@@ -266,7 +266,7 @@ namespace System.Cor3.Data.Settings
 		/// we just want a setting or cluster of settings.
 		/// </para>
 		/// </summary>
-		public class SQLiteSettingsContext : SQLiteContext
+		public class SQLiteSettingsContext : System.Cor3.Data.Context.SQLiteContext
 		{
 			#region const
 			const string query_settingreset = @"drop table if exists [settings];

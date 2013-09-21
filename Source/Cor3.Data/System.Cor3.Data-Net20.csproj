@@ -10,12 +10,12 @@
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\cor3.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Cor3.Core\cor3.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <WarningLevel>4</WarningLevel>
     <NoWarn>1591,1587,1570</NoWarn>
     <TargetFrameworkProfile />
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <OutputType>Library</OutputType>
@@ -242,10 +242,19 @@
       <HintPath Condition=" '$(Platform)' == 'xp86' ">C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.MSIL.1.0.88.0\lib\net20\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.MSIL.1.0.88.0\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Cor3.Core\Properties\GAsm.cs">
@@ -337,7 +346,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cor3.Core\System.Cor3-Net20.csproj">
-      <Project>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</Project>
+      <Project>{A2CF282B-96A1-4B49-AAA2-4E3711F7D8A3}</Project>
       <Name>System.Cor3-Net20</Name>
     </ProjectReference>
   </ItemGroup>

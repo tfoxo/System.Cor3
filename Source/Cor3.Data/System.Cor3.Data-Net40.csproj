@@ -10,7 +10,7 @@
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\cor3.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Cor3.Core\cor3.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <WarningLevel>4</WarningLevel>
     <NoWarn>1591,1587,1570</NoWarn>
@@ -231,6 +231,12 @@
     <Reference Include="MySql.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.MSIL.1.0.88.0\lib\net20\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.MSIL.1.0.88.0\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <HintPath>..\..\Projects\packages\SYSCORv35.1.3\lib\net20\System.Core.dll</HintPath>
