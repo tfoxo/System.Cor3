@@ -16,8 +16,4 @@ namespace System
 		static public implicit operator SqlFieldString(string s){ return new SqlFieldString(string.Copy(s.Trim(trimChars))); }
 		static public implicit operator string(SqlFieldString s){ return string.Copy(s.Value); }
 	}
-
-
-
-
 }

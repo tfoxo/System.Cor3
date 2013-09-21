@@ -7,9 +7,10 @@ using System.Drawing;
 
 namespace System.Cor3.Drawing
 {
+	// NOTE: TEST
 	// Line Generalization Algorithms
 	/// <summary>
-	/// • Nothing to say
+	/// TEST
 	/// </summary>
 	public class McMaster // Smoothing
 	{

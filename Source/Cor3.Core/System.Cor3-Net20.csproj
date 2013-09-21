@@ -173,13 +173,8 @@
     <Compile Include="Drawing\Metrics.cs" />
     <Compile Include="Drawing\ScaffoldCalculator.cs" />
     <None Include="Include\System.Win32.Gdi32.cs" />
-    <Compile Include="Internals\IViewPoint.cs" />
     <Compile Include="Internals\UndoRedoCommandManager.cs" />
-    <Compile Include="Internals\UserView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Internals\ViewPoint.cs" />
-    <Compile Include="Internals\ViewPointBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\GAsm.cs" />
     <Compile Include="Strings.Designer.cs">
@@ -250,8 +245,6 @@
     <Compile Include="System\DateHelper.cs" />
     <Compile Include="System\DICT.cs" />
     <Compile Include="System\DICTableBase.cs" />
-    <Compile Include="System\DictionaryList.cs" />
-    <Compile Include="System\DICT_List.cs" />
     <None Include="System\Divisor.cs" />
     <None Include="System\DoubleMathExtension.cs" />
     <None Include="System\EnumExtension.cs" />

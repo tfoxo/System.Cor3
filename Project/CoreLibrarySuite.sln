@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Cor3-Net20", "..\Sou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Cor3-Net40", "..\Source\Cor3.Core\System.Cor3-Net40.csproj", "{4549918E-94E0-4911-BBBA-99838A215302}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Cor3.Data-Net20", "..\Source\Cor3.Data\System.Cor3.Data-Net20.csproj", "{49FA2FBA-6F1D-4B8A-97FE-570F0F8F3B1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Cor3.Data-Net40", "..\Source\Cor3.Data\System.Cor3.Data-Net40.csproj", "{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +24,13 @@ Global
 		{4549918E-94E0-4911-BBBA-99838A215302}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4549918E-94E0-4911-BBBA-99838A215302}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4549918E-94E0-4911-BBBA-99838A215302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FA2FBA-6F1D-4B8A-97FE-570F0F8F3B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FA2FBA-6F1D-4B8A-97FE-570F0F8F3B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FA2FBA-6F1D-4B8A-97FE-570F0F8F3B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FA2FBA-6F1D-4B8A-97FE-570F0F8F3B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,5 @@
 ﻿/* User: oIo * Date: 8/18/2010 * Time: 4:27 AM */
-
+/* The directory these file is in should probably not be in this project. */
 namespace System
 {
 	using System.Collections.Generic;

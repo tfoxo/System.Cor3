@@ -10,6 +10,13 @@ using System.Xml.Serialization;
 namespace System
 {
 	public delegate void CallerEvent(object Key,object data);
+	
+	/// <summary>
+	/// This file is an ancient thought, pretty-much kept for no reason.
+	/// I believe that this is a part of a little 'NamedObjectFramework'
+	/// concept I abandoned years ago.  Since a few interesting tools
+	/// were dependent on the presence of this file, it remains.
+	/// </summary>
 	public class DICTableBase : SerializableClass<DICTableBase>
 	{
 		[XmlIgnore] public CallerEvent DataChanged;

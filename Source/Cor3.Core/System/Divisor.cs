@@ -3,10 +3,12 @@ using System;
 using System.Xml.Serialization;
 namespace System
 {
+	// TODO: delete or re-appropriate if there are no dependencies.
 	public class Divisor
 	{
 		[XmlAttribute("n")]
 		public double Numerator { get;set; }
+		
 		[XmlAttribute("d")]
 		public double Denominator { get;set; }
 		

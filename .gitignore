@@ -215,3 +215,4 @@ pip-log.txt
 .mr.developer.cfg
 /Source/Cor3.Core/obj
 /Source/Cor3.Core/bin
+/Source/Cor3.Core/cor3.snk

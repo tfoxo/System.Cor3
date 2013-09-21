@@ -1,8 +1,9 @@
 ﻿/* oOo * 11/19/2007 : 8:00 AM */
 using System;
-using System.Xml.Serialization;
+
 namespace System
 {
+	// (System.Windows.Forms compatible)
 	static public class AppInfo
 	{
 		static public void Init(string dir, string settings)

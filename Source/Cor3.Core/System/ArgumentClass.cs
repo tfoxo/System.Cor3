@@ -7,7 +7,8 @@ using System.ConsoleUtil;
 
 namespace System
 {
-	/// ArgumentClass
+	/// ArgumentClass---I can't say I remember why I constructed this.
+	/// Looks like it might be a 
 	public class ArgumentClass : AssemblyDescription
 	{
 		/// <summary>

@@ -4,8 +4,8 @@ namespace System
 {
 	using System.Collections.Generic;
 	/// <summary>
-	/// common tool for stripping and outputting content for SQL queries.
-	/// <para>This would be a idea for a base class—obsoleted by <see cref="System.SVar" /></para>
+	/// SQL String utility foundation.
+	/// <para>(obsoleted by <see cref="System.SVar" />)</para>
 	/// </summary>
 	public class query_field
 	{

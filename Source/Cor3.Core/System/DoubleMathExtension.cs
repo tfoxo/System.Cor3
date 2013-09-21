@@ -14,6 +14,10 @@ using System.Windows.Forms;
 //			return DspAudio.Midi.MidiReader.SmfStringFormatter.byteToString(input);
 //		}
 //	}
+
+// Most of these extensions were put here to cater to audio channels
+// in a audio process.
+
 namespace System
 {
 	static class FloatPointExtension
