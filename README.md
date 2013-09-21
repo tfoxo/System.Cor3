@@ -1,31 +1,47 @@
-# System.Cor3
+System.Cor3
+===========
 
-simple little abstraction library (used sort of like a include library)
-for CSharp.
+Simple abstraction library (used sort of like a include library) for CSharp.
+The project will most-likely be re-named to a more suitable name in the future.
 
-## STATUS: MIGRATING (PRE-ALPHA STAGES)
+## DEVELOPMENT PHASE
 
-> This is embarrassing!
+* PRE-RELEASE/MIGRATION/PLANNING
+* NOTES AND/OR PERSONAL ARTIFACTS NEED TO BE STRIPPED.
+* CHECK FOR ANY EXTERNAL SOURCES, LICENSING ISSUES, ETC...
 
-## ISSUES
+The collection is a third generation collection elaborated during three
+phases of development:
 
-*ITS NAKED*
+1. Collect organize and refactor 'common' sources from several dated
+   study, research and practice projects.
+    * Sources were are part of several projects and plugins for
+      a particular study/sandbox project, "EFX" (Environment Framework).
+    * Written while I might have understood half of .NET-v2.0 spec.
+2. Refactorization and consolidation phase #1
+    * Compile all sources to a single dll.
+    * Sources were a part of a sandbox project.
+3. Refactorization and consolidation phase #2
+    * Migrate Core (common) Library to github.
+    * Migrate Data Library to github.
+    * Migrate Parser Library to github.
+    * There are more csproj to migrate.
 
-* NOTES OR PERSONAL ARTIFACTS NEED TO BE STRIPPED.
-* CHECK FOR ANY EXTERNAL SOURCES, LICENSING ISSUES, ETC…
+Phase #3 core projects (core, data, parser and friends) comply to some rules.
 
-## PURPOSE
+* Strictly dependent on Microsoft .NET Framework library.
 
-About time that my embarrassing code up here and there, so I no longer have
-to worry about any more HD failures losing my codes in the process (again)
-like what seems to have happened with a particular font, and the old
-projects that many of these sources ended up getting consolidated out of
-since I compiled my first CSharp app using a .NET-1.0 application soon before
-v2.0 speck changed everything.
+## HOW WE USE DURING THE CURRENT DEVELOPMENT PHASE
 
-Perhaps some of this code may useful to others in their journeys.
+[todo section]
 
+A brief history:
+This collection started out as a huge mess.  Much of my programming
+experience was gained by of course studying the csharp language spec,
+while consolidating and adding to the library over something like
+5-10 years.  What eventually became a single library.
 
-## Noteworthy Log
+## Log
 
-20130919: initial dump
+20130919: upload core (common lib)
+
