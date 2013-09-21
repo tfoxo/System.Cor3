@@ -33,15 +33,12 @@ Phase #3 core projects (core, data, parser and friends) comply to some rules.
 
 ## HOW WE USE DURING THE CURRENT DEVELOPMENT PHASE
 
-[todo section]
+[todo section] 
 
-A brief history:
-This collection started out as a huge mess.  Much of my programming
-experience was gained by of course studying the csharp language spec,
-while consolidating and adding to the library over something like
-5-10 years.  What eventually became a single library.
 
 ## Log
 
-20130919: upload core (common lib)
+20130920: upload core (system.cor3.data lib)
+
+20130919: upload system.cor3.core (common lib)
 
