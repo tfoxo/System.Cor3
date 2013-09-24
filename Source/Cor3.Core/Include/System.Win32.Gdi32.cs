@@ -4,15 +4,12 @@
 //¡ï¡ï¡ï¡ï¡ï¡ï¡ï                Davidwu                       ¡ï¡ï¡ï¡ï¡ï¡ï¡ï
 //##########################################################################
 
+// we don't commonly cover copyrights translating win-api pinvoking unless
+// we copy/clone Class/Architecture beyond the scope of API calls.
+
 using System;
 using System.Runtime.InteropServices;
-using System.ComponentModel;
-using System.Text;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
-using System.Collections;
+
 namespace System
 {
 	/// <summary>
@@ -24,8 +21,10 @@ namespace System
 		
 		[DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
 		public static extern IntPtr GetDC(IntPtr hWnd);
+		
 		[DllImport("user32.dll", ExactSpelling = true)]
 		public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
+		
 		[DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
 		public static extern int UpdateLayeredWindow(IntPtr hwnd, IntPtr hdcDst, ref Point pptDst, ref Size psize, IntPtr hdcSrc, ref Point pptSrc, Int32 crKey, ref BLENDFUNCTION pblend, Int32 dwFlags);
 

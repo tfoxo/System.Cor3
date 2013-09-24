@@ -333,10 +333,7 @@
     <Folder Include="Reflection" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Readme.text" />
-    <None Include="System.Cor3.Data.shfbproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Messages.resx">
