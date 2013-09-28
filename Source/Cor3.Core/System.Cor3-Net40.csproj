@@ -173,7 +173,6 @@
     <Compile Include="Drawing\McMaster.cs" />
     <Compile Include="Drawing\Metrics.cs" />
     <Compile Include="Drawing\ScaffoldCalculator.cs" />
-    <None Include="Include\System.Win32.Gdi32.cs" />
     <Compile Include="Internals\ViewPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\GAsm.cs" />

@@ -153,7 +153,6 @@
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
@@ -172,7 +171,6 @@
     <Compile Include="Drawing\McMaster.cs" />
     <Compile Include="Drawing\Metrics.cs" />
     <Compile Include="Drawing\ScaffoldCalculator.cs" />
-    <None Include="Include\System.Win32.Gdi32.cs" />
     <Compile Include="Internals\UndoRedoCommandManager.cs" />
     <Compile Include="Internals\ViewPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -226,6 +224,7 @@
     <Compile Include="System\ArgumentClass.cs" />
     <Compile Include="System\AssemblyDescription.cs" />
     <Compile Include="System\BrowserHelper.cs" />
+    <Compile Include="System\Commander.cs" />
     <Compile Include="System\CommandingClass\CommandingClass.cs" />
     <Compile Include="System\CommandingClass\CommandingClassWithTimer.cs" />
     <Compile Include="System\CommandingClass\EventHatch.cs" />
