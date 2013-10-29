@@ -1,0 +1,34 @@
+﻿<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+	<!--<Import Project="dateinc.targets" />-->
+	<UsingTask
+		TaskName="GenerateIssInc"
+		TaskFactory="CodeTaskFactory"
+		AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" >
+		<ParameterGroup>
+			<OutputFileName ParameterType="System.String" Required="true" />
+			<ReplaceString  ParameterType="System.String" Required="false" />
+		</ParameterGroup>
+		<Task>
+			<Using Namespace="System" />
+			<Using Namespace="System.IO"/>
+			<Code Type="Fragment" Language="cs"><![CDATA[
+			Version v = System.Reflection.AssemblyName.GetAssemblyName(@"..\bin\FeedTool.exe").Version;
+			string TemplateString = ReplaceString ?? @"#define MyOutputFile ""Setup-FeedTool-v{2}-{1:yyyyMMddHHmm}""
+#define MyAppVersion ""{0}""";
+			System.IO.File.Delete(OutputFileName);
+			System.IO.File.WriteAllText(OutputFileName,string.Format(TemplateString,v,DateTime.Now,v.ToString(2)));
+]]>
+			</Code>
+		</Task>
+	</UsingTask>
+	<PropertyGroup>
+		<IssPath>C:\Program Files (x86)\Inno Setup 5\</IssPath>
+		<Iss>&quot;$(IssPath)iscc&quot;</Iss>
+		<Generate>&quot;setup-feed-tool-v1.iss&quot;</Generate>
+	</PropertyGroup>
+	<Target Name="Build">
+		<GenerateIssInc OutputFileName="setup-feed-tool-v1.inc" />
+		<Exec Command="$(Iss) $(Generate)" />
+	</Target>
+</Project>

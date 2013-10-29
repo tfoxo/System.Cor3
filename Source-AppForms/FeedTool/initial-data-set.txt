@@ -1,0 +1,138 @@
+#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
+#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
+#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
+#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
+
+radio.Astonisher 3|http://astonisher.wordpress.com/feed
+
+## TESTING
+#######################################################################
+# * I'm not quite sure if or how its possible to load more pages of content from the bay.
+tpb.Manteesh|http://rss.thepiratebay.se/user/3315597e8d840dd4d528199d7eedea30
+#PageDown|http://code.google.com/feeds/p/pagedown/hgchanges/basic?repo=wiki
+
+# my little blog
+local.tfw|http://vaio/b/feed/
+local.tfw.tfwxo.wordpress|http://tfwxo.wordpress.com/feed/
+#My Other Feed|http://vaio/p/feed/
+
+local.tfw.2nd Foundation|http://vaio/b/?feed=podcast&series=2ndFoundation
+local.tfw.Plato, The Republic|http://vaio/b/?feed=podcast&series=plato-the-republic
+
+#To Fail|http://I-Dont-Exist/
+
+## AMIGO
+#######################################################################
+#CoffeeRocket|http://coffeerocket.blogspot.com/feeds/posts/default
+blog.CoffeeRocket2|http://coffeerocket.blogspot.com/feeds/posts/default?alt=rss
+
+## ?
+#######################################################################
+unkn.megawatts1066|https://gdata.youtube.com/feeds/api/users/megawatts1066/uploads?max-results=50
+#mysticmoments1|https://gdata.youtube.com/feeds/api/users/mysticmoments1/uploads?max-results=50
+
+## SPACE / WEATHER / GEO/GALACTIC
+#######################################################################
+news.Suspicious0bservers|https://gdata.youtube.com/feeds/api/users/Suspicious0bservers/uploads?max-results=50
+
+## TECH
+#######################################################################
+tech.GoogleTechTalks|https://gdata.youtube.com/feeds/api/users/GoogleTechTalks/uploads?max-results=50
+tech.Sharp Develop|http://community.sharpdevelop.net/blogs/MainFeed.aspx
+
+# EBOOK
+#######################################################################
+
+book.TheAudioArchive|https://gdata.youtube.com/feeds/api/users/TheAudioArchive/uploads?max-results=50
+book.AudioBooksFree|https://gdata.youtube.com/feeds/api/users/audiobooksfree/uploads?max-results=50
+book.GreatestAudioBooks|https://gdata.youtube.com/feeds/api/users/GreatestAudioBooks/uploads?max-results=50
+book.AudioBookMturk|https://gdata.youtube.com/feeds/api/users/audiobookmturk/uploads?max-results=50
+book.AudioBookMturk12|https://gdata.youtube.com/feeds/api/users/audiobookmturk12/uploads?max-results=50
+book.AudioBookMturk13|https://gdata.youtube.com/feeds/api/users/audiobookmturk13/uploads?max-results=50
+book.Listener Audio Books|https://gdata.youtube.com/feeds/api/users/ListnerAudioBook/uploads?max-results=50
+book.Ultimate Audio Books|https://gdata.youtube.com/feeds/api/users/ultimateaudiobook/uploads?max-results=50
+book.Plato: The Republic|http://therepublic.audiobooks.libsynpro.com/rss
+
+# HISTORY
+#######################################################################
+book.webofstories|https://gdata.youtube.com/feeds/api/users/webofstories/uploads?max-results=50
+
+## REVOLUTIONS
+#######################################################################
+
+#TheHatedPatriot1776|https://gdata.youtube.com/feeds/api/users/TheHatedPatriot1776/uploads?max-results=50
+radio.Revolution Radio|https://gdata.youtube.com/feeds/api/users/freerevolutionradio/uploads?max-results=50
+radio.HumanityTranscending|https://gdata.youtube.com/feeds/api/users/HumanityTranscending/uploads?max-results=50
+
+# camelot
+radio.Project Camelot (archive.org)|http://feeds.feedburner.com/projectcamelot
+radio.Project Camelot Blog|http://projectcamelotportal.com/kerrys-blog?format=feed&type=rss
+radio.Project Camelot|https://gdata.youtube.com/feeds/api/users/jagbodhi/uploads?max-results=50
+
+# RBN
+radio.RBN.The John Moore Show|http://www.republicbroadcasting.org/podcasts.active.php?programID=21
+radio.RBN.What Really Happened?|http://www.republicbroadcasting.org/podcasts.active.php?programID=77
+radio.RBN.Spingola Speaks|http://www.republicbroadcasting.org/podcasts.active.php?programID=81
+
+#Cutting Through the Matrix|http://recordings.talkshoe.com/rss14155.xml
+#Radio Liberty Broadcast|http://www.soundwaves2000.com/radio_liberty/rl_feeds.xml
+
+## WTF
+#######################################################################
+
+# [Coast To Coast AM]
+radio.C2C Articles|http://feeds2.feedburner.com/C2C-Articles
+radio.C2C Past|http://feeds2.feedburner.com/C2C-PastShows
+radio.C2C Upcoming|http://feeds2.feedburner.com/C2C-UpcomingShows
+
+info.Rayleen Alan Miller|http://radio.rumormillnews.com/podcast/feed/
+#American Kabuki|http://americankabuki.blogspot.com/feeds/posts/default?alt=rss
+#American Kabuki (2)|http://feeds.feedburner.com/AmericanKabuki?format=xml
+
+## SPIRITOLOGY
+#######################################################################
+
+sphere.Creating5D|https://gdata.youtube.com/feeds/api/users/Creating5D/uploads?max-results=50
+sphere.Angel Lucci|http://angellucci.wordpress.com/feed/
+
+#######################################################################
+## ASTROTHEOLOGY
+#######################################################################
+sphere.MrAstrotheology|https://gdata.youtube.com/feeds/api/users/MrAstrotheology/uploads?max-results=50
+sphere.TheSantosBonacciShow|https://gdata.youtube.com/feeds/api/users/TheSantosBonacciShow/uploads?max-results=50
+#######################################################################
+# the following channels are derived from (suggested by) MrAstrotheology
+#######################################################################
+sphered.77GSlinger|https://gdata.youtube.com/feeds/api/users/77GSlinger/uploads?max-results=50
+sphered.mattpresti|https://gdata.youtube.com/feeds/api/users/mattpresti/uploads?max-results=50
+sphered.Frank7Chester|https://gdata.youtube.com/feeds/api/users/Frank7Chester/uploads?max-results=50
+sphered.TheRealVerbz|https://gdata.youtube.com/feeds/api/users/TheRealVerbz/uploads?max-results=50
+sphered.bdona4556|https://gdata.youtube.com/feeds/api/users/bdona4556/uploads?max-results=50
+sphered.kateofgaia|https://gdata.youtube.com/feeds/api/users/kateofgaia/uploads?max-results=50
+sphered.TemplateItem|https://gdata.youtube.com/feeds/api/users/TemplateItem/uploads?max-results=50
+
+# I forgot where this came from
+spherex.CitizenZTV|https://gdata.youtube.com/feeds/api/users/CitizenZTV/uploads?max-result=50
+
+## UFOLOGY
+#######################################################################
+
+radio.sirianfreeman3|https://gdata.youtube.com/feeds/api/users/sirianfreeman3/uploads?max-results=50
+radio.ADGUKNEWS|https://gdata.youtube.com/feeds/api/users/ADGUKNEWS/uploads?max-results=50
+radio.Inception Radio Network|http://inceptionradionetwork.com/feed/podcast
+radio.Inception Radio Network (RSS)|http://inceptionradionetwork.com/feed/
+radio.Sceptre Radio Network|http://sceptreradionetwork.com/sceptreradionetwork-news-rss.xml
+radio.The DisinfoCast With Matt Staggs|http://disinfo.libsyn.com/rss
+radio.Feet to the Fire Radio Show|http://innersites.com/feeds/F2F_RSS.xml
+radio.Just Energy Radio|http://www.justenergyradio.com/rss-feed/Just-Energy-Radio-rssfeed.xml
+radio.OffPlanet Radio|http://offplanetradio.com/podcast/rss.xml?categoryId=3441881
+
+## TOONS / CLASSICS
+#######################################################################
+
+toon.classicvault|https://gdata.youtube.com/feeds/api/users/classicvault/uploads?max-results=50
+toon.compukatz|https://gdata.youtube.com/feeds/api/users/compukatz/uploads?max-results=50
+toon.skreenplay|https://gdata.youtube.com/feeds/api/users/skreenplay/uploads?max-results=50
+toon.zootsmcgurn|https://gdata.youtube.com/feeds/api/users/zootsmcgurn/uploads?max-results=50
+toon.CCCartoons|https://gdata.youtube.com/feeds/api/users/CCCartoons/uploads?max-results=50
+toon.LifesACookieTube|https://gdata.youtube.com/feeds/api/users/LifesACookieTube/uploads?max-results=50

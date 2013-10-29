@@ -35,7 +35,7 @@ namespace System.Cor3.Drawing
 	// NOTE: TEST
 	// Line Generalization Algorithms
 	/// <summary>
-	/// TEST
+	/// HAS NOT BEEN TESTED
 	/// </summary>
 	public class McMaster // Smoothing
 	{

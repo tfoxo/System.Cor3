@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\oIo\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
@@ -33,54 +33,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <BaseIntermediateOutputPath>obj\Net40\</BaseIntermediateOutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
-    <DebugType>Full</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Net40\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
-    <DebugType>None</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\Net40\Release\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'Win32' ">
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <OutputType>Library</OutputType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win64' ">
-    <DebugType>None</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win64' ">
-    <DebugType>None</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\Release\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'Win64' ">
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x64</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <OutputType>Library</OutputType>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>Full</DebugType>
     <WarningLevel>4</WarningLevel>
@@ -97,22 +49,6 @@
     <DebugSymbols>false</DebugSymbols>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xp86' ">
-    <DebugType>Full</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xp86' ">
-    <DebugType>None</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\Release\</OutputPath>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
@@ -120,30 +56,6 @@
     <PlatformTarget>x86</PlatformTarget>
     <FileAlignment>4096</FileAlignment>
     <OutputType>Library</OutputType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|m32' ">
-    <DebugType>Full</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|m32' ">
-    <DebugType>None</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>..\..\Build\Modules\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'm32' ">
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <OutputType>Module</OutputType>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
@@ -160,8 +72,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data.Design\DbControlDesigner.cs" />
-    <Compile Include="Data.Design\DbActionList.cs" />
     <Compile Include="Data.Filter\query_field.cs" />
     <Compile Include="Data.Filter\SqlFieldString.cs" />
     <Compile Include="Data.Filter\SqlServerFieldString.cs" />

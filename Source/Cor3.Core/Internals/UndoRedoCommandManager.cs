@@ -29,7 +29,7 @@ using System.Collections.Generic;
 
 namespace System.Internals
 {
-
+    // NOTE: UNTESTED GARBAGE!!!
 	class UndoRedoCommandManager
 	{
 		public event EventHandler OnUndoRedoAction;

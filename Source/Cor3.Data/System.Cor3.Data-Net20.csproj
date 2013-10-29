@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>{49FA2FBA-6F1D-4B8A-97FE-570F0F8F3B1E}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <RootNamespace>System.Cor3.Data</RootNamespace>
     <AssemblyName>System.Cor3.Data-Net20</AssemblyName>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -31,54 +31,6 @@
     <Optimize>True</Optimize>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
-    <DefineConstants>DEBUG;TRACE;CONSOLE;NET35;TREEV</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>Full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
-    <DefineConstants>NET35;TRACE;TREEV</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>None</DebugType>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\Release\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win64' ">
-    <DefineConstants>DEBUG;TRACE;CONSOLE;NET35</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>Full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win64' ">
-    <DefineConstants>NET35;TRACE</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>None</DebugType>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineConstants>DEBUG;TRACE;CONSOLE;NET35</DefineConstants>
@@ -169,54 +121,6 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>None</DebugType>
     <DebugSymbols>false</DebugSymbols>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|m32' ">
-    <DefineConstants>DEBUG;TRACE;CONSOLE;NET35;TREEV</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>Full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|m32' ">
-    <DefineConstants>NET35;TRACE;TREEV</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>None</DebugType>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>..\..\Build\Modules\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xp86' ">
-    <DefineConstants>DEBUG;TRACE;CONSOLE;NET35;TREEV</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>Full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xp86' ">
-    <DefineConstants>NET35;TRACE;TREEV</DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>x86</PlatformTarget>
-    <FileAlignment>4096</FileAlignment>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugType>None</DebugType>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)' == 'Debug_MySql_Ref' ">
     <Reference Include="MySql.Data" />

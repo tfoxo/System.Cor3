@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link type="text/css" rel="stylesheet" href="style.css"/>
+	<title>FeedTool App</title>
+</head>
+<body>
+<!--
+foghorn.css
+https://github.com/jasonm23/markdown-css-themes/blob/gh-pages/foghorn.css
+md.css
+https://gist.github.com/somebox/1082608
+style.css
+https://gist.github.com/andyferra/2554919
+-->
+
+<h1 id="feedtool">Feed Tool</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>FeedTool is a cor3/sandbox application that seems worthy of a little more consideration.</p>
+
+<p><code>FeedTool</code> design bares the following characteristics.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Multiple Feed Source/Inputs
+
+<ul>
+<li>OPML</li>
+<li>Simple-Text-File</li>
+</ul></li>
+<li>Simple text-file as initialization file to load RSS/FEED urls from.</li>
+<li>XML/RSS Formats: PODCAST, YOUTUBE User-Videos, RSS/ATOM, XML/RSS (general feed)</li>
+<li>Implement cross-platform solution for AV playback of podcast or feed <code>enclosure</code>
+ elements which usually point to mp3 or audio files as defined in podcast feeds.</li>
+<li>Additionally, the project was an personal excersize in using/testing a couple .NET
+ <a href="http://msdn.microsoft.com/en-us/library/system.threading.thread(v=vs.80).aspx"><code>Thread</code></a> patterns including <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.backgroundworker(v=vs.80).aspx"><code>BackgroundWorker</code></a>
+ in the windows-forms demo.</li>
+</ul>
+
+<h2 id="future">Future</h2>
+
+<ul>
+<li>Integrate some features of a particular AvUtils application for the playback features.</li>
+<li>Parse/Check for OpenSearch and/or compatible information to &#8216;page&#8217; content perhaps
+ via application or global setting(s).</li>
+</ul>
+
+<h2 id="buildtargets">Build Targets</h2>
+
+<p>Windows Vista/7/8 (.NET v4.5)</p>
+
+<h2 id="third-partylibrariescreditsandordependencies">Third-Party Libraries, Credits and/or Dependencies</h2>
+
+<p>See: <a href="http://git-scm.com/book/en/Git-Tools-Submodules">GitSubModules</a> (for no particular reason)</p>
+
+<h3 id="credit:youtubeextractordennisdaume">Credit: YouTubeExtractor (Dennis Daume)</h3>
+
+<p>Credit due to <a href="https://github.com/flagbug/YoutubeExtractor/">YouTubeExtractor</a>&#8217;s <a href="https://github.com/flagbug/YoutubeExtractor/blob/master/YoutubeExtractor/YoutubeExtractor/DownloadUrlResolver.cs"><code>DownloadUrlResolver.cs</code></a>
+for pointing out:</p>
+
+<pre><code>http://www.youtube.com/get_video_info?&amp;video_id={{videoid}}&amp;el=detailpage&amp;ps=default&amp;eurl=&amp;gl=US&amp;hl=en
+</code></pre>
+
+<p>Some inspirations also having been gathered from <a href="http://brianlagunas.com/free-metro-light-and-dark-themes-for-wpf-and-silverlight-microsoft-controls/">Brian Lagunas</a>&#8217;s Free Metro light and dark themes pointed out by Dennis.</p>
+
+<h3 id="adobeflashplayer">Adobe Flash Player</h3>
+
+<p>Adobe Flash Player (Microsoft ActiveX control version) is required to view YouTube videos and perhaps some multimedia (audio) files.</p>
+
+<p>Download Flash Player (ActiveX version) <a href="http://www.adobe.com/support/flashplayer/downloads.html">here</a></p>
+
+<h2 id="developmenttopicsreferences">Development Topics &amp; References</h2>
+
+<ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/vstudio/hh156528.aspx">await</a> operator keyword, <a href="http://msdn.microsoft.com/en-us/library/vstudio/hh156513.aspx">async</a> keyword</li>
+<li>I&#8217;ve recently observed this project is neglecting some of the newer features of the .NET v4.5 framework.</li>
+<li>These guys are not relevant, come think of it.
+
+<ul>
+<li><a href="https://developers.google.com/gdata/articles/oauth">Using OAuth with the Google Data APIs</a>, or perhaps…</li>
+<li><a href="https://code.google.com/p/gdata-python-client/issues/attachmentText?id=638&amp;aid=6380000000&amp;name=signature-gdata-pycrypto.py&amp;token=etXU4Ul5MdUR9y8J2bP5PvnJurw%3A1346876520202">code.google.com\p\gdata-python-client\signature-gdata-pycrypto.py (attachment)</a></li>
+</ul></li>
+</ul>
+</body>
+</html>

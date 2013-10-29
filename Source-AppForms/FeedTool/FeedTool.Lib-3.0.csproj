@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{EB1B9490-A585-40D2-8744-EDAC58A780FE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FeedTool</RootNamespace>
+    <AssemblyName>FeedTool-3.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <NoWarn>0684,0618</NoWarn>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <DocumentationFile>Build\Bin\FeedTool.xml</DocumentationFile>
+    <YoutubeExtractor>D:\DEV\WIN\CS_ROOT\GIT_Svn.External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor</YoutubeExtractor>
+    <Cor3Inc>F:\DEV\WIN\CS_ROOT\Projects\tfw.cor3\Source\Cor3.Core\Include</Cor3Inc>
+    <FlashExtSrc>F:\DEV\WIN\CS_ROOT\Projects\tfw.cor3\Source-Libs\Flash.External</FlashExtSrc>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <OutputPath>Build\Bin</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <OutputPath>Build\Bin</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>True</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FeedTool.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Akavache">
+      <HintPath>..\..\Project\packages\akavache.3.0.2\lib\net45\Akavache.dll</HintPath>
+    </Reference>
+    <Reference Include="Akavache.Portable">
+      <HintPath>..\..\Project\packages\akavache.portable.3.0.2\lib\net45\Akavache.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Akavache.Sqlite3">
+      <HintPath>..\..\Project\packages\akavache.sqlite3.3.0.2\lib\net45\Akavache.Sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TextEditor">
+      <HintPath>..\..\Projects\packages\AvalonEdit.1.0.0\lib\net20\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Project\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI">
+      <HintPath>..\..\Project\packages\reactiveui-core.5.0.2\lib\Portable-Net45+WinRT45+WP8\ReactiveUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\Project\packages\Rx-Core.2.1.30214.0\lib\Net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\Project\packages\Rx-Interfaces.2.1.30214.0\lib\Net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\Project\packages\Rx-Linq.2.1.30214.0\lib\Net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\Project\packages\Rx-PlatformServices.2.1.30214.0\lib\Net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\svn_sound\Sound.Common\Formats\MMSys_Interop.cs">
+      <Link>Includes\MMSys_Interop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\ControlUtil.cs">
+      <Link>Includes\ControlUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\Serial.cs">
+      <Link>Includes\Serial.cs</Link>
+    </Compile>
+    <Compile Include="$(YoutubeExtractor)\AudioType.cs">
+      <Link>Includes\YoutubeExtractor\AudioType.cs</Link>
+    </Compile>
+    <Compile Include="$(YoutubeExtractor)\DownloadUrlResolver.cs">
+      <Link>Includes\YoutubeExtractor\DownloadUrlResolver.cs</Link>
+    </Compile>
+    <Compile Include="$(YoutubeExtractor)\HttpHelper.cs">
+      <Link>Includes\YoutubeExtractor\HttpHelper.cs</Link>
+    </Compile>
+    <Compile Include="$(YoutubeExtractor)\VideoInfo.cs">
+      <Link>Includes\YoutubeExtractor\VideoInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(YoutubeExtractor)\VideoNotAvailableException.cs">
+      <Link>Includes\YoutubeExtractor\VideoNotAvailableException.cs</Link>
+    </Compile>
+    <Compile Include="$(YoutubeExtractor)\VideoType.cs">
+      <Link>Includes\YoutubeExtractor\VideoType.cs</Link>
+    </Compile>
+    <Compile Include="$(YoutubeExtractor)\YoutubeParseException.cs">
+      <Link>Includes\YoutubeExtractor\YoutubeParseException.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\Adobe\AxShockwaveFlashObjects.cs">
+      <Link>Includes\Adobe\AxShockwaveFlashObjects.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\Adobe\ShockwaveFlashObjects.cs">
+      <Link>Includes\Adobe\ShockwaveFlashObjects.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceCall.cs">
+      <Link>Includes\Adobe\ExternalInterfaceCall.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceCallEventArgs.cs">
+      <Link>Includes\Adobe\ExternalInterfaceCallEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceProxy.cs">
+      <Link>Includes\Adobe\ExternalInterfaceProxy.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceSerializer.cs">
+      <Link>Includes\Adobe\ExternalInterfaceSerializer.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\Adobe\stdole.cs">
+      <Link>Includes\Adobe\stdole.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\FileLoader.cs">
+      <Link>Includes\FileLoader.cs</Link>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\FlashVidTool.2.0.cs">
+      <Link>Includes\FlashVidTool.2.0.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="$(FlashExtSrc)\FlashVidTool.Designer.cs">
+      <Link>Includes\FlashVidTool.Designer.cs</Link>
+      <DependentUpon>FlashVidTool.2.0.cs</DependentUpon>
+    </Compile>
+    <None Include="Resources\webui.swf">
+      <Link>res\webui.swf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="build-setup.cmd" />
+    <None Include="Properties\AssemblyInfo.cs.rev">
+      <DependentUpon>AssemblyInfo.cs</DependentUpon>
+    </None>
+    <None Include="README.md" />
+    <None Include="Sonar.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Projects\UriHacks.cs">
+      <Link>Includes\UriHacks.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\SerializableClass.cs">
+      <Link>Includes\SerializableClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Forms\Forms\WinTheme.cs">
+      <Link>Includes\WinTheme.cs</Link>
+    </Compile>
+    <Compile Include="Includes\TextEditorUtil.cs">
+      <Generator>MuGen32</Generator>
+      <LastGenOutput>TextEditorUtil.cs.text</LastGenOutput>
+    </Compile>
+    <Compile Include="Resource.Designer.cs">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Source\Converters\FeedDataConverter.cs" />
+    <Compile Include="Source\Converters\FeedListConverter.cs" />
+    <Compile Include="Source\Converters\FeedListItemConverter.cs" />
+    <Compile Include="Source\DictionaryFromStringExtension.cs" />
+    <Compile Include="Source\DirectoryReader.cs" />
+    <Compile Include="Source\Elements\AtomEntry.cs">
+      <DependentUpon>NodeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\NodeInfo.cs" />
+    <Compile Include="Source\Elements\OpmlDocument.cs">
+      <DependentUpon>XPathItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\OpmlOutline.cs">
+      <DependentUpon>XPathItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\RssNode.cs">
+      <DependentUpon>NodeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\XPathItem.cs" />
+    <Compile Include="Source\Elements\YtFeedEntry.cs">
+      <DependentUpon>NodeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\YtMediaContent.cs">
+      <DependentUpon>NodeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FeedCollection.cs" />
+    <Compile Include="Source\FeedDataItem.cs" />
+    <Compile Include="Source\FeedParser.cs" />
+    <Compile Include="Source\FeedListItem.cs" />
+    <Compile Include="Source\Readers\HttpContentReader.cs" />
+    <Compile Include="Source\Readers\OpmlReader.cs" />
+    <Compile Include="Source\SQLiteFeeds.cs" />
+    <Compile Include="Source\UriDownloader.cs" />
+    <Compile Include="Source\XmlInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\ExportImageListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportImageListForm.Designer.cs">
+      <DependentUpon>ExportImageListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(FlashExtSrc)\FlashVidTool.2.0.resx">
+      <Link>Includes\FlashVidTool.2.0.resx</Link>
+      <DependentUpon>FlashVidTool.2.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportImageListForm.resx">
+      <DependentUpon>ExportImageListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="initial-data-set.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms.Views\" />
+    <Folder Include="Includes\YoutubeExtractor" />
+    <Folder Include="Source\Converters" />
+    <Folder Include="Source\Readers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <PostBuildEvent>%windir%\Microsoft.Net\Framework\v4.0.30319\msbuild $(ProjectDir)build\setup\compileSetup.proj /p:ProjectDir=%cd%</PostBuildEvent>
+    <PreBuildEvent>::SubWCRev "$(ProjectDir).." "$(ProjectDir)Properties\AssemblyInfo.cs.rev" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+</Project>
