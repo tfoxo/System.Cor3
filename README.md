@@ -4,8 +4,6 @@ Simple abstraction library (used sort of like a include library) for CSharp.
 
 [MIT]: http://opensource.org/licenses/MIT
 
-## COPYLEFT
-
 Copyright &copy; 2005-2013 tfwroble
 
 This projects' source code licensing defaults to [MIT] license (providing credit where it is due where necessary).
