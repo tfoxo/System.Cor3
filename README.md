@@ -5,30 +5,16 @@ Simple abstraction library (used sort of like a include library) for CSharp.
 
 ## COPYLEFT
 
-Copyright (c) 2005-2013 tfwroble
+Copyright &copy; 2005-2013 tfwroble
 
-[Weak Events in CSharp](http://www.codeproject.com/Articles/29922/Weak-Events-in-C): Copyright (c) 2008 Daniel Grunwald
+[Weak Events in CSharp], ICSharpCode.TextEditor &ndash; Copyright &copy; 2008 Daniel Grunwald
 
-## LICENSE(s)
+[Weak Events in CSharp]: http://www.codeproject.com/Articles/29922/Weak-Events-in-C
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+## LOG
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+### 20131028 - REVISION 32
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+- Added the little FeedTool: `./Source-AppForms/FeedTool`
+- Added `Cor3.Forms` library: `./Source/Cor3.Forms/`
 
