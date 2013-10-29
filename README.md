@@ -12,10 +12,9 @@ Copyright &copy; 2005-2013 tfwroble
 
 This projects' source code licensing defaults to [MIT] license (providing credit where it is due where necessary).
 
-For dependency licensing information, consult the project directory and/or the LICENSE.md.
+For dependency licensing information, consult the project directory and/or the LICENSE.md in this directory.
 
 ## LOG
-
 ### 20131028 - REVISION 32
 
 - Added the little FeedTool: `./Source-AppForms/FeedTool`
