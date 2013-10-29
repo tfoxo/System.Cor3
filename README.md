@@ -2,14 +2,17 @@
 
 Simple abstraction library (used sort of like a include library) for CSharp.
 
+[MIT]: http://opensource.org/licenses/MIT
 
 ## COPYLEFT
 
 Copyright &copy; 2005-2013 tfwroble
 
-[Weak Events in CSharp], ICSharpCode.TextEditor &ndash; Copyright &copy; 2008 Daniel Grunwald
+This projects' source code licensing defaults to [MIT] license (providing credit where it is due where necessary).
 
-[Weak Events in CSharp]: http://www.codeproject.com/Articles/29922/Weak-Events-in-C
+For dependency licensing information, consult the project directory and/or the LICENSE.md.
+
+Currently, this project is in alpha stages (pre-release) where more (proper) attention is to be paid to attribution in many of the projects that have not yet migrated up here.
 
 ## LOG
 
