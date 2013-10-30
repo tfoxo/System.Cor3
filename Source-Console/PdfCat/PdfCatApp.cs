@@ -1,4 +1,4 @@
-﻿/* oio * 10/27/2013 * 3:47 AM */
+/* oio * 10/27/2013 * 3:47 AM */
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -113,7 +113,16 @@ namespace PdfCat
             foreach (string file in files)
             {
                 // Open the document to import pages from it.
-                PdfDocument inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import);
+                PdfDocument inputDocument;
+                try {
+                    inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import);
+                }
+                catch (Exception e)
+                {
+                    Console.Error.WriteLine("File: {0}", file);
+                    Console.Error.WriteLine("Error: {0}: {1}", e.Source, e.Message);
+                    continue;
+                }
                 
                 // Iterate pages
                 int count = inputDocument.PageCount;
@@ -205,7 +214,7 @@ namespace PdfCat
             //outputDocument.Options.CompressContentStreams = true;
             
             XFont font = new XFont("Verdana", 40, XFontStyle.Bold);
-            XStringFormat format = XStringFormat.Center;
+            XStringFormat format = XStringFormats.Center;
             int number = 0;
             
             // Iterate files
@@ -259,7 +268,7 @@ namespace PdfCat
             //outputDocument.Options.CompressContentStreams = true;
             
             XFont font = new XFont("Verdana", 40, XFontStyle.Bold);
-            XStringFormat format = XStringFormat.Center;
+            XStringFormat format = XStringFormats.Center;
             int number = 0;
             
             // Iterate files
