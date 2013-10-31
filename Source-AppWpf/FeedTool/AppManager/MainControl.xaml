@@ -1,0 +1,44 @@
+<UserControl
+	x:Class="FeedTool.ViewMain.MainControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	xmlns:cs="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf">
+	<DockPanel>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="280" />
+				<ColumnDefinition Width="3" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<HeaderedItemsControl Grid.Column="0" Grid.Row="0" x:Name="listFeeds" Foreground="White">
+				<HeaderedItemsControl.Header>
+					<Grid>
+						<TextBlock Text="Mr Header" Foreground="White" />
+						<Button Content="X" DockPanel.Dock="Right" Grid.Column="1" MinWidth="20" MinHeight="20" />
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+					</Grid>
+				</HeaderedItemsControl.Header>
+				<!--<HeaderedContentControl.Content>
+					<Grid>
+						<TextBox Grid.Column="0" Grid.Row="0" />
+						<TreeView Grid.Column="0" Grid.Row="1" />
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+					</Grid>
+				</HeaderedContentControl.Content>-->
+			</HeaderedItemsControl>
+			<GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="0" Background="Black" />
+			<cs:WebView x:Name="web_view" Address="https://startpage.com/" Grid.Row="0" Grid.Column="2">
+			</cs:WebView>
+		</Grid>
+	</DockPanel>
+</UserControl>
