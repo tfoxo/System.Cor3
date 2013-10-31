@@ -9,7 +9,7 @@ radio.Astonisher 3|http://astonisher.wordpress.com/feed
 #######################################################################
 # * I'm not quite sure if or how its possible to load more pages of content from the bay.
 #/tpb.Manteesh|http://rss.thepiratebay.se/user/3315597e8d840dd4d528199d7eedea30
-#/tpb.Manteesh|https://rss.thepiratebay.sx/user/7c91f6807ef8b745921b10a6a9a074f7
+#/tpb.V413HAV|https://rss.thepiratebay.sx/user/7c91f6807ef8b745921b10a6a9a074f7
 #PageDown|http://code.google.com/feeds/p/pagedown/hgchanges/basic?repo=wiki
 
 # my little blog
