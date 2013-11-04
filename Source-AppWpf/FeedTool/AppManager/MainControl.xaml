@@ -1,13 +1,47 @@
 <UserControl x:Class="FeedTool.ViewMain.MainControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:cs="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf">
 	<DockPanel>
+		<!--<ToolBar >-->
+		<Menu Height="22" DockPanel.Dock="Top">
+			<MenuItem Header="File">
+				<MenuItem Header="Show Dev Tools" Name="showDevToolsMenuItem" Click="control_Activated" />
+				<MenuItem Header="Close Dev Tools" Name="closeDevToolsMenuItem" Click="control_Activated" />
+				<Separator />
+				<MenuItem Header="Exit" Name="exitMenuItem" Click="control_Activated" />
+			</MenuItem>
+			<MenuItem Header="Edit">
+				<MenuItem Header="Undo" Name="undoMenuItem" Click="control_Activated" />
+				<MenuItem Header="Redo" Name="redoMenuItem" Click="control_Activated" />
+				<Separator />
+				<MenuItem Header="Cut" Name="cutMenuItem" Click="control_Activated" />
+				<MenuItem Header="Copy" Name="copyMenuItem" Click="control_Activated" />
+				<MenuItem Header="Paste" Name="pasteMenuItem" Click="control_Activated" />
+				<MenuItem Header="Delete" Name="deleteMenuItem" Click="control_Activated" />
+				<MenuItem Header="Select All" Name="selectAllMenuItem" Click="control_Activated" />
+			</MenuItem>
+			<MenuItem Header="View">
+				<MenuItem Header="Show/Hide Scale/Opacity" Name="viewBrowserControlsMenuItem" Click="browser_viewControls" />
+			</MenuItem>
+			<MenuItem Header="Tests">
+				<MenuItem Header="Test Resource Load Handler" Name="testResourceLoadMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Scheme Load Handler" Name="testSchemeLoadMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Execute JavaScript" Name="testExecuteScriptMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Evaluate JavaScript" Name="testEvaluateScriptMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Bind CLR Object to JavaScript" Name="testBindMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Console Message" Name="testConsoleMessageMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Tooltip" Name="testTooltipMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Popup" Name="testPopupMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Load String" Name="testLoadStringMenuItem" Click="control_Activated" />
+				<MenuItem Header="Test Cookie Visitor" Name="testCookieVisitorMenuItem" Click="control_Activated" />
+			</MenuItem>
+		</Menu>
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="280" />
+				<ColumnDefinition Width="280" MinWidth="0" />
 				<ColumnDefinition Width="3" />
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" MinWidth="56" />
 			</Grid.ColumnDefinitions>
 			<HeaderedItemsControl Grid.Column="0" Grid.Row="0" x:Name="listFeeds" Foreground="White">
 				<HeaderedItemsControl.Header>
@@ -32,41 +66,7 @@
 				</HeaderedContentControl.Content>-->
 			</HeaderedItemsControl>
 			<GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="0" Background="Black" />
-			<DockPanel Grid.Row="0" Grid.Column="2">
-				<!--<ToolBar >-->
-				<Menu Height="22" DockPanel.Dock="Top">
-					<MenuItem Header="File">
-						<MenuItem Header="Show Dev Tools" Name="showDevToolsMenuItem" Click="control_Activated" />
-						<MenuItem Header="Close Dev Tools" Name="closeDevToolsMenuItem" Click="control_Activated" />
-						<Separator />
-						<MenuItem Header="Exit" Name="exitMenuItem" Click="control_Activated" />
-					</MenuItem>
-					<MenuItem Header="Edit">
-						<MenuItem Header="Undo" Name="undoMenuItem" Click="control_Activated" />
-						<MenuItem Header="Redo" Name="redoMenuItem" Click="control_Activated" />
-						<Separator />
-						<MenuItem Header="Cut" Name="cutMenuItem" Click="control_Activated" />
-						<MenuItem Header="Copy" Name="copyMenuItem" Click="control_Activated" />
-						<MenuItem Header="Paste" Name="pasteMenuItem" Click="control_Activated" />
-						<MenuItem Header="Delete" Name="deleteMenuItem" Click="control_Activated" />
-						<MenuItem Header="Select All" Name="selectAllMenuItem" Click="control_Activated" />
-					</MenuItem>
-					<MenuItem Header="View">
-						<MenuItem Header="Show/Hide Scale/Opacity" Name="viewBrowserControlsMenuItem" Click="browser_viewControls" />
-					</MenuItem>
-					<MenuItem Header="Tests">
-						<MenuItem Header="Test Resource Load Handler" Name="testResourceLoadMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Scheme Load Handler" Name="testSchemeLoadMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Execute JavaScript" Name="testExecuteScriptMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Evaluate JavaScript" Name="testEvaluateScriptMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Bind CLR Object to JavaScript" Name="testBindMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Console Message" Name="testConsoleMessageMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Tooltip" Name="testTooltipMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Popup" Name="testPopupMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Load String" Name="testLoadStringMenuItem" Click="control_Activated" />
-						<MenuItem Header="Test Cookie Visitor" Name="testCookieVisitorMenuItem" Click="control_Activated" />
-					</MenuItem>
-				</Menu>
+			<DockPanel Grid.Row="0" Grid.Column="2" MinWidth="56">
 				<DockPanel VerticalAlignment="Top" DockPanel.Dock="Top">
 					<Button Height="23" Name="backButton" Width="75" IsEnabled="False" Click="control_Activated">Back</Button>
 					<Button Height="23" Name="forwardButton" Width="75" IsEnabled="False" Click="control_Activated">Forward</Button>

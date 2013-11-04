@@ -20,6 +20,7 @@
     <Cor3Inc>$(SourceDirectory)\Source\Cor3.Core\Include</Cor3Inc>
     <FlashExtSrc>$(SourceDirectory)\Source-Libs\Flash.External</FlashExtSrc>
     <ApplicationIcon>Build\Fringe\oxygen-refit-application-rss+xml.ico</ApplicationIcon>
+    <NoWarn>618, 684</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -128,6 +129,9 @@
     <Compile Include="AppManager\AppBootstrapper.cs">
       <Generator>MSBuild:Compile</Generator>
     </Compile>
+    <Page Include="Styles\Lime.xaml">
+      <Generator>msbuild:Compile</Generator>
+    </Page>
     <None Include="AppManager\AppComposition.cs">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -313,9 +317,6 @@
       <Link>Includes\FlashVidTool.Designer.cs</Link>
       <DependentUpon>FlashVidTool.2.0.cs</DependentUpon>
     </Compile>
-    <None Include="build-setup.cmd">
-      <DependentUpon>App.xaml</DependentUpon>
-    </None>
     <None Include="Properties\AssemblyInfo.cs.rev">
       <DependentUpon>AssemblyInfo.cs</DependentUpon>
     </None>
@@ -326,12 +327,12 @@
     <Resource Include="Resources\Entypo.ttf" />
     <None Include="Sonar.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>App.xaml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppManager" />
     <Folder Include="BrowserManager" />
+    <Folder Include="Styles" />
     <Folder Include="Resources" />
     <Folder Include="Source" />
     <Folder Include="Source\Converters" />
