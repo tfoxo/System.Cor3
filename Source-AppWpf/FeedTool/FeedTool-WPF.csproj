@@ -19,7 +19,7 @@
     <YoutubeExtractor>$(SourceDirectory)\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor</YoutubeExtractor>
     <Cor3Inc>$(SourceDirectory)\Source\Cor3.Core\Include</Cor3Inc>
     <FlashExtSrc>$(SourceDirectory)\Source-Libs\Flash.External</FlashExtSrc>
-    <ApplicationIcon>oxygen-refit-application-rss+xml.ico</ApplicationIcon>
+    <ApplicationIcon>Build\Fringe\oxygen-refit-application-rss+xml.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -324,10 +324,6 @@
     </None>
     <None Include="Resources\Entypo-license.txt" />
     <Resource Include="Resources\Entypo.ttf" />
-    <None Include="Resources\webui.swf">
-      <Link>res\webui.swf</Link>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
     <None Include="Sonar.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>App.xaml</DependentUpon>
