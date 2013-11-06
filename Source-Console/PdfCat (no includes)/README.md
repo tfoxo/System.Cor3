@@ -1,12 +1,10 @@
-# PDFCAT.cs
+# PDFCAT
 
 ## SUMMARY
 
 A modified sample from [PdfSharp/Migradoc WIKI](http://www.pdfsharp.net/wiki/CombineDocuments-sample.ashx).
 
 The tool takes in a directory and concatenates all PDFs in the diectory.
-
-Updates to the snipit would include support for regex to filter inputs, sorting and numbering options, etc...
 
 Used in this little program is a particular `variant1()` method, as `variant2`-`variant4` were left in tact to
 portray the PdfSharp XGraphics sample/capability.
@@ -21,6 +19,11 @@ portray the PdfSharp XGraphics sample/capability.
 
 ## COMPILE
 
-1. Install PdfSharp from NuGet.
-2. Link to or include [`Commander.cs`](https://github.com/tfoxo/System.Cor3/blob/master/Source/Cor3.Core/System/Commander.cs)
-3. Compile, Test
+1. There is no SLN file in the source package, so please set up a new SLN and add the project to your workspace in #develop, VisualStudio, ...
+2. Install PDFsharp from NuGet in #develop or VisualStudio using the "restore packages" option.
+3. (Optionally reset your target CPU and Fx, ...) Compile.
+4. Drag a folder containing two or three PDF files into/onto pdfcat executable or shortcut to test.
+
+----
+
+LICENSE: MIT (inherited from PDFsharp)
