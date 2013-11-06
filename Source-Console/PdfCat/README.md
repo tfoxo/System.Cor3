@@ -1,12 +1,14 @@
 # PDFCAT.cs
 
+Note that PDFsharp supports up to PDF v1.4 in it's read/write
+operations, so this tool will ignore any files complient to 
+spec v1.5 and newer.
+
 ## SUMMARY
 
 A modified sample from [PdfSharp/Migradoc WIKI](http://www.pdfsharp.net/wiki/CombineDocuments-sample.ashx).
 
 The tool takes in a directory and concatenates all PDFs in the diectory.
-
-Updates to the snipit would include support for regex to filter inputs, sorting and numbering options, etc...
 
 Used in this little program is a particular `variant1()` method, as `variant2`-`variant4` were left in tact to
 portray the PdfSharp XGraphics sample/capability.
