@@ -29,4 +29,4 @@ portray the PdfSharp XGraphics sample/capability.
 3. Compile, Test
 
 [empira]: http://www.pdfsharp.net
-[empira-wiki-sample]: http://www.pdfsharp.net/wiki/CombineDocuments-sample.ashx
+[empira-wiki-sample]: http://www.pdfsharp.net/wiki/ConcatenateDocuments-sample.ashx
