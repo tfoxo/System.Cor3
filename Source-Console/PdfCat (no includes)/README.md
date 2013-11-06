@@ -37,4 +37,4 @@ LICENSE: MIT (inherited from PDFsharp)
 
 [binary-package]:https://github.com/tfoxo/System.Cor3/releases/download/pdfcat-20131106/PDFcat-bin-20131106.zip
 [empira]: http://www.pdfsharp.net
-[empira-wiki-sample]: http://www.pdfsharp.net/wiki/CombineDocuments-sample.ashx
+[empira-wiki-sample]: http://www.pdfsharp.net/wiki/ConcatenateDocuments-sample.ashx
