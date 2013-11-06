@@ -6,11 +6,12 @@ spec v1.5 and newer.
 
 ## SUMMARY
 
-A modified sample from [PdfSharp/Migradoc WIKI](http://www.pdfsharp.net/wiki/CombineDocuments-sample.ashx).
+A modified sample from [PdfSharp/Migradoc WIKI][empira-wiki-sample].
 
-The tool takes in a directory and concatenates all PDFs in the diectory.
+The tool takes in a directory and concatenates all PDFs within.
 
-Used in this little program is a particular `variant1()` method, as `variant2`-`variant4` were left in tact to
+Used in from the original sample from empira Software demo is a particular
+`variant1()` method, as `variant2`-`variant4` were left in tact to
 portray the PdfSharp XGraphics sample/capability.
 
 ## PARAMS
@@ -26,3 +27,6 @@ portray the PdfSharp XGraphics sample/capability.
 1. Install PdfSharp from NuGet.
 2. Link to or include [`Commander.cs`](https://github.com/tfoxo/System.Cor3/blob/master/Source/Cor3.Core/System/Commander.cs)
 3. Compile, Test
+
+[empira]: http://www.pdfsharp.net
+[empira-wiki-sample]: http://www.pdfsharp.net/wiki/CombineDocuments-sample.ashx
