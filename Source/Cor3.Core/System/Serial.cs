@@ -13,6 +13,7 @@ namespace System.IO
 
 	/* oOo * 11/15/2007 : 5:53 AM */
 	/**
+	 * IGNORE THIS CLASS... Skip down to the next SerializableClass<T>.
 	 * my intention is to call a open and save function when the program launches
 	 * and closes.  all i would need to do is send the required data such as a built
 	 * in configuration that would initialize a window to it's previous posision.
