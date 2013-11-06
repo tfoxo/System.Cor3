@@ -35,4 +35,6 @@ Download the [binary package][binary-package] (compiled on Intel CORE i7 -- win7
 
 LICENSE: MIT (inherited from PDFsharp)
 
-[binary-package]
+[binary-package]:https://github.com/tfoxo/System.Cor3/releases/download/pdfcat-20131106/PDFcat-bin-20131106.zip
+[empira]: http://www.pdfsharp.net
+[empira-wiki-sample]: http://www.pdfsharp.net/wiki/CombineDocuments-sample.ashx
