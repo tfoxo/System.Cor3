@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Xml;
+
+using FeedTool.Loaders;
 
 namespace FeedTool.Converters
 {
@@ -87,7 +91,14 @@ namespace FeedTool.Converters
 		}
 		// not referenced
 		static public IList<FeedListItem> TextToList(string fileName) { return TextToList(fileName,true); }
-		//
+		/// <summary>
+		/// Here we are obtaining a list of FeedListItems.
+		/// <para>FeedListItem is interchangable from DataRowView.</para>
+		/// <para>The only elements used from FeedListItem are Title and Url.</para>
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="sort"></param>
+		/// <returns></returns>
 		static public IList<FeedListItem> TextToList(string fileName, bool sort)
 		{
 			FileInfo file = new FileInfo(fileName);
@@ -125,7 +136,27 @@ namespace FeedTool.Converters
 			foreach (FeedListItem feed in TextToList(fileName,sortByTitle)) FeedsDictionary.Add(feed.title,feed);
 			return FeedsDictionary;
 		}
+		/// <summary>
+		/// Used by the main app to get a dictionary of FeedListItems.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="sortByTitle"></param>
+		/// <returns></returns>
+		static public ObservableCollection<MasterFeedNode> TextToMaster(string fileName, bool sortByTitle=true)
+		{
+			ObservableCollection<MasterFeedNode> items = new ObservableCollection<MasterFeedNode>();
+			foreach (FeedListItem feed in TextToList(fileName,sortByTitle)) items.Add(
+				new MasterFeedNode{
+					Key=feed.title,
+					ListItem=feed,
+					Parser=new FeedParser {
+						ActionCompleted=delegate{},
+						Xml=new XmlInfo { Doc=new XmlDocument() }
+					}
+				}
+			);
+			return items;
+		}
 		#endregion
-	
 	}
 }

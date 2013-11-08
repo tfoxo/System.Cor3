@@ -185,6 +185,11 @@
     <Compile Include="Source\FeedDataItem.cs" />
     <Compile Include="Source\FeedListItem.cs" />
     <Compile Include="Source\FeedParser.cs" />
+    <Compile Include="Source\Loaders\BasicFeedNode.cs" />
+    <Compile Include="Source\Loaders\FeedRootNode.cs" />
+    <Compile Include="Source\Loaders\MasterFeedNode.cs" />
+    <Compile Include="Source\Loaders\ModelLoader.cs" />
+    <Compile Include="Source\Loaders\Options.cs" />
     <Compile Include="Source\Readers\HttpContentReader.cs" />
     <Compile Include="Source\Readers\OpmlReader.cs" />
     <Compile Include="Source\SQLiteFeeds.cs" />
@@ -237,9 +242,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>libcef.dll</DependentUpon>
     </None>
-    <None Include="packages.config">
-      <DependentUpon>App.xaml</DependentUpon>
+    <None Include="initial-data-set.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -320,9 +326,7 @@
     <None Include="Properties\AssemblyInfo.cs.rev">
       <DependentUpon>AssemblyInfo.cs</DependentUpon>
     </None>
-    <None Include="README.md">
-      <DependentUpon>App.xaml</DependentUpon>
-    </None>
+    <None Include="README.md" />
     <None Include="Resources\Entypo-license.txt" />
     <Resource Include="Resources\Entypo.ttf" />
     <None Include="Sonar.wav">
@@ -332,6 +336,7 @@
   <ItemGroup>
     <Folder Include="AppManager" />
     <Folder Include="BrowserManager" />
+    <Folder Include="Source\Loaders" />
     <Folder Include="Styles" />
     <Folder Include="Resources" />
     <Folder Include="Source" />

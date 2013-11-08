@@ -11,11 +11,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 
+using FeedTool.Loaders;
+
 namespace FeedTool
 {
 
 	abstract public class NodeInfo
 	{
+		public MasterFeedNode Parent { get; set; }
 		/// <summary>
 		/// ddd, MM-dd-yyyy hh:mm:ss
 		/// </summary>

@@ -68,7 +68,7 @@ Third-Party Libraries, Credits and/or Dependencies
 [asyncawait]:             http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx
 [oauth]:                  https://developers.google.com/gdata/articles/oauth
 [Caliburn.Metro.Autofac]: https://www.nuget.org/packages/Caliburn.Metro.Autofac
-[CefSharp]:               https://github.com/cefsharp/CefSharp‎
+[CefSharp]:               https://github.com/cefsharp/CefSharp
 [CefSharp-bin]:           https://github.com/cefsharp/CefSharp/releases/tag/v1.25.5
 [CefSharp-ddl]:           https://github.com/cefsharp/CefSharp/releases/download/v1.25.5/CefSharp-v1.25.5-binaries.zip
 [Caliburn.Metro]:         https://github.com/ziyasal/Caliburn.Metro

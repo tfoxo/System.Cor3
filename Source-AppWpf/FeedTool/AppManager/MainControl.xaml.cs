@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,6 +16,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using FeedTool.Loaders;
 
 namespace FeedTool.ViewMain
 {
@@ -23,6 +25,9 @@ namespace FeedTool.ViewMain
 	/// </summary>
 	public partial class MainControl : UserControl, IBrowserView
 	{
+		NodeInfo selectednode;
+		XmlInfo xmldoc;
+		ModelLoader model;
 		// file
 		public event EventHandler ShowDevToolsActivated;
 		public event EventHandler CloseDevToolsActivated;
@@ -55,13 +60,13 @@ namespace FeedTool.ViewMain
 		public event EventHandler ForwardActivated;
 
 		private readonly IDictionary<object, EventHandler> handlers;
-
+		
+		private readonly BrowserPresenter Presenter;
+		
 		public MainControl()
 		{
 			InitializeComponent();
-			var presenter = new BrowserPresenter(web_view, this,
-			                                     invoke => Dispatcher.BeginInvoke(invoke));
-
+			Presenter = new BrowserPresenter(web_view, this, invoke => Dispatcher.BeginInvoke(invoke));
 			handlers = new Dictionary<object, EventHandler>
 			{
 				// file
@@ -168,6 +173,51 @@ namespace FeedTool.ViewMain
 		public void browser_viewControls(object sender, RoutedEventArgs args)
 		{
 			advancedControls.Visibility = advancedControls.IsVisible ? Visibility.Collapsed : Visibility.Visible;
+		}
+		void Event_ClickedMenuLoadSomething(object sender, RoutedEventArgs e)
+		{
+			if (model==null) model = new ModelLoader();
+			model.RefreshFeed();
+			this.listFeeds.ItemsSource = model.Items;
+		}
+		/// <summary>
+		/// Actual Node selection handler.
+		/// </summary>
+		/// <param name="selection"></param>
+		void ItemSelector(		/*XmlInfo xmldoc, */NodeInfo selection)
+		{
+			this.xmldoc = selection.Parent.Parser.Xml;
+//			if (SelectorTimer.Enabled) SelectorTimer.Stop();
+			if (selection == null) return;
+			selectednode = selection;
+			if (xmldoc.RootType == "rss") {
+				var xnode = selectednode as RssNode;
+				urlTextBox.Text = xnode.Link;
+//				label1.Text = xnode.Title;
+//				label2.Text = xnode.Date;
+//				toolTip1.SetToolTip(linkLabel1, (linkLabel1.Text = xnode.Link));
+//				toolTip1.SetToolTip(linkLabel2, (linkLabel2.Text = xnode.Enclosure));
+				xnode.GenerateLinks();
+				web_view.LoadHtml(xnode.HtmlText);
+//				webBrowser1.DocumentText = xnode.HtmlText;
+
+			} else if (xmldoc.RootType == "feed") {
+				// We're expecting a YouTube feed here.
+				var xnode = selectednode as YtFeedEntry;
+				urlTextBox.Text = xnode.Link;
+//				label1.Text = xnode.Title;
+//				label2.Text = xnode.Published;
+//				toolTip1.SetToolTip(linkLabel1, linkLabel1.Text = xnode.Link);
+//				toolTip1.SetToolTip(linkLabel2, linkLabel2.Text = xnode.Enclosure);
+				xnode.GenerateLinks();
+				web_view.LoadHtml(xnode.HtmlText);
+//				webBrowser1.DocumentText = xnode.HtmlText;
+
+			}
+		}
+		void Hyperlink_Click(object sender, RoutedEventArgs e)
+		{
+			ItemSelector((sender as Hyperlink).Tag as NodeInfo);
 		}
 
 	}

@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel;
 using System.Net;
 
 namespace FeedTool
@@ -8,11 +9,12 @@ namespace FeedTool
 	{
 		[System.ComponentModel.DefaultValue(false)]
 		public bool Cancelled { get;set; }
+		public bool IsEnabled { get;set; }
 		public long ByteProgress { get;set; }
 		public long ByteLength { get;set; }
 		public int Percentage { get;set; }
 	}
-	public class UriDownloader
+	public class UriDownloader : INotifyPropertyChanged
 	{
 		#region Crap
 		// this didn't work.
@@ -93,6 +95,15 @@ namespace FeedTool
 				ByteLength = e.TotalBytesToReceive,
 				Percentage = e.ProgressPercentage,
 			};
+//			this.Max = Convert.ToDouble(e1.TotalBytesToReceive);
+//			this.Progress = Convert.ToDouble(e1.BytesReceived);
+//			this.TextStatus = string.Format("{0:N2}%—{1:N1}/{2:N1}Mb",(this.Progress/this.Max),this.Progress/1024,this.Max/1024);
+			if (this.PropertyChanged !=null)
+			{
+				this.PropertyChanged(this,new PropertyChangedEventArgs("Progress"));
+				this.PropertyChanged(this,new PropertyChangedEventArgs("Max"));
+				this.PropertyChanged(this,new PropertyChangedEventArgs("TextStatus"));
+			}
 		}
 		public void CompletionHandler(object sender, DownloadStringCompletedEventArgs args)
 		{
@@ -115,5 +126,7 @@ namespace FeedTool
 				OnComplete(this);
 		}
 		
+		
+		public event PropertyChangedEventHandler PropertyChanged;
 	}
 }

@@ -26,7 +26,7 @@ namespace FeedTool
 			}
 		}
 		
-		private const string home_url = "http://youtube.com";
+		private const string home_url = "http://vaio/b";
 //	    private const string home_url = "http://github.com/cefsharp/CefSharp";
 		private const string resource_url = "http://test/resource/load";
 		private const string scheme_url = "test://test/SchemeTest.html";
@@ -302,6 +302,11 @@ namespace FeedTool
 		}
 		
 		#endregion
+		
+		public void LoadHtml(string html)
+		{
+			model.LoadHtml(html);
+		}
 		
 		#region ICookieVisitor Members
 		
