@@ -11,42 +11,36 @@
 	<Window.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
-				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
-				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-				<ResourceDictionary Source="pack://application:,,,/FeedTool;component/Styles/Lime.xaml" />
-				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-				<ResourceDictionary Source="pack://application:,,,/FeedTool;component/Resources/Icons.xaml" />
+				
+				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Colours.xaml" />
+				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Fonts.xaml" />
+				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Controls.xaml" />
+				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+				
+				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
+				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml" />
+<!--				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml" />-->
+				
+				
+				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+<!--				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />-->
+				<ResourceDictionary Source="/FeedTool;component/Resources/Icons.xaml" />
+				<ResourceDictionary Source="/FeedTool;component/Styles/Lime.xaml" />
+			
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Window.Resources>
-	
 	<Controls:MetroWindow.WindowCommands>
 		<Controls:WindowCommands>
-			<Button Content="settings" />
-			<!--<Button>
-				<StackPanel Orientation="Horizontal">
-					<Rectangle Width="20" Height="20">
-						<Rectangle.Resources>
-							<SolidColorBrush x:Key="BlackBrush" Color="White" />
-						</Rectangle.Resources>
-						<Rectangle.Fill>
-							<VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cupcake}" />
-						</Rectangle.Fill>
-					</Rectangle>
-					<TextBlock Text="deploy cupcakes" />
-				</StackPanel>
-			</Button>-->
+			<Button Content="settings" Click="Button_Click" />
 		</Controls:WindowCommands>
 	</Controls:MetroWindow.WindowCommands>
 	<i:Interaction.Behaviors>
-        <Behaviours:BorderlessWindowBehavior ResizeWithGrip="True"/>
+		<Behaviours:BorderlessWindowBehavior ResizeWithGrip="True"/>
 	</i:Interaction.Behaviors>
-
 	<Controls:MetroWindow.Flyouts>
-		<Controls:Flyout Header="Bakery" Background="#9f000000" Position="Right" IsOpen="{Binding IsSettingsFlyoutOpen}">
+		<Controls:Flyout Name="fly" Header="Bakery" Background="#FF007FFF" Position="Right" IsOpen="{Binding IsSettingsFlyoutOpen}">
 			<StackPanel>
 				<Controls:Tile Title="My _Cupcakes" Count="23">
 					<Controls:MetroImage Source="{StaticResource appbar_cupcake}" />
@@ -55,7 +49,4 @@
 		</Controls:Flyout>
 	
 	</Controls:MetroWindow.Flyouts>
-	<!--<Grid>
-	</Grid>-->
-
 </Controls:MetroWindow>

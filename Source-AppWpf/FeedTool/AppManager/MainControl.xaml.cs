@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Text;
 using System.Windows;
@@ -16,6 +17,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+
 using FeedTool.Loaders;
 
 namespace FeedTool.ViewMain
@@ -25,9 +27,15 @@ namespace FeedTool.ViewMain
 	/// </summary>
 	public partial class MainControl : UserControl, IBrowserView
 	{
+		private readonly IDictionary<object, EventHandler> handlers;
+		private readonly BrowserPresenter Presenter;
+		
 		NodeInfo selectednode;
 		XmlInfo xmldoc;
 		ModelLoader model;
+		
+		#region Main Event-Handlers
+		
 		// file
 		public event EventHandler ShowDevToolsActivated;
 		public event EventHandler CloseDevToolsActivated;
@@ -58,10 +66,8 @@ namespace FeedTool.ViewMain
 		public event Action<object, string> UrlActivated;
 		public event EventHandler BackActivated;
 		public event EventHandler ForwardActivated;
-
-		private readonly IDictionary<object, EventHandler> handlers;
-		
-		private readonly BrowserPresenter Presenter;
+		public event EventHandler HomeActivated;
+		#endregion
 		
 		public MainControl()
 		{
@@ -98,9 +104,18 @@ namespace FeedTool.ViewMain
 				// navigation
 				{ backButton, BackActivated },
 				{ forwardButton, ForwardActivated },
+				{ homeButton, HomeActivated },
 			};
 
 		}
+		
+		protected override void OnInitialized(EventArgs e)
+		{
+			base.OnInitialized(e);
+			LoadTextData();
+		}
+		
+		#region Browser-EventHandlers
 		public void SetTitle(string title)
 		{
 //			(this.Parent as Window)
@@ -168,23 +183,81 @@ namespace FeedTool.ViewMain
 
 		public void SetZoomLevel(object sender, RoutedPropertyChangedEventArgs<double> zoomLevelArgs)
 		{
-			web_view.ZoomLevel = zoomLevelArgs.NewValue;
+//			web_view.ZoomLevel = zoomLevelArgs.NewValue;
 		}
 		public void browser_viewControls(object sender, RoutedEventArgs args)
 		{
 			advancedControls.Visibility = advancedControls.IsVisible ? Visibility.Collapsed : Visibility.Visible;
 		}
+		#endregion
+		
+		class LoaderWorker : BackgroundWorker
+		{
+			
+			public bool FeedsLoaded {
+				get { return feedsLoaded; }
+				set { feedsLoaded = value; }
+			} bool feedsLoaded = false;
+			
+			public ModelLoader LocalModel {
+				get { return localModel; }
+				set { localModel = value; }
+			} ModelLoader localModel;
+			
+			public LoaderWorker(ModelLoader mdl)
+			{
+				localModel = mdl;
+				feedsLoaded = false;
+			}
+			
+			protected override void OnDoWork(DoWorkEventArgs e)
+			{
+				base.OnDoWork(e);
+				if (localModel==null) localModel = new ModelLoader();
+				// model.RefreshFeed();
+				feedsLoaded = true;
+			}
+		} LoaderWorker worker;
+		
+		void LoaderCompleted(object sender, RunWorkerCompletedEventArgs e)
+		{
+			if (worker==null) return;
+			if (worker.FeedsLoaded) {
+				model = worker.LocalModel;
+				model.RefreshFeed();
+				listFeeds.ItemsSource = model.Items;
+				loaderProgress.Visibility = Visibility.Hidden;
+			}
+		}
+		
+		void LoadTextData()
+		{
+			if (worker == null) { ; }
+			else if (worker.IsBusy) {
+				worker.CancelAsync();
+				worker.Dispose();
+				worker = null;
+			}
+			if (worker==null) {
+				worker = new LoaderWorker(model);
+				loaderProgress.Value = 0;
+				loaderProgress.Visibility = Visibility.Visible;
+			}
+			worker.RunWorkerCompleted -= LoaderCompleted;
+			worker.RunWorkerCompleted += LoaderCompleted;
+			worker.RunWorkerAsync();
+		}
+		
 		void Event_ClickedMenuLoadSomething(object sender, RoutedEventArgs e)
 		{
-			if (model==null) model = new ModelLoader();
-			model.RefreshFeed();
-			this.listFeeds.ItemsSource = model.Items;
+			LoadTextData();
 		}
+		
 		/// <summary>
 		/// Actual Node selection handler.
 		/// </summary>
 		/// <param name="selection"></param>
-		void ItemSelector(		/*XmlInfo xmldoc, */NodeInfo selection)
+		void ItemSelector(/*XmlInfo xmldoc, */ NodeInfo selection)
 		{
 			this.xmldoc = selection.Parent.Parser.Xml;
 //			if (SelectorTimer.Enabled) SelectorTimer.Stop();

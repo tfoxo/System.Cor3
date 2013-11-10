@@ -89,6 +89,7 @@ namespace FeedTool
 			view.UrlActivated += view_UrlActivated;
 			view.ForwardActivated += view_ForwardActivated;
 			view.BackActivated += view_BackActivated;
+			view.HomeActivated += view_BackActivated;
 		}
 		
 		private void model_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -258,6 +259,10 @@ namespace FeedTool
 		private void view_BackActivated(object sender, EventArgs e)
 		{
 			model.Back();
+		}
+		private void view_HomeActivated(object sender, EventArgs e)
+		{
+			model.Load(home_url);
 		}
 		
 		private void view_ForwardActivated(object sender, EventArgs e)

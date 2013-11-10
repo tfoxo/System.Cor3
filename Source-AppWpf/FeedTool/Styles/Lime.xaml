@@ -4,7 +4,7 @@
 	<Color x:Key="HighlightLightColor">#FFa6cd5f</Color>
 	<Color x:Key="AccentColor">#CCa6cd5f</Color>
 	<Color x:Key="AccentColor2">#99a6cd5f</Color>
-	<Color x:Key="AccentColor3">#6648cb00</Color>
+	<Color x:Key="AccentColor3">#66a6cd5f</Color>
 	<Color x:Key="AccentColor4">#33a6cd5f</Color>
 	<LinearGradientBrush x:Key="BrandingBrush" EndPoint="0.001,0.5" StartPoint="1.002,0.5">
 		<GradientStop Color="{DynamicResource HighlightDarkColor}" Offset="0" />

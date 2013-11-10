@@ -45,11 +45,8 @@ namespace FeedTool
 				
 				linkTest = string.Join("<br/>",list.ToArray());
 				list.Clear();
-				
 				string vidTest = string.Empty;
-				
-				int cid = 0;
-				
+				int cid = 0;                                              
 				foreach (YtMediaContent yt in ContentEntries)
 				{
 					list.Add(
@@ -79,6 +76,7 @@ namespace FeedTool
 					.Replace("@{description}",Content)
 					.Replace("@{date}",Updated)
 					.Replace("@{img}",Image)
+					.Replace("@{video-id}",VideoID)
 					;
 			}
 		}
@@ -106,6 +104,8 @@ namespace FeedTool
 		public string Enclosure { get;set; }
 		public string Link { get;set; }
 
+		public string VideoID { get;set; }
+		
 		#endregion
 		
 		/// <summary>
@@ -116,6 +116,8 @@ namespace FeedTool
 		{
 			var node =		GetNode(doc,man,"id");
 			Id =			node.InnerText;
+			VideoID = String.Empty;
+			VideoID = this.Id.Substring(this.Id.LastIndexOf('/'));
 			Image =			TryGetText(doc, man, ref node, "img");
 			Title =			TryGetText(doc, man, ref node, "title");
 			

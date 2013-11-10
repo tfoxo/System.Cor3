@@ -22,6 +22,11 @@ namespace FeedTool.ViewMain
 		{
 			InitializeComponent();
 		}
+		
+		void Button_Click(object sender, RoutedEventArgs e)
+		{
+			fly.IsOpen = !fly.IsOpen;
+		}
 	}
 
 

@@ -8,25 +8,31 @@
  */
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace FeedTool.Loaders
 {
-	public class MasterFeedNode : BasicFeedNode // BasicFeedNode
+	public class MasterFeedNode : BasicFeedNode, INotifyPropertyChanged // BasicFeedNode
 	{
 		public string       Key      { get;set; }
 		public FeedListItem ListItem { get;set; }
 		public FeedParser   Parser   { get;set; }
 		public UriDownloader Downloader { get; set; }
 		
+		public int NumChildren       { get { return Children==null ? 0 : Children.Count; } }
+		
 		public ObservableCollection<NodeInfo> Children { get;set; }
 		
-		public void GetChildren(MasterFeedNode parent) {
+		public void GetChildren(MasterFeedNode parent)
+		{
 			foreach (NodeInfo n in Parser.Xml.Nodes)
 			{
 				n.Parent = parent;
 				Children.Add(n);
 			}
+//			OnPropertyChanged("NumChildren");
 		}
+		
 		public MasterFeedNode()
 		{
 			ListItem = new FeedListItem();
@@ -35,6 +41,13 @@ namespace FeedTool.Loaders
 			Key = string.Empty;
 			Children = new ObservableCollection<NodeInfo>();
 		}
+		
+		protected virtual void OnPropertyChanged(String property)
+		{
+			if (PropertyChanged != null) {
+				PropertyChanged(this, new PropertyChangedEventArgs(property));
+			}
+		} public event PropertyChangedEventHandler PropertyChanged;
 	}
 }
 //				if (n is YtFeedEntry) {new TreeNode {

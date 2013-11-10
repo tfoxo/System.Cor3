@@ -43,6 +43,7 @@ namespace FeedTool
 	    event Action<object, string> UrlActivated;
 	    event EventHandler BackActivated;
 	    event EventHandler ForwardActivated;
+	    event EventHandler HomeActivated;
 	
 	    void SetTitle(string title);
 	    void SetAddress(string address);

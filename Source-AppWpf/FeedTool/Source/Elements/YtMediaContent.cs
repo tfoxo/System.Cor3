@@ -27,7 +27,7 @@ namespace FeedTool
 	        yt:format="1" />*/
 		#endregion
 		
-		
+		public string EmbedHash { get;set; }
 		public string Url { get;set; }
 		public string Type { get;set; }
 		public string Medium { get;set; }
