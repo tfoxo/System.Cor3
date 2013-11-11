@@ -18,4 +18,5 @@ namespace FeedTool
 	        return new BrowserSchemeHandler();
 	    }
 	}
+
 }

@@ -40,35 +40,25 @@ namespace FeedTool
 				
 				List<string> list = new List<string>();
 				
-				foreach (YtMediaContent yt in ContentEntries)
-					list.Add(string.Format("Url: {0}, Type: {1}, Format: {2}",yt.Url,yt.Type,yt.Format));
+				foreach (YtMediaContent yt in ContentEntries) list.Add(string.Format("Url: {0}, Type: {1}, Format: {2}",yt.Url,yt.Type,yt.Format));
 				
 				linkTest = string.Join("<br/>",list.ToArray());
 				list.Clear();
 				string vidTest = string.Empty;
 				int cid = 0;                                              
-				foreach (YtMediaContent yt in ContentEntries)
-				{
-					list.Add(
-						string.Format(
-							@"<a href=""{0}"" title=""Type: {1}, Format: {2}"">vid</a> {4}",
-							yt.Url,
-							yt.Type,
-							yt.Format,
-							++cid,
-							yt.YtStrFormat
-						)
-					);
-				}
+				foreach (YtMediaContent yt in ContentEntries) list.Add(string.Format(@"<a href=""{0}"" title=""Type: {1}, Format: {2}"">vid</a> {4}",yt.Url,yt.Type,yt.Format,++cid,yt.YtStrFormat));
 				
 				vidTest = string.Join("<br />",list.ToArray())+"<hr />";
 				
 				#endregion
 				
 				return Resource
-					.Html_YouTube_Template
+					.Html_Master
+						.Replace("@{style}",Resource.html_css)
+						.Replace("@{content}",Resource.Html_YouTube_Template)
 					
 					.Replace("@{links}",vidTest)
+					.Replace("@{link}",Link)
 
 					.Replace("@{html-link}",HtmlLinks["link"])
 					

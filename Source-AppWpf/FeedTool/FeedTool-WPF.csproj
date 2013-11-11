@@ -166,6 +166,8 @@
     <Compile Include="BrowserManager\BrowserPresenter.cs" />
     <Compile Include="BrowserManager\BrowserSchemeHandler.cs" />
     <Compile Include="BrowserManager\BrowserSchemeHandlerFactory.cs" />
+    <Compile Include="BrowserManager\FeedSchemeHandler.cs" />
+    <Compile Include="BrowserManager\FeedSchemeHandlerFactory.cs" />
     <Compile Include="BrowserManager\IBrowserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -181,14 +183,26 @@
     <Compile Include="Source\Converters\FeedListItemConverter.cs" />
     <Compile Include="Source\DictionaryFromStringExtension.cs" />
     <Compile Include="Source\DirectoryReader.cs" />
-    <Compile Include="Source\Elements\AtomEntry.cs" />
+    <Compile Include="Source\Elements\AtomEntry.cs">
+      <DependentUpon>NodeInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Elements\NodeInfo.cs" />
-    <Compile Include="Source\Elements\OpmlDocument.cs" />
-    <Compile Include="Source\Elements\OpmlOutline.cs" />
-    <Compile Include="Source\Elements\RssNode.cs" />
+    <Compile Include="Source\Elements\OpmlDocument.cs">
+      <DependentUpon>XPathItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\OpmlOutline.cs">
+      <DependentUpon>XPathItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\RssNode.cs">
+      <DependentUpon>NodeInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Elements\XPathItem.cs" />
-    <Compile Include="Source\Elements\YtFeedEntry.cs" />
-    <Compile Include="Source\Elements\YtMediaContent.cs" />
+    <Compile Include="Source\Elements\YtFeedEntry.cs">
+      <DependentUpon>NodeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Elements\YtMediaContent.cs">
+      <DependentUpon>YtFeedEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\FeedCollection.cs" />
     <Compile Include="Source\FeedDataItem.cs" />
     <Compile Include="Source\FeedListItem.cs" />
@@ -258,7 +272,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resource.resx" />
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\BindingTest.html">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>

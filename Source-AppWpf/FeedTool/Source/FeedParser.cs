@@ -39,7 +39,7 @@ namespace FeedTool
             using (
                 BackgroundWorker Worker = new BackgroundWorker
                 {
-                    WorkerReportsProgress =            false,
+                    WorkerReportsProgress =         false,
                     WorkerSupportsCancellation =    false
                 })
             {

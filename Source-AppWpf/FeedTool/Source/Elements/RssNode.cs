@@ -15,7 +15,9 @@ namespace FeedTool
 		public override string HtmlText {
 			get {
 				return Resource
-					.Html_Rss_Template
+					.Html_Master
+					.Replace("@{style}",Resource.html_css)
+					.Replace("@{content}",Resource.Html_Rss_Template)
 					.Replace("@{title}",Title)
 					.Replace("@{description}",DefaultContent)
 					.Replace("@{link}",Link)

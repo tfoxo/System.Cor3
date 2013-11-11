@@ -27,12 +27,18 @@ namespace FeedTool.ViewMain
 	/// </summary>
 	public partial class MainControl : UserControl, IBrowserView
 	{
+		public static MainControl Self;
+		
 		private readonly IDictionary<object, EventHandler> handlers;
 		private readonly BrowserPresenter Presenter;
 		
 		NodeInfo selectednode;
 		XmlInfo xmldoc;
-		ModelLoader model;
+		
+		public ModelLoader Model {
+			get { return model; }
+			set { model = value; }
+		} ModelLoader model;
 		
 		#region Main Event-Handlers
 		
@@ -72,6 +78,7 @@ namespace FeedTool.ViewMain
 		public MainControl()
 		{
 			InitializeComponent();
+			Self = this;
 			Presenter = new BrowserPresenter(web_view, this, invoke => Dispatcher.BeginInvoke(invoke));
 			handlers = new Dictionary<object, EventHandler>
 			{
@@ -193,7 +200,6 @@ namespace FeedTool.ViewMain
 		
 		class LoaderWorker : BackgroundWorker
 		{
-			
 			public bool FeedsLoaded {
 				get { return feedsLoaded; }
 				set { feedsLoaded = value; }
@@ -257,7 +263,7 @@ namespace FeedTool.ViewMain
 		/// Actual Node selection handler.
 		/// </summary>
 		/// <param name="selection"></param>
-		void ItemSelector(/*XmlInfo xmldoc, */ NodeInfo selection)
+		internal void ItemSelector(/*XmlInfo xmldoc, */ NodeInfo selection)
 		{
 			this.xmldoc = selection.Parent.Parser.Xml;
 //			if (SelectorTimer.Enabled) SelectorTimer.Stop();
@@ -290,7 +296,15 @@ namespace FeedTool.ViewMain
 		}
 		void Hyperlink_Click(object sender, RoutedEventArgs e)
 		{
-			ItemSelector((sender as Hyperlink).Tag as NodeInfo);
+			NodeInfo node = (sender as Hyperlink).Tag as NodeInfo;
+			string temp = string.Format(
+				"feed://{0}/{1}/{2}",
+				node.GetType().Name,
+				node.Parent.Key,
+				node.Parent.Children.IndexOf(node)
+			);
+			web_view.Load(temp);
+			outputLabel.Content = temp;
 		}
 
 	}

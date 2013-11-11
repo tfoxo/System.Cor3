@@ -22,6 +22,7 @@ namespace FeedTool
 			if (CEF.Initialize(settings))
 			{
 				CEF.RegisterScheme("test", new BrowserSchemeHandlerFactory());
+				CEF.RegisterScheme("feed", new FeedSchemeHandlerFactory());
 				CEF.RegisterJsObject("bound", new BoundObject());
 			}
 		}
@@ -52,7 +53,10 @@ namespace FeedTool
 			                            CEF.ChromiumVersion, CEF.CefVersion, CEF.CefSharpVersion);
 			view.DisplayOutput(version);
 			BrowserSettings bSettings = new BrowserSettings(){
-				PluginsDisabled = false
+				PluginsDisabled = false,
+				DragDropDisabled=false,
+				LoadDropsDisabled=false,
+				WebSecurityDisabled=true
 			};
 			
 			model.RequestHandler = this;

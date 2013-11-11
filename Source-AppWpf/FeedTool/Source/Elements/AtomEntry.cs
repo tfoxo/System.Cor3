@@ -70,7 +70,9 @@ namespace FeedTool
                 #endregion
                 
                 return Resource
-                    .Html_YouTube_Template
+					.Html_Master
+					.Replace("@{style}",Resource.html_css)
+					.Replace("@{content}",Resource.Html_YouTube_Template)
 
                     //.Replace("@{links}",vidTest)
                     // link-alt-href
