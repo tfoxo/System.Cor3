@@ -3,6 +3,7 @@
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 
+github.tfoxo|https://github.com/tfoxo.atom
 radio.Astonisher 3|http://astonisher.wordpress.com/feed
 
 ## TESTING

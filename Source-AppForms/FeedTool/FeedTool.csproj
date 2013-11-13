@@ -173,6 +173,8 @@
     <Compile Include="..\..\Source\Cor3.Forms\Forms\WinTheme.cs">
       <Link>Includes\WinTheme.cs</Link>
     </Compile>
+    <Compile Include="Forms\IMainForm.cs" />
+    <Compile Include="Forms\Options.cs" />
     <Compile Include="Includes\TextEditorUtil.cs">
       <Generator>MuGen32</Generator>
       <LastGenOutput>TextEditorUtil.cs.text</LastGenOutput>
@@ -204,12 +206,13 @@
       <DependentUpon>NodeInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Elements\YtMediaContent.cs">
-      <DependentUpon>NodeInfo.cs</DependentUpon>
+      <DependentUpon>YtFeedEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\FeedCollection.cs" />
     <Compile Include="Source\FeedDataItem.cs" />
     <Compile Include="Source\FeedParser.cs" />
     <Compile Include="Source\FeedListItem.cs" />
+    <Compile Include="Source\IFeedParser.cs" />
     <Compile Include="Source\Readers\HttpContentReader.cs" />
     <Compile Include="Source\Readers\OpmlReader.cs" />
     <Compile Include="Source\SQLiteFeeds.cs" />

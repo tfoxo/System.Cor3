@@ -19,6 +19,9 @@ namespace FeedTool
 	public class FeedDataItem
 	{
 		[System.Xml.Serialization.XmlAttribute]
+		public string GroupID { get;set; }
+		
+		[System.Xml.Serialization.XmlAttribute]
 		public string Title { get;set; }
 		
 		[System.Xml.Serialization.XmlAttribute]
@@ -33,6 +36,7 @@ namespace FeedTool
 		public FeedDataItem(){}
 		public FeedDataItem(DataRowView row)
 		{
+			if (row["GroupID"]!=DBNull.Value)		Title = row["GroupID"] as string;
 			if (row["Title"]!=DBNull.Value)		Title = row["Title"] as string;
 			if (row["Category"]!=DBNull.Value)	Category = row["Category"] as string;
 			if (row["Url"]!=DBNull.Value)		Url = row["Url"] as string;
@@ -40,6 +44,7 @@ namespace FeedTool
 		}
 		public void ToRow(DataRowView row)
 		{
+			row["GroupID"] = GroupID;
 			row["Title"] = Title;
 			row["Category"] = Category;
 			row["Url"] = Url;

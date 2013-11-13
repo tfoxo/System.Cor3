@@ -1586,6 +1586,34 @@ namespace FeedTool {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to     &lt;object&gt;
+		///      &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;
+		///      &lt;embed src=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;
+		///    &lt;/object&gt;.
+		/// </summary>
+		internal static string Flash_Object {
+			get {
+				return ResourceManager.GetString("Flash Object", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to     &lt;object width=&quot;560&quot; height=&quot;315&quot;&gt;
+		///      &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;
+		///      &lt;embed src=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot; width=&quot;560&quot; height=&quot;315&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;
+		///    &lt;/object&gt;.
+		/// </summary>
+		internal static string Flash_Object_560x315 {
+			get {
+				return ResourceManager.GetString("Flash Object 560x315", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to     &lt;style&gt;
 		///body,
 		///p,
@@ -1670,13 +1698,12 @@ namespace FeedTool {
 		///    @{date}&lt;br/&gt;
 		///    @{description}
 		///    &lt;hr /&gt;
+		///    &lt;!--
 		///    &lt;h2&gt;IFrame-Embed&lt;/h2&gt;
 		///    &lt;iframe src=&apos;http://www.youtube.com/embed/@{video-id}&apos;&gt;&lt;/iframe&gt;
-		///    &lt;h2&gt;Object-Embed&lt;/h2&gt;
-		///    &lt;object width=&quot;560&quot; height=&quot;315&quot;&gt;
-		///      &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot;&gt;&lt;/param&gt;
-		///      &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;
-		///      &lt;param name=&quot;allowscri [rest of string was truncated]&quot;;.
+		///    --&gt;
+		///    &lt;h2&gt;Object-Embed&lt;/h2&gt;@{flash-object}
+		///.
 		/// </summary>
 		internal static string Html_YouTube_Template {
 			get {

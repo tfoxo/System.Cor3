@@ -119,9 +119,9 @@ namespace FeedTool.Converters
 				//
 				currentNode = currentItem.Split('|');
 				if (currentNode[0] == null || currentNode[1] == null) continue;
-				feedsList.Add( new FeedListItem {title=currentNode[0],url=currentNode[1]} );
+				feedsList.Add( new FeedListItem {groupid=currentNode[0],title=currentNode[1],url=currentNode[2]} );
 			}
-			feedsList.Sort(delegate(FeedListItem a, FeedListItem b) { return a.title.CompareTo(b.title); });
+			feedsList.Sort(delegate(FeedListItem a, FeedListItem b) { return a.SortName.CompareTo(b.SortName); });
 			return feedsList;
 		}
 		/// <summary>

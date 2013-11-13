@@ -114,7 +114,6 @@ namespace FeedTool.Forms
 			this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.ctx0 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.ctx1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.statusStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -1023,11 +1022,6 @@ namespace FeedTool.Forms
 			this.toolStripMenuItem17.Size = new System.Drawing.Size(118, 22);
 			this.toolStripMenuItem17.Text = "Icon List";
 			// 
-			// ctx0
-			// 
-			this.ctx0.Name = "ctx0";
-			this.ctx0.Size = new System.Drawing.Size(61, 4);
-			// 
 			// ctx1
 			// 
 			this.ctx1.Name = "contextMenuStrip1";
@@ -1124,7 +1118,6 @@ namespace FeedTool.Forms
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tab1_Data;
 		private System.Windows.Forms.ContextMenuStrip ctx1;
-		private System.Windows.Forms.ContextMenuStrip ctx0;
 		internal System.Windows.Forms.ImageList imageList2;
 		internal System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.ToolTip toolTip1;

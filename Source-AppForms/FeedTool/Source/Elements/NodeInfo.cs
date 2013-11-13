@@ -13,7 +13,6 @@ using System.Xml;
 
 namespace FeedTool
 {
-
 	abstract public class NodeInfo
 	{
 		/// <summary>

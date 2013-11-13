@@ -17,7 +17,7 @@ namespace FeedTool
 				return Resource
 					.Html_Master
 					.Replace("@{style}",Resource.html_css)
-					.Replace("@{content}",Resource.Html_Rss_Template)
+					.Replace("@{content}",Resource.Html_Rss_Template.Replace("@{flash-object}",Resource.Flash_Object))
 					.Replace("@{title}",Title)
 					.Replace("@{description}",DefaultContent)
 					.Replace("@{link}",Link)

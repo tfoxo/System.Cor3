@@ -27,13 +27,13 @@ namespace FeedTool
 			}
 		}
 		
-		private const string home_url = "http://vaio/b";
-//	    private const string home_url = "http://github.com/cefsharp/CefSharp";
+		private const string home_url     = "https://github.com/tfoxo/System.Cor3/blob/master/Source-AppWpf/FeedTool/README.md";
+		
 		private const string resource_url = "http://test/resource/load";
-		private const string scheme_url = "test://test/SchemeTest.html";
-		private const string bind_url = "test://test/BindingTest.html";
-		private const string tooltip_url = "test://test/TooltipTest.html";
-		private const string popup_url = "test://test/PopupTest.html";
+		private const string scheme_url   = "test://test/SchemeTest.html";
+		private const string bind_url     = "test://test/BindingTest.html";
+		private const string tooltip_url  = "test://test/TooltipTest.html";
+		private const string popup_url    = "test://test/PopupTest.html";
 		
 		private int color_index = 0;
 		private readonly string[] colors = { "red", "blue", "green", };
@@ -201,8 +201,7 @@ namespace FeedTool
 		
 		private void view_TestExecuteScriptActivated(object sender, EventArgs e)
 		{
-			var script = String.Format("document.body.style.background = '{0}'",
-			                           colors[color_index++]);
+			var script = String.Format("document.body.style.background = '{0}'", colors[color_index++]);
 			if (color_index >= colors.Length)
 			{
 				color_index = 0;

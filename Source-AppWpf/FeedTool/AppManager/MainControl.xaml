@@ -107,7 +107,7 @@
 					<MenuItem Header="Show Dev Tools" Name="showDevToolsMenuItem" Click="control_Activated" />
 					<MenuItem Header="Close Dev Tools" Name="closeDevToolsMenuItem" Click="control_Activated" />
 					<Separator />
-					<MenuItem Header="Load Something" Name="menuLoadSomething" Click="Event_ClickedMenuLoadSomething" />
+					<MenuItem Header="Load S_omething" Name="menuLoadSomething" Click="Event_ClickedMenuLoadSomething" />
 					<Separator />
 					<MenuItem Header="Exit" Name="exitMenuItem" Click="control_Activated" />
 				</MenuItem>

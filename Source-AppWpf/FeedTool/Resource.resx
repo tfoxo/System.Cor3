@@ -125,15 +125,11 @@
     @{date}&lt;br/&gt;
     @{description}
     &lt;hr /&gt;
+    &lt;!--
     &lt;h2&gt;IFrame-Embed&lt;/h2&gt;
     &lt;iframe src='http://www.youtube.com/embed/@{video-id}'&gt;&lt;/iframe&gt;
-    &lt;h2&gt;Object-Embed&lt;/h2&gt;
-    &lt;object width="560" height="315"&gt;
-      &lt;param name="movie" value="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0"&gt;&lt;/param&gt;
-      &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;
-      &lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;
-      &lt;embed src="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;
-    &lt;/object&gt;
+    --&gt;
+    &lt;h2&gt;Object-Embed&lt;/h2&gt;@{flash-object}
 </value>
   </data>
   <data name="Html Rss Template" xml:space="preserve">
@@ -2699,5 +2695,21 @@ pre { font-family: 'Segoe UI'; }
 h2 {font-family: 'Segoe UI Light';}
 body { background-color: white; }
     &lt;/style&gt;</value>
+  </data>
+  <data name="Flash Object" xml:space="preserve">
+    <value>    &lt;object&gt;
+      &lt;param name="movie" value="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0"&gt;&lt;/param&gt;
+      &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;
+      &lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;
+      &lt;embed src="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;
+    &lt;/object&gt;</value>
+  </data>
+  <data name="Flash Object 560x315" xml:space="preserve">
+    <value>    &lt;object width="560" height="315"&gt;
+      &lt;param name="movie" value="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0"&gt;&lt;/param&gt;
+      &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;
+      &lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;
+      &lt;embed src="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0" width="560" height="315" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;
+    &lt;/object&gt;</value>
   </data>
 </root>
