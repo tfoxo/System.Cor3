@@ -43,10 +43,10 @@ namespace System.Cor3.Data.Context
 	/// <seealso cref="QueryContext{TConnection,TCommand,TAdapter,TParameter}" />
 	public class QueryDatabaseContext : QueryContextInfo
 	{
-		// ————————————————————————————————————————————————————
 		
-		[Obsolete]
-		static public string sqlitedb = @"D:\DEV\WIN\CS_ROOT\Projects\Prime\Source\mvc.prime.razor\newdb.sqlite";
+		// as hard-wired for testing
+		// [Obsolete] static public string sqlitedb = @"\newdb.sqlite";
+		// ————————————————————————————————————————————————————
 		
 		public const string master_table = "sqlite_master";
 		public const string sql_table_select = "select * from [{0}] where type = 'table';";
