@@ -134,7 +134,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Compile>
     <None Include="Build\build-setup.cmd" />
-    <None Include="Build\extract-setup.cmd" />
     <None Include="Build\Fringe\oxygen-refit-application-rss+xml.ico">
       <Link>oxygen-refit-application-rss+xml.ico</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

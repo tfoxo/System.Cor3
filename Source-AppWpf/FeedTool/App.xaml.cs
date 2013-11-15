@@ -8,18 +8,16 @@ using System.Windows;
 
 using CefSharp;
 using FeedTool.Properties;
-
 namespace FeedTool
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-        public App()
-        {
-            BrowserPresenter.Init();
-        }
-    }
-
+	/// <summary>
+	/// Interaction logic for App.xaml
+	/// </summary>
+	public partial class App : Application
+	{
+		public App()
+		{
+			BrowserPresenter.Init();
+		}
+	}
 }

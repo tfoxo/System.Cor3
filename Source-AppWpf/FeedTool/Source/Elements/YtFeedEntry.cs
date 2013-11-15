@@ -54,8 +54,9 @@ namespace FeedTool
 				
 				return Resource
 					.Html_Master
-						.Replace("@{style}",Resource.html_css)
-						.Replace("@{content}",Resource.Html_YouTube_Template)
+					.Replace("@{style}",Resource.html_css)
+					.Replace("@{content}",Resource.Html_YouTube_Template)
+					.Replace("@{flash-object}",Resource.Flash_Object_WIDTHx420)
 					
 					.Replace("@{links}",vidTest)
 					.Replace("@{link}",Link)

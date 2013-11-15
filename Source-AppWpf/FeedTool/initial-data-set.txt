@@ -3,6 +3,8 @@
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 
+dev|FFMPEG-GIT|http://git.videolan.org/?p=ffmpeg.git;a=rss
+
 radio|Astonisher 3|http://astonisher.wordpress.com/feed
 
 ## TESTING

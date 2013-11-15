@@ -30,6 +30,12 @@ Features
     * [YouTubeExtractor]
 	* ReactiveUI
 
+SharpFFmpeg
+------------------------
+
+see: [ffmpeg-windows-c-sharp-h264]
+
+
 Third-Party Libraries, Credits and/or Dependencies
 -------------------------
 
@@ -56,6 +62,7 @@ Third-Party Libraries, Credits and/or Dependencies
 * Rx-Main v2.1.30214.0 (net45)
 * Rx-PlatformServices v2.1.30214.0 (net45)-->
 
+[ffmpeg-windows-c-sharp-h264]: http://stackoverflow.com/questions/4160589/ffmpeg-windows-c-sharp-h264
 [Thread]:                 http://msdn.microsoft.com/en-us/library/system.threading.thread(v=vs.80).aspx
 [Thread40]:               http://msdn.microsoft.com/en-us/library/system.threading.thread.aspx
 [BackgroundWorker]:       http://msdn.microsoft.com/en-us/library/system.componentmodel.backgroundworker(v=vs.80).aspx

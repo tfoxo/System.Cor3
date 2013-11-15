@@ -13,7 +13,8 @@ namespace FeedTool
 {
 	public class BrowserPresenter : IRequestHandler, ICookieVisitor
 	{
-		const string FlashPluginPath = @"C:\Windows\SysWOW64\Macromed\Flash\NPSWF32_11_9_900_117.dll";
+		//const string FlashPluginPath = @"C:\Windows\SysWOW64\Macromed\Flash\NPSWF32_11_9_900_117.dll";
+		const string FlashPluginPath = @"C:\Windows\System32\Macromed\Flash\NPSWF32_11_9_900_117.dll";
 		
 		public static void Init()
 		{

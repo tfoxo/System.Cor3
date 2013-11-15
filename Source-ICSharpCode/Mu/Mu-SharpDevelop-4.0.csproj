@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <GeneratorConfig>Keep</GeneratorConfig>
+    <ProjectGuid>{4F53FF8F-AEB9-47C5-ADEC-0C720358AF29}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Mu</RootNamespace>
+    <AssemblyName>Mu</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <ReferencePath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin</ReferencePath>
+    <OutputPath>bin\$(Configuration)</OutputPath>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <SevenZPath>$(SolutionDir)\..\build\bin-7z</SevenZPath>
+    <SevenZ>$(SevenZPath)\7z.exe</SevenZ>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\$(Configuration)</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AvalonDock">
+      <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\AvalonDock.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\ICSharpCode.AvalonEdit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.Core">
+      <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\ICSharpCode.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop">
+      <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\ICSharpCode.SharpDevelop.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Dom">
+      <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\ICSharpCode.SharpDevelop.Dom.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Widgets">
+      <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\ICSharpCode.SharpDevelop.Widgets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SharpDevelop">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Source\Cor3.Core\System\ControlUtil.cs">
+      <Link>Include\Cor3\ControlUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\DICT.cs">
+      <Link>Include\Cor3\DICT.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\Serial.cs">
+      <Link>Include\Cor3\Serial.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\SerializableClass.cs">
+      <Link>Include\Cor3\SerializableClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\WTF.cs">
+      <Link>Include\Cor3\WTF.cs</Link>
+    </Compile>
+    <Compile Include="Src\Lib\CsProjectItemInfo.cs" />
+    <Compile Include="Src\Lib\CsProjectItemSettings.cs" />
+    <Compile Include="Src\Lib\ToolSettings_Skin.cs" />
+    <Compile Include="Src\View\EditorControl.xaml.cs">
+      <DependentUpon>EditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Src\View\EditorControlViewContent.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Src\Commands\MuStartup.cs" />
+    <Compile Include="Src\Commands\ShowMuControl.cs" />
+    <Compile Include="Src\Lib\CsProjectItemUtil.cs" />
+    <Compile Include="Src\Lib\ToolSettings.cs" />
+    <Compile Include="Src\Lib\ZoomLevelToTextFormattingModeConverter.cs">
+      <Generator>msbuild:compile</Generator>
+    </Compile>
+    <Compile Include="Src\View\IncludeLinkGeneratorControl.xaml.cs">
+      <DependentUpon>IncludeLinkGeneratorControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Src\View\IncludeLinkGeneratorView.cs" />
+    <None Include="build\build.cmd" />
+    <None Include="build\mu.sdaddin" />
+    <None Include="Mu.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build" />
+    <Folder Include="Include" />
+    <Folder Include="Include\Cor3" />
+    <Folder Include="Src\Lib" />
+    <Folder Include="Src" />
+    <Folder Include="Src\Commands" />
+    <Folder Include="Src\View" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Src\View\EditorControl.xaml" />
+    <Page Include="Src\View\IncludeLinkGeneratorControl.xaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

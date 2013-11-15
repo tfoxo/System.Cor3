@@ -1614,11 +1614,26 @@ namespace FeedTool {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to     &lt;object width=&quot;100%&quot; height=&quot;420&quot;&gt;
+		///      &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;
+		///      &lt;embed src=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot; width=&quot;100%&quot; height=&quot;420&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;
+		///    &lt;/object&gt;.
+		/// </summary>
+		internal static string Flash_Object_WIDTHx420 {
+			get {
+				return ResourceManager.GetString("Flash Object WIDTHx420", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to     &lt;style&gt;
 		///body,
 		///p,
 		///h2,
-		///pre { font-family: &apos;Segoe UI&apos;; }
+		///pre, pre &gt; code  { font-family: &apos;Segoe UI&apos;; }
+		///pre &gt; code  { font-size: 11pt; }
 		///h2 {font-family: &apos;Segoe UI Light&apos;;}
 		///body { background-color: white; }
 		///    &lt;/style&gt;.
@@ -1696,13 +1711,14 @@ namespace FeedTool {
 		///    &lt;h2&gt;@{title}&lt;/h2&gt;
 		///    &lt;tt&gt;@{links}&lt;/tt&gt;
 		///    @{date}&lt;br/&gt;
-		///    @{description}
+		///    &lt;pre&gt;&lt;code&gt;@{description}
+		///    &lt;/code&gt;&lt;/pre&gt;
 		///    &lt;hr /&gt;
 		///    &lt;!--
 		///    &lt;h2&gt;IFrame-Embed&lt;/h2&gt;
 		///    &lt;iframe src=&apos;http://www.youtube.com/embed/@{video-id}&apos;&gt;&lt;/iframe&gt;
-		///    --&gt;
-		///    &lt;h2&gt;Object-Embed&lt;/h2&gt;@{flash-object}
+		///    &lt;h2&gt;Object-Embed&lt;/h2&gt;
+		///    --&gt;@{flash-object}
 		///.
 		/// </summary>
 		internal static string Html_YouTube_Template {

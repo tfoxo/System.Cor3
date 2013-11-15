@@ -42,9 +42,11 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 
 [Files]
 ;Source: "F:\DEV\WIN\CS_ROOT\Projects\System.Cor3\Source-Tools\XmlRssTest\Build\Bin\FeedTool.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#FeedBinPath}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#FeedBinPath}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; AfterInstall: MyAfterInstall('{app}\FeedTool.exe')
+;Source: "D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-AppWpf\FeedTool\Build\Setup\AppData\feedtool.cfg"; DestDir: "{userappdata}\Macromedia\Flash Player\#Security\FlashPlayerTrust"
+; BeforeInstall: MyBeforeInstall
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-;Source: "{#FeedBinPath}\Build\Attribution\*"; DestDir: "{app}\Attribution"; Flags: ignoreversion createallsubdirs recursesubdirs
+; Source: "{#FeedBinPath}\Build\Attribution\*"; DestDir: "{app}\Attribution"; Flags: ignoreversion createallsubdirs recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -57,3 +59,42 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 
 ;[Dirs]
 ;Name: "{app}\Attribution\OPML Icon from Wikipedia\"
+
+[Code]
+var
+  MyProgChecked     : Boolean;
+  MyProgCheckResult : Boolean;
+  MyMessage         : String;
+  MyCfg             : String;
+  MyCfgTxt          : String;
+
+//function MessageBox(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal): Integer; external 'MessageBoxA@user32.dll stdcall';
+
+procedure MyBeforeInstall();
+begin
+    MyProgCheckResult := MsgBox('Should I check for Flash Security? here: ' + ExtractFilePath(CurrentFileName) + '?', mbConfirmation, MB_YESNO) = idYes;
+    MyProgChecked := True;
+end;
+procedure MyAfterInstall(FileName: String);
+begin
+  if (CurrentFileName = FileName) THEN begin
+    //MsgBox(CurrentFileName, mbConfirmation, MB_YESNO);
+    MyMessage := 'userappdata:' + ExpandConstant('{userappdata}') + #10 + #13 + 'appdata: '+ ExpandConstant('{commonappdata}');
+    MyCfg     :=  ExpandConstant('{userappdata}')+'\Macromedia\Flash Player\#Security\FlashPlayerTrust\FeedTool.cfg';
+    MyCfgTxt  :=  ExpandConstant('{app}');
+    DeleteFile(MyCfg);
+    SaveStringToFile(MyCfg,MyCfgTxt,false);
+  end;
+end;
+
+
+//procedure CurPageChanged(CurPageID: Integer);
+//begin
+//  if CurPageID = wpWelcome then
+//    MyMessage := 'userappdata:' + ExpandConstant('{userappdata}') + #10 + #13 + 'appdata: '+ ExpandConstant('{commonappdata}');
+//    MyCfg     :=  ExpandConstant('{userappdata}')+'\Macromedia\Flash Player\#Security\FlashPlayerTrust\FeedTool.cfg';
+//    MyCfgTxt  :=  ExpandConstant('{app}');
+//    DeleteFile(MyCfg);
+//    SaveStringToFile(MyCfg,MyCfgTxt,false);
+//    MyProgCheckResult := MsgBox(MyCfgTxt, mbConfirmation, MB_YESNO) = idYes;
+//end;
