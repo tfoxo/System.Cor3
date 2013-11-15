@@ -15,7 +15,13 @@ This projects' source code licensing defaults to [MIT] license (providing credit
 For dependency licensing information, consult the project directory and/or the LICENSE.md in this directory.
 
 ## LOG
-### 20131028 - REVISION 32
+
+20131115 - REVISION 71
+
+- Added WPF FeedTool
+- Added MuTool (*.sdaddin)
+
+20131028 - REVISION 32
 
 - Added the little FeedTool: `./Source-AppForms/FeedTool`
 - Added `Cor3.Forms` library: `./Source/Cor3.Forms/`
