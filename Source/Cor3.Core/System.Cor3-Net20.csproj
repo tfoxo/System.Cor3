@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="System.ConsoleUtil\ArgumentType.cs" />
     <Compile Include="System.ConsoleUtil\MessageType.cs" />
+    <Compile Include="Tasks\NormalizePathTask.cs" />
     <None Include="System.ConsoleUtil\SkypeUtil.cs" />
     <Compile Include="System.Cor3.WinForms\ExceptionDialog.cs">
       <SubType>Form</SubType>
@@ -213,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="System\CommandingClass" />
+    <Folder Include="Tasks" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Strings.resx">

@@ -49,16 +49,18 @@
 						ToolTip="Generate text and copy to clipboard."
 					/>
 					<Separator Width="3" Background="Transparent" />
-					<!--<CheckBox Name="ckIncludeCompile" Content="Compile" />
+					<CheckBox Name="ckIncludeLinks" Content="Links" />
+					<!--
+					<Separator Width="3" Background="Transparent" />
+					<CheckBox Name="ckIncludeCompile" Content="Compile" />
 					<Separator Width="3" Background="Transparent" />
 					<CheckBox Name="ckIncludeEmbeddedResource" Content="EmbeddedResource" />
-					<Separator Width="3" Background="Transparent" />
-					<CheckBox Name="ckIncludeLinks" Content="Links" />
 					<Separator Width="3" Background="Transparent" />
 					<CheckBox Name="ckIncludeNone" Content="None" />
 					<Separator Width="3" Background="Transparent" />
 					<CheckBox Name="ckIncludeResource" Content="Resource" />
-					<Separator Width="3" Background="Transparent" />-->
+					<Separator Width="3" Background="Transparent" />
+-->
 				</StackPanel>
 				<ComboBox Name="cbProjectF" Grid.Column="2"
 				          ToolTip="From"

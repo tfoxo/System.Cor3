@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Tasks;
 
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -33,8 +34,17 @@ namespace PdfCat
         [STAThread]
         static void Main(string[] args)
         {
-            PdfCatApp app = new PdfCatApp(args);
+            //PdfCatApp app = new PdfCatApp(args);
+            if (args.Length != 2)
+            {
+            	Console.WriteLine("Nothing to do");
+            	Console.ReadKey(true);
+            	return;
+            }
             
+            NormalizePathTask task = new NormalizePathTask(args[0],args[1]);
+            	Console.ReadKey(true);
+            	return;
         }
         
         public PdfCatApp(params string[] a)
@@ -316,7 +326,7 @@ namespace PdfCat
                             new XRect((gfx.PageSize.ToXPoint() - new XSize(width, width)) / 2,
                                       new XSize(width, width)));
             gfx.DrawString(number.ToString(), font, XBrushes.Firebrick,
-                           new XRect(XPoint.Empty, gfx.PageSize), XStringFormat.Center);
+                           new XRect(XPoint.Empty, gfx.PageSize),XStringFormats.Center);
         }
     }
 }

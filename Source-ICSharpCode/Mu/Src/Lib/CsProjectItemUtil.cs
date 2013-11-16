@@ -11,6 +11,7 @@ namespace Mu
     class CsProjectItemUtil
     {
         static CsProjectItemSettings Settings { get;set; }
+        
         static public readonly ItemType[] DefaultTypes = new ItemType[]{ ItemType.Compile, };
         
         static readonly ItemType[] CommonTypes = {
