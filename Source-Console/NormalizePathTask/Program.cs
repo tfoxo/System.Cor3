@@ -7,24 +7,24 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-using System.Tasks;
+using System.Threading.Tasks;
 
-namespace NormalizePathTool
+namespace System.Tasks
 {
 	class Program
 	{
 		public static void Main(string[] args)
 		{
-            if (args.Length != 2)
-            {
-            	Console.WriteLine("Nothing to do");
-            	Console.ReadKey(true);
-            	return;
-            }
-            
-            NormalizePathTask task = new NormalizePathTask(args[0],args[1]);
-            	Console.ReadKey(true);
-            	return;
+			if (args.Length != 2)
+			{
+				Console.WriteLine("Nothing to do");
+				Console.ReadKey(true);
+				return;
+			}
+			NormalizePathTool task = new NormalizePathTool(args[0],args[1],new NormalizePathOptions { IsConsoleEnabled=true, MatchCase=true });
+			task.Run();
+			Console.ReadKey(true);
+			return;
 		}
 	}
 }
