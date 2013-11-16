@@ -12,17 +12,18 @@ a basic process goes
 
 ## to use:
 
-1. In the SD/IDE select the menu-item: `Tools/Generate Links`
-2. Note that following the generate button are two combo-boxes: from, to
+1. Install the SD4 compatible addin.
+2. In the SD/IDE select the menu-item: `Tools/Generate Links`
+3. Note that following the generate button are two combo-boxes: from, to
     - the from combo is used for the source project where links are generated from
     - the to combo is used as the relative path for the mentioned todo below (normalizing paths)
-3. Open your project in the text editor
+4. Open your project in the text editor
     - RIGHT-CLICK the CS-PROJ you want to integrate sources from another project into, and
     - ...select the 'Open With...' option.
     - choose 'Text Editor'
-4. Go back to the 'MuGenerator Tool' tab in the SD/IDE.
-5. (Perhaps modify, and then) Copy the ItemGroup source from the TextEditor from the MuGen Tab.
-6. Go back to your CSPROJ source and paste at the end of the last `ItemGroup`.
+5. Go back to the 'MuGenerator Tool' tab in the SD/IDE.
+6. (Perhaps modify, and then) Copy the ItemGroup source from the TextEditor from the MuGen Tab.
+7. Go back to your CSPROJ source and paste at the end of the last `ItemGroup`.
 
 ## todos
 
