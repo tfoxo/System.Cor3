@@ -27,5 +27,5 @@ useful?
 
 ## todos
 
-- normalize paths such as a comparison of one project's path to another's.
+- normalize paths such as a comparison of one project's path to another's (kind of like flash-develop does).
 - Target-Specific types (None, Resource, EmbeddedResource, Compile, etc...)
