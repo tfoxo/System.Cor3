@@ -62,7 +62,7 @@ namespace System.Tasks
 		public bool IsConsoleEnabled {
 			get { return isConsoleEnabled; }
 			set { isConsoleEnabled = value; }
-		} bool isConsoleEnabled;
+		} bool isConsoleEnabled = false;
 		
 		public bool UseFullPathWhenShorter {
 			get { return useFullPathWhenShorter; }
@@ -107,6 +107,7 @@ BASE (CONTEXT):
 
 RESULT:
   Full  = {20}
+  FullIsShorter  = {21}
   Exist = {19}
   {18}
 
@@ -139,6 +140,14 @@ RESULT:
 		/// The path result of our inquary.
 		/// </summary>
 		public bool ResultPathExists { get; private set; }
+		
+		/// <summary>
+		/// Indicates that `ResultPath` is longer then the actual `TargetPath`.
+		/// <para>If Options.UseFullPathWhenShorter is true and indeed the full
+		/// TargetPath is shorter, then `ResultPath` will be set to the full
+		/// `TargetPath`.</para>
+		/// </summary>
+		public bool ResultIsLonger { get; private set; }
 		
 		/// <summary>
 		/// Destination path.  The file we are providing a path for.
@@ -298,7 +307,6 @@ RESULT:
 				Console.Error.WriteLine("Both paths must begin with drive-letter + semi-colon. (EG: c:/)");
 				Console.Error.WriteLine("EG: 'c:/'");
 				Console.Error.WriteLine();
-				Console.ReadKey(true);
 				return;
 			}
 			else if (!(IsTargetRooted || IsBaseRooted) && !Options.IsConsoleEnabled)
@@ -329,7 +337,8 @@ RESULT:
 			ResultPath = NormalizeSeparators(temp);
 			ResultPathFull = NormalizeSeparators(Path.Combine(BasePath,ResultPath));
 			
-			if (ResultPath.Length < TargetPath.Length && Options.UseFullPathWhenShorter) {
+			if (ResultPath.Length > (TargetPath.Length+1+TargetFileName.Length) && Options.UseFullPathWhenShorter) {
+				ResultIsLonger = true;
 				ResultPath = TargetPath;
 				ResultPathFull = ResultPath;
 			}
@@ -386,7 +395,8 @@ RESULT:
 				/*17*/ BaseList.Count-(LastSimilarIndex + added),
 				/*18*/ ResultPath,
 				/*19*/ ResultPathExists,
-				/*20*/ ResultPathFull
+				/*20*/ ResultPathFull,
+				/*21*/ ResultIsLonger
 			);
 		}
 	}

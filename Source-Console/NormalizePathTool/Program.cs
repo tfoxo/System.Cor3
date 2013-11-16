@@ -18,12 +18,11 @@ namespace System.Tasks
 			if (args.Length != 2)
 			{
 				Console.WriteLine("Nothing to do");
-				Console.ReadKey(true);
 				return;
 			}
-			NormalizePathTool task = new NormalizePathTool(args[0],args[1],new NormalizePathOptions { IsConsoleEnabled=true, MatchCase=true });
+			NormalizePathTool task = new NormalizePathTool(args[0],args[1],new NormalizePathOptions { IsConsoleEnabled=true, UseFullPathWhenShorter=true });
 			task.Run();
-			Console.ReadKey(true);
+			task = null;
 			return;
 		}
 	}
