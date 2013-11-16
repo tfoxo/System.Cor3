@@ -27,5 +27,7 @@ useful?
 
 ## TODO
 
-- normalize paths such as a comparison of one project's path to another's (kind of like flash-develop does).
+- [normalize paths] such as a comparison of one project's path to another's (kind of like flash-develop does).
 - Target-Specific types (None, Resource, EmbeddedResource, Compile, etc...)
+
+[normalize paths]: https://github.com/tfoxo/System.Cor3/wiki/Normalize-Paths-Task
