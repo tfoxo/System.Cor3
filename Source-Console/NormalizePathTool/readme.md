@@ -14,7 +14,7 @@ as pertains to MsBuild, CSharp Targets.
 
 ## NormalizePathOptions
 
-intrinsic:
+intrinsic: (defaults)
 
 	char IllegalPathSeparator    { get;set; } = '\\'
 	bool IsConsoleEnabled        { get;set; } = false
@@ -28,10 +28,10 @@ The following output is the result of the following command
 
 ### Command-Line (`test-tool.cmd`)
 
-By default, the tool uses a particular set of `[NormalizePathOptions]`.
+By default, the tool (EXE) uses non-default `[NormalizePathOptions]`.
 
 	:: Command-Options (fixed in binary)
-	:: new NormalizePathOptions { IsConsoleEnabled=true, MatchCase=true, UseFullPathWhenShorter=true }
+	:: new NormalizePathOptions { IsConsoleEnabled=true, UseFullPathWhenShorter=true }
 	NormalizePath "D:/DEV/WIN/CS_ROOT/Projects/github-cor3/Source-Console/NormalizePathTool/bin/Debug/NormalizePath.exe" "D:/DEV/BIN/cyg/etc/emacs/site-start.d/autoconf.el" 1> output.txt
 
 ### Output
