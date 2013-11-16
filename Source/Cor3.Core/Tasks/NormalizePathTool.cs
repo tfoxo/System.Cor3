@@ -31,6 +31,7 @@ namespace System.Tasks
 			inputFile = fname;
 		}
 	}
+	
 	public class NormalizePathOptions
 	{
 		#region Path Separator(s)
@@ -62,7 +63,14 @@ namespace System.Tasks
 			get { return isConsoleEnabled; }
 			set { isConsoleEnabled = value; }
 		} bool isConsoleEnabled;
+		
+		public bool UseFullPathWhenShorter {
+			get { return useFullPathWhenShorter; }
+			set { useFullPathWhenShorter = value; }
+		} bool useFullPathWhenShorter = false;
+		
 	}
+	
 	/// <summary>
 	/// Description of NormalizePathTask.
 	/// </summary>
@@ -70,7 +78,7 @@ namespace System.Tasks
 	{
 		#region Constant
 
-		const string template = @"NormailzePathTask
+		const string template = @"NormalizePathTool
 =================
 
 GENERALLY:
@@ -108,8 +116,9 @@ RESULT:
 		#region Props
 		static public readonly NormalizePathOptions DefaultOptions = new NormalizePathOptions
 		{
-			MatchCase        = true,
-			IsConsoleEnabled = false
+			MatchCase              = true,
+			IsConsoleEnabled       = false,
+			UseFullPathWhenShorter = false
 		};
 		
 		/// <summary>
@@ -316,8 +325,15 @@ RESULT:
 			BaseRemainderPath = string.Join("/",BaseRemainderList.ToArray());
 			
 			ResultPath = IsTargetFile ? Path.Combine(TargetRemainderPath,TargetFileName) : TargetRemainderPath;
-			ResultPath = NormalizeSeparators(Pad(ResultPath,BaseList.Count-(LastSimilarIndex + added)));
+			string temp = Pad(ResultPath,BaseList.Count-(LastSimilarIndex + added));
+			ResultPath = NormalizeSeparators(temp);
 			ResultPathFull = NormalizeSeparators(Path.Combine(BasePath,ResultPath));
+			
+			if (ResultPath.Length < TargetPath.Length && Options.UseFullPathWhenShorter) {
+				ResultPath = TargetPath;
+				ResultPathFull = ResultPath;
+			}
+			
 			ResultPathExists = IsTargetFile ? File.Exists(ResultPathFull) : Directory.Exists(ResultPathFull);
 			
 			if (Options.IsConsoleEnabled) PrintInfo();
