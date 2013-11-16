@@ -91,7 +91,7 @@
     </Compile>
     <Compile Include="System.ConsoleUtil\ArgumentType.cs" />
     <Compile Include="System.ConsoleUtil\MessageType.cs" />
-    <Compile Include="Tasks\NormalizePathTask.cs" />
+    <Compile Include="Tasks\NormalizePathTool.cs" />
     <None Include="System.ConsoleUtil\SkypeUtil.cs" />
     <Compile Include="System.Cor3.WinForms\ExceptionDialog.cs">
       <SubType>Form</SubType>

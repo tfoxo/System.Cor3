@@ -38,7 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NormalizePathTask", "Normal
 	ProjectSection(SolutionItems) = postProject
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NormalizePathTool", "..\Source-Console\NormalizePathTask\NormalizePathTool.csproj", "{1302FD1F-2F03-4256-B153-573684486C6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NormalizePath", "..\Source-Console\NormalizePathTask\NormalizePath.csproj", "{1302FD1F-2F03-4256-B153-573684486C6A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET40-App-FeedTool", "NET40-App-FeedTool", "{05C26A44-1D03-49A6-9C5F-1A8BB3E43ED4}"
 	ProjectSection(SolutionItems) = postProject
