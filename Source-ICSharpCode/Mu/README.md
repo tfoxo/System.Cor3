@@ -9,7 +9,7 @@ best described by its limitations as compared to how it works.
 
 ## does
 
-![](build\mu.png)
+![](https://raw.github.com/tfoxo/System.Cor3/master/Source-ICSharpCode/Mu/build/mu.png)
 
 ## to use:
 
