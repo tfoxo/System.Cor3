@@ -49,7 +49,7 @@
 						ToolTip="Generate text and copy to clipboard."
 					/>
 					<Separator Width="3" Background="Transparent" />
-					<CheckBox Name="ckIncludeCompile" Content="Compile" />
+					<!--<CheckBox Name="ckIncludeCompile" Content="Compile" />
 					<Separator Width="3" Background="Transparent" />
 					<CheckBox Name="ckIncludeEmbeddedResource" Content="EmbeddedResource" />
 					<Separator Width="3" Background="Transparent" />
@@ -58,7 +58,7 @@
 					<CheckBox Name="ckIncludeNone" Content="None" />
 					<Separator Width="3" Background="Transparent" />
 					<CheckBox Name="ckIncludeResource" Content="Resource" />
-					<Separator Width="3" Background="Transparent" />
+					<Separator Width="3" Background="Transparent" />-->
 				</StackPanel>
 				<ComboBox Name="cbProjectF" Grid.Column="2"
 				          ToolTip="From"
@@ -81,7 +81,7 @@
 			</Grid.RowDefinitions>
 			<Label Grid.Row="0" Content="Include-Path" HorizontalAlignment="Right" VerticalAlignment="Center" />
 			<TextBox Name="tbIncludeKey" Grid.Column="1" Text="Include" />
-			<Label Grid.Row="1" Content="Relative-Path" HorizontalAlignment="Right" VerticalAlignment="Center" />
+			<Label Grid.Row="1" Content="Base-Path" HorizontalAlignment="Right" VerticalAlignment="Center" />
 			<TextBox Name="tbRelativePath" Grid.Row="1" Grid.Column="1" />
 		</Grid>
 		<avalon:TextEditor ShowLineNumbers="True" Name="editor" Grid.Row="3" SyntaxHighlighting="XML" FontFamily="Consolas">

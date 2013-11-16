@@ -47,14 +47,14 @@ namespace Mu.View
 		void Event_DoExecute3(object sender, RoutedEventArgs e)
 		{
 //			ProjectService.OpenSolution.Projects.ToArray()[0].Name;
-			var selectedproj = cbProjectF.SelectedValue as IProject;
-//			tbRelativePath.Text = selectedproj.Location;
+			IProject selectedprojf = cbProjectF.SelectedItem as IProject;
+			IProject selectedprojt = cbProjectT.SelectedItem as IProject;
 			CsProjectItemUtil util = new CsProjectItemUtil(
 				new CsProjectItemSettings {
 					PreIncludePath = tbIncludeKey.Text,
-					Project        = selectedproj,
+					Project        = selectedprojf,
 					IncludeLinks   = false,
-					ProjectPath    = selectedproj.Directory
+					ProjectPath    = selectedprojt.Directory
 				});
 			this.editor.Text = @"    <ItemGroup>@{nodes}
     </ItemGroup>"
@@ -66,8 +66,8 @@ namespace Mu.View
 		{
 			try
 			{
-				var selectedprojfr = cbProjectF.SelectedValue as IProject;
-				var selectedprojto = cbProjectT.SelectedValue as IProject;
+				IProject selectedprojfr = cbProjectF.SelectedItem as IProject;
+				IProject selectedprojto = cbProjectT.SelectedItem as IProject;
 				if (cbProjectT.SelectedItem != null) tbRelativePath.Text = selectedprojto.Directory;
 			}
 			catch

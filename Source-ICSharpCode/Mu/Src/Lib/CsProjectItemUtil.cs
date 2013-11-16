@@ -91,7 +91,7 @@ namespace Mu
                 .Replace("{tag}",info.Item.ItemType.ItemName)
 //                        .Replace("{inc}",p.Include)
                 .Replace("{inc}",info.ProjectInclude.FullName
-                    .Replace(info.Project.Directory,string.Empty)  .Trim('\\','/') )
+                    .Replace(Settings.ProjectPath,string.Empty)  .Trim('\\','/') )
 //                        .Replace("{fname}",p.FileName)
                 .Replace("{fname:pre}",Settings.PreIncludePath)
                 .Replace("{fname}",info.Item.Include)
