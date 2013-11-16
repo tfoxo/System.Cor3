@@ -12,7 +12,7 @@ a basic process goes
 
 ## to use:
 
-1. Install the SD4 compatible addin.
+1. Install the SD4 compatible [addin](https://github.com/tfoxo/System.Cor3/releases/download/pdfcat-20131106/mu.sdaddin).
 2. In the SD/IDE select the menu-item: `Tools/Generate Links`
 3. Note that following the generate button are two combo-boxes: from, to
     - the from combo is used for the source project where links are generated from
