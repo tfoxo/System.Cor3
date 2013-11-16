@@ -16,6 +16,10 @@ For dependency licensing information, consult the project directory and/or the L
 
 ## LOG
 
+20131115 - REVISION 107
+
+- Added [Source-Console/NormalizePathTool] Project
+
 20131115 - REVISION 71
 
 - Added WPF FeedTool
@@ -26,3 +30,4 @@ For dependency licensing information, consult the project directory and/or the L
 - Added the little FeedTool: `./Source-AppForms/FeedTool`
 - Added `Cor3.Forms` library: `./Source/Cor3.Forms/`
 
+[NormalizePathTool]: https://github.com/tfoxo/System.Cor3/tree/master/Source-Console/NormalizePathTool
