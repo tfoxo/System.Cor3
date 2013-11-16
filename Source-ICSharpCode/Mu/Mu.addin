@@ -1,9 +1,11 @@
-<AddIn name="Mu" author="oio" url="mailto:tfwroble@gmail.com" description="Link/Includes Snippit generator to import source files (without copying them) paste into another project.">
+<AddIn name="Mu" author="oio" url="mailto:tfwroble@gmail.com" description="Link/Includes Snippit generator">
 	<Manifest>
 		<Identity name="Mu" version="1.0" />
 	</Manifest>
 	<Runtime>
 		<Import assembly="Mu.dll" />
+		<Import assembly="FirstFloor.ModernUI.dll" />
+		
 		<Import assembly=":ICSharpCode.AvalonEdit" />
 		<Import assembly=":ICSharpCode.Core" />
 		<Import assembly=":ICSharpCode.SharpDevelop" />

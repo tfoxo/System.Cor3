@@ -9,10 +9,16 @@ namespace Mu
 {
 	class CsProjectItemSettings
 	{
-		public string PreIncludePath { get;set; }
+		
 		public IProject Project { get;set; }
-		public bool IncludeLinks { get;set; }
 		
 		public bool HasProject { get { return Project != null; } }
+		
+		public string ProjectPath { get;set; }
+		
+		public string PreIncludePath { get;set; }
+		
+		public bool IncludeLinks { get;set; }
+		
 	}
 }

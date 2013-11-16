@@ -85,10 +85,10 @@ namespace System {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to 	&lt;{tag} Include=&quot;{inc}&quot;&gt;
-		///		&lt;Link&gt;{fname:pre}\{fname}&lt;/Link&gt;{vals}
-		///	&lt;/{tag}&gt;
-		///.
+		///   Looks up a localized string similar to 
+		///        &lt;{tag} Include=&quot;{inc}&quot;&gt;
+		///            &lt;Link&gt;{fname:pre}\{fname}&lt;/Link&gt;{vals}
+		///        &lt;/{tag}&gt;.
 		/// </summary>
 		public static string CompileElement2 {
 			get {
@@ -125,7 +125,7 @@ namespace System {
 		
 		/// <summary>
 		///   Looks up a localized string similar to 
-		///		&lt;{0}&gt;{1}&lt;/{0}&gt;.
+		///            &lt;{0}&gt;{1}&lt;/{0}&gt;.
 		/// </summary>
 		public static string FormatTag0 {
 			get {

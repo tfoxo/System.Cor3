@@ -16,6 +16,19 @@ namespace Mu.View
 		public EditorControl()
 		{
 			InitializeComponent();
+			
+		}
+		protected override void OnInitialized(EventArgs e)
+		{
+			base.OnInitialized(e);
+			
+			try {
+				this.cbProjectF.SelectedItem = ProjectService.CurrentProject;
+				this.cbProjectT.SelectedItem = ProjectService.CurrentProject;
+				this.tbRelativePath.Text = ProjectService.CurrentProject.Directory;
+			}
+			catch {
+			}
 		}
 		
 		void Event_DoExecute1(object sender, RoutedEventArgs e)
@@ -34,13 +47,14 @@ namespace Mu.View
 		void Event_DoExecute3(object sender, RoutedEventArgs e)
 		{
 //			ProjectService.OpenSolution.Projects.ToArray()[0].Name;
-			var selectedproj = cbProjects.SelectedValue as IProject;
-			tbRelativePath.Text = selectedproj.Location;
+			var selectedproj = cbProjectF.SelectedValue as IProject;
+//			tbRelativePath.Text = selectedproj.Location;
 			CsProjectItemUtil util = new CsProjectItemUtil(
 				new CsProjectItemSettings {
 					PreIncludePath = tbIncludeKey.Text,
 					Project        = selectedproj,
-					IncludeLinks   = false
+					IncludeLinks   = false,
+					ProjectPath    = selectedproj.Directory
 				});
 			this.editor.Text = @"    <ItemGroup>@{nodes}
     </ItemGroup>"
@@ -50,8 +64,16 @@ namespace Mu.View
 		
 		void CbProjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			var selectedproj = cbProjects.SelectedValue as IProject;
-			tbRelativePath.Text = selectedproj.Location;
+			try
+			{
+				var selectedprojfr = cbProjectF.SelectedValue as IProject;
+				var selectedprojto = cbProjectT.SelectedValue as IProject;
+				if (cbProjectT.SelectedItem != null) tbRelativePath.Text = selectedprojto.Directory;
+			}
+			catch
+			{
+				
+			}
 		}
 
 		#region IHighlighting

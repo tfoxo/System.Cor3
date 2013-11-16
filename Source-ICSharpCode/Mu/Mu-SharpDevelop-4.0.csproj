@@ -51,6 +51,9 @@
       <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\AvalonDock.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\..\Project\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.AvalonEdit">
       <HintPath>C:\Program Files %28x86%29\SharpDevelop\4.3\bin\ICSharpCode.AvalonEdit.dll</HintPath>
       <Private>False</Private>
@@ -134,23 +137,21 @@
     <Compile Include="Src\Lib\ZoomLevelToTextFormattingModeConverter.cs">
       <Generator>msbuild:compile</Generator>
     </Compile>
-    <Compile Include="Src\View\IncludeLinkGeneratorControl.xaml.cs">
-      <DependentUpon>IncludeLinkGeneratorControl.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Src\View\IncludeLinkGeneratorView.cs" />
     <None Include="build\build.cmd" />
     <None Include="build\mu.sdaddin" />
     <None Include="Mu.addin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Strings.resx" />
+    <EmbeddedResource Include="Strings.resx">
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build" />
@@ -163,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Src\View\EditorControl.xaml" />
-    <Page Include="Src\View\IncludeLinkGeneratorControl.xaml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

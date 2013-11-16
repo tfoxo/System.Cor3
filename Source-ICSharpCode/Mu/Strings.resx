@@ -146,7 +146,7 @@
   </data>
   <data name="FormatTag0" xml:space="preserve">
     <value>
-		&lt;{0}&gt;{1}&lt;/{0}&gt;</value>
+            &lt;{0}&gt;{1}&lt;/{0}&gt;</value>
   </data>
   <data name="ErrorSelectAProject" xml:space="preserve">
     <value>&lt;error Message="You probably need to select a project." /&gt;</value>

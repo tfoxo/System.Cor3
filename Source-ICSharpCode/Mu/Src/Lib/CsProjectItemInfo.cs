@@ -9,26 +9,26 @@ namespace Mu
 {
 	class CsProjectItemInfo
 	{
-		public FileInfo ProjectFileName { get; set; }
-		public FileInfo ProjectFile { get; set; }
-		public FileInfo ProjectInclude { get; set; }
-		
-		public IProject Project { get;set; }
+		public FileInfo    ProjectFileName { get; set; }
+		public FileInfo    ProjectFile { get; set; }
+		public FileInfo    ProjectInclude { get; set; }
+		public IProject    Project { get;set; }
 		public ProjectItem Item { get;set; }
-		public IDictionary<string,string> Meta { get; private set; }
-		public bool HasLink { get; private set; }
+		public bool        HasLink { get; private set; }
+		public string      MetaInfoAsAttributes { get { return GetAttributeString(Item); } }
 		
-		public string MetaInfoAsAttributes { get { return GetAttributeString(Item); } }
+		public IDictionary<string,string> Meta { get; private set; }
 		
 		public CsProjectItemInfo(IProject proj, ProjectItem p)
 		{
-			Project = proj;
-			Item = p;
-			ProjectFileName   = new FileInfo(proj.FileName);
-			ProjectFile = new FileInfo(Path.Combine(ProjectFileName.Directory.FullName,p.FileName));
-			ProjectInclude = new FileInfo(Path.Combine(ProjectFileName.Directory.FullName,p.Include));
-			
-			Meta = GetMetaDictionary(Item);
+			Project              = proj;
+			Item                 = p;
+			ProjectFileName      = new FileInfo(proj.FileName);
+			string localfile     = Path.Combine(ProjectFileName.Directory.FullName,p.FileName);
+			ProjectFile          = new FileInfo(localfile);
+			string includefile   = Path.Combine(ProjectFileName.Directory.FullName,p.Include);
+			ProjectInclude       = new FileInfo(includefile);
+			Meta                 = GetMetaDictionary(Item);
 		}
 		
 		Dictionary<string,string> GetMetaDictionary(ProjectItem p)

@@ -38,7 +38,7 @@ namespace Mu.Commands
 		public override void Run()
 		{
 			foreach (IViewContent view in WorkbenchSingleton.Workbench.ViewContentCollection) {
-				if (view is IncludeLinkGeneratorView) {
+				if (view is EditorControlViewContent) {
 					view.WorkbenchWindow.SelectWindow();
 					return;
 				}
