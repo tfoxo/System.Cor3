@@ -10,13 +10,13 @@ useful?
 
 ![](https://raw.github.com/tfoxo/System.Cor3/master/Source-ICSharpCode/Mu/build/mu-crop.png)
 
-## to use:
+## USE:
 
 1. Install the SD4 compatible [addin](https://github.com/tfoxo/System.Cor3/releases/download/pdfcat-20131106/mu.sdaddin).
-2. In the SD/IDE select the menu-item: `Tools/Generate Links`
-3. Note that following the generate button are two combo-boxes: from, to
-    - the from combo is used for the source project where links are generated from
-    - the to combo is used as the relative path for the mentioned todo below (normalizing paths)
+2. Click SD/IDE MenuItem: `/Tools/Generate Links`
+3. ComboBoxes (right of 'Generate' button):
+    - csproj-from: (left-most combo) source project (generation is based on this proj)
+    - csproj-to: (right-most combo) this is here as a place-holder for future path-normalization on project-locations so the source-paths can be generated in a manner 'friendly' to existing project-file semantics.
 4. Open your project in the text editor
     - RIGHT-CLICK the CS-PROJ you want to integrate sources from another project into, and
     - ...select the 'Open With...' option.
