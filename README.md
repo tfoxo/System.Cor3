@@ -18,7 +18,7 @@ For dependency licensing information, consult the project directory and/or the L
 
 20131116 - REVISION 113
 
-- Added [Source-Console/NormalizePathTool] Project
+- Added Source-Console/[NormalizePathTool] Project
 
 20131115 - REVISION 71
 
