@@ -10,7 +10,7 @@ useful?
 
 ![](https://raw.github.com/tfoxo/System.Cor3/master/Source-ICSharpCode/Mu/build/mu-crop.png)
 
-## USE:
+## USE
 
 1. Install the SD4 compatible [addin](https://github.com/tfoxo/System.Cor3/releases/download/pdfcat-20131106/mu.sdaddin).
 2. Click SD/IDE MenuItem: `/Tools/Generate Links`
@@ -25,7 +25,7 @@ useful?
 6. (Perhaps modify, and then) Copy the ItemGroup source from the TextEditor from the MuGen Tab.
 7. Go back to your CSPROJ source and paste at the end of the last `ItemGroup`.
 
-## todos
+## TODO
 
 - normalize paths such as a comparison of one project's path to another's (kind of like flash-develop does).
 - Target-Specific types (None, Resource, EmbeddedResource, Compile, etc...)
