@@ -58,6 +58,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="readme.md" />
+    <None Include="test-tool.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,7 +14,15 @@ as pertains to MsBuild, CSharp Targets.
 
 ## EXAMPLE OUTPUT
 
-	NormailzePathTask
+The following output is the result of the following command
+
+### Command-Line (`test-tool.cmd`)
+
+	NormalizePath "D:/DEV/WIN/CS_ROOT/Projects/github-cor3/Source-Console/NormalizePathTool/bin/Debug/NormalizePath.exe" "D:/DEV/BIN/cyg/etc/emacs/site-start.d/autoconf.el" 1> output.txt
+
+### Output
+
+	NormalizePathTool
 	=================
 
 	GENERALLY:
@@ -45,5 +53,6 @@ as pertains to MsBuild, CSharp Targets.
 	  Full  = D:/DEV/BIN/cyg/etc/emacs/site-start.d/../../../../../WIN/CS_ROOT/Projects/github-cor3/Source-Console/NormalizePathTool/bin/Debug/NormalizePath.exe
 	  Exist = True
 	  ../../../../../WIN/CS_ROOT/Projects/github-cor3/Source-Console/NormalizePathTool/bin/Debug/NormalizePath.exe
+
 
 [NormalizePathTool.cs]: https://github.com/tfoxo/System.Cor3/blob/master/Source/Cor3.Core/Tasks/NormalizePathTool.cs
