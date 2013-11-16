@@ -34,17 +34,7 @@ namespace PdfCat
         [STAThread]
         static void Main(string[] args)
         {
-            //PdfCatApp app = new PdfCatApp(args);
-            if (args.Length != 2)
-            {
-            	Console.WriteLine("Nothing to do");
-            	Console.ReadKey(true);
-            	return;
-            }
-            
-            NormalizePathTask task = new NormalizePathTask(args[0],args[1]);
-            	Console.ReadKey(true);
-            	return;
+            PdfCatApp app = new PdfCatApp(args);
         }
         
         public PdfCatApp(params string[] a)
