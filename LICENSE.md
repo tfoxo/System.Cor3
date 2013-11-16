@@ -53,4 +53,4 @@ generations of these sources started out as a collection
 of demos based on tuturials, exercises and such.
 
 Most of the residuals have been removed and I would be glad to
-attribute credit where it is due.
+attribute credit where it is due upon notice.

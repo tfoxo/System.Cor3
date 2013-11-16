@@ -30,11 +30,6 @@ Features
     * [YouTubeExtractor]
 	* ReactiveUI
 
-SharpFFmpeg
-------------------------
-
-see: [ffmpeg-windows-c-sharp-h264]
-
 
 Third-Party Libraries, Credits and/or Dependencies
 -------------------------
