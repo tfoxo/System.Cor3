@@ -14,9 +14,6 @@ legend:
 -------------------------------------------
 + Archives
   - SharpFFmpeg_2.0_src.zip
-+ ffmpeg-sharp
-  + examples
-  + src
 + ICSharpCode.TextEditor
 + Nuget
   + ICSharpCode.TextEditor.3.2.1.6466
