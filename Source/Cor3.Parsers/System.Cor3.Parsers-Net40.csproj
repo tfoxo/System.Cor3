@@ -140,71 +140,72 @@
     <Compile Include="..\Cor3.Core\Properties\GAsm.cs">
       <Link>Properties\GAsm.cs</Link>
     </Compile>
-    <Compile Include="CascadingStyleSheets\CommonDefinitions.cs" />
-    <Compile Include="CascadingStyleSheets\CssParserException.cs" />
-    <Compile Include="CascadingStyleSheets\Expression.cs" />
-    <Compile Include="ISyntaxStrategy.cs" />
-    <Compile Include="MarkdownSharp\Markdown.cs" />
-    <Compile Include="MarkdownSharp\MmdExtension.cs" />
-    <Compile Include="ParseStrategy\Class1.cs" />
+    <Compile Include="..\Cor3.Core\System\XLog.cs">
+      <Link>Includes\XLog.cs</Link>
+    </Compile>
+    <Compile Include="..\Cor3.Core\System\XLogEventArgs.cs">
+      <Link>Includes\XLogEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="Source\CascadingStyleSheets\CommonDefinitions.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssParserException.cs" />
+    <Compile Include="Source\CascadingStyleSheets\Expression.cs" />
+    <Compile Include="Source\MarkdownSharp\Markdown.cs" />
+    <Compile Include="Source\MarkdownSharp\MmdExtension.cs" />
+    <Compile Include="Source\ParseStrategy\Class1.cs" />
     <Compile Include="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <None Include="..\Cor3.Core\System\XLog.cs">
-      <Link>XLog.cs</Link>
-    </None>
-    <None Include="..\Cor3.Core\System\XLogEventArgs.cs">
-      <Link>XLogEventArgs.cs</Link>
-    </None>
-    <Compile Include="AnsiCharClassType.cs" />
-    <Compile Include="CascadingStyleSheets\AttributeInfoCollection.cs" />
-    <Compile Include="CascadingStyleSheets\AttributeInsight.cs" />
-    <Compile Include="CascadingStyleSheets\CssAttributeFragment.cs" />
-    <Compile Include="CascadingStyleSheets\CssAttributeValueFragment.cs" />
-    <Compile Include="CascadingStyleSheets\CssColour.cs" />
-    <Compile Include="CascadingStyleSheets\CssDefinitions.cs" />
-    <Compile Include="CascadingStyleSheets\CssFragmentType.cs" />
-    <Compile Include="CascadingStyleSheets\CssParser.cs" />
-    <Compile Include="CascadingStyleSheets\CssParserOptions.cs" />
-    <Compile Include="CascadingStyleSheets\CssParserReference.cs" />
-    <Compile Include="CascadingStyleSheets\CssFragment.cs" />
-    <Compile Include="CascadingStyleSheets\CssParserUserPreferences.cs" />
-    <Compile Include="CascadingStyleSheets\CssRewriteOptions.cs" />
-    <Compile Include="Html\BlockWriteInfo.cs" />
-    <Compile Include="Html\HtmlAttributeValuePair.cs" />
-    <Compile Include="Html\HtmlExtension.cs" />
-    <Compile Include="Html\CharacterEntityConversions.cs" />
-    <Compile Include="Html\ConvertionsExtension.cs" />
-    <Compile Include="Html\TagHelper.cs" />
-    <Compile Include="INIParser.cs" />
-    <Compile Include="ITextRange.cs" />
-    <Compile Include="ParserBlock.cs" />
-    <Compile Include="ParserTypes.cs" />
+    <Compile Include="Source\CascadingStyleSheets\AttributeInfoCollection.cs" />
+    <Compile Include="Source\CascadingStyleSheets\AttributeInsight.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssAttributeFragment.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssAttributeValueFragment.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssColour.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssDefinitions.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssFragmentType.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssParser.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssParserOptions.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssParserReference.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssFragment.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssParserUserPreferences.cs" />
+    <Compile Include="Source\CascadingStyleSheets\CssRewriteOptions.cs" />
+    <Compile Include="Source\Html\BlockWriteInfo.cs" />
+    <Compile Include="Source\Html\HtmlAttributeValuePair.cs" />
+    <Compile Include="Source\Html\HtmlExtension.cs" />
+    <Compile Include="Source\Html\CharacterEntityConversions.cs" />
+    <Compile Include="Source\Html\ConvertionsExtension.cs" />
+    <Compile Include="Source\Html\TagHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RangeBlock.cs" />
     <Compile Include="ResourceUtil.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="StringRange.cs" />
-    <Compile Include="TextRange.cs" />
-    <Compile Include="Tools\SimpleTemplateConverter.cs" />
-    <Compile Include="Tools\ItemCountChanged.cs" />
-    <Compile Include="Tools\SimpleTemplateItem.cs" />
-    <Compile Include="UnicodeSpaceType.cs" />
+    <Compile Include="Source\AnsiCharClassType.cs" />
+    <Compile Include="Source\INIParser.cs" />
+    <Compile Include="Source\ISyntaxStrategy.cs" />
+    <Compile Include="Source\ITextRange.cs" />
+    <Compile Include="Source\ParserBlock.cs" />
+    <Compile Include="Source\ParserTypes.cs" />
+    <Compile Include="Source\RangeBlock.cs" />
+    <Compile Include="Source\StringRange.cs" />
+    <Compile Include="Source\TextRange.cs" />
+    <Compile Include="Source\UnicodeSpaceType.cs" />
+    <Compile Include="Source\Tools\SimpleTemplateConverter.cs" />
+    <Compile Include="Source\Tools\ItemCountChanged.cs" />
+    <Compile Include="Source\Tools\SimpleTemplateItem.cs" />
     <None Include="app.config" />
-    <None Include="CascadingStyleSheets\css21props.text" />
-    <None Include="CascadingStyleSheets\css3-animations.text" />
-    <None Include="CascadingStyleSheets\css3-background.text" />
+    <None Include="Source\CascadingStyleSheets\css21props.text" />
+    <None Include="Source\CascadingStyleSheets\css3-animations.text" />
+    <None Include="Source\CascadingStyleSheets\css3-background.text" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CascadingStyleSheets" />
-    <Folder Include="Html" />
-    <Folder Include="MarkdownSharp" />
+    <Folder Include="Source\CascadingStyleSheets" />
+    <Folder Include="Source\Html" />
+    <Folder Include="Source\MarkdownSharp" />
+    <Folder Include="Includes" />
     <Folder Include="Source" />
-    <Folder Include="ParseStrategy" />
-    <Folder Include="Tools" />
+    <Folder Include="Source\ParseStrategy" />
+    <Folder Include="Source\Tools" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cor3.Core\System.Cor3-Net40.csproj">
