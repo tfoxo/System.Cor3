@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{11CCEC81-7B26-442D-A937-79B33DD89E8B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>System.Cor3.Stock</RootNamespace>
+    <AssemblyName>System.Cor3.Stock</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\cross-button.png">
+      <Link>Images\Fugue\cross-button.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\arrow-090.png">
+      <Link>Images\Fugue\arrow-090.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\arrow-270.png">
+      <Link>Images\Fugue\arrow-270.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\arrow-180.png">
+      <Link>Images\Fugue\arrow-180.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\arrow.png">
+      <Link>Images\Fugue\arrow.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\binocular.png">
+      <Link>Images\Fugue\binocular.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\48x48\categories\system-help.png">
+      <Link>Images\Oxygen\system-help.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen\32x32\actions\document_open.png">
+      <Link>Images\Oxygen\document_open.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\32x32\actions\document-save.png">
+      <Link>Images\Oxygen\document-save.png</Link>
+    </Resource>
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\32x32\actions\view-refresh.png">
+      <Link>Images\Oxygen\view-refresh.png</Link>
+    </Resource>
+    <Resource Include="Images\Oxygen\player_pause.png" />
+    <Resource Include="Images\Oxygen\player_play.png" />
+    <Resource Include="Images\Oxygen\player_start.png" />
+    <Resource Include="Images\Oxygen\player_stop.png" />
+    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen\128x128\actions\reload.png">
+      <Link>Images\Oxygen\reload.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\graphic design\Design.UI\Icons\_downloads\oxygen\128x128\actions\indent.png">
+      <Link>Images\Oxygen\indent.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\graphic design\Design.UI\Icons\_downloads\oxygen\128x128\actions\unindent.png">
+      <Link>Images\Oxygen\unindent.png</Link>
+    </Resource>
+    <Resource Include="Images\bolt16.png" />
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\address-book-new.png">
+      <Link>Images\Oxygen\address-book-new.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\application-exit.png">
+      <Link>Images\Oxygen\application-exit.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\appointment-new.png">
+      <Link>Images\Oxygen\appointment-new.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\bookmark-new.png">
+      <Link>Images\Oxygen\bookmark-new.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\call-start.png">
+      <Link>Images\Oxygen\call-start.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\call-stop.png">
+      <Link>Images\Oxygen\call-stop.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\configure.png">
+      <Link>Images\Oxygen\configure.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\contact-new.png">
+      <Link>Images\Oxygen\contact-new.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\continue-data-project.png">
+      <Link>Images\Oxygen\continue-data-project.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\dashboard-show.png">
+      <Link>Images\Oxygen\dashboard-show.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\dialog-ok-apply.png">
+      <Link>Images\Oxygen\dialog-ok-apply.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\dialog-ok.png">
+      <Link>Images\Oxygen\dialog-ok.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\document-edit.png">
+      <Link>Images\Oxygen\document-edit.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\document-preview-archive.png">
+      <Link>Images\Oxygen\document-preview-archive.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\document-preview.png">
+      <Link>Images\Oxygen\document-preview.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\edit-bomb.png">
+      <Link>Images\Oxygen\edit-bomb.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\edit-find.png">
+      <Link>Images\Oxygen\edit-find.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-bottom.png">
+      <Link>Images\Oxygen\go-bottom.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-down.png">
+      <Link>Images\Oxygen\go-down.png</Link>
+    </Resource>
+    <None Include="app.config" />
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-first-view-page.png">
+      <Link>Images\Oxygen\go-first-view-page.png</Link>
+    </None>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-first.png">
+      <Link>Images\Oxygen\go-first.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-last-view-page.png">
+      <Link>Images\Oxygen\go-last-view-page.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-last.png">
+      <Link>Images\Oxygen\go-last.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-next-view-page.png">
+      <Link>Images\Oxygen\go-next-view-page.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-next.png">
+      <Link>Images\Oxygen\go-next.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-previous-view-page.png">
+      <Link>Images\Oxygen\go-previous-view-page.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-previous.png">
+      <Link>Images\Oxygen\go-previous.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-top.png">
+      <Link>Images\Oxygen\go-top.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-up.png">
+      <Link>Images\Oxygen\go-up.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\im-user.png">
+      <Link>Images\Oxygen\im-user.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\list-remove.png">
+      <Link>Images\Oxygen\list-remove.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\mail-send.png">
+      <Link>Images\Oxygen\mail-send.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\svn-commit.png">
+      <Link>Images\Oxygen\svn-commit.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\svn-update.png">
+      <Link>Images\Oxygen\svn-update.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-lock-screen.png">
+      <Link>Images\Oxygen\system-lock-screen.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-log-out.png">
+      <Link>Images\Oxygen\system-log-out.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-reboot.png">
+      <Link>Images\Oxygen\system-reboot.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-search.png">
+      <Link>Images\Oxygen\system-search.png</Link>
+    </Resource>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-shutdown.png">
+      <Link>Images\Oxygen\system-shutdown.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-suspend-hibernate.png">
+      <Link>Images\Oxygen\system-suspend-hibernate.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-suspend.png">
+      <Link>Images\Oxygen\system-suspend.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-switch-user.png">
+      <Link>Images\Oxygen\system-switch-user.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-media-optical-copy.png">
+      <Link>Images\Oxygen\tools-media-optical-copy.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-media-optical-format.png">
+      <Link>Images\Oxygen\tools-media-optical-format.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-report-bug.png">
+      <Link>Images\Oxygen\tools-report-bug.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-wizard.png">
+      <Link>Images\Oxygen\tools-wizard.png</Link>
+    </None>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\transform-scale.png">
+      <Link>Images\Oxygen\transform-scale.png</Link>
+    </None>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\zoom-fit-best.png">
+      <Link>Images\Oxygen\zoom-fit-best.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\zoom-fit-height.png">
+      <Link>Images\Oxygen\zoom-fit-height.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\zoom-fit-width.png">
+      <Link>Images\Oxygen\zoom-fit-width.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\graphic design\Design.UI\Icons\_downloads\oxygen\128x128\apps\kexi.png">
+      <Link>Images\Oxygen\kexi.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\accessories-calculator.png">
+      <Link>Images\Oxygen\accessories-calculator.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\accessories-dictionary.png">
+      <Link>Images\Oxygen\accessories-dictionary.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\qelectrotech.png">
+      <Link>Images\Oxygen\qelectrotech.png</Link>
+    </Resource>
+    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\strigi.png">
+      <Link>Images\Oxygen\strigi.png</Link>
+    </None>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\yakuake.png">
+      <Link>Images\Oxygen\yakuake.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\places\network-server-database.png">
+      <Link>Images\Oxygen\network-server-database.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\places\network-workgroup.png">
+      <Link>Images\Oxygen\network-workgroup.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\places\repository.png">
+      <Link>Images\Oxygen\repository.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\places\server-database.png">
+      <Link>Images\Oxygen\server-database.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\field-lighter.png">
+      <Link>Images\field-lighter.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\asm.png">
+      <Link>Images\asm.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\blue-diamond.png">
+      <Link>Images\blue-diamond.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\box-diamond.png">
+      <Link>Images\box-diamond.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxB0.png">
+      <Link>Images\boxB0.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxB012.png">
+      <Link>Images\boxB012.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxC.png">
+      <Link>Images\boxC.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxG.png">
+      <Link>Images\boxG.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxGold.png">
+      <Link>Images\boxGold.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxGray.png">
+      <Link>Images\boxGray.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxM.png">
+      <Link>Images\boxM.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxOrange.png">
+      <Link>Images\boxOrange.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxR.png">
+      <Link>Images\boxR.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\boxY.png">
+      <Link>Images\boxY.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\box_TPL.png">
+      <Link>Images\box_TPL.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\class-object-ymc.png">
+      <Link>Images\class-object-ymc.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\class-object-yrb.png">
+      <Link>Images\class-object-yrb.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\class-old.png">
+      <Link>Images\class-old.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\curly-right.png">
+      <Link>Images\curly-right.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\enumeration.png">
+      <Link>Images\enumeration.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\field.png">
+      <Link>Images\field.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\fugue-folder-assemblies.png">
+      <Link>Images\fugue-folder-assemblies.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\fx_text0.png">
+      <Link>Images\fx_text0.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\methodC.png">
+      <Link>Images\methodC.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\methodG.png">
+      <Link>Images\methodG.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\methodM.png">
+      <Link>Images\methodM.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\methodMx.png">
+      <Link>Images\methodMx.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\page_note.png">
+      <Link>Images\page_note.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\page_red.png">
+      <Link>Images\page_red.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\page_white.png">
+      <Link>Images\page_white.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\page_white_cs.png">
+      <Link>Images\page_white_cs.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\page_white_vb.png">
+      <Link>Images\page_white_vb.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\proj_cs.png">
+      <Link>Images\proj_cs.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\proj_vb.png">
+      <Link>Images\proj_vb.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\pubclass.gif">
+      <Link>Images\pubclass.gif</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\pubenumeration.gif">
+      <Link>Images\pubenumeration.gif</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\pubinterface.gif">
+      <Link>Images\pubinterface.gif</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\rect5072.png">
+      <Link>Images\rect5072.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\refAssembly.png">
+      <Link>Images\refAssembly.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\SVG-Png-Icon Library\ref_table.png">
+      <Link>Images\ref_table.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\database.png">
+      <Link>Images\database.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\disk-return-black.png">
+      <Link>Images\Fugue\disk-return-black.png</Link>
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\table.png">
+      <Link>Images\table.png</Link>
+    </Resource>
+    <Resource Include="Images\Bolt32.png" />
+    <Resource Include="Images\bolt.png" />
+    <Resource Include="Images\Oxygen\application_x_desktop.png" />
+    <Resource Include="Images\Oxygen\dialog-password.png" />
+    <Resource Include="Images\template.png" />
+    <Resource Include="Images\rect.png" />
+    <Resource Include="Images\Oxygen\preferences_plugin.png" />
+    <Resource Include="Images\Oxygen\preferences_plugin16.png" />
+    <Resource Include="Images\Oxygen\application_exit.png" />
+    <Resource Include="Images\Oxygen\1downarrow.png" />
+    <Resource Include="Images\Oxygen\1leftarrow.png" />
+    <Resource Include="Images\Oxygen\1rightarrow.png" />
+    <Resource Include="Images\Oxygen\1uparrow.png" />
+    <Resource Include="Images\Oxygen\2downarrow.png" />
+    <Resource Include="Images\Oxygen\2leftarrow.png" />
+    <Resource Include="Images\Oxygen\2rightarrow.png" />
+    <Resource Include="Images\Oxygen\2uparrow.png" />
+    <Resource Include="Images\Oxygen\accessories_dictionary.png" />
+    <Resource Include="Images\Oxygen\add.png" />
+    <Resource Include="Images\Oxygen\document_decrypt.png" />
+    <Resource Include="Images\Oxygen\document_encrypt.png" />
+    <Resource Include="Images\Oxygen\document_properties.png" />
+    <Resource Include="Images\Oxygen\document_save_all.png" />
+    <Resource Include="Images\Oxygen\preferences_plugin32.png" />
+    <Resource Include="Images\Oxygen\preferences_system.png" />
+    <Resource Include="Images\Oxygen\preferences_system_power_management.png" />
+    <Resource Include="Images\Oxygen\preferences_desktop_notification_bell.png" />
+    <Resource Include="Images\Oxygen\preferences_desktop_theme.png" />
+    <Resource Include="Images\Oxygen\preferences_other.png" />
+    <Resource Include="Images\Oxygen\fileclose.png" />
+    <Resource Include="Images\Oxygen\db.cfg.png" />
+    <Resource Include="Images\Oxygen\ark_view.png" />
+    <Resource Include="Images\Oxygen\attach.png" />
+    <Resource Include="Images\Oxygen\back.png" />
+    <Resource Include="Images\Oxygen\book.png" />
+    <Resource Include="Images\Oxygen\book2.png" />
+    <Resource Include="Images\Oxygen\configure_toolbars.png" />
+    <Resource Include="Images\Oxygen\contents.png" />
+    <Resource Include="Images\Oxygen\decrypted.png" />
+    <Resource Include="Images\Oxygen\dialog_ok.png" />
+    <Resource Include="Images\Oxygen\dialog_ok_apply.png" />
+    <Resource Include="Images\Oxygen\down.png" />
+    <Resource Include="Images\Oxygen\edit_add.png" />
+    <Resource Include="Images\Oxygen\edit_clear_history.png" />
+    <Resource Include="Images\Oxygen\edit_clear_list.png" />
+    <Resource Include="Images\Oxygen\editclear.png" />
+    <Resource Include="Images\Oxygen\editcopy.png" />
+    <Resource Include="Images\Oxygen\editcut.png" />
+    <Resource Include="Images\Oxygen\editdelete.png" />
+    <Resource Include="Images\Oxygen\editinput.png" />
+    <Resource Include="Images\Oxygen\editpaste.png" />
+    <Resource Include="Images\Oxygen\exit.png" />
+    <Resource Include="Images\Oxygen\favorites.png" />
+    <Resource Include="Images\Oxygen\fileimport.png" />
+    <Resource Include="Images\Oxygen\filenew.png" />
+    <Resource Include="Images\Oxygen\filesave.png" />
+    <Resource Include="Images\Oxygen\filesaveas.png" />
+    <Resource Include="Images\Oxygen\file_export.png" />
+    <Resource Include="Images\Oxygen\go_next_rtl.png" />
+    <Resource Include="Images\Oxygen\go_previous_rtl.png" />
+    <Resource Include="Images\Oxygen\image.png" />
+    <Resource Include="Images\Oxygen\note.png" />
+    <Resource Include="Images\Oxygen\ok.png" />
+    <Resource Include="Images\sledge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>
