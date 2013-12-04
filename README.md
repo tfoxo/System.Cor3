@@ -16,6 +16,13 @@ For dependency licensing information, consult the project directory and/or the L
 
 ## LOG
 
+20131204 - REVISION 129
+
+- Added Generator (which depends on the following libs also added)
+- Added and Modified Cor3.Parsers
+- Added Cor3.Stock (a broken version needing fixing)
+- Added `/projects/integrating.sln` : changes that might break a good compile will remain here until all compiles well.
+
 20131116 - REVISION 113
 
 - Added Source-Console/[NormalizePathTool] Project
