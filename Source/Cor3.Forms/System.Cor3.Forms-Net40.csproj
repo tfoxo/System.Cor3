@@ -7,10 +7,10 @@
     <OutputType>Library</OutputType>
     <RootNamespace>System.Cor3.Forms</RootNamespace>
     <AssemblyName>System.Cor3.Forms</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\cor3.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Cor3.Core\cor3.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
@@ -38,6 +38,7 @@
     <NoWin32Manifest>False</NoWin32Manifest>
     <IntermediateOutputPath>obj\Net40\$(Configuration)\</IntermediateOutputPath>
     <WarningLevel>4</WarningLevel>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>false</DebugSymbols>

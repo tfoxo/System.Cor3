@@ -5,8 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\oIo\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>cor3.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
@@ -18,53 +17,38 @@
     <AssemblyName>System.Cor3</AssemblyName>
     <OutputType>Library</OutputType>
     <NoWin32Manifest>False</NoWin32Manifest>
-    <IntermediateOutputPath>obj\Net40\$(Configuration)\</IntermediateOutputPath>
+    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DebugType>Full</DebugType>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
     <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <Optimize>False</Optimize>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <DefineConstants>DEBUG;TRACE;CONSOLE</DefineConstants>
-    <DocumentationFile>bin\Debug\System.Cor3.xml</DocumentationFile>
-    <BaseIntermediateOutputPath>obj\Net40\</BaseIntermediateOutputPath>
-    <StartAction>Project</StartAction>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <Optimize>True</Optimize>
+    <Optimize>False</Optimize>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <DefineConstants>TRACE</DefineConstants>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>Full</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Net40\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>None</DebugType>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
-    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <BaseAddress>4194304</BaseAddress>
     <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <FileAlignment>4096</FileAlignment>
-    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core">
-      <HintPath>C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll</HintPath>
-      <Private>False</Private>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -85,6 +69,14 @@
     <Compile Include="Drawing\McMaster.cs" />
     <Compile Include="Drawing\Metrics.cs" />
     <Compile Include="Drawing\ScaffoldCalculator.cs" />
+    <None Include="Include\ClipboardMonitorService.cs" />
+    <None Include="Include\Disconnecter.cs" />
+    <None Include="Include\GetSignTool_PublicKey_BuildTask.cs" />
+    <None Include="Include\quickbuildtool.exe.cs" />
+    <None Include="Include\System.Win32.Gdi32.cs" />
+    <None Include="Include\TextEditorUtil.cs" />
+    <None Include="Include\UriExtensions.cs" />
+    <None Include="Include\UriHacks.cs" />
     <Compile Include="Internals\ViewPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\GAsm.cs" />
@@ -175,7 +167,6 @@
     <Compile Include="System\ParamaterlessAction.cs" />
     <Compile Include="System\Paths.cs" />
     <Compile Include="System\Reshelp.cs" />
-    <Compile Include="System\SerializableClass.cs" />
     <Compile Include="System\Status.cs" />
     <Compile Include="System\StringByteExtension.cs" />
     <Compile Include="System\StringHelper.cs" />
@@ -187,13 +178,6 @@
     <Compile Include="System\introvert.cs" />
     <Compile Include="System\ITableChecksum.cs" />
     <Compile Include="System\LoadSaveFlags.cs" />
-    <Compile Include="System\MRU.cs" />
-    <Compile Include="System\MRUClass.cs">
-      <DependentUpon>MRU.cs</DependentUpon>
-    </Compile>
-    <Compile Include="System\MRUItem.cs">
-      <DependentUpon>MRU.cs</DependentUpon>
-    </Compile>
     <Compile Include="System\object_manager.cs" />
     <Compile Include="System\Serial.cs" />
     <Compile Include="System\SerializableList.cs" />
@@ -214,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data.Filter" />
+    <Folder Include="Include" />
     <Folder Include="Tasks" />
     <Folder Include="System\CommandingClass" />
   </ItemGroup>

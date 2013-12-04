@@ -1614,12 +1614,24 @@ namespace FeedTool {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to     &lt;object width=&quot;100%&quot; height=&quot;420&quot;&gt;
+		///   Looks up a localized string similar to     &lt;object width=&quot;100%&quot; height=&quot;420&quot; id=&quot;movie&quot; class=&quot;mov420&quot;&gt;
 		///      &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot;&gt;&lt;/param&gt;
 		///      &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;
 		///      &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;
-		///      &lt;embed src=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot; width=&quot;100%&quot; height=&quot;420&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;
-		///    &lt;/object&gt;.
+		///      &lt;embed src=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot; width=&quot;100%&quot; height=&quot;420&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt; [rest of string was truncated]&quot;;.
+		/// </summary>
+		internal static string Flash_Object_Old2 {
+			get {
+				return ResourceManager.GetString("Flash Object Old2", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to     &lt;object width=&quot;100%&quot; height=&quot;420&quot; id=&quot;movie&quot; class=&quot;mov420&quot;&gt;
+		///      &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;
+		///      &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;
+		///      &lt;embed src=&quot;http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0&quot; width=&quot;100%&quot; height=&quot;420&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt; [rest of string was truncated]&quot;;.
 		/// </summary>
 		internal static string Flash_Object_WIDTHx420 {
 			get {
@@ -1628,15 +1640,15 @@ namespace FeedTool {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to     &lt;style&gt;
-		///body,
-		///p,
-		///h2,
-		///pre, pre &gt; code  { font-family: &apos;Segoe UI&apos;; }
-		///pre &gt; code  { font-size: 11pt; }
-		///h2 {font-family: &apos;Segoe UI Light&apos;;}
-		///body { background-color: white; }
-		///    &lt;/style&gt;.
+		///   Looks up a localized string similar to 
+		///@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&amp;subset=latin-ext,cyrillic,latin,cyrillic-ext);
+		///@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&amp;subset=latin-ext,cyrillic,latin,cyrillic-ext);
+		///      body, p, h2, pre, pre &gt; code  { font-family: &apos;PT Serif&apos;, &apos;Segoe UI&apos;; }
+		///      pre &gt; code  { font-size: 11pt; }
+		///      h2 {font-family: &apos;PT Serif&apos;, &apos;Segoe UI Light&apos;;}
+		///      body { background-color: white; }
+		///      /**
+		///       * rule [rest of string was truncated]&quot;;.
 		/// </summary>
 		internal static string html_css {
 			get {
@@ -1645,12 +1657,34 @@ namespace FeedTool {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to 
+		///    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+		///    &lt;script language=&apos;javascript&apos;&gt;
+		///      $(document).ready(function(){
+		///        $(&apos;li#cf1&apos;).click(function(){ changeStyle(&quot;format-code&quot;); });
+		///        $(&apos;li#cf2&apos;).click(function(){ changeStyle(&quot;format-mode&quot;); });
+		///        $(&apos;li#cf3&apos;).click(function(){ changeStyle(&quot;code-format&quot;); });
+		///      });
+		///      function changeStyle(nam) { $(&quot;section#content&quot;).removeAttr(&quot;class&quot;).attr(&quot;class&quot;,nam); }
+		///    &lt;/script&gt;.
+		/// </summary>
+		internal static string Html_Javascript {
+			get {
+				return ResourceManager.GetString("Html Javascript", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to &lt;html lang=&quot;en-US&quot;&gt;
 		///  &lt;head&gt;
 		///    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-		///    &lt;title&gt;@{title}&lt;/title&gt;@{style}
+		///    &lt;title&gt;@{title}&lt;/title&gt;
+		///    &lt;style&gt;@{style}
+		///    &lt;/style&gt;
+		///    &lt;!----&gt;@{html-javascript}
 		///  &lt;/head&gt;
-		///&lt;body&gt;@{content}&lt;/body&gt;
+		///  &lt;body&gt;@{content}
+		///  &lt;/body&gt;
 		///&lt;/html&gt;.
 		/// </summary>
 		internal static string Html_Master {
@@ -1680,16 +1714,13 @@ namespace FeedTool {
 		///@{title}
 		///&lt;/title&gt;
 		///&lt;style&gt;
-		///body,
-		///p,
-		///h2,
-		///pre { font-family: segoe ui; }
-		///h2 {font-family: &apos;Segoe UI Light&apos;;}
+		///body,p,h2,pre { font-family: segoe ui; }
+		///h2 { font-family: &apos;Segoe UI Light&apos;; }
 		///body { background-color: white; }
 		///&lt;/style&gt;
 		///&lt;/head&gt;
 		///&lt;body&gt;
-		///&lt;img src=&apos;@{img}&apos; align=&quot;right&quot; width=&quot;240&quot;&gt;
+		///&lt;img src=&quot;@{img}&quot; align=&quot;right&quot; width=&quot;240&quot;&gt;
 		///&lt;h2&gt;@{title}&lt;/h2&gt;
 		///&lt;tt&gt;@{links}&lt;/tt&gt;
 		///@{date}&lt;br/&gt;
@@ -1711,15 +1742,18 @@ namespace FeedTool {
 		///    &lt;h2&gt;@{title}&lt;/h2&gt;
 		///    &lt;tt&gt;@{links}&lt;/tt&gt;
 		///    @{date}&lt;br/&gt;
-		///    &lt;pre&gt;&lt;code&gt;@{description}
-		///    &lt;/code&gt;&lt;/pre&gt;
-		///    &lt;hr /&gt;
-		///    &lt;!--
-		///    &lt;h2&gt;IFrame-Embed&lt;/h2&gt;
-		///    &lt;iframe src=&apos;http://www.youtube.com/embed/@{video-id}&apos;&gt;&lt;/iframe&gt;
-		///    &lt;h2&gt;Object-Embed&lt;/h2&gt;
-		///    --&gt;@{flash-object}
-		///.
+		///    &lt;ul class=&apos;ulmenu&apos;&gt;
+		///       &lt;li id=&quot;cf1&quot;&gt;
+		///       CODE
+		///       &lt;/li&gt; &lt;li id=&quot;cf2&quot;&gt;
+		///       PRE/WRAP
+		///       &lt;/li&gt; &lt;li id=&quot;cf3&quot;&gt;
+		///       Show Method #3
+		///       &lt;/li&gt;
+		///    &lt;/ul&gt;
+		///    &lt;section id=&quot;content&quot; class=&quot;format-mode&quot;&gt;@{description}
+		///    &lt;/section&gt;
+		///    &lt;hr /&gt;@{flash-object}.
 		/// </summary>
 		internal static string Html_YouTube_Template {
 			get {

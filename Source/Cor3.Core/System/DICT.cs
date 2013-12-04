@@ -126,10 +126,12 @@ namespace System
 		{
 			MessageBox.Show(
 				string.Format(
-					Strings.DictionaryList_ErrorMessage,
+//					Strings.DictionaryList_ErrorMessage,
+					"Argument ‘{0}’ as allready been added to the Dictionary.",
 					parameter
 				),
-				Strings.DictionaryList_ErrorMessage_Title
+//				Strings.DictionaryList_ErrorMessage_Title
+				"DictionaryList Usage Error"
 			);
 		}
 		

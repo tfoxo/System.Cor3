@@ -20,6 +20,7 @@ namespace System.IO
 	/// we're intent on re-constructing.
 	/// </summary>
 	[XmlRootAttribute("MRU")]
+	[Obsolete]
 	public class MRU // revision 13
 		: SerializableList<MRUItem>
 	{

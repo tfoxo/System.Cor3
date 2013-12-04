@@ -61,7 +61,6 @@ namespace Mu
             
             foreach ( ProjectItem p in Settings.Project.Items )
             {
-                
                 if (!listtypes.Contains(p.ItemType)) continue;
                 
                 CsProjectItemInfo info = new CsProjectItemInfo(Settings.Project,p);

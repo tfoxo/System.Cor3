@@ -8,7 +8,6 @@ using System.Xml;
 
 namespace FeedTool.Forms
 {
-    // washington monument 666ft
     /// <summary>
     /// <para>
     /// I guess this is intended to parse (default) web-server directory
@@ -107,7 +106,8 @@ namespace FeedTool.Forms
 
             XmlDocument doc = new XmlDocument();
 
-            try {
+            try
+            {
                 doc.LoadXml(content);
                 foreach (XmlNode node in doc.FirstChild.SelectNodes(path))
                     Items.Add(node.InnerText);

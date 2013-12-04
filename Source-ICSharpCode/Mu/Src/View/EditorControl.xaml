@@ -64,11 +64,9 @@
 				</StackPanel>
 				<ComboBox Name="cbProjectF" Grid.Column="2"
 				          ToolTip="From"
-				          SelectionChanged="CbProjects_SelectionChanged"
 				          ItemsSource="{Binding Source={x:Static sdp:ProjectService.OpenSolution}, Path=Projects}" DisplayMemberPath="Name" />
 				<ComboBox Name="cbProjectT" Grid.Column="4"
 				          ToolTip="To"
-				          SelectionChanged="CbProjects_SelectionChanged"
 				          ItemsSource="{Binding Source={x:Static sdp:ProjectService.OpenSolution}, Path=Projects}" DisplayMemberPath="Name" />
 			</Grid>
 		</Grid>

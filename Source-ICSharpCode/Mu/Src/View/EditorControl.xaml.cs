@@ -23,9 +23,13 @@ namespace Mu.View
 			base.OnInitialized(e);
 			
 			try {
+				
 				this.cbProjectF.SelectedItem = ProjectService.CurrentProject;
 				this.cbProjectT.SelectedItem = ProjectService.CurrentProject;
 				this.tbRelativePath.Text = ProjectService.CurrentProject.Directory;
+				
+				cbProjectF.SelectionChanged += CbProjects_SelectionChanged;
+				cbProjectT.SelectionChanged += CbProjects_SelectionChanged;
 			}
 			catch {
 			}
@@ -54,12 +58,10 @@ namespace Mu.View
 					PreIncludePath = tbIncludeKey.Text,
 					Project        = selectedprojf,
 					IncludeLinks   = false,
-					ProjectPath    = selectedprojt.Directory
+					ProjectPath    = System.IO.Path.Combine(selectedprojt.Directory,selectedprojt.FileName)
 				});
-			this.editor.Text = @"    <ItemGroup>@{nodes}
-    </ItemGroup>"
+			this.editor.Text = Strings.ItemGroupElement
 				.Replace("@{nodes}",util.SerializeLinks());
-			util = null;
 		}
 		
 		void CbProjects_SelectionChanged(object sender, SelectionChangedEventArgs e)

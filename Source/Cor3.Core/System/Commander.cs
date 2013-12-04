@@ -139,7 +139,6 @@ namespace System
 		/// <summary>
 		/// this one is not ready yet.
 		/// <para>We're looking up values for a provided flag.</para>
-		/// 
 		/// </summary>
 		/// <param name="attributes"></param>
 		/// <returns></returns>

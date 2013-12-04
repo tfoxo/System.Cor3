@@ -57,6 +57,7 @@ namespace FeedTool
 					.Replace("@{style}",Resource.html_css)
 					.Replace("@{content}",Resource.Html_YouTube_Template)
 					.Replace("@{flash-object}",Resource.Flash_Object_WIDTHx420)
+					.Replace("@{html-javascript}",Resource.Html_Javascript)
 					
 					.Replace("@{links}",vidTest)
 					.Replace("@{link}",Link)

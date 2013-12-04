@@ -187,4 +187,9 @@
   <data name="DictionaryList_ErrorMessage" xml:space="preserve">
     <value>Argument ‘{0}’ as allready been added to the Dictionary.</value>
   </data>
+  <data name="ItemGroupElement" xml:space="preserve">
+    <value>    &lt;ItemGroup&gt;@{nodes}
+    &lt;/ItemGroup&gt;
+</value>
+  </data>
 </root>

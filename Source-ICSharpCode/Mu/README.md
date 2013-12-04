@@ -29,5 +29,6 @@ useful?
 
 - [normalize paths] such as a comparison of one project's path to another's (kind of like flash-develop does).
 - Target-Specific types (None, Resource, EmbeddedResource, Compile, etc...)
+- Include additional or more adequate version information in the Mu.addin-file.
 
 [normalize paths]: https://github.com/tfoxo/System.Cor3/wiki/Normalize-Paths-Task

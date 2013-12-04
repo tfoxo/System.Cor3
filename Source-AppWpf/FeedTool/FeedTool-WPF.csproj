@@ -21,6 +21,7 @@
     <FlashExtSrc>$(Cor3_Directory)\Source-Libs\Flash.External</FlashExtSrc>
     <ApplicationIcon>Build\Fringe\oxygen-refit-application-rss+xml.ico</ApplicationIcon>
     <NoWarn>618, 684</NoWarn>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -154,6 +155,8 @@
     <Compile Include="AppManager\AppWindowManager.cs">
       <Generator>MSBuild:Compile</Generator>
     </Compile>
+    <Compile Include="AppManager\ImageHelper.cs" />
+    <Compile Include="AppManager\ImageSourceLoader.cs" />
     <Compile Include="AppManager\MainControl.xaml.cs">
       <DependentUpon>MainControl.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -171,6 +174,33 @@
     <Compile Include="BrowserManager\FeedSchemeHandlerFactory.cs" />
     <Compile Include="BrowserManager\IBrowserView.cs" />
     <None Include="Build\Setup\compileSetup.proj" />
+    <Resource Include="Images\appbar.folder.ellipsis.png" />
+    <Resource Include="Images\appbar.folder.open.png" />
+    <Resource Include="Images\appbar.folder.png" />
+    <Resource Include="Images\appbar.home.png" />
+    <Resource Include="Images\appbar.navigate.next.png" />
+    <Resource Include="Images\appbar.navigate.previous.png" />
+    <Resource Include="Images\appbar.ribbon.png" />
+    <Resource Include="Images\appbar.rss" />
+    <Resource Include="Images\appbar.sort.alphabetical.ascending.png" />
+    <Resource Include="Images\appbar.sort.alphabetical.descending.png" />
+    <Resource Include="Images\appbar.sort.alphabetical.png" />
+    <Resource Include="Images\appbar.sort.png" />
+    <Resource Include="Images\appbar.sound.0" />
+    <Resource Include="Images\appbar.sound.1" />
+    <Resource Include="Images\appbar.sound.2" />
+    <Resource Include="Images\appbar.sound.3.png" />
+    <Resource Include="Images\appbar.sound.stereo.png" />
+    <Resource Include="Images\appbar.stream.png" />
+    <Resource Include="Images\appbar.text.size.png" />
+    <Resource Include="Images\appbar.tiles.nine.png" />
+    <Resource Include="Images\appbar.tiles.sixteen.png" />
+    <Resource Include="Images\appbar.tower.png" />
+    <Resource Include="Images\appbar.transit.hazard.png" />
+    <Resource Include="Images\appbar.warning.circle.png" />
+    <Resource Include="Images\appbar.warning.png" />
+    <Resource Include="Images\appbar.youtube.play.png" />
+    <Resource Include="Images\appbar.youtube.png" />
     <None Include="Properties\VersionInfo.base.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -369,6 +399,7 @@
     <Folder Include="BrowserManager" />
     <Folder Include="Build" />
     <Folder Include="Build\Setup" />
+    <Folder Include="Images" />
     <Folder Include="Source\Loaders" />
     <Folder Include="Styles" />
     <Folder Include="Resources" />

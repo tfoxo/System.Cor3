@@ -13,7 +13,6 @@ using System.Text;
 namespace System.Cor3.Parsers.Tools
 {
 
-
 	public class SimpleTemplateConverter : INotifyPropertyChanged
 	{
 		

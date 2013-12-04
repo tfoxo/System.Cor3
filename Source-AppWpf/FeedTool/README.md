@@ -11,6 +11,17 @@ New project picking up where the FeedTool (WinForms) left off.
 
 Target **Platform**: Windows Vista/7/8 (NET-v4.5/MSBuild-v5.0)
 
+Focal-Points (work-tasks)
+--------------------------
+
+- Roll out a pipe-service oriented API
+- Use CefSharp in stead of Embedded InternetExplorer (ActiveX)
+- A simple, modern-ui
+- Changable templates
+
+    - widget aided templates for reading?
+    - customizable templates for specific feeds?
+
 Features
 ------
 

@@ -30,7 +30,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-//using System.Cor3.Data.Map.Parser;
 using System.Data;
 using System.Xml.Serialization;
 

@@ -8,7 +8,6 @@ using System.Xml;
 
 namespace FeedTool.Forms
 {
-    // washington monument 666ft
     /// <summary>
     /// <para>
     /// I guess this is intended to parse (default) web-server directory

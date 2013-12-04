@@ -134,6 +134,17 @@ namespace System {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to     &lt;ItemGroup&gt;@{nodes}
+		///    &lt;/ItemGroup&gt;
+		///.
+		/// </summary>
+		public static string ItemGroupElement {
+			get {
+				return ResourceManager.GetString("ItemGroupElement", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to No Project!.
 		/// </summary>
 		public static string MsgNoProject {

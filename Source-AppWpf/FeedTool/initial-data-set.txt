@@ -1,8 +1,8 @@
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
-#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 
+dev|SD4|http://build.sharpdevelop.net/BuildArtefacts/Rss/For/SD4x
 dev|FFMPEG-GIT|http://git.videolan.org/?p=ffmpeg.git;a=rss
 
 radio|Astonisher 3|http://astonisher.wordpress.com/feed
@@ -16,7 +16,7 @@ radio|Astonisher 3|http://astonisher.wordpress.com/feed
 
 # my little blog
 local|tfw|http://vaio/b/feed/
-local|tfw.tfwxo.wordpress|http://tfwxo.wordpress.com/feed/
+local|tfwxo|http://tfwxo.wordpress.com/feed/
 #My Other Feed|http://vaio/p/feed/
 
 local|tfw.2nd Foundation|http://vaio/b/?feed=podcast&series=2ndFoundation
@@ -45,6 +45,7 @@ news|Suspicious0bservers|https://gdata.youtube.com/feeds/api/users/Suspicious0bs
 #######################################################################
 tech|GoogleTechTalks|https://gdata.youtube.com/feeds/api/users/GoogleTechTalks/uploads?max-results=50
 tech|Sharp Develop|http://community.sharpdevelop.net/blogs/MainFeed.aspx
+tech|blogs.oasis-open.org|http://blogs.oasis-open.org/rss.xml
 
 # EBOOK
 #######################################################################
@@ -106,6 +107,12 @@ sphere|Angel Lucci|http://angellucci.wordpress.com/feed/
 #######################################################################
 sphere|MrAstrotheology|https://gdata.youtube.com/feeds/api/users/MrAstrotheology/uploads?max-results=50
 sphere|TheSantosBonacciShow|https://gdata.youtube.com/feeds/api/users/TheSantosBonacciShow/uploads?max-results=50
+
+#######################################################################
+sphere|Solaris Blue-Raven(0)|https://www.youtube.com/feeds/api/users/Medusastorm001/uploads?max-results=50
+sphere|Solaris Blue-Raven(1)|http://gdata.youtube.com/feeds/base/users/Medusastorm001/uploads?alt=rss&v=2&orderby=published&max-results=50
+sphere|Solaris Blue-Raven(2)|http://gdata.youtube.com/feeds/base/users/Medusastorm001/uploads?alt=rss&orderby=published&max-results=50
+
 #######################################################################
 # the following channels are derived from (suggested by) MrAstrotheology
 #######################################################################

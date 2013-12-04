@@ -112,11 +112,11 @@
     <Compile Include="..\..\Source\Cor3.Core\System\Serial.cs">
       <Link>Include\Cor3\Serial.cs</Link>
     </Compile>
-    <Compile Include="..\..\Source\Cor3.Core\System\SerializableClass.cs">
-      <Link>Include\Cor3\SerializableClass.cs</Link>
-    </Compile>
     <Compile Include="..\..\Source\Cor3.Core\System\WTF.cs">
       <Link>Include\Cor3\WTF.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\Tasks\NormalizePathTool.cs">
+      <Link>NormalizePathTool.cs</Link>
     </Compile>
     <Compile Include="Src\Lib\CsProjectItemInfo.cs" />
     <Compile Include="Src\Lib\CsProjectItemSettings.cs" />
@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build" />
+    <Folder Include="Include" />
     <Folder Include="Include" />
     <Folder Include="Include\Cor3" />
     <Folder Include="Src\Lib" />
