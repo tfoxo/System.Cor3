@@ -138,24 +138,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Source\CascadingStyleSheets" />
-    <Folder Include="Source\Html" />
-    <Folder Include="Source\MarkdownSharp" />
-    <Folder Include="Source" />
-    <Folder Include="Source\ParseStrategy" />
-    <Folder Include="Source\Tools" />
+    <ProjectReference Include="..\Cor3.Core\System.Cor3-Net40.csproj">
+      <Project>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</Project>
+      <Name>System.Cor3-Net40</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cor3.Core\System.Cor3-Net40.csproj">
-      <Project>{4549918E-94E0-4911-BBBA-99838A215302}</Project>
-      <Name>System.Cor3-Net40</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

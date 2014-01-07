@@ -67,6 +67,149 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Oxygen\go-bottom.png" />
+    <Resource Include="Images\Oxygen\go-down.png" />
+    <Resource Include="Images\Oxygen\go-first-view-page.png" />
+    <Resource Include="Images\Oxygen\go-first.png" />
+    <Resource Include="Images\Oxygen\go-last-view-page.png" />
+    <Resource Include="Images\Oxygen\go-last.png" />
+    <Resource Include="Images\Oxygen\go-next-view-page.png" />
+    <Resource Include="Images\Oxygen\go-next.png" />
+    <Resource Include="Images\Oxygen\go-previous-view-page.png" />
+    <Resource Include="Images\Oxygen\go-previous.png" />
+    <Resource Include="Images\Oxygen\go-top.png" />
+    <Resource Include="Images\Oxygen\go-up.png" />
+    <Resource Include="Images\Oxygen\switchuser.png" />
+    <Resource Include="Images\Oxygen\system_lock_screen.png" />
+    <Resource Include="Images\Oxygen\system_log_out.png" />
+    <Resource Include="Images\Oxygen\system_restart.png" />
+    <Resource Include="Images\Oxygen\system_software_update.png" />
+    <Resource Include="Images\Oxygen\system_suspend.png" />
+    <Resource Include="Images\Oxygen\system_suspend_hibernate.png" />
+    <Resource Include="Images\Oxygen\system_switch_user.png" />
+    <Resource Include="Images\Oxygen\table.png" />
+    <Resource Include="Images\Oxygen\text_block.png" />
+    <Resource Include="Images\Oxygen\text_bold.png" />
+    <Resource Include="Images\Oxygen\text_center.png" />
+    <Resource Include="Images\Oxygen\text_csv.png" />
+    <Resource Include="Images\Oxygen\text_enriched.png" />
+    <Resource Include="Images\Oxygen\text_italic.png" />
+    <Resource Include="Images\Oxygen\text_right.png" />
+    <Resource Include="Images\Oxygen\text_strike.png" />
+    <Resource Include="Images\Oxygen\text_sub.png" />
+    <Resource Include="Images\Oxygen\text_super.png" />
+    <Resource Include="Images\Oxygen\text_under.png" />
+    <Resource Include="Images\Oxygen\text_x_bibtex.png" />
+    <Resource Include="Images\Oxygen\text_x_hex.png" />
+    <Resource Include="Images\Oxygen\todo.png" />
+    <Resource Include="Images\Oxygen\tool.png" />
+    <Resource Include="Images\Oxygen\tool2.png" />
+    <Resource Include="Images\Oxygen\tools_report_bug.png" />
+    <Resource Include="Images\Oxygen\tools_wizard.png" />
+    <Resource Include="Images\Oxygen\transform_move.png" />
+    <Resource Include="Images\Oxygen\transform_rotate.png" />
+    <Resource Include="Images\Oxygen\trash_empty.png" />
+    <Resource Include="Images\Oxygen\undo.png" />
+    <Resource Include="Images\Oxygen\unindent.png" />
+    <Resource Include="Images\Oxygen\up.png" />
+    <Resource Include="Images\Oxygen\user.png" />
+    <Resource Include="Images\Oxygen\users.png" />
+    <Resource Include="Images\Oxygen\utilities_file_archiver.png" />
+    <Resource Include="Images\Oxygen\view_choose.png" />
+    <Resource Include="Images\Oxygen\view_close.png" />
+    <Resource Include="Images\Oxygen\view_detailed.png" />
+    <Resource Include="Images\Oxygen\contact-new.png" />
+    <Resource Include="Images\Oxygen\continue-data-project.png" />
+    <Resource Include="Images\Oxygen\dashboard-show.png" />
+    <Resource Include="Images\Oxygen\dialog-ok-apply.png" />
+    <Resource Include="Images\Oxygen\dialog-ok.png" />
+    <Resource Include="Images\Oxygen\document-edit.png" />
+    <Resource Include="Images\Oxygen\document-preview-archive.png" />
+    <Resource Include="Images\Oxygen\document-preview.png" />
+    <Resource Include="Images\Oxygen\document-save-all.png" />
+    <Resource Include="Images\Oxygen\document-save-as.png" />
+    <Resource Include="Images\Oxygen\document-save.png" />
+    <Resource Include="Images\Oxygen\document_open.png" />
+    <Resource Include="Images\Oxygen\edit_clear_locationbar.png" />
+    <Resource Include="Images\Oxygen\edit_clear_locationbar_rtl.png" />
+    <Resource Include="Images\Oxygen\edit_delete_mail.png" />
+    <Resource Include="Images\Oxygen\edit_find_next.png" />
+    <Resource Include="Images\Oxygen\edit_find_previous.png" />
+    <Resource Include="Images\Oxygen\fileprint.png" />
+    <Resource Include="Images\Oxygen\filequickprint.png" />
+    <Resource Include="Images\Oxygen\fill.png" />
+    <Resource Include="Images\Oxygen\filter.png" />
+    <Resource Include="Images\Oxygen\find.png" />
+    <Resource Include="Images\Oxygen\firefox.png" />
+    <Resource Include="Images\Oxygen\fontsizedown_koffice.png" />
+    <Resource Include="Images\Oxygen\fontsizeup_koffice.png" />
+    <Resource Include="Images\Oxygen\format_font_size_less.png" />
+    <Resource Include="Images\Oxygen\format_font_size_more.png" />
+    <Resource Include="Images\Oxygen\format_line_spacing_double.png" />
+    <Resource Include="Images\Oxygen\format_line_spacing_normal.png" />
+    <Resource Include="Images\Oxygen\format_line_spacing_triple.png" />
+    <Resource Include="Images\Oxygen\format_list_ordered.png" />
+    <Resource Include="Images\Oxygen\format_list_unordered.png" />
+    <Resource Include="Images\Oxygen\format_text_direction_ltr.png" />
+    <Resource Include="Images\Oxygen\format_text_direction_rtl.png" />
+    <Resource Include="Images\Oxygen\format_text_subscript.png" />
+    <Resource Include="Images\Oxygen\format_text_superscript.png" />
+    <Resource Include="Images\Oxygen\forward.png" />
+    <Resource Include="Images\Oxygen\games_config_board.png" />
+    <Resource Include="Images\Oxygen\indent.png" />
+    <Resource Include="Images\Oxygen\insert_table.png" />
+    <Resource Include="Images\Oxygen\kexi.png" />
+    <Resource Include="Images\Oxygen\knotes.png" />
+    <Resource Include="Images\Oxygen\knotes_delete_knotes.png" />
+    <Resource Include="Images\Oxygen\ktip.png" />
+    <Resource Include="Images\Oxygen\make_kdevelop.png" />
+    <Resource Include="Images\Oxygen\media_equalizer.png" />
+    <Resource Include="Images\Oxygen\media_playlist.png" />
+    <Resource Include="Images\Oxygen\media_playlist_clear.png" />
+    <Resource Include="Images\Oxygen\media_playlist_refresh.png" />
+    <Resource Include="Images\Oxygen\media_podcast.png" />
+    <Resource Include="Images\Oxygen\media_scripts.png" />
+    <Resource Include="Images\Oxygen\note2.png" />
+    <Resource Include="Images\Oxygen\package_engineering.png" />
+    <Resource Include="Images\Oxygen\package_internet.png" />
+    <Resource Include="Images\Oxygen\paintbrush.png" />
+    <Resource Include="Images\Oxygen\paperbag.png" />
+    <Resource Include="Images\Oxygen\pdf.png" />
+    <Resource Include="Images\Oxygen\pencil2.png" />
+    <Resource Include="Images\Oxygen\plasmagik.png" />
+    <Resource Include="Images\Oxygen\player_eject.png" />
+    <Resource Include="Images\Oxygen\player_end.png" />
+    <Resource Include="Images\Oxygen\player_fwd.png" />
+    <Resource Include="Images\Oxygen\player_record.png" />
+    <Resource Include="Images\Oxygen\player_rew.png" />
+    <Resource Include="Images\Oxygen\plus.png" />
+    <Resource Include="Images\Oxygen\redo.png" />
+    <Resource Include="Images\Oxygen\reload.png" />
+    <Resource Include="Images\Oxygen\rotate.png" />
+    <Resource Include="Images\Oxygen\rotate_ccw.png" />
+    <Resource Include="Images\Oxygen\rotate_cw.png" />
+    <Resource Include="Images\Oxygen\ruler.png" />
+    <Resource Include="Images\Oxygen\run_build.png" />
+    <Resource Include="Images\Oxygen\run_build_file.png" />
+    <Resource Include="Images\Oxygen\services.png" />
+    <Resource Include="Images\Oxygen\spacedouble_koffice.png" />
+    <Resource Include="Images\Oxygen\spacesimple_koffice.png" />
+    <Resource Include="Images\Oxygen\spacetriple_koffice.png" />
+    <Resource Include="Images\Oxygen\stop.png" />
+    <Resource Include="Images\Oxygen\strigi.png" />
+    <Resource Include="Images\Oxygen\configure.png" />
+    <Resource Include="Images\Oxygen\chronometer.png" />
+    <Resource Include="Images\Oxygen\colorpicker.png" />
+    <Resource Include="Images\Oxygen\color_fill.png" />
+    <Resource Include="Images\Oxygen\color_line.png" />
+    <Resource Include="Images\Oxygen\accessories-dictionary.png" />
+    <Resource Include="Images\Oxygen\address-book-new.png" />
+    <Resource Include="Images\Oxygen\application-exit.png" />
+    <Resource Include="Images\Oxygen\appointment-new.png" />
+    <Resource Include="Images\Oxygen\bookmark-new.png" />
+    <Resource Include="Images\Oxygen\call-start.png" />
+    <Resource Include="Images\Oxygen\call-stop.png" />
+    <Resource Include="Images\Oxygen\accessories-calculator.png" />
     <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\fugue-icons\icons\cross-button.png">
       <Link>Images\Fugue\cross-button.png</Link>
     </Resource>
@@ -88,12 +231,6 @@
     <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\48x48\categories\system-help.png">
       <Link>Images\Oxygen\system-help.png</Link>
     </Resource>
-    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen\32x32\actions\document_open.png">
-      <Link>Images\Oxygen\document_open.png</Link>
-    </Resource>
-    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\32x32\actions\document-save.png">
-      <Link>Images\Oxygen\document-save.png</Link>
-    </Resource>
     <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\32x32\actions\view-refresh.png">
       <Link>Images\Oxygen\view-refresh.png</Link>
     </Resource>
@@ -101,104 +238,14 @@
     <Resource Include="Images\Oxygen\player_play.png" />
     <Resource Include="Images\Oxygen\player_start.png" />
     <Resource Include="Images\Oxygen\player_stop.png" />
-    <Resource Include="..\..\..\..\..\..\..\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen\128x128\actions\reload.png">
-      <Link>Images\Oxygen\reload.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\graphic design\Design.UI\Icons\_downloads\oxygen\128x128\actions\indent.png">
-      <Link>Images\Oxygen\indent.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\graphic design\Design.UI\Icons\_downloads\oxygen\128x128\actions\unindent.png">
-      <Link>Images\Oxygen\unindent.png</Link>
-    </Resource>
     <Resource Include="Images\bolt16.png" />
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\address-book-new.png">
-      <Link>Images\Oxygen\address-book-new.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\application-exit.png">
-      <Link>Images\Oxygen\application-exit.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\appointment-new.png">
-      <Link>Images\Oxygen\appointment-new.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\bookmark-new.png">
-      <Link>Images\Oxygen\bookmark-new.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\call-start.png">
-      <Link>Images\Oxygen\call-start.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\call-stop.png">
-      <Link>Images\Oxygen\call-stop.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\configure.png">
-      <Link>Images\Oxygen\configure.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\contact-new.png">
-      <Link>Images\Oxygen\contact-new.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\continue-data-project.png">
-      <Link>Images\Oxygen\continue-data-project.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\dashboard-show.png">
-      <Link>Images\Oxygen\dashboard-show.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\dialog-ok-apply.png">
-      <Link>Images\Oxygen\dialog-ok-apply.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\dialog-ok.png">
-      <Link>Images\Oxygen\dialog-ok.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\document-edit.png">
-      <Link>Images\Oxygen\document-edit.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\document-preview-archive.png">
-      <Link>Images\Oxygen\document-preview-archive.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\document-preview.png">
-      <Link>Images\Oxygen\document-preview.png</Link>
-    </Resource>
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\edit-bomb.png">
       <Link>Images\Oxygen\edit-bomb.png</Link>
     </Resource>
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\edit-find.png">
       <Link>Images\Oxygen\edit-find.png</Link>
     </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-bottom.png">
-      <Link>Images\Oxygen\go-bottom.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-down.png">
-      <Link>Images\Oxygen\go-down.png</Link>
-    </Resource>
-    <None Include="app.config" />
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-first-view-page.png">
-      <Link>Images\Oxygen\go-first-view-page.png</Link>
-    </None>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-first.png">
-      <Link>Images\Oxygen\go-first.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-last-view-page.png">
-      <Link>Images\Oxygen\go-last-view-page.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-last.png">
-      <Link>Images\Oxygen\go-last.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-next-view-page.png">
-      <Link>Images\Oxygen\go-next-view-page.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-next.png">
-      <Link>Images\Oxygen\go-next.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-previous-view-page.png">
-      <Link>Images\Oxygen\go-previous-view-page.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-previous.png">
-      <Link>Images\Oxygen\go-previous.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-top.png">
-      <Link>Images\Oxygen\go-top.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\go-up.png">
-      <Link>Images\Oxygen\go-up.png</Link>
-    </Resource>
+    <Resource Include="app.config" />
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\im-user.png">
       <Link>Images\Oxygen\im-user.png</Link>
     </Resource>
@@ -226,33 +273,33 @@
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-search.png">
       <Link>Images\Oxygen\system-search.png</Link>
     </Resource>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-shutdown.png">
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-shutdown.png">
       <Link>Images\Oxygen\system-shutdown.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-suspend-hibernate.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-suspend-hibernate.png">
       <Link>Images\Oxygen\system-suspend-hibernate.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-suspend.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-suspend.png">
       <Link>Images\Oxygen\system-suspend.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-switch-user.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\system-switch-user.png">
       <Link>Images\Oxygen\system-switch-user.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-media-optical-copy.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-media-optical-copy.png">
       <Link>Images\Oxygen\tools-media-optical-copy.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-media-optical-format.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-media-optical-format.png">
       <Link>Images\Oxygen\tools-media-optical-format.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-report-bug.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-report-bug.png">
       <Link>Images\Oxygen\tools-report-bug.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-wizard.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\tools-wizard.png">
       <Link>Images\Oxygen\tools-wizard.png</Link>
-    </None>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\transform-scale.png">
+    </Resource>
+    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\transform-scale.png">
       <Link>Images\Oxygen\transform-scale.png</Link>
-    </None>
+    </Resource>
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\zoom-fit-best.png">
       <Link>Images\Oxygen\zoom-fit-best.png</Link>
     </Resource>
@@ -262,21 +309,9 @@
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\128x128\actions\zoom-fit-width.png">
       <Link>Images\Oxygen\zoom-fit-width.png</Link>
     </Resource>
-    <Resource Include="D:\Multimedia\graphic design\Design.UI\Icons\_downloads\oxygen\128x128\apps\kexi.png">
-      <Link>Images\Oxygen\kexi.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\accessories-calculator.png">
-      <Link>Images\Oxygen\accessories-calculator.png</Link>
-    </Resource>
-    <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\accessories-dictionary.png">
-      <Link>Images\Oxygen\accessories-dictionary.png</Link>
-    </Resource>
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\qelectrotech.png">
       <Link>Images\Oxygen\qelectrotech.png</Link>
     </Resource>
-    <None Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\strigi.png">
-      <Link>Images\Oxygen\strigi.png</Link>
-    </None>
     <Resource Include="D:\Multimedia\Graphic Design\Design.UI\Icons\_downloads\oxygen-icons-4.7.0\256x256\apps\yakuake.png">
       <Link>Images\Oxygen\yakuake.png</Link>
     </Resource>

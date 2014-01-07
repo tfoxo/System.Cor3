@@ -308,18 +308,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cor3.Core\System.Cor3-Net40.csproj">
-      <Project>{4549918E-94E0-4911-BBBA-99838A215302}</Project>
-      <Name>System.Cor3-Net40</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Documents\Fully themed Windows Vista Controls.htm" />
     <None Include="Documents\Windows 7 TreeView and ListView « Ira Lukhezo%27s blog.htm" />
     <None Include="Documents\Windows XP Visual Styles for Windows Forms - CodeProject.htm" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Design" />
-    <Folder Include="Forms\Components" />
+    <Folder Include="Forms\Components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cor3.Core\System.Cor3-Net40.csproj">
+      <Project>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</Project>
+      <Name>System.Cor3-Net40</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

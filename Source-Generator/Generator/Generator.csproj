@@ -196,8 +196,12 @@
     <Compile Include="Controls\Forms\CombineTableDocument.Designer.cs">
       <DependentUpon>CombineTableDocument.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Forms\CombineTablesViewForm.cs" />
-    <Compile Include="Controls\Forms\TableFieldSelector.cs" />
+    <Compile Include="Controls\Forms\CombineTablesViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Forms\TableFieldSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\Forms\TableFieldSelector.Designer.cs">
       <DependentUpon>TableFieldSelector.cs</DependentUpon>
     </Compile>
@@ -253,7 +257,9 @@
       <DependentUpon>WindowRibbon.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="System\BgHelper.cs" />
+    <Compile Include="System\BgHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="System\ImageConverter.cs" />
     <Compile Include="Strings.Designer.cs">
       <DependentUpon>Strings.resx</DependentUpon>
@@ -285,16 +291,10 @@
     <ApplicationDefinition Include="App.xaml" />
     <Page Include="Controls\AvalonEditor\Editor.xaml" />
     <Page Include="Controls\Pages\DataEditor.xaml" />
-    <Page Include="Controls\Pages\FieldView.xaml">
-      <DependentUpon>DataEditor.xaml</DependentUpon>
-    </Page>
+    <Page Include="Controls\Pages\FieldView.xaml" />
     <Page Include="Controls\Pages\SqlEditor.xaml" />
-    <Page Include="Controls\Pages\TableView.xaml">
-      <DependentUpon>DataEditor.xaml</DependentUpon>
-    </Page>
-    <Page Include="Controls\Pages\TemplateDetail.xaml">
-      <DependentUpon>DataEditor.xaml</DependentUpon>
-    </Page>
+    <Page Include="Controls\Pages\TableView.xaml" />
+    <Page Include="Controls\Pages\TemplateDetail.xaml" />
     <Page Include="Controls\Pages\TemplateEditor.xaml" />
     <Page Include="Controls\PopupThing.xaml" />
     <Page Include="Controls\Sidebar\SelectionPane.xaml" />
@@ -364,7 +364,7 @@
       <Name>AvalonDock</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Source\Cor3.Core\System.Cor3-Net40.csproj">
-      <Project>{4549918E-94E0-4911-BBBA-99838A215302}</Project>
+      <Project>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</Project>
       <Name>System.Cor3-Net40</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Source\Cor3.Data\System.Cor3.Data-Net40.csproj">
@@ -388,15 +388,6 @@
       <Name>Generator.Lib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\Generator" />
-    <Folder Include="Controls\AvalonEditor" />
-    <Folder Include="Controls\Forms" />
-    <Folder Include="Controls\Window" />
-    <Folder Include="Controls\Sidebar" />
-    <Folder Include="Controls\Pages" />
-    <Folder Include="System" />
-    <Folder Include="Properties\Resources" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Html YouTube Template" xml:space="preserve">
+    <value>
+    &lt;img src='@{img}' align="right" width="240"&gt;
+    &lt;h2&gt;@{title}&lt;/h2&gt;
+    &lt;tt&gt;@{links}&lt;/tt&gt;
+    @{date}&lt;br/&gt;
+    &lt;ul class='ulmenu'&gt;
+       &lt;li id="cf1"&gt;
+       CODE
+       &lt;/li&gt; &lt;li id="cf2"&gt;
+       PRE/WRAP
+       &lt;/li&gt; &lt;li id="cf3"&gt;
+       Show Method #3
+       &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;section id="content" class="format-mode"&gt;@{description}
+    &lt;/section&gt;
+    &lt;hr /&gt;@{flash-object}</value>
+  </data>
+  <data name="Html Rss Template" xml:space="preserve">
+    <value>
+&lt;!--&lt;img src='@{img}' align="right"&gt;--&gt;
+&lt;h2&gt;&lt;span style="float:right; font-size: 10px;"&gt;@{html-link}@{html-enclosure-break}@{html-enclosure}&lt;/span&gt;@{title}&lt;/h2&gt;
+@{date}&lt;br/&gt;
+&lt;!--&lt;tt&gt;&lt;/tt&gt;--&gt;
+&lt;div&gt;@{description}&lt;/div&gt;
+</value>
+  </data>
+  <data name="Sqlite Db Feeds" xml:space="preserve">
+    <value>feeds.sqlite</value>
+  </data>
+  <data name="Sqlite Db Create" xml:space="preserve">
+    <value>CREATE TABLE [feeds] (
+	[id]		INTEGER PRIMARY KEY AUTOINCREMENT,
+	[ddt]		DATETIME DEFAULT NULL,
+	[udt]		DATETIME DEFAULT NULL,
+	[title]		VARCHAR DEFAULT NULL,
+	[alt]		VARCHAR DEFAULT NULL,
+	[note]		VARCHAR DEFAULT NULL,
+	[url]		VARCHAR DEFAULT NULL,
+	[content]		VARCHAR DEFAULT NULL
+);</value>
+  </data>
+  <data name="Dic RssFeed" xml:space="preserve">
+    <value>title|/title
+pubDate|/pubDate
+link|/link
+enclosure|/enclosure/@url
+enclosure-length|/enclosure/@length
+enclosure-type|/enclosure/@type
+content|/content:encoded
+comments|/comments
+creator|/creator
+description|/description</value>
+  </data>
+  <data name="Dic YtFeed" xml:space="preserve">
+    <value>id|/xmlroot:id
+title|/xmlroot:title
+published|/xmlroot:published
+updated|/xmlroot:updated
+creator|/xmlroot:creator
+content|/xmlroot:content
+link|/xmlroot:link[@rel='self']/@href
+enclosure|/xmlroot:enclosure/@url
+img|/media:group/media:thumbnail[1]/@url</value>
+  </data>
+  <data name="Dic AtomFeed" xml:space="preserve">
+    <value>id|/id
+title|/title
+link-type|/link[@rel='self']/@type
+link-href|/link[@rel='self']/@href
+link-alt-type|/link[@rel='alternate']/@type
+link-alt-href|/link[@rel='alternate']/@href
+author-name|/author/name
+author-email|/author/email
+author-uri|/author/uri
+rights|/rights
+icon|/icon
+logo|/logo
+subtitle|/subtitle
+updated|/updated
+entry-id|/id
+entry-updated|/updated
+entry-link-rel|/link/@rel
+entry-link-type|/link/@type
+entry-link-href|/link/@href
+entry-title|/title
+entry-subtitle|/subtitle
+entry-summary|/summary</value>
+  </data>
+  <data name="Html Youtube Old Template" xml:space="preserve">
+    <value>&lt;html&gt;
+&lt;title&gt;
+@{title}
+&lt;/title&gt;
+&lt;style&gt;
+body,p,h2,pre { font-family: segoe ui; }
+h2 { font-family: 'Segoe UI Light'; }
+body { background-color: white; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;img src="@{img}" align="right" width="240"&gt;
+&lt;h2&gt;@{title}&lt;/h2&gt;
+&lt;tt&gt;@{links}&lt;/tt&gt;
+@{date}&lt;br/&gt;
+@{description}
+&lt;hr /&gt;
+&lt;iframe width="640" height="360" src="//www.youtube.com/embed/@{video-id}" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="Html Master" xml:space="preserve">
+    <value>&lt;html lang="en-US"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;@{title}&lt;/title&gt;
+    &lt;style&gt;@{style}
+    &lt;/style&gt;
+    &lt;!----&gt;@{html-javascript}
+  &lt;/head&gt;
+  &lt;body&gt;@{content}
+  &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="html css" xml:space="preserve">
+    <value>
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&amp;subset=latin-ext,cyrillic,latin,cyrillic-ext);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&amp;subset=latin-ext,cyrillic,latin,cyrillic-ext);
+      body, p, h2, pre, pre &gt; code  { font-family: 'PT Serif', 'Segoe UI'; }
+      pre &gt; code  { font-size: 11pt; }
+      h2 {font-family: 'PT Serif', 'Segoe UI Light';}
+      body { background-color: white; }
+      /**
+       * rules for ul-menu and other elements should take the 'modern' approach.
+       * the modern approach uses transparency a lot so in cef-sharp wpf, might
+       * pose some challenges.
+       */
+        ul.ulmenu {
+          /* #1ba1e2   or 27,161,226
+          */
+          font-size: 10pt;
+          display: inline-block;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        ul.ulmenu &gt; li
+        {
+          display: inline-block;
+          list-style: none;
+          margin: auto;
+          padding: 4px 12px ;
+          border: 1px solid rgb(170,170,170);
+          border: 1px solid rgba(170,170,170, 1.0);
+
+          cursor: pointer;
+        }
+        ul.ulmenu &gt; li:hover
+        {
+          background: rgb(200, 200, 200);
+          background: rgba(200, 200, 200, 1.0);
+        }
+        ul.ulmenu &gt; li:active
+        {
+          background: rgb(27,161,226);
+          background: rgba(27,161,226, 1.0);
+        }
+      .format-mode { white-space: pre-line; }
+      .format-code { white-space: pre; }
+      section#content {
+        max-height: 340px;
+        overflow: auto;
+        font-size: 11pt;
+      }
+      .mov420
+      {
+        height: 420px;
+      }</value>
+  </data>
+  <data name="Flash Object" xml:space="preserve">
+    <value>    &lt;object&gt;
+      &lt;param name="movie" value="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0"&gt;&lt;/param&gt;
+      &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;
+      &lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;
+      &lt;embed src="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;
+    &lt;/object&gt;</value>
+  </data>
+  <data name="Flash Object 560x315" xml:space="preserve">
+    <value>    &lt;object width="560" height="315"&gt;
+      &lt;param name="movie" value="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0"&gt;&lt;/param&gt;
+      &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;
+      &lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;
+      &lt;embed src="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0" width="560" height="315" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;
+    &lt;/object&gt;</value>
+  </data>
+  <data name="Flash Object WIDTHx420" xml:space="preserve">
+    <value>    &lt;object width="100%" height="420" id="movie" class="mov420"&gt;
+      &lt;param name="movie" value="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0"&gt;&lt;/param&gt;
+      &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;
+      &lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;
+      &lt;embed src="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0" width="100%" height="420" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;
+    &lt;/object&gt;</value>
+  </data>
+  <data name="Flash Object Old2" xml:space="preserve">
+    <value>    &lt;object width="100%" height="420" id="movie" class="mov420"&gt;
+      &lt;param name="movie" value="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0"&gt;&lt;/param&gt;
+      &lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;
+      &lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;
+      &lt;embed src="http://www.youtube.com/v/@{video-id}?version=3&amp;amp;hl=en_US&amp;amp;rel=0" width="100%" height="420" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;
+    &lt;/object&gt;</value>
+  </data>
+  <data name="Html Javascript" xml:space="preserve">
+    <value>
+    &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script language='javascript'&gt;
+      $(document).ready(function(){
+        $('li#cf1').click(function(){ changeStyle("format-code"); });
+        $('li#cf2').click(function(){ changeStyle("format-mode"); });
+        $('li#cf3').click(function(){ changeStyle("code-format"); });
+      });
+      function changeStyle(nam) { $("section#content").removeAttr("class").attr("class",nam); }
+    &lt;/script&gt;</value>
+  </data>
+</root>

@@ -13,7 +13,13 @@ namespace System
 		}
 	
 		// Required
+		/// <summary>
+		/// The container directory such as '%appdata%/local/[AppDirectoryName]/[AppFileSettings]'
+		/// </summary>
 		static public string AppDirectoryName = string.Empty;
+		/// <summary>
+		/// The container directory such as '%appdata%/local/[AppDirectoryName]/[AppFileSettings]'
+		/// </summary>
 		static public string AppFileSettings = string.Empty;
 	
 		// DirectoryInfo

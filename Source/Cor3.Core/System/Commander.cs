@@ -135,6 +135,15 @@ namespace System
 			}
 			return returned;
 		}
+
+		public bool HasFlag(string arg, bool clearFlag)
+		{
+			if (!HasValue(arg)) return false;
+			int index = GetIndex(arg);
+			
+			Args.RemoveAt(index);
+			return true;
+		}
 		
 		/// <summary>
 		/// this one is not ready yet.

@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>System.Cor3.Mvc</RootNamespace>
     <AssemblyName>System.Cor3.Mvc3-Net40</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Cor3.Core\cor3.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
@@ -27,6 +27,7 @@
     <RunCodeAnalysis>False</RunCodeAnalysis>
     <NoWin32Manifest>False</NoWin32Manifest>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\</OutputPath>
@@ -116,25 +117,13 @@
     <Compile Include="RootController.cs" />
     <Compile Include="Services\MediaService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="dataTables" />
-    <Folder Include="Extensions.Media" />
-    <Folder Include="Extensions" />
-    <Folder Include="Cor3Extensions" />
-    <Folder Include="Properties" />
-    <Folder Include="Services" />
-    <Folder Include="Refresh.FlashTools" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="MultiMarkDown.proj" />
     <None Include="MultiMarkDown.proj.cmd" />
     <None Include="MultiMarkDown.proj.Clean.cmd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cor3.Core\System.Cor3-Net40.csproj">
-      <Project>{4549918E-94E0-4911-BBBA-99838A215302}</Project>
-      <Name>System.Cor3-Net40</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cor3.Data\System.Cor3.Data-Net40.csproj">
       <Project>{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}</Project>
       <Name>System.Cor3.Data-Net40</Name>

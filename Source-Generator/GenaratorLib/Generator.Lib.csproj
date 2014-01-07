@@ -99,7 +99,9 @@
     <Compile Include="Systems\Core.Parser\DataCfg.cs" />
     <Compile Include="Systems\Core.Parser\ParserEnumerations.cs" />
     <Compile Include="Systems\Core.Parser\FieldMatch.cs" />
-    <Compile Include="Systems\Core.Parser\GeneratorParser.cs" />
+    <Compile Include="Systems\Core.Parser\GeneratorParser.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Systems\Core.Parser\ParserHelper.cs" />
     <Compile Include="Systems\Core.Parser\IDataConfig.cs" />
     <Compile Include="Systems\Core.Parser\ParseUtil.cs" />
@@ -197,21 +199,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Systems" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\AS3" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\ExtJs" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\DotNet" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\Net" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\AS3" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\ACE" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\TSQL" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\SCHEMA" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\Parser" />
-    <Folder Include="ParserStrategy\DataStrategy\Types\ADO" />
-    <Folder Include="Systems\Includes" />
-    <Folder Include="ParserStrategy\Factory" />
-    <Folder Include="ParserStrategy\SchemaStrategy" />
-    <Folder Include="ParserStrategy\TemplateStrategy\Model" />
+    <Folder Include="Systems\Includes\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Messages.resx">
@@ -225,7 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Cor3.Core\System.Cor3-Net40.csproj">
-      <Project>{4549918E-94E0-4911-BBBA-99838A215302}</Project>
+      <Project>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</Project>
       <Name>System.Cor3-Net40</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Source\Cor3.Data\System.Cor3.Data-Net40.csproj">

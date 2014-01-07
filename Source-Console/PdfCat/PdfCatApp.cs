@@ -17,7 +17,6 @@ namespace PdfCat
     /// </summary>
     class PdfCatApp : System.Commander
     {
-        
         DirectoryInfo InputDirectory = null;
         string inputStartPath = null;
         /// <summary>
