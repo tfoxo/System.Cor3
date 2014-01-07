@@ -1,6 +1,16 @@
+#### Note the usage of comments within the scope of this document.
+#### (1) hash '#' will indicate that the line be ignored all-together.
+#### (2) hashes indicate header-level-1 indicating that the
+#### items following are contained within a section denoded by the header.
+#### (3) hashes indicate header-level-2
+#### (4) or more hashes indicates as (2) does.
+#### (note) that this is a personal standard
+
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
 #Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
+
+#http://www.youtube.com/user/SupremeMasterTV03?feature=watch
 
 dev|SD4|http://build.sharpdevelop.net/BuildArtefacts/Rss/For/SD4x
 dev|FFMPEG-GIT|http://git.videolan.org/?p=ffmpeg.git;a=rss
@@ -29,9 +39,6 @@ local|tfw.Plato, The Republic|http://vaio/b/?feed=podcast&series=plato-the-repub
 #CoffeeRocket|http://coffeerocket.blogspot.com/feeds/posts/default
 blog|CoffeeRocket2|http://coffeerocket.blogspot.com/feeds/posts/default?alt=rss
 
-## MOZILLA
-tech|Mozilla Blog|https://blog.mozilla.org/feed/
-
 ## ?
 #######################################################################
 unkn|megawatts1066|https://gdata.youtube.com/feeds/api/users/megawatts1066/uploads?max-results=50
@@ -44,10 +51,18 @@ news|Suspicious0bservers|https://gdata.youtube.com/feeds/api/users/Suspicious0bs
 ## TECH
 #######################################################################
 tech|GoogleTechTalks|https://gdata.youtube.com/feeds/api/users/GoogleTechTalks/uploads?max-results=50
-tech|Sharp Develop|http://community.sharpdevelop.net/blogs/MainFeed.aspx
 tech|blogs.oasis-open.org|http://blogs.oasis-open.org/rss.xml
+tech|Google Developers Blog|http://feeds.feedburner.com/GDBcode?format=xml
+tech|Chromium blog|http://blog.chromium.org/feeds/posts/default
 
-# EBOOK
+### ICSHARPCODE
+#######################################################################
+tech|Sharp Develop|http://community.sharpdevelop.net/blogs/MainFeed.aspx
+
+## MOZILLA
+tech|Mozilla Blog|https://blog.mozilla.org/feed/
+
+# EBOOK (Miscelaneous EBooks as may also be available on LibriVOX)
 #######################################################################
 
 book|TheAudioArchive|https://gdata.youtube.com/feeds/api/users/TheAudioArchive/uploads?max-results=50
@@ -71,12 +86,12 @@ book|webofstories|https://gdata.youtube.com/feeds/api/users/webofstories/uploads
 radio|Revolution Radio|https://gdata.youtube.com/feeds/api/users/freerevolutionradio/uploads?max-results=50
 radio|HumanityTranscending|https://gdata.youtube.com/feeds/api/users/HumanityTranscending/uploads?max-results=50
 
-# camelot
+## camelot
 radio|Project Camelot (archive.org)|http://feeds.feedburner.com/projectcamelot
 radio|Project Camelot Blog|http://projectcamelotportal.com/kerrys-blog?format=feed&type=rss
 radio|Project Camelot|https://gdata.youtube.com/feeds/api/users/jagbodhi/uploads?max-results=50
 
-# RBN
+## RBN
 radio.RBN|The John Moore Show|http://www.republicbroadcasting.org/podcasts.active.php?programID=21
 radio.RBN|What Really Happened?|http://www.republicbroadcasting.org/podcasts.active.php?programID=77
 radio.RBN|Spingola Speaks|http://www.republicbroadcasting.org/podcasts.active.php?programID=81
@@ -84,19 +99,20 @@ radio.RBN|Spingola Speaks|http://www.republicbroadcasting.org/podcasts.active.ph
 #Cutting Through the Matrix|http://recordings.talkshoe.com/rss14155.xml
 #Radio Liberty Broadcast|http://www.soundwaves2000.com/radio_liberty/rl_feeds.xml
 
-## WTF
 #######################################################################
-
 # [Coast To Coast AM]
+#######################################################################
+## WhyTF is this still here?
 radio|C2C Articles|http://feeds2.feedburner.com/C2C-Articles
 radio|C2C Past|http://feeds2.feedburner.com/C2C-PastShows
 radio|C2C Upcoming|http://feeds2.feedburner.com/C2C-UpcomingShows
 
-info|Rayleen Alan Miller|http://radio.rumormillnews.com/podcast/feed/
+#info|Rayleen Alan Miller|http://radio.rumormillnews.com/podcast/feed/
 #American Kabuki|http://americankabuki.blogspot.com/feeds/posts/default?alt=rss
 #American Kabuki (2)|http://feeds.feedburner.com/AmericanKabuki?format=xml
 
-## SPIRITOLOGY
+#######################################################################
+## SPIRITOLOGY?
 #######################################################################
 
 sphere|Creating5D|https://gdata.youtube.com/feeds/api/users/Creating5D/uploads?max-results=50
@@ -105,8 +121,39 @@ sphere|Angel Lucci|http://angellucci.wordpress.com/feed/
 #######################################################################
 ## ASTROTHEOLOGY
 #######################################################################
-sphere|MrAstrotheology|https://gdata.youtube.com/feeds/api/users/MrAstrotheology/uploads?max-results=50
-sphere|TheSantosBonacciShow|https://gdata.youtube.com/feeds/api/users/TheSantosBonacciShow/uploads?max-results=50
+SantosBonacci|MrAstrotheology|https://gdata.youtube.com/feeds/api/users/MrAstrotheology/uploads?max-results=50
+SantosBonacci|TheSantosBonacciShow|https://gdata.youtube.com/feeds/api/users/TheSantosBonacciShow/uploads?max-results=50
+SantosBonacci|qltelevision|https://gdata.youtube.com/feeds/api/users/qltelevision/uploads?max-results=50
+SantosBonacci|starseedseeker|https://gdata.youtube.com/feeds/api/users/starseedseeker/uploads?max-results=50
+
+#######################################################################
+# Kate Of Gaia presents Santos Bonacci on a weekly basis
+#######################################################################
+sphered|kateofgaia|https://gdata.youtube.com/feeds/api/users/kateofgaia/uploads?max-results=50
+SantosBonacci|LightworkersMedia1|https://gdata.youtube.com/feeds/api/users/LightworkersMedia1/uploads?max-results=50
+
+#sphere|SupremeMasterTV03|https://gdata.youtube.com/feeds/api/users/SupremeMasterTV03/uploads?max-results=50
+
+#######################################################################
+# Manly Palmer Hall
+#######################################################################
+ManlyPHall|MPHarchive|https://gdata.youtube.com/feeds/api/users/MPHarchive/uploads?max-results=50
+ManlyPHall|pendeathlington|https://gdata.youtube.com/feeds/api/users/pendeathlington/uploads?max-results=50
+ManlyPHall|theduderinok2|https://gdata.youtube.com/feeds/api/users/theduderinok2/uploads?max-results=50
+
+#######################################################################
+# otherly
+#######################################################################
+## This was added specifically due to a ManlyPHall video in its ranks
+## as well as some Red Ice Radio releases.
+ManlyPHall|linuxfrik|https://gdata.youtube.com/feeds/api/users/linuxfrik/uploads?max-results=50
+## This was added specifically due to a ManlyPHall video in its ranks
+ManlyPHall|5T4RSCREAM233|https://gdata.youtube.com/feeds/api/users/5T4RSCREAM233/uploads?max-results=50
+
+#######################################################################
+# OCCULT
+#######################################################################
+AlanWattsLectures|AlanWattsLectures|https://gdata.youtube.com/feeds/api/users/AlanWattsLectures/uploads?max-results=50
 
 #######################################################################
 sphere|Solaris Blue-Raven(0)|https://www.youtube.com/feeds/api/users/Medusastorm001/uploads?max-results=50
@@ -114,14 +161,13 @@ sphere|Solaris Blue-Raven(1)|http://gdata.youtube.com/feeds/base/users/Medusasto
 sphere|Solaris Blue-Raven(2)|http://gdata.youtube.com/feeds/base/users/Medusastorm001/uploads?alt=rss&orderby=published&max-results=50
 
 #######################################################################
-# the following channels are derived from (suggested by) MrAstrotheology
+# the following channels are derived from (suggested by) MrAstrotheology, or perhaps his web-site
 #######################################################################
 sphered|77GSlinger|https://gdata.youtube.com/feeds/api/users/77GSlinger/uploads?max-results=50
 sphered|mattpresti|https://gdata.youtube.com/feeds/api/users/mattpresti/uploads?max-results=50
 sphered|Frank7Chester|https://gdata.youtube.com/feeds/api/users/Frank7Chester/uploads?max-results=50
 sphered|TheRealVerbz|https://gdata.youtube.com/feeds/api/users/TheRealVerbz/uploads?max-results=50
 sphered|bdona4556|https://gdata.youtube.com/feeds/api/users/bdona4556/uploads?max-results=50
-sphered|kateofgaia|https://gdata.youtube.com/feeds/api/users/kateofgaia/uploads?max-results=50
 sphered|TemplateItem|https://gdata.youtube.com/feeds/api/users/TemplateItem/uploads?max-results=50
 
 # I forgot where this came from

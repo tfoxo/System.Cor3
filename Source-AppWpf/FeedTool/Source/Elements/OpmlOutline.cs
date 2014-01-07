@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 
-namespace FeedTool.Forms
+namespace FeedTool.Elements
 {
 	public class OpmlOutline : XPathItem
 	{

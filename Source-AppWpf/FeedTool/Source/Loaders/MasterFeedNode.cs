@@ -12,8 +12,12 @@ using System.ComponentModel;
 
 namespace FeedTool.Loaders
 {
+	/// <summary>
+	/// Level 1
+	/// </summary>
 	public class MasterFeedNode : BasicFeedNode, INotifyPropertyChanged // BasicFeedNode
 	{
+		#region Properties
 		public string       Key      { get;set; }
 		public FeedListItem ListItem { get;set; }
 		public FeedParser   Parser   { get;set; }
@@ -22,6 +26,7 @@ namespace FeedTool.Loaders
 		public int NumChildren       { get { return Children==null ? 0 : Children.Count; } }
 		
 		public ObservableCollection<NodeInfo> Children { get;set; }
+		#endregion
 		
 		public void GetChildren(MasterFeedNode parent)
 		{
@@ -42,7 +47,7 @@ namespace FeedTool.Loaders
 			Children = new ObservableCollection<NodeInfo>();
 		}
 		
-		protected virtual void OnPropertyChanged(String property)
+		protected virtual void OnPropertyChanged(string property)
 		{
 			if (PropertyChanged != null) {
 				PropertyChanged(this, new PropertyChangedEventArgs(property));
@@ -50,6 +55,7 @@ namespace FeedTool.Loaders
 		} public event PropertyChangedEventHandler PropertyChanged;
 	}
 }
+#region Mess
 //				if (n is YtFeedEntry) {new TreeNode {
 //					               	Name = n.Name,
 //					               	Text = n.Name,
@@ -74,3 +80,4 @@ namespace FeedTool.Loaders
 //					               	SelectedImageKey = "ui-radio-button.png"
 //					               });
 //				}
+#endregion

@@ -3,8 +3,15 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 
-namespace FeedTool.Forms
+using FeedTool.Elements;
+
+namespace FeedTool.Readers
 {
+	/// <summary>
+	/// This class is designed to be a fail-safe bridge to the OpmlDocument
+	/// (XPathParser) which checks on a few points of interest (validity)
+	/// before attempting to load and return a OpmlDocument.
+	/// </summary>
     public class OpmlReader : HttpContentReader<OpmlDocument>
     {
         public OpmlReader(){ }
@@ -35,6 +42,8 @@ namespace FeedTool.Forms
         public override void ParseContent()
         {
             System.Diagnostics.Debug.Print("::ParseContent()");
+            
+            // Handle erronious OPML
             if (string.IsNullOrEmpty(Content))
             {
                 Content = "(we've got nothing)";
@@ -42,13 +51,17 @@ namespace FeedTool.Forms
                 base.ParseContent();
                 return;
             }
+            
+            // Ensure that we are dealing with OPML/XML
             bool isopml=Content.Contains("<opml");
             System.Diagnostics.Debug.Print("Loaded file.  Getting OPML File... \nIsOPML: {0}",isopml);
-
+			
+            // Report error if need be
             if (!isopml)
             {
                 System.Diagnostics.Debug.Print("Not an OPML file.",isopml);
             }
+            // 
             else
             {
                 this.Output = IsFileSystemMode ?

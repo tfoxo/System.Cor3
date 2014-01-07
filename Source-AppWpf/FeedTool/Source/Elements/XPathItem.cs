@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace FeedTool.Forms
+namespace FeedTool.Elements
 {
 	public class XPathItem
 	{

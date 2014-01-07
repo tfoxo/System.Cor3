@@ -16,6 +16,12 @@ using Microsoft.Win32;
 
 namespace FeedTool.Loaders
 {
+	/// <summary>
+	/// In a hierarchical MV/VM pattern, we construct a class which represents
+	/// the root node of our tree.
+	/// <para>This particular model was designed for a <tt>System.Windows.Forms.TreeView.Tag</tt>
+	/// as can be noticed by usage of <tt>SelectedImageKey</tt></para>
+	/// </summary>
 	public class FeedRootNode : BasicFeedNode
 	{
 		/// <summary>
@@ -25,6 +31,7 @@ namespace FeedTool.Loaders
 			get { return imageKey; }
 			set { imageKey = value; }
 		} string imageKey;
+		
 		/// <summary>
 		/// I don't know how this will be used yet
 		/// </summary>
@@ -32,6 +39,7 @@ namespace FeedTool.Loaders
 			get { return selectedImageKey; }
 			set { selectedImageKey = value; }
 		} string selectedImageKey;
+		
 		/// <summary>
 		/// We will just be using a one or zero
 		/// </summary>

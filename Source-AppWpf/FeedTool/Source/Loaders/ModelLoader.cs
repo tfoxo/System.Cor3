@@ -27,6 +27,7 @@ namespace FeedTool.Loaders
 			get { return allItemsProgress; }
 			set { allItemsProgress = value; }
 		} int? allItemsProgress = 0;
+		
 		public int  AllItemsProgressMin = 0;
 		public int  AllItemsProgressMax = 0;
 		
@@ -45,7 +46,7 @@ namespace FeedTool.Loaders
 		
 		const string DefaultFileName = "initial-data-set.txt";
 		
-		readonly OpenFileDialog ofd_text = new OpenFileDialog(){ Filter = "Feed Text|*.txt;*.text|All Files|*" };
+		readonly OpenFileDialog ofd_text = new OpenFileDialog { Filter = "Feed Text|*.txt;*.text|All Files|*" };
 		readonly OpenFileDialog ofd_AllXml = new OpenFileDialog { Filter = "Xml File|*.xml;*.rss*.opml*.feed|All Files|*" };
 		readonly OpenFileDialog ofd_opml = new OpenFileDialog { Filter = "OPML File|*.opml;*.xml|All Files|*" };
 

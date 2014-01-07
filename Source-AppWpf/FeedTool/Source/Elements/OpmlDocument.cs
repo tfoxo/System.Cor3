@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
-namespace FeedTool.Forms
+namespace FeedTool.Elements
 {
+	/// <summary>
+	/// Given the obvious derivation in XPathItem
+	/// </summary>
 	public class OpmlDocument : XPathItem
 	{
 		public XmlDocument XML { get;set; }

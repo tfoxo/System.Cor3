@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 
-namespace FeedTool.Forms
+namespace FeedTool.Readers
 {
 	
 	public class HttpContentReader<T> : HttpContentReader where T:class,new()
