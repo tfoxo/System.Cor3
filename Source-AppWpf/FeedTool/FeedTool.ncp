@@ -1,0 +1,482 @@
+<Project>
+  <Name>FeedTool</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>FeedDataItem</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>FeedCollection</Name>
+        <Access>Public</Access>
+        <Location left="255" top="107" />
+        <Size width="207" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public FeedDataItem Items { get; set; }</Member>
+        <Member type="Constructor">public FeedCollection()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FeedDataItem</Name>
+        <Access>Public</Access>
+        <Location left="10" top="107" />
+        <Size width="202" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string GroupId { get; set; }</Member>
+        <Member type="Property">public string Title { get; set; }</Member>
+        <Member type="Property">public string NewProperty { get; set; }</Member>
+        <Member type="Property">public string Category { get; set; }</Member>
+        <Member type="Property">public int Order { get; set; }</Member>
+        <Member type="Method">public void ToRow(DataRowView row)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Showing the FeedDataItem in relation to the FeedCollection.
+
+The FeedCollection is used as a XML Import/Export format to get data into and out of the application.</Text>
+        <Location left="10" top="10" />
+        <Size width="452" height="79" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>FeedListItem</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>FeedListItemConverter</Name>
+        <Access>Public</Access>
+        <Location left="51" top="41" />
+        <Size width="475" height="378" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int FeedTextFile { get; set; }</Member>
+        <Member type="Property">public IList&lt;FeedListItem&gt; Items { get; set; }</Member>
+        <Member type="Method">public static List&lt;FeedList&gt; GetData(FeedDataConverter converter)</Member>
+        <Member type="Method">public IDictionary&lt;string,FeedListItem&gt; GetDictionary(bool sortByTitle = true)</Member>
+        <Member type="Method">public IList&lt;FeedListItem&gt; GetList()</Member>
+        <Member type="Method">public IList&lt;FeedListItem&gt; GetList(bool sort)</Member>
+        <Member type="Method">public string GetText(string lineterminator)</Member>
+        <Member type="Method">public string GetText()</Member>
+        <Member type="Method">public void Refresh()</Member>
+        <Member type="Method">public static IDictionary&lt;string,FeedListItem&gt; TextToDictionary(string fileName, bool sortByTitle = true)</Member>
+        <Member type="Method">public static IList&lt;FeedListItem&gt; TextToList(string fileName, bool sort)</Member>
+        <Member type="Method">public static IList&lt;FeedListItem&gt; TextToList(string fileName)</Member>
+        <Member type="Method">public static ObservableCollection&lt;MasterFeedNode&gt; TextToMaster(string fileName, bool sortByTitle = true)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FeedListItem</Name>
+        <Access>Public</Access>
+        <Location left="173" top="454" />
+        <Size width="216" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int? id { get; set; }</Member>
+        <Member type="Property">public DateTime? udt { get; set; }</Member>
+        <Member type="Property">public DateTime? ddt { get; set; }</Member>
+        <Member type="Property">public string content { get; set; }</Member>
+        <Member type="Property">public string groupid { get; set; }</Member>
+        <Member type="Property">public string title { get; set; }</Member>
+        <Member type="Property">public string alt { get; set; }</Member>
+        <Member type="Property">public string note { get; set; }</Member>
+        <Member type="Property">public string url { get; set; }</Member>
+        <Member type="Property">internal string SortName { get; set; }</Member>
+        <Member type="Method">public SQLiteCommand Parameterize()</Member>
+        <Member type="Method">public void SetFields(FeedListItem value)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>BasicFeedNode</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BasicFeedNode</Name>
+        <Access>Public</Access>
+        <Location left="10" top="10" />
+        <Size width="173" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string name</Member>
+        <Member type="Field">string tag</Member>
+        <Member type="Field">string text</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public NodeInfo Tag { get; set; }</Member>
+        <Member type="Property">public string Text { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MasterFeedNode</Name>
+        <Access>Public</Access>
+        <Location left="86" top="227" />
+        <Size width="329" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int NumChildren { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;NodeInfo&gt; Children { get; set; }</Member>
+        <Member type="Property">public UriDownloader Downloader { get; set; }</Member>
+        <Member type="Property">public string Key { get; set; }</Member>
+        <Member type="Property">public string Key { get; set; }</Member>
+        <Member type="Property">public FeedListItem ListItem { get; set; }</Member>
+        <Member type="Property">public FeedParser Parser { get; set; }</Member>
+        <Member type="Constructor">public MasterFeedNode()</Member>
+        <Member type="Method">public void GetChildren(MasterFeedNode parent)</Member>
+        <Member type="Method">protected virtual void OnPropertyChanged(string property)</Member>
+        <Member type="Event">public event PropertyChangedEventHandler PropertyChanged</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>INotifyPropertyChanged</Name>
+        <Access>Public</Access>
+        <Location left="236" top="25" />
+        <Size width="297" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Event">event PropertyChangedEventHandler PropertyChanged</Member>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Dependency" first="1" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>278</X>
+          <Y>202</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>379</X>
+          <Y>142</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Dependency" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>241</X>
+          <Y>202</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>85</X>
+          <Y>214</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>NodeInfo</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>NodeInfo</Name>
+        <Access>Public</Access>
+        <Location left="10" top="10" />
+        <Size width="456" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string Content { get; set; }</Member>
+        <Member type="Property">public string DefaultContent { get; set; }</Member>
+        <Member type="Property">public string Description { get; set; }</Member>
+        <Member type="Property">public IDictionary&lt;string,string&gt; HtmlLinks { get; set; }</Member>
+        <Member type="Property">public string HtmlText { get; set; }</Member>
+        <Member type="Property">public string Index { get; set; }</Member>
+        <Member type="Property">public Dictionary&lt;string,string&gt; Infos { get; set; }</Member>
+        <Member type="Property">public string ItemPath { get; set; }</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public MasterFeedNode Parent { get; set; }</Member>
+        <Member type="Method">public DateTime? CheckDate(string origin)</Member>
+        <Member type="Method">public virtual void GenerateLinks()</Member>
+        <Member type="Method">internal XmlNode GetNode(XmlNode root, XmlNamespaceManager man, string path)</Member>
+        <Member type="Method">internal XmlNode GetNode(XmlDocument doc, XmlNamespaceManager man, string dicPath)</Member>
+        <Member type="Method">internal XmlNodeList GetNodes(XmlNode root, XmlNamespaceManager man, string path)</Member>
+        <Member type="Method">internal string GetNodeText(XmlDocument doc, XmlNamespaceManager man, ref XmlNode node, string nodeName)</Member>
+        <Member type="Method">internal string GetPath(string toAdd)</Member>
+        <Member type="Method">public abstract void Parse()</Member>
+        <Member type="Method">internal string TryGetText(XmlDocument doc, XmlNamespaceManager man, ref XmlNode node, string key)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>YtFeedEntry</Name>
+        <Access>Public</Access>
+        <Location left="10" top="508" />
+        <Size width="303" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override string Content { get; set; }</Member>
+        <Member type="Property">public List&lt;YtMediaContent&gt; ContentEntries { get; set; }</Member>
+        <Member type="Property">public string Creator { get; set; }</Member>
+        <Member type="Property">public DateTime? DatePublished { get; set; }</Member>
+        <Member type="Property">public DateTime? DateUpdated { get; set; }</Member>
+        <Member type="Property">public override string Description { get; set; }</Member>
+        <Member type="Property">public string Enclosure { get; set; }</Member>
+        <Member type="Property">public string HtmlText { get; set; }</Member>
+        <Member type="Property">public string Id { get; set; }</Member>
+        <Member type="Property">public string Image { get; set; }</Member>
+        <Member type="Property">internal Dictionary&lt;string,string&gt; Infos { get; set; }</Member>
+        <Member type="Property">public string Link { get; set; }</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">private string OrigPublished { get; set; }</Member>
+        <Member type="Property">private string OrigUpdated { get; set; }</Member>
+        <Member type="Property">public string Published { get; set; }</Member>
+        <Member type="Property">public string Title { get; set; }</Member>
+        <Member type="Property">public string Updated { get; set; }</Member>
+        <Member type="Property">public string VideoID { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AtomEntry</Name>
+        <Access>Public</Access>
+        <Location left="371" top="508" />
+        <Size width="273" height="502" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string AuthorEmail { get; set; }</Member>
+        <Member type="Property">public string AuthorName { get; set; }</Member>
+        <Member type="Property">public string AuthorUri { get; set; }</Member>
+        <Member type="Property">public List&lt;AtomEntry&gt; ContentEntries { get; set; }</Member>
+        <Member type="Property">public DateTime? DateUpdate { get; set; }</Member>
+        <Member type="Property">public string Description { get; set; }</Member>
+        <Member type="Property">public string FeedIcon { get; set; }</Member>
+        <Member type="Property">public string FeedLinkHref { get; set; }</Member>
+        <Member type="Property">public string FeedLinkRel { get; set; }</Member>
+        <Member type="Property">public string FeedLinkType { get; set; }</Member>
+        <Member type="Property">public string FeedLogo { get; set; }</Member>
+        <Member type="Property">public string FeedRights { get; set; }</Member>
+        <Member type="Property">public string FeedSubtitle { get; set; }</Member>
+        <Member type="Property">public string FeedTitle { get; set; }</Member>
+        <Member type="Property">public string HtmlText { get; set; }</Member>
+        <Member type="Property">public string Id { get; set; }</Member>
+        <Member type="Property">public Dictionary&lt;string,string&gt; Infos { get; set; }</Member>
+        <Member type="Property">public int LinkHref { get; set; }</Member>
+        <Member type="Property">public string LinkRel { get; set; }</Member>
+        <Member type="Property">public string LinkType { get; set; }</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">private DateTime? OrigUpdated { get; set; }</Member>
+        <Member type="Property">public string Summary { get; set; }</Member>
+        <Member type="Property">public string Title { get; set; }</Member>
+        <Member type="Property">public string Updated { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RssNode</Name>
+        <Access>Public</Access>
+        <Location left="675" top="508" />
+        <Size width="264" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">private bool CanParseDate { get; set; }</Member>
+        <Member type="Property">public string Comments { get; set; }</Member>
+        <Member type="Property">public override string Content { get; set; }</Member>
+        <Member type="Property">public string Creator { get; set; }</Member>
+        <Member type="Property">public string Date { get; set; }</Member>
+        <Member type="Property">public string DefaultContent { get; set; }</Member>
+        <Member type="Property">public override string Description { get; set; }</Member>
+        <Member type="Property">public string Enclosure { get; set; }</Member>
+        <Member type="Property">public string EnclosureLength { get; set; }</Member>
+        <Member type="Property">public string EnclosureType { get; set; }</Member>
+        <Member type="Property">public override string HtmlText { get; set; }</Member>
+        <Member type="Property">internal override Dictionary&lt;string,string&gt; Infos { get; set; }</Member>
+        <Member type="Property">public string Link { get; set; }</Member>
+        <Member type="Property">public override string Name { get; set; }</Member>
+        <Member type="Property">public string OriginalDate { get; set; }</Member>
+        <Member type="Property">public DateTime PubDate { get; set; }</Member>
+        <Member type="Property">public string Title { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>YtMediaFormat</Name>
+        <Access>Public</Access>
+        <Location left="339" top="1053" />
+        <Size width="183" height="180" />
+        <Collapsed>False</Collapsed>
+        <Value>Unknown = 0</Value>
+        <Value>RtspMobile_H263_AMR = 1</Value>
+        <Value>HttpSwf = 5</Value>
+        <Value>RtspMpeg4Aac = 6</Value>
+        <Value>Flv240p = 17</Value>
+        <Value>Flv360p = 18</Value>
+        <Value>Flv480p = 19</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>YtMediaContent</Name>
+        <Access>Public</Access>
+        <Location left="36" top="958" />
+        <Size width="235" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public string Duration { get; set; }</Member>
+        <Member type="Property">public string Expression { get; set; }</Member>
+        <Member type="Property">public string Format { get; set; }</Member>
+        <Member type="Property">public string Medium { get; set; }</Member>
+        <Member type="Property">public string NewProperty { get; set; }</Member>
+        <Member type="Property">public string Type { get; set; }</Member>
+        <Member type="Property">public string Url { get; set; }</Member>
+        <Member type="Property">public YtMediaFormat YtFormat { get; set; }</Member>
+        <Member type="Property">public string YtStrFormat { get; set; }</Member>
+        <Member type="Constructor">public YtMediaContent()</Member>
+        <Member type="Method">public static void ConvertEnum(YtMediaFormat value)</Member>
+        <Member type="Method">public static string ConvertEnum(string value)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>- XML (XPATH) PARSER -
+
+XPath parser takes NodeInfo into account as a generalized container for XML and contained sub-entries.
+
+Within each NodeInfo or sub-class is a &lt;string,string&gt; Dictionary which contains XPath expressions that yield the child entries (XML ENTRY) contained in the feed.</Text>
+        <Location left="488" top="260" />
+        <Size width="443" height="150" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>406</X>
+          <Y>483</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>241</X>
+          <Y>482</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>323</X>
+          <Y>435</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Dependency" first="5" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>296</X>
+          <Y>1157</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>283</X>
+          <Y>1157</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="1" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>345</X>
+          <Y>603</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ModelLoader (IFeedAppAPI)</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IFeedAppAPI</Name>
+        <Access>Public</Access>
+        <Location left="35" top="10" />
+        <Size width="221" height="163" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void CheckForErrors(bool refreshChildren)</Member>
+        <Member type="Method">void LoadFeedSet()</Member>
+        <Member type="Method">void PrepareTreeFromFeedsList()</Member>
+        <Member type="Method">void ProcessFeedDictionary(string filename)</Member>
+        <Member type="Method">void ProcessFeedDictionary()</Member>
+        <Member type="Method">void ResetControls()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IFeedAppAPI_Events</Name>
+        <Access>Public</Access>
+        <Location left="422" top="162" />
+        <Size width="385" height="231" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void Event_FeedContextItem(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void Event_ListBoxSelectedIndexChanged(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void Event_NodeMouseClick(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void Event_ReloadAll(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void Event_RootContextItem(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void Event_TimedSelection(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void Event_TreeView_DoubleClick(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void Event_TryLoadOPML(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void LoadTextToolStripMenuItemClick(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">void SaveTextToolStripMenuItemClick(object sender, RoutedEventArgs args)</Member>
+      </Entity>
+      <Entity type="Comment">
+        <Text>IFeedAPI is used in ModelLoader (FeedTool.Loaders namespace).
+The IFeedAppAPI_Events interface is not implemented.</Text>
+        <Location left="296" top="35" />
+        <Size width="378" height="56" />
+      </Entity>
+      <Entity type="Class">
+        <Name>ModelLoader</Name>
+        <Access>Public</Access>
+        <Location left="10" top="220" />
+        <Size width="358" height="536" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private const string DefaultFileName = "initial-data-set.txt"</Member>
+        <Member type="Field">private int? allItemsProgress = new int?(0)</Member>
+        <Member type="Field">int AllItemsProgressMax = 0</Member>
+        <Member type="Field">int AllItemsProgressMin = 0</Member>
+        <Member type="Field">string currentFeedTextFileName = "initial-data-set.txt"</Member>
+        <Member type="Field">ObservableCollection&lt;MasterFeedNode&gt; Items</Member>
+        <Member type="Field">OpenFileDialog ofd_AllXml = new OpenFileDialog { Filter = "Xml File|*.xml;*.rss*.opml*.feed|All Files|*" }</Member>
+        <Member type="Field">OpenFileDialog ofd_opml = new OpenFileDialog { Filter = "OPML File|*.opml;*.xml|All Files|*" }</Member>
+        <Member type="Field">private readonly OpenFileDialog ofd_text = new OpenFileDialog { Filter = "Feed Text|*.txt;*.text|All Files|*" }</Member>
+        <Member type="Field">SaveFileDialog sfd_txt = new SaveFileDialog { Filter = "Feed Text|*.txt;*.text|All Files|*" }</Member>
+        <Member type="Field">SaveFileDialog sfd_xml = new SaveFileDialog { Filter = "Xml File|*.xml;*.rss*.opml*.feed|All Files|*" }</Member>
+        <Member type="Property">public int? AllItemsProgress { get; set; }</Member>
+        <Member type="Property">public string CurrentFeedTextFileName { get; set; }</Member>
+        <Member type="Property">private Dictionary&lt;string, FeedListItem&gt; FeedDictionary { get; set; }</Member>
+        <Member type="Property">public Dictionary&lt;string, FeedParser&gt; XmlList { get; set; }</Member>
+        <Member type="Constructor">public ModelLoader()</Member>
+        <Member type="Method">public void CheckForErrors(bool refreshChildren = false)</Member>
+        <Member type="Method">public void Event_TextLoad(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">public void Event_TextSave(object sender, RoutedEventArgs args)</Member>
+        <Member type="Method">public void GetFeedsFile(string fileName)</Member>
+        <Member type="Method">public void LoadFeedSet()</Member>
+        <Member type="Method">public void PrepareTreeFromFeedsList()</Member>
+        <Member type="Method">public void ProcessFeedDictionary()</Member>
+        <Member type="Method">public void ProcessFeedDictionary(string fileName)</Member>
+        <Member type="Method">public void RefreshFeed()</Member>
+        <Member type="Method">public void ResetControls()</Member>
+        <Member type="Event">public event PropertyChangedEventHandler PropertyChanged</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Comment" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>281</X>
+          <Y>91</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

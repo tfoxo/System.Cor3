@@ -5,8 +5,9 @@
 #include "setup-feed-tool-v1.inc"
 #define MyAppPublisher "tfwroble@gmail.com"
 #define MyAppExeName "FeedTool.exe"
-
+  
 #define FeedBinPath "D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-AppWpf\FeedTool\bin"
+#define FeedResPath "D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-AppWpf\FeedTool\Build\Fringe"
 ; {#FeedBinPath}\Build\Setup
 ; {#FeedBinPath}\Build\bin
 ; \Build\Setup
@@ -26,7 +27,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 OutputDir=..
 OutputBaseFilename={#MyOutputFile}
-SetupIconFile={#FeedBinPath}\oxygen-refit-application-rss+xml.ico
+SetupIconFile={#FeedResPath}\RSSICO.ico
 Compression=lzma
 SolidCompression=yes
 VersionInfoVersion={#MyAppVersion}

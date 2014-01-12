@@ -12,21 +12,20 @@
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				
+				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
+<!--				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml" />-->
 				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Colours.xaml" />
 				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Fonts.xaml" />
 				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Controls.xaml" />
 				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
 				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
 				
-				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
-				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml" />
-<!--				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml" />-->
-				
-				
-				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-<!--				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />-->
-				<ResourceDictionary Source="/FeedTool;component/Resources/Icons.xaml" />
 				<ResourceDictionary Source="/FeedTool;component/Styles/Lime.xaml" />
+				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml" />
+				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+				
+<!--				<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />-->
+				<ResourceDictionary Source="/FeedTool;component/Resources/Icons.xaml" />
 			
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
