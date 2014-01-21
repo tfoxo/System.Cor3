@@ -10,9 +10,9 @@ namespace FeedTool
 		/// </summary>
 		static public Dictionary<string,string> ToStringDictionary(this string input, char sepRows, char sepCols, char[] lineComment, char[] trim)
 		{
-			Dictionary<string,string> dic = new Dictionary<string, string>();
+			var dic = new Dictionary<string, string>();
 			if (string.IsNullOrEmpty(input)) return dic;
-			List<string> list = new List<string>(input.Split(sepRows));
+			var list = new List<string>(input.Split(sepRows));
 			foreach (string r in list)
 			{
 				string row = r.Trim(trim);
@@ -33,8 +33,7 @@ namespace FeedTool
 		/// </summary>
 		static public Dictionary<string,string> ToStringDictionary(this System.IO.FileInfo input, char sepRows, char sepCols, char[] lineComment, char[] trim)
 		{
-			if (!input.Exists) return string.Empty.ToStringDictionary(sepRows,sepCols,lineComment,trim); // empty dictionary
-			return System.IO.File.ReadAllText(input.FullName,System.Text.Encoding.UTF8).ToStringDictionary(sepRows,sepCols,lineComment,trim);
+			return !input.Exists ? string.Empty.ToStringDictionary(sepRows, sepCols, lineComment, trim) : System.IO.File.ReadAllText(input.FullName, System.Text.Encoding.UTF8).ToStringDictionary(sepRows, sepCols, lineComment, trim); // empty dictionary
 		}
 	}
 }

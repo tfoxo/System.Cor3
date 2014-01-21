@@ -9,14 +9,14 @@ namespace FeedTool.Converters
 	public class FeedListConverter
 	{
 		//^(\w*)\.([A-z0-9 ._,\:()?-]*)\|([^\n\r]*)
-		char[] splitter = { '\n', '\r', '\t' };
+		readonly char[] splitter = { '\n', '\r', '\t' };
 		public List<FeedDataItem> Items {
 			get { return items; }
-		} List<FeedDataItem> items = new List<FeedDataItem>();
+		} readonly List<FeedDataItem> items = new List<FeedDataItem>();
 
 		public void Convert(System.IO.FileInfo file)
 		{
-			List<string> list = new List<string>(System.IO.File.ReadAllLines(file.FullName));
+			var list = new List<string>(System.IO.File.ReadAllLines(file.FullName));
 			for (int i=0; i < list.Count; i++)
 			{
 				string sitem = list[i].Trim(splitter);
@@ -35,14 +35,14 @@ namespace FeedTool.Converters
 	/// </summary>
 	public class FeedListConverter_OLD
 	{
-		char[] splitter = { '\n', '\r', '\t' };
+		readonly char[] splitter = { '\n', '\r', '\t' };
 		public List<FeedDataItem> Items {
 			get { return items; }
-		} List<FeedDataItem> items = new List<FeedDataItem>();
+		} readonly List<FeedDataItem> items = new List<FeedDataItem>();
 
 		public void Convert(System.IO.FileInfo file)
 		{
-			List<string> list = new List<string>(System.IO.File.ReadAllLines(file.FullName));
+			var list = new List<string>(System.IO.File.ReadAllLines(file.FullName));
 			for (int i=0; i < list.Count; i++)
 			{
 				string sitem = list[i].Trim(splitter);

@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Xml;
 
@@ -15,6 +16,14 @@ using FeedTool.Loaders;
 
 namespace FeedTool
 {
+	public class Meta
+	{
+		public string Key { get;set; }
+		public string Rel { get;set; }
+		public string @Type { get;set; }
+		public string Value { get;set; }
+		public string Description { get;set; }
+	}
 	/// <summary>
 	/// A basic class designed as a hierarchical tree-node by providing a Parent entry
 	/// (pointing to type: MasterFeedNode/Level 1) and also prviding 'Children' nodes
@@ -22,8 +31,16 @@ namespace FeedTool
 	/// That is, our MasterFeedNode is LEVEL 1 and the children are all going
 	/// to derive from this (NodeInfo) type.
 	/// </summary>
-	abstract public class NodeInfo
+	abstract public class NodeInfo : INotifyPropertyChanged
 	{
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void OnPropertyChanged(string property)
+		{
+			if (PropertyChanged != null) {
+				PropertyChanged(this, new PropertyChangedEventArgs(property));
+			}
+		}
 		
 		internal const string linkFormat = @"<a title=""{0}"" href=""{1}""{2}>{3}</a>";
 		
@@ -41,6 +58,10 @@ namespace FeedTool
 		public IDictionary<string,string> HtmlLinks {
 			get { return htmlLinks; }
 		} internal Dictionary<string,string> htmlLinks = new Dictionary<string,string>();
+		
+		public IDictionary<string,Meta> MetaInfo {
+			get { return metaInfo; }
+		} internal Dictionary<string,Meta> metaInfo = new Dictionary<string,Meta>();
 		
 		virtual public void GenerateLinks()
 		{
@@ -92,16 +113,17 @@ namespace FeedTool
 		
 		abstract public void Parse(XmlDocument doc, XmlNamespaceManager man);
 		
+		
+		abstract public void LoadMeta(XmlDocument doc, XmlNamespaceManager man);
 		/// <summary>
 		/// Returns null or the value if present.
 		/// </summary>
 		internal string TryGetText(XmlDocument doc, XmlNamespaceManager man, ref XmlNode node, string key)
 		{
 			string result = nullString;
-			try
-			{
+			try {
 				result = GetNodeText(doc, man, ref node, key);
-			} catch {
+			} finally {
 			}
 			
 			return result;

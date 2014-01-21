@@ -33,7 +33,7 @@ namespace FeedTool.Converters
 		
 		#region DataSet Info
 		
-		DataSet Data = new DataSet(ds_dataset)
+		readonly DataSet Data = new DataSet(ds_dataset)
 		{
 			Tables =
 			{
@@ -72,7 +72,7 @@ namespace FeedTool.Converters
 		
 		public FeedDataConverter(System.IO.FileInfo file)
 		{
-			FeedListConverter converter = new FeedListConverter(){};
+			var converter = new FeedListConverter(){};
 			converter.Convert(file);
 			this.items = converter.Items;
 			converter = null;
@@ -90,15 +90,15 @@ namespace FeedTool.Converters
 		{
 			Items.Clear();
 			foreach (DataRowView row in View) {
-				FeedDataItem enc = new FeedDataItem(row);
+				var enc = new FeedDataItem(row);
 				items.Add(enc);
 			}
 		}
 		
 		#region Load/Save
 		
-		System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog{ Filter="Feeds|*.feeds" };
-		System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog{ Filter="Feeds|*.feeds" };
+		readonly System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog{ Filter="Feeds|*.feeds" };
+		readonly System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog{ Filter="Feeds|*.feeds" };
 		
 		public void SaveXml() { if (sfd.ShowDialog()==System.Windows.Forms.DialogResult.OK) SaveXml(sfd.FileName); }
 		public void SaveXml(string filename)

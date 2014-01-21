@@ -17,11 +17,20 @@ namespace FeedTool.Loaders
 	/// </summary>
 	public class MasterFeedNode : BasicFeedNode, INotifyPropertyChanged // BasicFeedNode
 	{
+		
+		void Initialize(){
+			
+		}
+		
 		#region Properties
 		public string       Key      { get;set; }
 		public FeedListItem ListItem { get;set; }
 		public FeedParser   Parser   { get;set; }
 		public UriDownloader Downloader { get; set; }
+		
+		public bool HasPages { get; set; }
+		public int ItemsPerPage { get; set; }
+		public int PageCount { get; set; }
 		
 		public int NumChildren       { get { return Children==null ? 0 : Children.Count; } }
 		

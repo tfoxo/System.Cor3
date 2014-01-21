@@ -19,19 +19,19 @@ namespace FeedTool.Loaders
 	public class BasicFeedNode
 	{
 		public string Name {
-			get { return name; }
-			set { name = value; }
-		} string name;
+			get;
+			set;
+		} 
 		
 		public string Text {
-			get { return text; }
-			set { text = value; }
-		} string text;
+			get;
+			set;
+		} 
 		
 		public NodeInfo Tag {
-			get { return tag; }
-			set { tag = value; }
-		} NodeInfo tag;
+			get;
+			set;
+		} 
 		
 	}
 }

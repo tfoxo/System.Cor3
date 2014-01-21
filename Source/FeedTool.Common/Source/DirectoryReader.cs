@@ -84,7 +84,7 @@ namespace FeedTool.Forms
             string content = input;
             bool isIis5=content.Contains("html"), isapache=content.Contains(apache_doc);
             string html = string.Empty;
-            List<string> Items = new List<string>();
+            var Items = new List<string>();
             string path=string.Empty;
             if (content==null)
                 content = "(we've got nothing)";
@@ -104,7 +104,7 @@ namespace FeedTool.Forms
             string matches = string.Empty;
             foreach (Match m in HtmlLink.Matches(content)) matches += m.Groups[0].Value;
 
-            XmlDocument doc = new XmlDocument();
+            var doc = new XmlDocument();
 
             try
             {

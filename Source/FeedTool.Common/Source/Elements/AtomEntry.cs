@@ -10,6 +10,10 @@ namespace FeedTool
     /// </summary>
     public class AtomEntry : NodeInfo
     {
+		public override void LoadMeta(XmlDocument doc, XmlNamespaceManager man)
+		{
+//			throw new NotImplementedException();
+		}
         #region Dictionary Infos
 
         internal override Dictionary<string, string> Infos
@@ -17,12 +21,12 @@ namespace FeedTool
             get {
                 return infos;
             }
-        } Dictionary<string,string> infos = Resource.Dic_AtomFeed.ToStringDictionary('\n','|',new char[] {'#','['},new char[] {'\r','\n','\t'});
+        } readonly Dictionary<string,string> infos = Resource.Dic_AtomFeed.ToStringDictionary('\n','|',new char[] {'#','['},new char[] {'\r','\n','\t'});
         #endregion
 
         #region Content Dictionary
 
-        List<AtomEntry> contentEntries = new List<AtomEntry>();
+        readonly List<AtomEntry> contentEntries = new List<AtomEntry>();
 
         public List<AtomEntry> ContentEntries
         {
@@ -41,7 +45,7 @@ namespace FeedTool
                 
                 string linkTest = string.Empty;
                 
-                List<string> list = new List<string>();
+                var list = new List<string>();
                 list.Add(string.Format("Url: {0}, Type: {1}, Format: {2}",LinkHref,LinkType,LinkRel));
                 linkTest = string.Join("<br />",list.ToArray());
                 list.Clear();
@@ -123,6 +127,7 @@ namespace FeedTool
         /// Title, Comments, Description, Date
         /// </summary>
         /// <param name="doc"></param>
+		/// <param name = "man"></param>
         public override void Parse(XmlDocument doc, XmlNamespaceManager man)
         {
             var node =       GetNode(doc,man,"entry-id");
@@ -136,6 +141,7 @@ namespace FeedTool
             OrigUpdated =    TryGetText(doc, man, ref node, "entry-updated");
             DateUpdated =    CheckDate(OrigUpdated);
             Updated =        DateUpdated.HasValue ? DateUpdated.Value.ToString(dateFmt) : OrigUpdated;
+			GenerateLinks();
         }
 
         public override void GenerateLinks()

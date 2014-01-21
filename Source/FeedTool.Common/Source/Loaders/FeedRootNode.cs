@@ -28,24 +28,24 @@ namespace FeedTool.Loaders
 		/// I don't know how this will be used yet
 		/// </summary>
 		public string ImageKey {
-			get { return imageKey; }
-			set { imageKey = value; }
-		} string imageKey;
+			get;
+			set;
+		} 
 		
 		/// <summary>
 		/// I don't know how this will be used yet
 		/// </summary>
 		public string SelectedImageKey {
-			get { return selectedImageKey; }
-			set { selectedImageKey = value; }
-		} string selectedImageKey;
+			get;
+			set;
+		} 
 		
 		/// <summary>
 		/// We will just be using a one or zero
 		/// </summary>
 		public int DownloadProgress {
-			get { return downloadProgress; }
-			set { downloadProgress = value; }
-		} int downloadProgress;
+			get;
+			set;
+		} 
 	}
 }

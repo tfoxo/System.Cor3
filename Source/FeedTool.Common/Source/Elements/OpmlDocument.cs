@@ -47,6 +47,7 @@ namespace FeedTool.Elements
 			}
 
 		}
+		/// <exception cref="T:System.Exception"></exception>
 		public OpmlDocument(FileInfo xmlContent) : base()
 		{
 			XMLROOT = ROOT;
@@ -77,7 +78,7 @@ namespace FeedTool.Elements
 					string newPath = GetPath(newroot,i+1);
 					Debug.Print("doc:begin: {0}::{1}",i,newPath);
 					
-					OpmlOutline childOutline = new OpmlOutline(list[i],newPath);
+					var childOutline = new OpmlOutline(list[i],newPath);
 					ELEMENTS.Add(childOutline);
 					
 					Debug.Print("doc:end: {0}::{1}",i,newPath);

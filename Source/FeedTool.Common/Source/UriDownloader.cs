@@ -56,6 +56,7 @@ namespace FeedTool
 		public bool HasException {
 			get { return hasException; }
 		}
+		
 		public Exception InnerException { get; set; }
 		
 		public Action<UriDownloader> OnComplete { get; set; }
@@ -64,14 +65,14 @@ namespace FeedTool
 		public void Run()
 		{
 //			bool UrlExists = true;
-			Uri uri = new Uri(UriAddress);
+			var uri = new Uri(UriAddress);
 			uri.EnableHacks();
 			
 			System.Diagnostics.Debug.Print(
 				"configure-download: {0}", UriAddress
 			);
 			using (
-				WebClient Client = new WebClient
+				var Client = new WebClient
 				{
 					Encoding = System.Text.Encoding.UTF8,
 					UseDefaultCredentials = true,

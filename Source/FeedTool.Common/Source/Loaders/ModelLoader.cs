@@ -61,8 +61,6 @@ namespace FeedTool.Loaders
 		/// <summary>
 		/// Not implemented.
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="args"></param>
 		public void Event_TextSave(object sender, RoutedEventArgs args)
 		{
 		}

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Xml;
+
+using YoutubeExtractor;
 
 namespace FeedTool
 {
@@ -15,13 +18,13 @@ namespace FeedTool
 
 		internal override Dictionary<string, string> Infos {
 			get { return infos; }
-		} Dictionary<string,string> infos = Resource.Dic_YtFeed
+		} readonly Dictionary<string,string> infos = Resource.Dic_YtFeed
 			.ToStringDictionary('\n','|',new char[]{'#','['},new char[]{'\r','\n','\t'});
 		#endregion
 		
 		#region Content Dictionary
 
-		List<YtMediaContent> contentEntries = new List<YtMediaContent>();
+		readonly List<YtMediaContent> contentEntries = new List<YtMediaContent>();
 		
 		public List<YtMediaContent> ContentEntries {
 			get { return contentEntries; }
@@ -38,14 +41,14 @@ namespace FeedTool
 				
 				string linkTest = string.Empty;
 				
-				List<string> list = new List<string>();
+				var list = new List<string>();
 				
 				foreach (YtMediaContent yt in ContentEntries) list.Add(string.Format("Url: {0}, Type: {1}, Format: {2}",yt.Url,yt.Type,yt.Format));
 				
 				linkTest = string.Join("<br/>",list.ToArray());
 				list.Clear();
 				string vidTest = string.Empty;
-				int cid = 0;                                              
+				int cid = 0;
 				foreach (YtMediaContent yt in ContentEntries) list.Add(string.Format(@"<a href=""{0}"" title=""Type: {1}, Format: {2}"">vid</a> {4}",yt.Url,yt.Type,yt.Format,++cid,yt.YtStrFormat));
 				
 				vidTest = string.Join("<br />",list.ToArray())+"<hr />";
@@ -100,10 +103,38 @@ namespace FeedTool
 		
 		#endregion
 		
+		public override void LoadMeta(XmlDocument doc, XmlNamespaceManager man)
+		{
+			System.Diagnostics.Debug.WriteLine("Youtube META: BEGIN");
+			try
+			{
+				Meta M = null;
+				foreach (XmlNode anode in doc.DocumentElement.SelectNodes(GetPath("/xmlroot:link[@rel='alternate']"),man))
+				{
+					M = new Meta{ Key="link", @Type="text/html", Rel="alternate", Value=anode.Attributes["href"].Value };
+				}
+				if (M==null) throw new Exception("Failed to load initial node.");
+				var videoInfos = DownloadUrlResolver.GetDownloadUrls(M.Value) as List<VideoInfo>;
+				if (videoInfos==null) throw new Exception();
+				foreach (VideoInfo video in videoInfos)
+				{
+					var N = new Meta{ Key = video.Title, Type=video.VideoExtension, Value=video.DownloadUrl, Rel="Youtube Download", Description=string.Format("{{VideoInfo: AudioRate={0}, VideoResolution={1}}}",video.AudioBitrate,video.Resolution) };
+					metaInfo.Add(string.Format("{0}.{1}.{2}",N.Key,N.@Type,video.AudioBitrate),N);
+				}
+				OnPropertyChanged("MetaInfo");
+//					metaInfo.Add("html-link",a);
+			}
+			catch (Exception X) {
+				System.Diagnostics.Debug.WriteLine("{0}\nInnerException: {1}",X.Message,X.InnerException);
+			}
+			System.Diagnostics.Debug.WriteLine("Youtube META: END");
+			
+		}
 		/// <summary>
 		/// Title, Comments, Description, Date
 		/// </summary>
 		/// <param name="doc"></param>
+		/// <param name = "man"></param>
 		public override void Parse(XmlDocument doc, XmlNamespaceManager man)
 		{
 			var node =		GetNode(doc,man,"id");
@@ -127,20 +158,45 @@ namespace FeedTool
 			Link =			TryGetText(doc, man, ref node, "link");
 			
 			XmlNodeList nodelist = doc.DocumentElement.SelectNodes(GetPath("/media:group/media:content"),man);
-			List<YtMediaContent> items = new List<YtMediaContent>();
-			
+			var items = new List<YtMediaContent>();
 			contentEntries.Clear();
+			metaInfo.Clear();
 			foreach (XmlNode xnode in nodelist)
 			{
 				string ytUrl, ytType, ytFormat;
 				ytUrl = xnode.Attributes["url"].Value;
 				ytType = xnode.Attributes["type"].Value;
 				ytFormat = xnode.Attributes["yt:format"].Value;
-				YtMediaContent ytc = new YtMediaContent{ Url=ytUrl, Type=ytType, Format=ytFormat };
+				var ytc = new YtMediaContent{ Url=ytUrl, Type=ytType, Format=ytFormat };
 				contentEntries.Add(ytc);
 			}
+			GenerateLinks();
+//            LoadMeta(doc,man);
+//			worker = new BackgroundWorker(){
+//				WorkerReportsProgress = false,
+//				WorkerSupportsCancellation = true
+//			};
+//			worker.DoWork += WorkerEvent;
+//			worker.RunWorkerCompleted  += WorkerEvent;
+		}
+		
+		BackgroundWorker worker;
+		void WorkerEvent(object sender, DoWorkEventArgs e)
+		{
+			string link = null;
+			List<VideoInfo> videoInfos = (List<VideoInfo>)DownloadUrlResolver.GetDownloadUrls(link);
+			VideoInfo video = videoInfos
+				.Where(info => info.CanExtractAudio)
+				.OrderByDescending(info => info.AudioBitrate)
+				.First();
+
+		}
+		
+		void WorkerEvent(object sender, RunWorkerCompletedEventArgs e)
+		{
 			
 		}
+		
 		
 		public override void GenerateLinks()
 		{

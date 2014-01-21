@@ -37,7 +37,7 @@ namespace FeedTool
         public void Run()
         {
             using (
-                BackgroundWorker Worker = new BackgroundWorker
+                var Worker = new BackgroundWorker
                 {
                     WorkerReportsProgress =         false,
                     WorkerSupportsCancellation =    false

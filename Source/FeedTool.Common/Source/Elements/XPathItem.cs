@@ -15,11 +15,11 @@ namespace FeedTool.Elements
 		{
 			return GetPath(XMLROOT,index,key);
 		}
-		public string GetPath(string root, int index)
+		public static string GetPath(string root, int index)
 		{
 			return string.Format("{0}[{1}]",root,index);
 		}
-		public string GetPath(string root, int index, string key)
+		public static string GetPath(string root, int index, string key)
 		{
 			return string.Format("{0}[{1}]{2}",root,index,key);
 		}

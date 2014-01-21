@@ -7,9 +7,13 @@ namespace FeedTool
 {
 	public class RssNode : NodeInfo
 	{
+		public override void LoadMeta(XmlDocument doc, XmlNamespaceManager man)
+		{
+//			throw new NotImplementedException();
+		}
 		internal override Dictionary<string, string> Infos {
 			get { return infos; }
-		} Dictionary<string,string> infos = Resource.Dic_RssFeed
+		} readonly Dictionary<string,string> infos = Resource.Dic_RssFeed
 			.ToStringDictionary('\n','|',new char[]{'#','['},new char[]{'\r','\n','\t'});
 		
 		public override string HtmlText {
@@ -86,7 +90,7 @@ namespace FeedTool
 			EnclosureType =	TryGetText(doc, man, ref node, "enclosure-length");
 			EnclosureLength =TryGetText(doc, man, ref node, "enclosure-type");
 			Date =			CanParseDate ? PubDate.ToString(dateFmt) : OriginalDate;
-			
+			GenerateLinks();
 		}
 		public override void GenerateLinks()
 		{

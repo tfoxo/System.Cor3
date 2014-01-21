@@ -36,7 +36,7 @@ namespace FeedTool
 		/// yt:format @'https://developers.google.com/youtube/2.0/reference'
 		/// <para>1 - RTSP streaming URL for mobile video playback. H.263 video (up to 176x144) and AMR audio.</para>
 		/// <para>5 - HTTP URL to the embeddable player (SWF) for this video. This format is not available for a video that is not embeddable.
-		/// Developers commonly add &format=5 to their queries to restrict results to videos that can be embedded on their sites.</para>
+		/// Developers commonly add format=5 to their queries to restrict results to videos that can be embedded on their sites.</para>
 		/// <para>6 - RTSP streaming URL for mobile video playback. MPEG-4 SP video (up to 176x144) and AAC audio.</para>
 		/// <para>In addition, the following streaming formats are valid for live videos: 19 – 480p FLV, 18 – 360p FLV, 17 – 240p FLV</para>
 		public string Format { get;set; }
@@ -44,7 +44,7 @@ namespace FeedTool
 			get
 			{
 				if (this.Type==null) return YtMediaFormat.Unknown;
-				YtMediaFormat yt = (YtMediaFormat)Enum.Parse(typeof(YtMediaFormat),this.Format);
+				var yt = (YtMediaFormat)Enum.Parse(typeof(YtMediaFormat),this.Format);
 				return yt;
 			}
 		}

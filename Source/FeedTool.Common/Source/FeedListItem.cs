@@ -10,6 +10,7 @@ namespace FeedTool
 	public class FeedListItem
 	{
 		internal string SortName { get { return string.Concat(groupid,".",title); } }
+		
 		#region Queries
 		/// <summary> not that we need it or anything </summary>
 		internal const string Insert_FeedListItem = @"INSERT INTO [FeedListItem] (
@@ -44,6 +45,7 @@ WHERE [id] = @xid;";
 		/// <summary> not that we need it or anything </summary>
 		internal const string Select_FeedListItem = @"Select * From FeedListItem;";
 		#endregion
+		
 		#region Properties
 		public int? id { get;set; }
 		public DateTime? udt { get;set; }
@@ -55,6 +57,7 @@ WHERE [id] = @xid;";
 		public string note { get;set; }
 		public string url { get;set; }
 		#endregion
+		
 		#region Constructors
 
 		public FeedListItem(DataRowView row)
@@ -71,6 +74,7 @@ WHERE [id] = @xid;";
 		}
 
 		public FeedListItem(){}
+		
 		/// <summary>
 		/// Used for cloning operations.
 		/// <para>Particularly for Insert/Update SQL Queries due to the readonly PRIMARY KEY value.</para>
@@ -87,6 +91,7 @@ WHERE [id] = @xid;";
 			this.note = value.note;
 			this.url = value.url;
 		}
+		
 		#region NONONO
 		#if NONONO
 		
@@ -102,6 +107,7 @@ WHERE [id] = @xid;";
 		#endif
 		#endregion
 		#endregion
+		
 		#region Utils
 
 		/// <summary>

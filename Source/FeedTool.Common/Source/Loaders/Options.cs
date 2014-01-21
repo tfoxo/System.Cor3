@@ -14,7 +14,7 @@ namespace FeedTool.Loaders
 {
 	public class Options
 	{
-		Dictionary<string, string> Sounds = new Dictionary<string, string> { {
+		readonly Dictionary<string, string> Sounds = new Dictionary<string, string> { {
 			OPML_LOAD,
 			SND_OPML_LOAD
 		} };

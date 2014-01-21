@@ -52,7 +52,7 @@ namespace FeedTool.Elements
 			{
 				string newPath = GetPath(newroot,i+1);
 				Debug.Print("elm-begin: {0}::{1}",i,newPath);
-				OpmlOutline childOutline = new OpmlOutline(list[i],newPath);
+				var childOutline = new OpmlOutline(list[i],newPath);
 				ELEMENTS.Add(childOutline);
 				Debug.Print("elm-end: {0}::{1}",i,newPath);
 			}

@@ -32,8 +32,8 @@ namespace FeedTool.Converters
 		public string GetText(string lineterminator)
 		{
 			if (Items.Count==0) return null;
-			List<string> list = new List<string>();
-			foreach (FeedListItem item in Items)
+			var list = new List<string>();
+			foreach (var item in Items)
 			{
 				if (string.IsNullOrEmpty(item.title)||string.IsNullOrEmpty(item.url)) continue;
 				list.Add(string.Format("{0}|{1}",item.title,item.url));
@@ -83,7 +83,7 @@ namespace FeedTool.Converters
 		/// <returns>List&lt;FeedListItem&gt;</returns>
 		static public List<FeedListItem> GetData(FeedDataConverter converter)
 		{
-			List<FeedListItem> list = new List<FeedListItem>();
+			var list = new List<FeedListItem>();
 			converter.UpdateItems();
 			foreach (FeedDataItem item in converter.Items)
 				list.Add(new FeedListItem{ title=item.Title,url=item.Url });
@@ -101,27 +101,48 @@ namespace FeedTool.Converters
 		/// <returns></returns>
 		static public IList<FeedListItem> TextToList(string fileName, bool sort)
 		{
-			FileInfo file = new FileInfo(fileName);
+			var file = new FileInfo(fileName);
 			string files = File.ReadAllText(fileName);
 			
-			Stack<string> FeedsStack = new Stack<string>(files.Split('\n'));
+			var FeedsStack = new Stack<string>(files.Split('\n'));
 			FeedsStack.Reverse();
 			
-			List<FeedListItem> feedsList = new List<FeedListItem>();
+			var feedsList = new List<FeedListItem>();
 			
 			//
-			while (FeedsStack.Count > 0) {
+			while (FeedsStack.Count > 0)
+			{
+				//
 				string[] currentNode;
+				//
 				string currentItem = FeedsStack.Pop().Trim('\r','\n');
 				//
 				if (string.IsNullOrEmpty(currentItem)) continue;
 				else if (currentItem[0]=='#') continue;
 				//
 				currentNode = currentItem.Split('|');
-				if (currentNode[0] == null || currentNode[1] == null) continue;
+				//
+				if (currentNode.Length == 0 || currentNode.Length < 3) {
+					System.Diagnostics.Debug.WriteLine("currentNode.length = {0} (not good)",currentNode.Length);
+					System.Diagnostics.Debug.WriteLine("CurrentItem = \"{0}\"",currentItem);
+					System.Diagnostics.Debug.WriteLine("------------------------------");
+					continue;
+				}
+				else if (string.IsNullOrEmpty(currentNode[0]) || string.IsNullOrEmpty(currentNode[1]) || string.IsNullOrEmpty(currentNode[2])) {
+					System.Diagnostics.Debug.WriteLine("One of the (array) string[3] elements was null");
+					continue;
+				}
+				else if (currentNode[0] == null || currentNode[1] == null || currentNode[2] == null) {
+					System.Diagnostics.Debug.WriteLine("One of the (array) string[3] elements was null");
+					continue;
+				}
+				//
 				feedsList.Add( new FeedListItem {groupid=currentNode[0],title=currentNode[1],url=currentNode[2]} );
+				//
 			}
-			feedsList.Sort(delegate(FeedListItem a, FeedListItem b) { return a.SortName.CompareTo(b.SortName); });
+			//
+			feedsList.Sort((FeedListItem a, FeedListItem b) => string.Compare(a.SortName, b.SortName, StringComparison.CurrentCulture));
+			//
 			return feedsList;
 		}
 		/// <summary>
@@ -132,7 +153,7 @@ namespace FeedTool.Converters
 		/// <returns></returns>
 		static public IDictionary<string,FeedListItem> TextToDictionary(string fileName, bool sortByTitle=true)
 		{
-			Dictionary<string,FeedListItem> FeedsDictionary = new Dictionary<string,FeedListItem>();
+			var FeedsDictionary = new Dictionary<string,FeedListItem>();
 			foreach (FeedListItem feed in TextToList(fileName,sortByTitle)) FeedsDictionary.Add(feed.title,feed);
 			return FeedsDictionary;
 		}
@@ -144,7 +165,7 @@ namespace FeedTool.Converters
 		/// <returns></returns>
 		static public ObservableCollection<MasterFeedNode> TextToMaster(string fileName, bool sortByTitle=true)
 		{
-			ObservableCollection<MasterFeedNode> items = new ObservableCollection<MasterFeedNode>();
+			var items = new ObservableCollection<MasterFeedNode>();
 			foreach (FeedListItem feed in TextToList(fileName,sortByTitle)) items.Add(
 				new MasterFeedNode{
 					Key=feed.title,

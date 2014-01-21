@@ -59,7 +59,7 @@ namespace FeedTool.Readers
             // Report error if need be
             if (!isopml)
             {
-                System.Diagnostics.Debug.Print("Not an OPML file.",isopml);
+                System.Diagnostics.Debug.Print("Not an OPML file.");
             }
             // 
             else

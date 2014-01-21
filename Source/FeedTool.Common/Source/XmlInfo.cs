@@ -118,7 +118,6 @@ namespace FeedTool
         /// navigating, such as to provide a icon to a user interface
         /// which identifies the type of feed we are viewing.
         /// </summary>
-        /// <param name="nsUri"></param>
         /// <returns></returns>
         public bool HasNSValue(string value)
         {
@@ -131,7 +130,6 @@ namespace FeedTool
         /// navigating, such as to provide a icon to a user interface
         /// which identifies the type of feed we are viewing.
         /// </summary>
-        /// <param name="nsUri"></param>
         /// <returns></returns>
         public bool HasNSKey(string attr)
         {
