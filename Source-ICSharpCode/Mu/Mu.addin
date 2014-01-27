@@ -5,6 +5,9 @@
 	<Runtime>
 		<Import assembly="Mu.dll" />
 		<Import assembly="FirstFloor.ModernUI.dll" />
+		<Import assembly="System.Cor3.dll" />
+		<Import assembly="System.Cor3.dll" />
+		<Import assembly="Generator.Lib.dll" />
 		
 		<Import assembly=":ICSharpCode.AvalonEdit" />
 		<Import assembly=":ICSharpCode.Core" />

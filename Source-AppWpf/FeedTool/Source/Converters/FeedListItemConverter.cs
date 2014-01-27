@@ -110,18 +110,29 @@ namespace FeedTool.Converters
 			List<FeedListItem> feedsList = new List<FeedListItem>();
 			
 			//
-			while (FeedsStack.Count > 0) {
+			while (FeedsStack.Count > 0)
+			{
+				//
 				string[] currentNode;
+				//
 				string currentItem = FeedsStack.Pop().Trim('\r','\n');
 				//
 				if (string.IsNullOrEmpty(currentItem)) continue;
 				else if (currentItem[0]=='#') continue;
 				//
 				currentNode = currentItem.Split('|');
-				if (currentNode[0] == null || currentNode[1] == null) continue;
+				//
+				if (currentNode[0] == null || currentNode[1] == null)
+					continue;
+				else if (string.IsNullOrEmpty(currentNode[0]) || string.IsNullOrEmpty(currentNode[1]))
+					continue;
+				//
 				feedsList.Add( new FeedListItem {groupid=currentNode[0],title=currentNode[1],url=currentNode[2]} );
+				//
 			}
+			//
 			feedsList.Sort(delegate(FeedListItem a, FeedListItem b) { return a.SortName.CompareTo(b.SortName); });
+			//
 			return feedsList;
 		}
 		/// <summary>

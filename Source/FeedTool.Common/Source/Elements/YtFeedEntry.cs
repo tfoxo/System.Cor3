@@ -184,11 +184,8 @@ namespace FeedTool
 		void WorkerEvent(object sender, DoWorkEventArgs e)
 		{
 			string link = null;
-			List<VideoInfo> videoInfos = (List<VideoInfo>)DownloadUrlResolver.GetDownloadUrls(link);
-			VideoInfo video = videoInfos
-				.Where(info => info.CanExtractAudio)
-				.OrderByDescending(info => info.AudioBitrate)
-				.First();
+			var videoInfos = (List<VideoInfo>)DownloadUrlResolver.GetDownloadUrls(link);
+			var video = (from info in videoInfos where info.CanExtractAudio orderby info.AudioBitrate descending select info).First();
 
 		}
 		

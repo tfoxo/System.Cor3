@@ -141,19 +141,20 @@ namespace FeedTool.Loaders
 						if (downloader.HasException) AllItemsProgress++;
 						else System.Diagnostics.Debug.Print("Got XmlList Content, continuing");
 						pair.Parser.Content = downloader.Content;
-						pair.Parser.ActionCompleted = delegate {
-//							try {
-								if (!string.IsNullOrEmpty(pair.Parser.Content)) pair.ListItem.content = pair.Parser.Content;
-								AllItemsProgress++;
-								if (AllItemsProgress.Value == AllItemsProgressMax) {
-									AllItemsProgress = 0;
-									CheckForErrors();
-								}
-								System.Diagnostics.Debug.Print("DownloadUrl Completed Loading/Parsing Child elements");
-								pair.GetChildren(pair);
-//							} catch (Exception exception) {
-//								MessageBox.Show(string.Concat(exception.Message,"\r",exception.Source));
-//							}
+						pair.Parser.ActionCompleted = () => {
+							//							try {
+							if (!string.IsNullOrEmpty(pair.Parser.Content))
+								pair.ListItem.content = pair.Parser.Content;
+							AllItemsProgress++;
+							if (AllItemsProgress.Value == AllItemsProgressMax) {
+								AllItemsProgress = 0;
+								CheckForErrors();
+							}
+							System.Diagnostics.Debug.Print("DownloadUrl Completed Loading/Parsing Child elements");
+							pair.GetChildren(pair);
+							//							} catch (Exception exception) {
+							//								MessageBox.Show(string.Concat(exception.Message,"\r",exception.Source));
+							//							}
 						};
 						pair.Parser.Run();
 					}

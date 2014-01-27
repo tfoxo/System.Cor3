@@ -4,17 +4,20 @@
 #### items following are contained within a section denoded by the header.
 #### (3) hashes indicate header-level-2
 #### (4) or more hashes indicates as (2) does.
-#### (note) that this is a personal standard
+#### (N) that this is a personal standard
 
-#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
-#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
-#Template|https://gdata.youtube.com/feeds/api/users/Template/uploads?max-results=50
+nasa|CHANDRA HARVARD|http://chandra.harvard.edu/resources/podcasts/podcasts.xml
 
+### SAMPLE YOUTUBE PLAYLIST FEED
+#		  https://gdata.youtube.com/feeds/api/users/default/playlists?max-results=50
+#         https://gdata.youtube.com/feeds/api/users/default/playlists?v=2&max-results=50
+#Template|https://gdata.youtube.com/feeds/api/users/default/uploads?max-results=50
+#Template|https://gdata.youtube.com/feeds/api/users/default/uploads?max-results=50
+#Template|https://gdata.youtube.com/feeds/api/users/default/uploads?max-results=50
 #http://www.youtube.com/user/SupremeMasterTV03?feature=watch
 
 dev|SD4|http://build.sharpdevelop.net/BuildArtefacts/Rss/For/SD4x
 dev|FFMPEG-GIT|http://git.videolan.org/?p=ffmpeg.git;a=rss
-
 radio|Astonisher 3|http://astonisher.wordpress.com/feed
 
 ## TESTING
@@ -25,12 +28,10 @@ radio|Astonisher 3|http://astonisher.wordpress.com/feed
 #PageDown|http://code.google.com/feeds/p/pagedown/hgchanges/basic?repo=wiki
 
 # my little blog
-local|tfw|http://vaio/b/feed/
 local|tfwxo|http://tfwxo.wordpress.com/feed/
-#My Other Feed|http://vaio/p/feed/
 
-local|tfw.2nd Foundation|http://vaio/b/?feed=podcast&series=2ndFoundation
-local|tfw.Plato, The Republic|http://vaio/b/?feed=podcast&series=plato-the-republic
+### (localhost)
+local|tfw|http://vaio/b/feed/
 
 #To Fail|http://I-Dont-Exist/
 
@@ -46,14 +47,19 @@ unkn|megawatts1066|https://gdata.youtube.com/feeds/api/users/megawatts1066/uploa
 
 ## SPACE / WEATHER / GEO/GALACTIC
 #######################################################################
-news|Suspicious0bservers|https://gdata.youtube.com/feeds/api/users/Suspicious0bservers/uploads?max-results=50
+science|Suspicious0bservers|https://gdata.youtube.com/feeds/api/users/Suspicious0bservers/uploads?max-results=50
+## SCIENCE.NASA
+science|ScienceAtNASA|https://gdata.youtube.com/feeds/api/users/ScienceAtNASA/uploads?max-results=50
 
 ## TECH
 #######################################################################
 tech|GoogleTechTalks|https://gdata.youtube.com/feeds/api/users/GoogleTechTalks/uploads?max-results=50
 tech|blogs.oasis-open.org|http://blogs.oasis-open.org/rss.xml
-tech|Google Developers Blog|http://feeds.feedburner.com/GDBcode?format=xml
-tech|Chromium blog|http://blog.chromium.org/feeds/posts/default
+tech|Google Developers Blog|http://feeds.feedburner.com/GDBcode?alt=rss
+tech|Chromium blog|http://blog.chromium.org/feeds/posts/default?alt=rss
+
+## TECH (SOFTWARE)
+tech|ffmpeg.zeranoe|http://ffmpeg.zeranoe.com/builds/rss.xml
 
 ### ICSHARPCODE
 #######################################################################
@@ -81,7 +87,6 @@ book|webofstories|https://gdata.youtube.com/feeds/api/users/webofstories/uploads
 
 ## REVOLUTIONS
 #######################################################################
-
 #TheHatedPatriot1776|https://gdata.youtube.com/feeds/api/users/TheHatedPatriot1776/uploads?max-results=50
 radio|Revolution Radio|https://gdata.youtube.com/feeds/api/users/freerevolutionradio/uploads?max-results=50
 radio|HumanityTranscending|https://gdata.youtube.com/feeds/api/users/HumanityTranscending/uploads?max-results=50
@@ -102,13 +107,12 @@ radio.RBN|Spingola Speaks|http://www.republicbroadcasting.org/podcasts.active.ph
 #######################################################################
 # [Coast To Coast AM]
 #######################################################################
-## WhyTF is this still here?
 radio|C2C Articles|http://feeds2.feedburner.com/C2C-Articles
 radio|C2C Past|http://feeds2.feedburner.com/C2C-PastShows
 radio|C2C Upcoming|http://feeds2.feedburner.com/C2C-UpcomingShows
 
 #info|Rayleen Alan Miller|http://radio.rumormillnews.com/podcast/feed/
-#American Kabuki|http://americankabuki.blogspot.com/feeds/posts/default?alt=rss
+American Kabuki|American Kabuki|http://americankabuki.blogspot.com/feeds/posts/default?alt=rss
 #American Kabuki (2)|http://feeds.feedburner.com/AmericanKabuki?format=xml
 
 #######################################################################
@@ -125,6 +129,7 @@ SantosBonacci|MrAstrotheology|https://gdata.youtube.com/feeds/api/users/MrAstrot
 SantosBonacci|TheSantosBonacciShow|https://gdata.youtube.com/feeds/api/users/TheSantosBonacciShow/uploads?max-results=50
 SantosBonacci|qltelevision|https://gdata.youtube.com/feeds/api/users/qltelevision/uploads?max-results=50
 SantosBonacci|starseedseeker|https://gdata.youtube.com/feeds/api/users/starseedseeker/uploads?max-results=50
+SantosBonacci|ThisFaIseReaIity|https://gdata.youtube.com/feeds/api/users/ThisFaIseReaIity/uploads?max-results=50
 
 #######################################################################
 # Kate Of Gaia presents Santos Bonacci on a weekly basis
@@ -140,6 +145,9 @@ SantosBonacci|LightworkersMedia1|https://gdata.youtube.com/feeds/api/users/Light
 ManlyPHall|MPHarchive|https://gdata.youtube.com/feeds/api/users/MPHarchive/uploads?max-results=50
 ManlyPHall|pendeathlington|https://gdata.youtube.com/feeds/api/users/pendeathlington/uploads?max-results=50
 ManlyPHall|theduderinok2|https://gdata.youtube.com/feeds/api/users/theduderinok2/uploads?max-results=50
+ManlyPHall|PromienieNet|https://gdata.youtube.com/feeds/api/users/PromienieNet/uploads?max-results=50
+ManlyPHall|CarstenDam|https://gdata.youtube.com/feeds/api/users/CarstenDam/uploads?max-results=50
+ManlyPHall|PromienieNet|https://gdata.youtube.com/feeds/api/users/PromienieNet/uploads?max-results=50
 
 #######################################################################
 # otherly

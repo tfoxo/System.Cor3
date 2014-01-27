@@ -212,8 +212,7 @@ namespace System.Cor3.Data
 		#region adapt
 		virtual public TAdapter DefaultSelectAdapter(DbOp op, string query, TConnection connection)
 		{
-			TAdapter adapter = new TAdapter(){ SelectCommand=new TCommand(){ CommandText=query, Connection=connection} };
-			return adapter;
+			return new TAdapter(){ SelectCommand=new TCommand(){ CommandText=query, Connection=connection} };
 		}
 		#endregion
 		#region ins
@@ -225,7 +224,7 @@ namespace System.Cor3.Data
 		/// <returns></returns>
 		public DataSet Insert(string query, CBRowParam S)
 		{
-			return Insert(query,S,DefaultFill);
+			return Insert(query: query, S: S, Fill: DefaultFill);
 		}
 		/// <summary>
 		/// 

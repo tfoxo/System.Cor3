@@ -142,7 +142,7 @@ namespace Generator.Core.Parser
 		
 		static int counter=0;
 		
-		static Dictionary<NsTypes,string> AC001 = new Dictionary<NsTypes,string>(){
+		static readonly Dictionary<NsTypes,string> AC001 = new Dictionary<NsTypes,string>(){
 			{ NsTypes.Global, Strings.Factory_AcErratum },
 			{ NsTypes.TableTypes, string.Concat(
 				Strings.Factory_AcTable,";",
@@ -156,7 +156,7 @@ namespace Generator.Core.Parser
 				Strings.Factory_AcTypes,";",
 				Strings.Factory_AcPkType) },
 		};
-		static Dictionary<NsTypes,string> AC002 = new Dictionary<NsTypes,string>(){
+		static readonly Dictionary<NsTypes,string> AC002 = new Dictionary<NsTypes,string>(){
 			{ NsTypes.Global,Strings.Factory_AcErratum },
 			{ NsTypes.TableTypes, string.Concat(
 				Strings.Factory_AcTable,";",
@@ -228,8 +228,7 @@ namespace Generator.Core.Parser
 		/// <param name="tps">IDbConfiguration4; (selection)</param>
 		/// <param name="newVersion">This isn't used.</param>
 		/// <returns>parsed string result.</returns>
-		static public string ConvertInput(IDbConfiguration4 tps,
-		                                  bool newVersion)
+		static public string ConvertInput(IDbConfiguration4 tps, bool newVersion)
 		{
 			string tableOut = string.Empty;
 			
@@ -267,8 +266,8 @@ namespace Generator.Core.Parser
 			{
 				string sdb=	tps.SelectedView.Database, stb=tps.SelectedView.Table;
 				
-				database =	tps.SelectedCollection.Databases.Where(db=>db.Name==sdb).FirstOrDefault();
-				table =		database.Items.Where(t=>t.Name==stb).FirstOrDefault();
+				database =	tps.SelectedCollection.Databases.FirstOrDefault(db => db.Name == sdb);
+				table = (TableElement)database.Items.FirstOrDefault(t => t.Name == stb);
 				
 				if (CheckForError(database,table,true))
 				{
@@ -355,11 +354,11 @@ namespace Generator.Core.Parser
 						#region Main Parser Section
 						Logger.LogC("template factory","Match0.Value = “{0}”",match0.Value);
 						Logger.LogC("\tfactory",".Name = “{0}”",match0.Name);
-						Global.statC("{0}",match0.Params[0]);
+						System.Cor3.ConsoleColorC.statC("{0}",match0.Params[0]);
 						string newOut = string.Empty;
 						for(int i=1; i < match0.Params.Length; i++)
 						{
-							Global.statG("table: “{0}”", match0.Params[i]);
+							System.Cor3.ConsoleColorC.statG("table: “{0}”", match0.Params[i]);
 							TableTemplate tpl = tps.Templates[match0.Params[0]];
 							TableElement tbl = tps.SelectedDatabase[match0.Params[i]];
 							table.View = tps.SelectedView;
@@ -378,10 +377,7 @@ namespace Generator.Core.Parser
 		
 		/// changed: we are not just calling continue to break out of a loop;  No loop;
 		/// Now we're returning the input 'tableIn'.
-		static public string ConvertInputPart(IDbConfiguration4 tps,
-		                                      TableElement table,
-		                                      QuickMatch match,
-		                                      string tableIn)
+		static public string ConvertInputPart(IDbConfiguration4 tps, TableElement table, QuickMatch match, string tableIn)
 		{
 			string tableOut = tableIn;
 //			QuickMatch match0 = list[0];
@@ -445,13 +441,7 @@ namespace Generator.Core.Parser
 				#region Main Parser Section
 				
 //				switch (match0.Name) { default: Global.statC("{0}",match0.Params[0]); break; }
-				Logger.LogC(
-					Strings.LogTemplateInfo_Title,
-					Strings.LogTemplateInfo_Format,
-					match.Value,
-					match.Name,
-					match.Params[0]
-				);
+				Logger.LogC(Strings.LogTemplateInfo_Title,Strings.LogTemplateInfo_Format,match.Value,match.Name,match.Params[0]);
 				
 				string newOut = string.Empty;
 				
@@ -460,19 +450,10 @@ namespace Generator.Core.Parser
 					Global.statG(Strings.LogTable_Format, match.Params[i]);
 					TableTemplate tpl = tps.Templates[match.Params[0]];
 					TableElement tbl = tps.SelectedDatabase[match.Params[i]];
-					newOut += ConvertInput2(
-						tps,
-						tbl,
-						tpl.ElementTemplate,
-						tpl.ItemsTemplate,
-						false
-					);
+					newOut += ConvertInput2(tps,tbl,tpl.ElementTemplate,tpl.ItemsTemplate,false);
 				}
-				
 				tableOut = tableOut.Replace( match.FullString, newOut );
-				
 				#endregion
-				
 			}
 			
 			return tableOut;
@@ -488,6 +469,7 @@ namespace Generator.Core.Parser
 		/// <para>The parser process repeats using this method for each requested table/template
 		/// provided by the given template until there are no templates left to parse.</para>
 		/// </summary>
+		/// <param name = "tps"></param>
 		/// <param name="table"></param>
 		/// <param name="tableTemplate"></param>
 		/// <param name="fieldTemplate"></param>
@@ -539,6 +521,7 @@ namespace Generator.Core.Parser
 		/// in a list where each parsed field is an item.
 		/// </para>
 		/// </summary>
+		/// <param name = "tps"></param>
 		/// <param name="table"></param>
 		/// <param name="fieldTemplate"></param>
 		/// <param name="noKey"></param>
@@ -550,7 +533,7 @@ namespace Generator.Core.Parser
 		                                           string fieldTemplate,
 		                                           bool noKey)
 		{
-			List<string> paramStrings = new List<string>();
+			var paramStrings = new List<string>();
 			string temp = null, sdb=null, stb=null;
 			// what's the table we're dealing with here?
 			string fieldOut = table.Reformat( fieldTemplate );
@@ -567,8 +550,8 @@ namespace Generator.Core.Parser
 			{
 				sdb = table.View.Database;
 				stb = table.View.Table;
-				DatabaseElement db = tps.SelectedCollection.Databases.Where(xdb=>xdb.Name==sdb).FirstOrDefault();
-				TableElement tbl = db.Items.Where(t=>t.Name==stb).FirstOrDefault();
+				DatabaseElement db = tps.SelectedCollection.Databases.FirstOrDefault(xdb => xdb.Name == sdb);
+				var tbl = (TableElement)db.Items.FirstOrDefault(t => t.Name == stb);
 				if (CheckForError(tbl)) Logger.Warn("GetParamStrings","Table \"{0}\" wasn't found");
 				fieldOut = tbl.ReplaceValues( fieldTemplate );
 				foreach (FieldElement field in tbl.Fields)
@@ -584,8 +567,8 @@ namespace Generator.Core.Parser
 				{
 					sdb = link.Database;
 					stb = link.Table;
-					db = tps.SelectedCollection.Databases.Where(xdb=>xdb.Name==sdb).FirstOrDefault();
-					tbl = db.Items.Where(t=>t.Name==stb).FirstOrDefault();
+					db = tps.SelectedCollection.Databases.FirstOrDefault(xdb => xdb.Name == sdb);
+					tbl = (TableElement)db.Items.FirstOrDefault(t => t.Name == stb);
 					if (CheckForError(tbl)) Logger.Warn("GetParamStrings","Table \"{0}\" wasn't found");
 					Logger.LogG("Found table","{0}",tbl.Name);
 					fieldOut = tbl.ReplaceValues( fieldTemplate );

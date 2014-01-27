@@ -75,7 +75,7 @@ namespace System
 		/// <returns></returns>
 		static public string FormatList(this string input, bool addLineSep, string format, string fieldFormat, params object[] values)
 		{
-			string[] list = new string[values.Length];
+			var list = new string[values.Length];
 			for (int i=0; i < values.Length; i++) list[i] = string.Format(fieldFormat,values[i]);
 			string output = string.Format(format,string.Join(addLineSep ? "\r\n" : string.Empty, list));
 			return output;
@@ -99,7 +99,8 @@ namespace System
 			string output = string.Format("{0}",input);
 			try {
 				output = string.Concat(char.ToUpper(output[0]).ToString(),output.Substring(1));
-			} catch (Exception) { }
+			} catch {
+			}
 			return output;
 		}
 

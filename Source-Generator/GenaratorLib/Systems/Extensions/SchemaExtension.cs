@@ -41,18 +41,11 @@ namespace Generator.Extensions
 		 * the only extension method in the entire class
 		 */
 		#region Extension: String.SFilter
-		/// <summary>
-		/// wid is the name of the column, table is the name of the table
-		/// </summary>
-		/// <param name="input"></param>
-		/// <param name="wid"></param>
-		/// <param name="table"></param>
-		/// <returns></returns>
 		static public string SFilter(this string input, string wid, string table)
 		{
 			return "{word-id} = '{col-id}'"
-				.Replace("{col-id}",table)
-				.Replace("{word-id}",wid)
+				.Replace(oldValue: "{col-id}", newValue: table)
+				.Replace(oldValue: "{word-id}", newValue: wid)
 				;
 		}
 

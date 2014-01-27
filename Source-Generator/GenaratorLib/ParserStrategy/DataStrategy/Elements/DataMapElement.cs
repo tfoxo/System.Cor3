@@ -16,8 +16,16 @@ namespace Generator.Core.Entities
 	/// provides a basic (empty) structure for type-checking
 	/// map elements.
 	/// </summary>
-	public abstract class DataMapElement : IGeneratorElement
+	public abstract class DataMapElement : IGeneratorElement, INotifyPropertyChanged
 	{
+		public event PropertyChangedEventHandler PropertyChanged;
+		protected internal void OnPropertyChanged(string propertyName)
+		{
+			if (PropertyChanged != null)
+			{
+				PropertyChanged(this,new PropertyChangedEventArgs(propertyName));
+			}
+		}
 		/* not to be implemented until we have a use for this guy
 		internal Dictionary<string,object> _keydata = new Dictionary<string, object>();
 		public Dictionary<string, object> KeyData { get { return _keydata; } set { _keydata = value; } }
@@ -40,6 +48,6 @@ namespace Generator.Core.Entities
 		/// </summary>
 		[XmlAttribute] public string Tags {
 			get { return tags; } set { tags = value; }
-		} string tags = "";
+		} string tags = null;
 	}
 }

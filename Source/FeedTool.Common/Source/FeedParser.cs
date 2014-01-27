@@ -74,7 +74,7 @@ namespace FeedTool
         
         void ParseAtom()
         {
-            XmlNodeList xnl = Xml.DocRoot.SelectNodes("//entry");
+            var xnl = Xml.DocRoot.SelectNodes("//entry");
             for (int i = 0; i < xnl.Count; i++) {
                 var node = new AtomEntry { Index=i, ItemPath=string.Format("//entry[{0}]",i+1), };
                 node.Parse(Xml.Doc, Xml.DocNs);
@@ -84,7 +84,7 @@ namespace FeedTool
         }
         void ParseRss()
         {
-            XmlNodeList xnl = Xml.DocRoot.SelectNodes("//channel/item");
+            var xnl = Xml.DocRoot.SelectNodes("//channel/item");
             for (int i = 0; i < xnl.Count; i++) {
                 var node = new RssNode { Index=i, ItemPath=string.Format("//channel/item[{0}]",i+1), };
                 node.Parse(Xml.Doc, Xml.DocNs);
@@ -95,7 +95,7 @@ namespace FeedTool
         // Feeds are actually podcasts.
         void ParseFeed()
         {
-            XmlNodeList xnl = Xml.DocRoot.SelectNodes("//xmlroot:entry", Xml.DocNs);
+            var xnl = Xml.DocRoot.SelectNodes("//xmlroot:entry", Xml.DocNs);
             for (int i = 0; i < xnl.Count; i++) {
                 var node = new YtFeedEntry { Index=i, ItemPath=string.Format("//xmlroot:entry[{0}]",i+1), };
                 node.Parse(Xml.Doc, Xml.DocNs);

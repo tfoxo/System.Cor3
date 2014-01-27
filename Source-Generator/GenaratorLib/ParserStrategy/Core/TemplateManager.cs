@@ -25,11 +25,11 @@ namespace Generator.Core.Operations
 	/// Note that Windows.Forms.TreeNode is referenced in correlation with
 	/// most data-elements.
 	/// </summary>
-	public class TemplateManager : IDatabaseCollection, ITemplateSelection, IDbConfiguration4, IFactory
+	public class TemplateManager : IDbConfiguration4, IFactory
 	{
 		static int tcount = 0;
 		static int __dbIncr = 0;
-		static int __tbIncr = 0;
+		const int __tbIncr = 0;
 		
 		#if WPF4
 		
@@ -98,7 +98,7 @@ namespace Generator.Core.Operations
 		
 		#region Selection: Query
 		
-		public bool HasQuery { get { return !(SelectedQuery == null); } }
+		public bool HasQuery { get { return SelectedQuery != null; } }
 		public QueryElement selectedQuery = null;
 		public QueryElement SelectedQuery { get { return selectedQuery; } set { selectedQuery = value; } }
 		/// <summary>
@@ -107,14 +107,15 @@ namespace Generator.Core.Operations
 		/// <returns></returns>
 		virtual public DatabaseCollection CreateConfig()
 		{
-			DatabaseCollection dc	= new DatabaseCollection();
-			DatabaseElement dbelm	= new DatabaseElement(string.Format(Messages.Node_New_Database_Element,__dbIncr));
+			var dc	= new DatabaseCollection();
+			var dbelm	= new DatabaseElement(string.Format(Messages.Node_New_Database_Element,__dbIncr));
 			dc.Queries				= new List<QueryElement>();
 			dc.Databases			= new List<DatabaseElement>(){ dbelm };
 			__dbIncr++;
 			
 			dbelm.Items				= new List<TableElement>();
-			TableElement te			= new TableElement();
+			dbelm.Views				= new List<DataViewElement>();
+			var te			= new TableElement();
 			te.Fields				= new List<FieldElement>();
 			te.Name					= string.Format(Messages.Node_New_Table_Element, __tbIncr);
 			
@@ -166,7 +167,7 @@ namespace Generator.Core.Operations
 		public TemplateCollection Templates { get;set; }
 		
 		/// <summary>gets the selected template.  Sets the template however note that this is not inherited when passing through <see cref="ITemplateSelection.SelectedTemplate" /></summary>
-		public TableTemplate SelectedTemplate { get; internal set; }
+		public TableTemplate SelectedTemplate { get; set; }
 		
 		#region SelectionType
 		
@@ -215,8 +216,7 @@ namespace Generator.Core.Operations
 			{
 				if (Templates==null) return false;
 				if (Templates.FileLoadedOrSaved==null) return false;
-				if (Templates.FileLoadedOrSaved==string.Empty) return false;
-				return true;
+				return Templates.FileLoadedOrSaved != string.Empty;
 			}
 		}
 		
@@ -231,7 +231,7 @@ namespace Generator.Core.Operations
 		
 		#region Selection: Database
 		public DatabaseCollection	SelectedCollection { get; set; }
-		public bool IsSelectedFieldPrimary { get { return ! (HasSelectedField|HasSelectedDatabase) ? false : SelectedField.DataName==SelectedDatabase.Name; } }
+		public bool IsSelectedFieldPrimary { get { return (HasSelectedField | HasSelectedDatabase) && SelectedField.DataName == SelectedDatabase.Name; } }
 		
 		public bool HasSelectedDatabase { get { return SelectedDatabase != null; } }
 		public bool HasSelectedTable { get { return SelectedTable != null; } }
@@ -272,13 +272,15 @@ namespace Generator.Core.Operations
 		{
 			++tcount;
 			Logger.LogY("TemplateContext","AddNewTemplate");
-			TableTemplate tt = new TableTemplate();
-			tt.Alias = "(New"+tcount.ToString()+")";
-			tt.Group = this.SelectedTemplateGroup;
+			var tt = new TableTemplate();
+			tt.Alias = string.Format("(New{0})", tcount);
+			tt.Group = SelectedTemplateGroup;
 			tt.ElementTemplate = string.Empty;
 			tt.ItemsTemplate = string.Empty;
-			tt.ToTable(this.ItemsTable);
-			Logger.LogY("TemplateContext","              : {0} : {1}", this.SelectedTemplateGroup,this);
+			tt.ToTable(ItemsTable);
+			const string templateContext = "TemplateContext";
+			const string str = "              : {0} : {1}";
+			Logger.LogY(templateContext, str, SelectedTemplateGroup, this);
 		}
 		
 		#endregion

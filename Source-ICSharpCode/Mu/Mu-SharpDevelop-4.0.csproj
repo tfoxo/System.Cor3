@@ -103,24 +103,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Source\Cor3.Core\System\ControlUtil.cs">
-      <Link>Include\Cor3\ControlUtil.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\Cor3.Core\System\DICT.cs">
-      <Link>Include\Cor3\DICT.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\Cor3.Core\System\Serial.cs">
-      <Link>Include\Cor3\Serial.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\Cor3.Core\System\WTF.cs">
-      <Link>Include\Cor3\WTF.cs</Link>
-    </Compile>
     <Compile Include="..\..\Source\Cor3.Core\Tasks\NormalizePathTool.cs">
       <Link>NormalizePathTool.cs</Link>
     </Compile>
     <Compile Include="Src\Lib\CsProjectItemInfo.cs" />
     <Compile Include="Src\Lib\CsProjectItemSettings.cs" />
     <Compile Include="Src\Lib\ToolSettings_Skin.cs" />
+    <Compile Include="Src\Samsung.cs" />
     <Compile Include="Src\View\EditorControl.xaml.cs">
       <DependentUpon>EditorControl.xaml</DependentUpon>
     </Compile>
@@ -137,6 +126,9 @@
     <Compile Include="Src\Lib\ZoomLevelToTextFormattingModeConverter.cs">
       <Generator>msbuild:compile</Generator>
     </Compile>
+    <None Include="..\..\..\..\..\..\DATA\schema\Prime\prim7.generator-config">
+      <Link>prim7.generator-config</Link>
+    </None>
     <None Include="build\build.cmd" />
     <None Include="build\mu.sdaddin" />
     <None Include="Mu.addin">
@@ -155,9 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build" />
+    <Folder Include="build\artifacts" />
     <Folder Include="Include" />
     <Folder Include="Include" />
-    <Folder Include="Include\Cor3" />
     <Folder Include="Src\Lib" />
     <Folder Include="Src" />
     <Folder Include="Src\Commands" />
@@ -165,6 +157,20 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Src\View\EditorControl.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source-Generator\GenaratorLib\Generator.Lib.csproj">
+      <Project>{FF8C58DF-784E-4818-A92C-150B8BD6B85E}</Project>
+      <Name>Generator.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Core\System.Cor3-Net40.csproj">
+      <Project>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</Project>
+      <Name>System.Cor3-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Data\System.Cor3.Data-Net40.csproj">
+      <Project>{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}</Project>
+      <Name>System.Cor3.Data-Net40</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

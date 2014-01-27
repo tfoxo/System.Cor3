@@ -105,15 +105,15 @@ namespace FeedTool.Converters
 		{
 			Table.AcceptChanges();
 			UpdateItems();
-			FeedCollection collection = new FeedCollection{ Items=this.Items };
+			var collection = new FeedCollection{ Items=this.Items };
 			collection.Save(filename,collection);
 		}
 		
 		public void LoadXml(bool append) { if (ofd.ShowDialog()==System.Windows.Forms.DialogResult.OK) LoadXml(ofd.FileName,append); }
 		public void LoadXml(string filename, bool append)
 		{
-			FeedCollection collection = FeedCollection.Load(filename);
-			this.items = collection.Items;
+			var collection = FeedCollection.Load(filename);
+			items = collection.Items;
 			RefreshFromList(append);
 		}
 		

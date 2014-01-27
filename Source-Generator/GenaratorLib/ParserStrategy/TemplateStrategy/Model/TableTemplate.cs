@@ -107,7 +107,7 @@ namespace Generator.Core.Markup
 	/// here that should be moved.
 	/// </para>
 	/// </remarks>
-	public class TableTemplate : MarkupTemplate<TableElement>
+	public sealed class TableTemplate : MarkupTemplate<TableElement>
 	{
 		#region Props
 		string className,syntaxLanguage;
@@ -132,11 +132,15 @@ namespace Generator.Core.Markup
 		/// </para>
 		/// </summary>
 		[XmlAttribute,Category(groupTemplate)]
-		public string SyntaxLanguage { get { return syntaxLanguage; } set { syntaxLanguage = value; } }
+		public string SyntaxLanguage {
+			get { return syntaxLanguage; } set { syntaxLanguage = value; }
+		}
 		
 
 		FieldTemplate fieldTemplate;
-		[XmlElement,Browsable(false)] public FieldTemplate FieldTemplate { get { return fieldTemplate; } set { fieldTemplate = value; } }
+		[XmlElement,Browsable(false)] public FieldTemplate FieldTemplate {
+			get { return fieldTemplate; } set { fieldTemplate = value; }
+		}
 		#endregion
 
 		// .ctor

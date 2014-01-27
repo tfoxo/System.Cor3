@@ -77,10 +77,10 @@ namespace Generator.Core.Operations
 			// Loop through and find all the matches
 			foreach (Match m in input.getmatches())
 			{
-				List<string> list = new List<string>();
-				tempmatch tm = new tempmatch(m);
+				var list = new List<string>();
+				var tm = new tempmatch(m);
 
-				if (!(tm.MethodsArray.Length==3)) continue;
+				if (tm.MethodsArray.Length != 3) continue;
 				if ((tm.MethodsArray[0]=="list") && (tm.MethodsArray[1]=="columns"))
 				{
 					System.Windows.Forms.MessageBox.Show("listing cols");

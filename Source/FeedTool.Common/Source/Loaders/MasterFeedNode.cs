@@ -39,7 +39,7 @@ namespace FeedTool.Loaders
 		
 		public void GetChildren(MasterFeedNode parent)
 		{
-			foreach (NodeInfo n in Parser.Xml.Nodes)
+			foreach (var n in Parser.Xml.Nodes)
 			{
 				n.Parent = parent;
 				Children.Add(n);

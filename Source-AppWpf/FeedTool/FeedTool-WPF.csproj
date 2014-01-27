@@ -19,7 +19,7 @@
     <YoutubeExtractor>$(Cor3_Directory)\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor</YoutubeExtractor>
     <Cor3Inc>$(Cor3_Directory)\Source\Cor3.Core\Include</Cor3Inc>
     <FlashExtSrc>$(Cor3_Directory)\Source-Libs\Flash.External</FlashExtSrc>
-    <ApplicationIcon>Build\Fringe\RSSICO.ico</ApplicationIcon>
+    <ApplicationIcon>Build\Fringe\FeedToolIcon.ico</ApplicationIcon>
     <NoWarn>618, 684</NoWarn>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
@@ -129,86 +129,105 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml" />
-    <Compile Include="..\..\Source\Cor3.Core\Include\UriHacks.cs">
-      <Link>Includes\UriHacks.cs</Link>
-    </Compile>
-    <Compile Include="App.xaml.cs">
+    <ApplicationDefinition Include="FeedToolApp.xaml" />
+    <Compile Include="FeedToolApp.xaml.cs">
       <SubType>Code</SubType>
-      <DependentUpon>App.xaml</DependentUpon>
+      <DependentUpon>FeedToolApp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppManager\AppBootstrapper.cs">
+    <Compile Include="Source\App\AppBootstrapper.cs">
       <Generator>MSBuild:Compile</Generator>
     </Compile>
-    <None Include="Build\build-setup.cmd" />
-    <None Include="Build\Fringe\oxygen-refit-application-rss+xml.ico">
-      <Link>oxygen-refit-application-rss+xml.ico</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="x64\SQLite.Interop.dll" />
-    <None Include="x86\SQLite.Interop.dll" />
-    <Page Include="Styles\Lime.xaml">
-      <Generator>msbuild:Compile</Generator>
-    </Page>
-    <None Include="AppManager\AppComposition.cs">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <Compile Include="AppManager\AppView.xaml.cs">
+    <Compile Include="Source\App\AppView.xaml.cs">
       <DependentUpon>AppView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppManager\AppViewModel.cs">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="Source\BinaryTarget.cs" />
+    <Compile Include="Source\ImageHelper.cs" />
+    <Compile Include="Source\ImageSourceLoader.cs" />
+    <Compile Include="Source\ModelLoader.cs" />
+    <Compile Include="Source\BinaryTargetDownloader.cs" />
+    <Compile Include="Source\Views\DownloaderView.xaml.cs">
+      <DependentUpon>DownloaderView.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppManager\AppWindowManager.cs">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="Source\Views\FeedDataView.xaml.cs">
+      <DependentUpon>FeedDataView.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppManager\ImageHelper.cs" />
-    <Compile Include="AppManager\ImageSourceLoader.cs" />
-    <Compile Include="AppManager\MainControl.xaml.cs">
+    <Compile Include="Source\Views\FeedListViewCommands.cs" />
+    <Compile Include="Source\Views\TextEditorView.xaml.cs">
+      <DependentUpon>TextEditorView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Views\FeedListView.xaml.cs">
+      <DependentUpon>FeedListView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Views\BrowserView.xaml.cs">
+      <DependentUpon>BrowserView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Build\build-setup.cmd" />
+    <None Include="x64\SQLite.Interop.dll" />
+    <None Include="x86\SQLite.Interop.dll" />
+    <Page Include="Source\App\AppView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Source\Views\DownloaderView.xaml" />
+    <Page Include="Source\Views\FeedDataView.xaml" />
+    <Page Include="Source\Views\TextEditorView.xaml" />
+    <Page Include="Source\Views\FeedListView.xaml" />
+    <Page Include="Source\Views\BrowserView.xaml" />
+    <Page Include="Styles\Lime.xaml">
+      <Generator>msbuild:Compile</Generator>
+    </Page>
+    <None Include="Source\App\AppComposition.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <Compile Include="Source\App\MainControl.xaml.cs">
       <DependentUpon>MainControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppManager\MainWindowContainer.xaml.cs">
+    <Compile Include="Source\App\MainWindowContainer.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>MainWindowContainer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrowserManager\BoundObject.cs" />
-    <Compile Include="BrowserManager\BrowserDownloadHandler.cs" />
-    <Compile Include="BrowserManager\BrowserPresenter.cs" />
-    <Compile Include="BrowserManager\BrowserSchemeHandler.cs" />
-    <Compile Include="BrowserManager\BrowserSchemeHandlerFactory.cs" />
-    <Compile Include="BrowserManager\FeedSchemeHandler.cs" />
-    <Compile Include="BrowserManager\FeedSchemeHandlerFactory.cs" />
-    <Compile Include="BrowserManager\IBrowserView.cs" />
+    <Compile Include="Source\Browser\BoundObject.cs" />
+    <Compile Include="Source\Browser\BrowserDownloadHandler.cs" />
+    <Compile Include="Source\Browser\BrowserPresenter.cs" />
+    <Compile Include="Source\Browser\BrowserSchemeHandler.cs" />
+    <Compile Include="Source\Browser\BrowserSchemeHandlerFactory.cs" />
+    <Compile Include="Source\Browser\FeedSchemeHandler.cs" />
+    <Compile Include="Source\Browser\FeedSchemeHandlerFactory.cs" />
+    <Compile Include="Source\Browser\IBrowserView.cs" />
     <None Include="Build\Setup\compileSetup.proj" />
-    <Resource Include="Images\appbar.folder.ellipsis.png" />
-    <Resource Include="Images\appbar.folder.open.png" />
-    <Resource Include="Images\appbar.folder.png" />
-    <Resource Include="Images\appbar.home.png" />
-    <Resource Include="Images\appbar.navigate.next.png" />
-    <Resource Include="Images\appbar.navigate.previous.png" />
-    <Resource Include="Images\appbar.ribbon.png" />
-    <Resource Include="Images\appbar.rss" />
-    <Resource Include="Images\appbar.sort.alphabetical.ascending.png" />
-    <Resource Include="Images\appbar.sort.alphabetical.descending.png" />
-    <Resource Include="Images\appbar.sort.alphabetical.png" />
-    <Resource Include="Images\appbar.sort.png" />
-    <Resource Include="Images\appbar.sound.0" />
-    <Resource Include="Images\appbar.sound.1" />
-    <Resource Include="Images\appbar.sound.2" />
-    <Resource Include="Images\appbar.sound.3.png" />
-    <Resource Include="Images\appbar.sound.stereo.png" />
-    <Resource Include="Images\appbar.stream.png" />
-    <Resource Include="Images\appbar.text.size.png" />
-    <Resource Include="Images\appbar.tiles.nine.png" />
-    <Resource Include="Images\appbar.tiles.sixteen.png" />
-    <Resource Include="Images\appbar.tower.png" />
-    <Resource Include="Images\appbar.transit.hazard.png" />
-    <Resource Include="Images\appbar.warning.circle.png" />
-    <Resource Include="Images\appbar.warning.png" />
-    <Resource Include="Images\appbar.youtube.play.png" />
-    <Resource Include="Images\appbar.youtube.png" />
+    <Resource Include="Resources\Images\appbar.folder.ellipsis.png" />
+    <Resource Include="Resources\Images\appbar.folder.open.png" />
+    <Resource Include="Resources\Images\appbar.folder.png" />
+    <Resource Include="Resources\Images\appbar.home.png" />
+    <Resource Include="Resources\Images\appbar.navigate.next.png" />
+    <Resource Include="Resources\Images\appbar.navigate.previous.png" />
+    <Resource Include="Resources\Images\appbar.ribbon.png" />
+    <Resource Include="Resources\Images\appbar.rss" />
+    <Resource Include="Resources\Images\appbar.sort.alphabetical.ascending.png" />
+    <Resource Include="Resources\Images\appbar.sort.alphabetical.descending.png" />
+    <Resource Include="Resources\Images\appbar.sort.alphabetical.png" />
+    <Resource Include="Resources\Images\appbar.sort.png" />
+    <Resource Include="Resources\Images\appbar.sound.0" />
+    <Resource Include="Resources\Images\appbar.sound.1" />
+    <Resource Include="Resources\Images\appbar.sound.2" />
+    <Resource Include="Resources\Images\appbar.sound.3.png" />
+    <Resource Include="Resources\Images\appbar.sound.stereo.png" />
+    <Resource Include="Resources\Images\appbar.stream.png" />
+    <Resource Include="Resources\Images\appbar.text.size.png" />
+    <Resource Include="Resources\Images\appbar.tiles.nine.png" />
+    <Resource Include="Resources\Images\appbar.tiles.sixteen.png" />
+    <Resource Include="Resources\Images\appbar.tower.png" />
+    <Resource Include="Resources\Images\appbar.transit.hazard.png" />
+    <Resource Include="Resources\Images\appbar.warning.circle.png" />
+    <Resource Include="Resources\Images\appbar.warning.png" />
+    <Resource Include="Resources\Images\appbar.youtube.play.png" />
+    <Resource Include="Resources\Images\appbar.youtube.png" />
     <None Include="FeedTool.ncp" />
     <None Include="Properties\VersionInfo.base.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,56 +242,14 @@
     <Compile Include="Resource.Designer.cs">
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Source\Converters\FeedDataConverter.cs" />
-    <Compile Include="Source\Converters\FeedListConverter.cs" />
-    <Compile Include="Source\Converters\FeedListItemConverter.cs" />
-    <Compile Include="Source\DictionaryFromStringExtension.cs" />
-    <Compile Include="Source\DirectoryReader.cs" />
-    <Compile Include="Source\Elements\AtomEntry.cs">
-      <DependentUpon>NodeInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Elements\NodeInfo.cs" />
-    <Compile Include="Source\Elements\OpmlDocument.cs">
-      <DependentUpon>XPathItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Elements\OpmlOutline.cs">
-      <DependentUpon>XPathItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Elements\RssNode.cs">
-      <DependentUpon>NodeInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Elements\XPathItem.cs" />
-    <Compile Include="Source\Elements\YtFeedEntry.cs">
-      <DependentUpon>NodeInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Elements\YtMediaContent.cs">
-      <DependentUpon>YtFeedEntry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\FeedCollection.cs" />
-    <Compile Include="Source\FeedDataItem.cs" />
-    <Compile Include="Source\FeedListItem.cs" />
-    <Compile Include="Source\FeedParser.cs" />
-    <Compile Include="Source\Loaders\BasicFeedNode.cs" />
-    <Compile Include="Source\Loaders\FeedRootNode.cs" />
-    <Compile Include="Source\Loaders\MasterFeedNode.cs" />
-    <Compile Include="Source\Loaders\ModelLoader.cs" />
-    <Compile Include="Source\Loaders\Options.cs" />
-    <Compile Include="Source\Readers\HttpContentReader.cs" />
-    <Compile Include="Source\Readers\OpmlReader.cs" />
-    <Compile Include="Source\SQLiteFeeds.cs" />
-    <Compile Include="Source\UriDownloader.cs" />
-    <Compile Include="Source\XmlInfo.cs" />
     <None Include="Build\CefSharp-v1.25.5-binaries\libcef.dll">
       <Link>libcef.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Page Include="AppManager\AppView.xaml">
+    <Page Include="Source\App\MainControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AppManager\MainControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AppManager\MainWindowContainer.xaml">
+    <Page Include="Source\App\MainWindowContainer.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Icons.xaml">
@@ -310,7 +287,7 @@
       <DependentUpon>libcef.dll</DependentUpon>
     </None>
     <None Include="initial-data-set.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -330,69 +307,6 @@
     <EmbeddedResource Include="Resources\TooltipTest.html" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\svn_sound\Sound.Common\Formats\MMSys_Interop.cs">
-      <Link>Includes\MMSys_Interop.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\Cor3.Core\System\ControlUtil.cs">
-      <Link>Includes\ControlUtil.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\Cor3.Core\System\Serial.cs">
-      <Link>Includes\Serial.cs</Link>
-    </Compile>
-    <Compile Include="$(YoutubeExtractor)\AudioType.cs">
-      <Link>Includes\YoutubeExtractor\AudioType.cs</Link>
-    </Compile>
-    <Compile Include="$(YoutubeExtractor)\DownloadUrlResolver.cs">
-      <Link>Includes\YoutubeExtractor\DownloadUrlResolver.cs</Link>
-    </Compile>
-    <Compile Include="$(YoutubeExtractor)\HttpHelper.cs">
-      <Link>Includes\YoutubeExtractor\HttpHelper.cs</Link>
-    </Compile>
-    <Compile Include="$(YoutubeExtractor)\VideoInfo.cs">
-      <Link>Includes\YoutubeExtractor\VideoInfo.cs</Link>
-    </Compile>
-    <Compile Include="$(YoutubeExtractor)\VideoNotAvailableException.cs">
-      <Link>Includes\YoutubeExtractor\VideoNotAvailableException.cs</Link>
-    </Compile>
-    <Compile Include="$(YoutubeExtractor)\VideoType.cs">
-      <Link>Includes\YoutubeExtractor\VideoType.cs</Link>
-    </Compile>
-    <Compile Include="$(YoutubeExtractor)\YoutubeParseException.cs">
-      <Link>Includes\YoutubeExtractor\YoutubeParseException.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\Adobe\AxShockwaveFlashObjects.cs">
-      <Link>Includes\Adobe\AxShockwaveFlashObjects.cs</Link>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\Adobe\ShockwaveFlashObjects.cs">
-      <Link>Includes\Adobe\ShockwaveFlashObjects.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceCall.cs">
-      <Link>Includes\Adobe\ExternalInterfaceCall.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceCallEventArgs.cs">
-      <Link>Includes\Adobe\ExternalInterfaceCallEventArgs.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceProxy.cs">
-      <Link>Includes\Adobe\ExternalInterfaceProxy.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\Adobe\ExternalInterfaceSerializer.cs">
-      <Link>Includes\Adobe\ExternalInterfaceSerializer.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\Adobe\stdole.cs">
-      <Link>Includes\Adobe\stdole.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\FileLoader.cs">
-      <Link>Includes\FileLoader.cs</Link>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\FlashVidTool.2.0.cs">
-      <Link>Includes\FlashVidTool.2.0.cs</Link>
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="$(FlashExtSrc)\FlashVidTool.Designer.cs">
-      <Link>Includes\FlashVidTool.Designer.cs</Link>
-      <DependentUpon>FlashVidTool.2.0.cs</DependentUpon>
-    </Compile>
     <None Include="Properties\AssemblyInfo.cs.rev">
       <DependentUpon>AssemblyInfo.cs</DependentUpon>
     </None>
@@ -404,18 +318,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppManager" />
-    <Folder Include="BrowserManager" />
+    <Folder Include="Source\App" />
+    <Folder Include="Source\Browser" />
     <Folder Include="Build" />
     <Folder Include="Build\Setup" />
-    <Folder Include="Images" />
-    <Folder Include="Source\Loaders" />
+    <Folder Include="Resources\Images" />
+    <Folder Include="Source" />
     <Folder Include="Styles" />
     <Folder Include="Resources" />
-    <Folder Include="Source" />
-    <Folder Include="Source\Converters" />
-    <Folder Include="Source\Elements" />
-    <Folder Include="Source\Readers" />
+    <Folder Include="Source\Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\FeedTool.Common\FeedTool.Common.csproj">
+      <Project>{3A15849B-0693-4314-884D-409F5D21A5BB}</Project>
+      <Name>FeedTool.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask TaskName="GitVersionFile" AssemblyFile="$(ProjectDir)\Build\Fringe\MSBuildVersioning.dll" />

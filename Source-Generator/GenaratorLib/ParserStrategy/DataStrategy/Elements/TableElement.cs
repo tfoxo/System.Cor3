@@ -17,8 +17,24 @@ using System.Xml.Serialization;
 #endregion
 namespace Generator.Core.Entities
 {
-	public class TableElement : DataMapElement
+	public class TableElement : DatabaseChildElement
 	{
+		[XmlAttribute()]
+		public string Name {
+			get { return name; }
+			set { name = value; OnPropertyChanged("Name"); }
+		} string name;
+		
+		[XmlIgnore]
+		public DatabaseElement Parent {
+			get {
+				return parent;
+			}
+			set {
+				parent = value;
+				OnPropertyChanged("Parent");
+			}
+		} DatabaseElement parent;
 		#region Properties
 		/// <summary>
 		/// A helper method used to transform our internal variable dictionary
@@ -30,7 +46,7 @@ namespace Generator.Core.Entities
 		[XmlElement("Field"), System.ComponentModel.Browsable(false)]
 		public List<FieldElement> Fields {
 			get { return items; }
-			set { items = new List<FieldElement>(value); }
+			set { items = new List<FieldElement>(value); OnPropertyChanged("Fields"); }
 		} List<FieldElement> items;
 		
 		/// <summary>
@@ -41,22 +57,26 @@ namespace Generator.Core.Entities
 		}
 		
 		#region Table Definition
-		[XmlAttribute()]
-		public string Name {
-			get { return name; }
-			set { name = value; }
-		} string name;
 		
-		[XmlAttribute("base")] public string BaseClass { get;set; }
+		string baseClass;
+		[XmlAttribute("base")]
+		public string BaseClass {
+			get {
+				return baseClass;
+			}
+			set {
+				baseClass = value; OnPropertyChanged("BaseClass");
+			}
+		}
 
 		[XmlAttribute] public string Inherits {
-			get { return _inherits; } set { _inherits = value; }
+			get { return _inherits; } set { _inherits = value; OnPropertyChanged("Inherits"); }
 		} string _inherits;
 
 		[DefaultValue(""), XmlAttribute()]
 		public string Description {
 			get { return description; }
-			set { name = description; }
+			set { description = description; OnPropertyChanged("Description"); }
 		} string description;
 		
 		[XmlIgnore()] public string FriendlyName {
@@ -65,7 +85,7 @@ namespace Generator.Core.Entities
 		
 		[XmlAttribute()] public string PrimaryKey {
 			get { return primaryKey; }
-			set { primaryKey = value; }
+			set { primaryKey = value; OnPropertyChanged("PrimaryKey"); }
 		} string primaryKey;
 		
 		[XmlIgnore()]
@@ -80,7 +100,7 @@ namespace Generator.Core.Entities
 		[XmlAttribute]
 		public /*DatabaseType*/string DbType {
 			get { return dbType; }
-			set { dbType = value; }
+			set { dbType = value;  OnPropertyChanged("DbType"); }
 		} /*DatabaseType*/string dbType = "Unspecified";
 
 		/// <summary>
@@ -90,7 +110,7 @@ namespace Generator.Core.Entities
 		/// </summary>
 		[XmlIgnore] public DataViewElement View {
 			get { return view; }
-			set { view = value; }
+			set { view = value; OnPropertyChanged("View"); }
 		} DataViewElement view;
 		/// <summary>
 		/// get;set;
@@ -99,7 +119,7 @@ namespace Generator.Core.Entities
 		/// </summary>
 		[XmlIgnore] public DataViewLink Link {
 			get { return link; }
-			set { link = value; }
+			set { link = value; OnPropertyChanged("Link"); }
 		} DataViewLink link;
 		
 		#endregion
@@ -418,7 +438,7 @@ namespace Generator.Core.Entities
 		#if TREEV
 		public TreeNode ToNode()
 		{
-			TreeNode tn = new TreeNode(name);
+			var tn = new TreeNode(Name);
 			tn.Name = Name;
 			// the image correlates with the PanelTableEditor (or whatever it's called)
 			tn.SelectedImageKey = tn.ImageKey = "table";
@@ -429,7 +449,7 @@ namespace Generator.Core.Entities
 		}
 		public void ToTree(TreeNode tn)
 		{
-			TreeNode tblelement = tn.Nodes.Add(this.name);
+			var tblelement = tn.Nodes.Add(Name);
 			tblelement.Name = this.Name;
 //			tblelement.BaseClass = this.BaseClass;
 			// the image correlates with the PanelTableEditor (or whatever it's called)
@@ -440,11 +460,11 @@ namespace Generator.Core.Entities
 		#endif
 		#endregion
 		#region .ctor
-		#if TREEV
+		#if TREEV || false
 		// .ctor
 		public TableElement(TreeNode node)
 		{
-			name = node.Text;
+			Name = node.Text;
 			if (items == null)
 				items = new List<FieldElement>();
 			if (node.Tag is TableElement) {
@@ -575,7 +595,7 @@ namespace Generator.Core.Entities
 				Add("PKFriendlyName",		PrimaryKeyElement.DataName.Clean());
 				Add("PKFriendlyNameC",		PrimaryKeyElement.DataName.Clean().ToStringCapitolize());
 			} else {
-				Global.statR(Generator.Messages.TableElement_PrimaryKeyNotFound, name);
+				Global.statR(Generator.Messages.TableElement_PrimaryKeyNotFound, Name);
 			}
 			#endregion
 			

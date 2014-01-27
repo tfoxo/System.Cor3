@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 
 namespace FeedTool
@@ -126,13 +127,13 @@ WHERE [id] = @xid;";
 			this.url = value.url;
 		}
 
-		#if NO
+//		#if NO
 		// TODO: add if (usePrimary) to the primary key
 		// an insert statement would not use or contain
 		// a primary key value (or would contain a null,
 		// hence we provide the oppertunity to neglect
 		// it here.
-		public SqlCommand Parameterize(SqlCommand cmd, bool usePrimary)
+		public SQLiteCommand Parameterize(SQLiteCommand cmd, bool usePrimary)
 		{
 			if (usePrimary) cmd.Parameters.AddWithValue("@xid", this.id);
 			cmd.Parameters.AddWithValue("@udt", this.udt);
@@ -145,7 +146,7 @@ WHERE [id] = @xid;";
 			cmd.Parameters.AddWithValue("@url", this.url);
 			return cmd;
 		}
-		#endif
+//		#endif
 		#endregion
 		
 	}

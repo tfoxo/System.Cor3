@@ -39,7 +39,8 @@ namespace System
 		}
 		static public string GenerateDatedFileName(this string fileName)
 		{
-			return fileName.GenerateFileName(DateTime.Now.ToString("yyyyMMddHHmm"));
+//			return fileName.GenerateFileName(DateTime.Now.ToString("yyyyMMddHHmm"));
+			return fileName.GenerateFileName(DateTime.Now.ToString("yyyyMMddHHmmssfff"));
 		}
 		static public string GenerateFileName(this string filename, string append)
 		{

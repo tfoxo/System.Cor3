@@ -15,9 +15,15 @@ namespace Generator.Core.Entities
 	/// </summary>
 	public class FieldElement : DataMapElement
 	{
+		[XmlIgnore]
+		public TableElement Parent {
+			get { return parent; }
+			set { parent = value; OnPropertyChanged("Parent"); }
+		} TableElement parent;
+		
 		static public FieldElement Clone(FieldElement element)
 		{
-			FieldElement field = new FieldElement();
+			var field = new FieldElement();
 			field.IsArray = element.IsArray;
 			field.BlockAction = element.BlockAction;
 			field.CodeBlock = element.CodeBlock;
@@ -50,57 +56,90 @@ namespace Generator.Core.Entities
 		
 		[XmlAttribute/*,DefaultValue("Text")*/] public string DataType {
 			get { return dataType; }
-			set { dataType = value; }
+			set { dataType = value; OnPropertyChanged("DataType"); }
 		} string dataType = "Text";
 		
 		
-		[XmlAttribute,DefaultValue("")] public string DataTypeNative { get;set; }
-		
-		[XmlAttribute] public string DataName { get;set; }
-		
-		[XmlAttribute] public string FormatString { get;set; }
-		
-		[XmlAttribute,DefaultValue("")] public string BaseClass { get;set; }
-		
+		[XmlAttribute, DefaultValue("")] public string DataTypeNative {
+			get { return dataTypeNative; } set { dataTypeNative = value; OnPropertyChanged("DataTypeNative"); }
+		} string dataTypeNative;
+		[XmlAttribute] public string DataName {
+			get { return dataName; } set { dataName = value; OnPropertyChanged("DataName"); }
+		} string dataName;
+		[XmlAttribute] public string FormatString {
+			get { return formatString; } set { formatString = value; OnPropertyChanged("FormatString"); }
+		} string formatString;
+		[XmlAttribute, DefaultValue("")] public string BaseClass {
+			get { return baseClass; } set { baseClass = value; OnPropertyChanged("BaseClass"); }
+		} string baseClass;
 		[XmlAttribute,DefaultValue(-1)] public int MaxLength {
-			get { return maxLength; }
-			set { maxLength = value; }
+			get { return maxLength; } set { maxLength = value; OnPropertyChanged("MaxLength"); }
 		} int maxLength = -1;
-		
 		[DefaultValue(false),XmlAttribute] public bool UseFormat {
-			get { return useFormat; }
-			set { useFormat = value; }
+			get { return useFormat; } set { useFormat = value; OnPropertyChanged("UseFormat"); }
 		} bool useFormat;
 		
 		[DefaultValue(true),XmlAttribute] public bool IsNullable {
-			get { return isNullable; }
-			set { isNullable = value; }
+			get { return isNullable; } set { isNullable = value; OnPropertyChanged("IsNullable"); }
 		} bool isNullable = true;
 		
-		[XmlAttribute] public bool IsArray { get; set; }
- 
+		[XmlAttribute]
+		public bool IsArray {
+			get { return isArray; } set { isArray = value; OnPropertyChanged("IsArray"); }
+		} bool isArray;
 		
-		[XmlAttribute] public string Description { get; set; }
+		[XmlIgnore]
+		public bool IsPrimary {
+			get { return parent.PrimaryKey == dataName; }
+			set { if (value) Parent.PrimaryKey = dataName; OnPropertyChanged("IsPrimary"); }
+		}
 		
-		[XmlAttribute/*,DefaultValue("DBNull.Value")*/] public string DefaultValue {
+		[XmlAttribute]
+		public string Description {
+			get { return description; }
+			set { description = value; OnPropertyChanged("Description"); }
+		} string description;
+		
+		[XmlAttribute/*,DefaultValue("DBNull.Value")*/]
+		public string DefaultValue {
 			get { return defaultValue; }
-			set { defaultValue = value; }
+			set { defaultValue = value; OnPropertyChanged("DefaultValue"); }
 		} string defaultValue = "DBNull.Value";
 		
-		[XmlAttribute] public string BlockAction { get;set; }
+		[XmlAttribute]
+		public string BlockAction {
+			get { return blockAction; }
+			set { blockAction = value; OnPropertyChanged("BlockAction"); }
+		} string blockAction;
 		
-		[XmlAttribute] public string CodeBlock { get;set; }
+		[XmlAttribute]
+		public string CodeBlock {
+			get { return codeBlock; }
+			set { codeBlock = value; OnPropertyChanged("CodeBlock"); }
+		} string codeBlock;
 		
-		[XmlAttribute] public string FormType { get;set; }
+		[XmlAttribute]
+		public string FormType {
+			get { return formType; }
+			set { formType = value; OnPropertyChanged("FormType"); }
+		} string formType;
 
 		/// <summary>
 		/// Used internally by the parser
 		/// </summary>
-		[XmlIgnore] public DataViewElement View { get;set; }
+		[XmlIgnore]
+		public DataViewElement View {
+			get { return view; }
+			set { view = value; OnPropertyChanged("View"); }
+		} DataViewElement view;
 		/// <summary>
 		/// Used internally by the parser
 		/// </summary>
-		[XmlIgnore] public DataViewLink Link { get;set; }
+		[XmlIgnore]
+		public DataViewLink Link {
+			get { return link; }
+			set { link = value; OnPropertyChanged("Link"); }
+		} DataViewLink link;
 		
 		#endregion
 
@@ -112,8 +151,7 @@ namespace Generator.Core.Entities
 		public object this[string Key]
 		{
 			get {
-				if (!Contains(Key)) return null;
-				return Params[Key];
+				return !Contains(Key) ? null : Params[Key];
 			}
 		}
 
@@ -144,10 +182,10 @@ namespace Generator.Core.Entities
 			get
 			{
 				//
-				DICT <string,object> fparams = new DICT <string,object>();
+				var fparams = new DICT <string,object>();
 				// we're gearing towards usage such as this using reflection
 				// as opposed to this particular static method.
-				GeneratorTypeProvider.GetTypes<GeneratorDateTimeFieldProvider>(fparams);
+				GeneratorTypeProvider.GetTypes<GeneratorDateTimeFieldProvider>(input: fparams);
 				// -------------------------
 				// DataName
 				// -------------------------
@@ -384,7 +422,7 @@ namespace Generator.Core.Entities
 		#if TREEV
 		public TreeNode ToNode()
 		{
-			TreeNode tn = new TreeNode(DataName);
+			var tn = new TreeNode(DataName);
 			tn.Name = DataName;
 			tn.ToolTipText = ToolTip;
 			// the image correlates with the PanelTableEditor (or whatever it's called)
@@ -396,7 +434,7 @@ namespace Generator.Core.Entities
 		public FieldElement(TreeNode tn)
 		{
 			if (tn.Tag is FieldElement) {
-				FieldElement fe			= tn.Tag as FieldElement;
+				var fe			= tn.Tag as FieldElement;
 				IsArray					= fe.IsArray;
 				DataName				= fe.DataName;
 				DataType				= fe.DataType;

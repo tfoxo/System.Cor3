@@ -228,10 +228,10 @@ namespace Generator.Service
 			// Refresh Bindings
 			
 			Factory.Templates = tc;
-			Factory.ItemsTable = Factory.Templates.GetData();
+			Factory.ItemsTable = Factory.Templates.GetData().Tables["Templates"];
 			Factory.SelectedGroupView = new DataView(
 				Factory.ItemsTable,
-				Factory.SelectedTemplate==null?string.Empty:Factory.SelectedTemplate.Group,
+				Factory.SelectedTemplate == null ? string.Empty:Factory.SelectedTemplate.Group,
 				"Group,Alias",
 				DataViewRowState.ModifiedCurrent|DataViewRowState.CurrentRows
 			);

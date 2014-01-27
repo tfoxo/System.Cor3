@@ -12,7 +12,15 @@ namespace Generator.Core.Entities
 
 	public class DatabaseElement : DataMapElement
 	{
-		
+		[XmlIgnore]
+		public DatabaseCollection Parent {
+			get {
+				return parent;
+			}
+			set {
+				parent = value; OnPropertyChanged("Parent");
+			}
+		} DatabaseCollection parent;
 		#region Properties
 		
 		#region Connection Type
@@ -21,32 +29,47 @@ namespace Generator.Core.Entities
 		/// </summary>
 		[XmlAttribute]
 		public ConnectionType ConnectionType
-		{ get { return connectionType; } set { connectionType = value; }
+		{ get { return connectionType; } set { connectionType = value; OnPropertyChanged("ConnectionType"); }
 		} ConnectionType connectionType;
 		#endregion
 		
 		/*XmlElement here probably isn't serialized*/
 		[XmlAttribute] public string Name {
-			get { return name; } set { name = value; }
+			get { return name; } set { name = value; OnPropertyChanged("Name"); }
 		} [XmlElement("info")] string name;
 		
 		[XmlAttribute] public string PrimaryKey {
-			get { return primaryKey; } set { primaryKey = value; }
+			get { return primaryKey; } set { primaryKey = value; OnPropertyChanged("PrimaryKey"); }
 		} string primaryKey;
 		
 		[XmlElement] public List<UniqueKey> Keys;
 		
-		List<TableElement> items;
 		/// <summary>
 		/// A (XmlElement) collection of TableElement Items.
 		/// </summary>
-		[XmlElement("Table"), System.ComponentModel.Browsable(false)]
-		public List<TableElement> Items { get { return items; } set { items = value; } }
+		[XmlElement("Table")]
+		public List<TableElement> Items {
+			get { return items; }
+			set { items = value; OnPropertyChanged("Items"); }
+		} List<TableElement> items;
+		
+		[XmlIgnore] public List<DatabaseChildElement> Children {
+			get { return children; }
+			set { children = value; OnPropertyChanged("Children"); }
+		} List<DatabaseChildElement> children = new List<DatabaseChildElement>();
+		
 		/// <summary>
+		/// A (XmlElement) collection of DataViewElement Views.
 		/// </summary>
-		[XmlElement("View"), System.ComponentModel.Browsable(false)]
-		public List<DataViewElement> Views { get { return views; } set { views = value; } }
-		List<DataViewElement> views;
+		[XmlElement("View")]
+		public List<DataViewElement> Views {
+			get { return views; }
+			set { views = value; OnPropertyChanged("Views"); }
+		} List<DataViewElement> views;
+//		/// <summary>
+//		/// </summary>
+//		public List<DataViewElement> Views { get { return views; } set { views = value;  OnPropertyChanged("Views"); } }
+//		List<DataViewElement> views;
 
 		#endregion
 
@@ -81,20 +104,21 @@ namespace Generator.Core.Entities
 		public DatabaseElement(TreeNode tn)
 		{
 			if (items == null) items = new List<TableElement>();
+			if (views == null) views = new List<DataViewElement>();
 			Name = tn.Text;
 			if (tn.Tag is DatabaseElement)
 			{
-				DatabaseElement dt = tn.Tag as DatabaseElement;
+				var dt = tn.Tag as DatabaseElement;
 				ConnectionType = dt.ConnectionType;
 				PrimaryKey = dt.PrimaryKey;
 //				PrimaryKey = dt.PrimaryKey;
 			}
 			foreach (TreeNode node in tn.Nodes)
 			{
-				if (node.Tag is TableElement) Items.Add(new TableElement(node));
-				if (Views == null) views = new List<DataViewElement>();
+				if (node.Tag is TableElement) items.Add(new TableElement(node));
+//				if (Views == null) views = new List<DataViewElement>();
 				else if (node.Tag is DataViewElement) {
-					Views.Add(new DataViewElement(node));
+					views.Add(new DataViewElement(node));
 				}
 			}
 		}
@@ -121,18 +145,18 @@ namespace Generator.Core.Entities
 		public void ToTree(TreeView tv)
 		{
 			foreach (TableElement telm in Items) tv.Nodes.Add(telm.ToNode());
-			foreach (DataViewElement telm in Views) tv.Nodes.Add(telm.ToNode());
+//			foreach (DataViewElement telm in Views) tv.Nodes.Add(telm.ToNode());
 		}
 		public void ToTree(TreeNode tn) { tn.Nodes.Add(ToNode()); }
 		public TreeNode ToNode()
 		{
-			TreeNode node = new TreeNode(Name);
+			var node = new TreeNode(Name);
 			node.Name = Name;
 			// the image correlates with the PanelTableEditor (or whatever it's called)
 			node.SelectedImageKey = node.ImageKey = ImageKeyNames.Database;
 			node.Tag = this;
 			foreach (TableElement telm in Items) node.Nodes.Add(telm.ToNode());
-			foreach (DataViewElement telm in Views) node.Nodes.Add(telm.ToNode());
+//			foreach (DataViewElement telm in Views) node.Nodes.Add(telm.ToNode());
 			return node;
 		}
 		#endif

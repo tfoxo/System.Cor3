@@ -75,15 +75,13 @@ namespace Generator.Core.Markup
 			table.Columns.Add(res.itmTpl,typeof(string));
 		}
 		
-		public DataTable GetData()
+		public DataSet GetData()
 		{
-			DataTable table = new DataTable();
+			var table = new DataTable("Templates");
+			var ds = new DataSet{ Tables = { table } };
 			ColumnDefaults(table);
-			foreach (TableTemplate tt in Templates)
-			{
-				tt.ToTable(table);
-			}
-			return table;
+			foreach (TableTemplate tt in Templates) tt.ToTable(table);
+			return ds;
 		}
 		
 		public void Add(TableTemplate item)

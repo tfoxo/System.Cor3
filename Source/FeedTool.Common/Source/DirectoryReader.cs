@@ -86,23 +86,25 @@ namespace FeedTool.Forms
             string html = string.Empty;
             var Items = new List<string>();
             string path=string.Empty;
-            if (content==null)
-                content = "(we've got nothing)";
-            else if (isapache) {
-                content = content.Replace(apache_doc,"");
-                path=APACHEPATH;
-            } else if (isIis5) {
-                isIis5=true;
-                content = IISFilter(content);
-                content = HtmlText.Replace(content,"");
-                path=IIS5PATH;
-            } else {
-                content = IISFilter(content);
-                content = HtmlText.Replace(content,"");
-                path=IIS7PATH;
-            }
+			if (content == null) {
+				content = "(we've got nothing)";
+			} else if (isapache) {
+				content = content.Replace(apache_doc, "");
+				path = APACHEPATH;
+			} else if (isIis5) {
+				isIis5 = true;
+				content = IISFilter(content);
+				content = HtmlText.Replace(content, "");
+				path = IIS5PATH;
+			} else {
+				content = IISFilter(content);
+				content = HtmlText.Replace(content, "");
+				path = IIS7PATH;
+			}
             string matches = string.Empty;
-            foreach (Match m in HtmlLink.Matches(content)) matches += m.Groups[0].Value;
+			foreach (Match m in HtmlLink.Matches(content)) {
+				matches += m.Groups[0].Value;
+			}
 
             var doc = new XmlDocument();
 
@@ -135,7 +137,7 @@ namespace FeedTool.Forms
         void Run(object sender, DoWorkEventArgs e)
         {
             using (client = new WebClient { Encoding=System.Text.Encoding.UTF8, UseDefaultCredentials=true }) {
-                client.DownloadStringCompleted += GotString;
+				client.DownloadStringCompleted += GotString;
                 client.DownloadStringAsync(URL);
             }
             client = null;

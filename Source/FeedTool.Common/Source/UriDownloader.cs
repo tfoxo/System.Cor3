@@ -24,11 +24,9 @@ namespace FeedTool
 			public WebClientTest():base(){}
 			protected override WebRequest GetWebRequest(Uri address)
 			{
-				WebRequest req = base.GetWebRequest(address);
+				var req = base.GetWebRequest(address);
 				if (HeadOnly && req.Method == "GET")
-				{
 					req.Method = "HEAD";
-				}
 				return req;
 			}
 		}
@@ -101,9 +99,9 @@ namespace FeedTool
 //			this.TextStatus = string.Format("{0:N2}%—{1:N1}/{2:N1}Mb",(this.Progress/this.Max),this.Progress/1024,this.Max/1024);
 			if (this.PropertyChanged !=null)
 			{
-				this.PropertyChanged(this,new PropertyChangedEventArgs("Progress"));
-				this.PropertyChanged(this,new PropertyChangedEventArgs("Max"));
-				this.PropertyChanged(this,new PropertyChangedEventArgs("TextStatus"));
+				PropertyChanged(this, new PropertyChangedEventArgs("Progress"));
+				PropertyChanged(this, new PropertyChangedEventArgs("Max"));
+				PropertyChanged(this, new PropertyChangedEventArgs("TextStatus"));
 			}
 		}
 		public void CompletionHandler(object sender, DownloadStringCompletedEventArgs args)

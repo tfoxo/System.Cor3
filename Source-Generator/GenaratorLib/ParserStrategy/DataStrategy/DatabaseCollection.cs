@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -13,13 +14,61 @@ namespace Generator.Core.Entities
 {
 	//
 	[XmlRoot("DatabaseCollection"/*,Namespace=DatabaseCollection.const_ns*/)] //,Namespace="http://w3.tfw.co/xmlns/2011/dbscheme")]
-	public class DatabaseCollection : SerializableClass<DatabaseCollection>
+	public class DatabaseCollection : SerializableClass<DatabaseCollection>, INotifyPropertyChanged
 	{
+		#region PropertyChanged
+		public event PropertyChangedEventHandler PropertyChanged;
+		virtual protected void OnPropertyChanged(string propertyName)
+		{
+			if (PropertyChanged != null)
+			{
+				PropertyChanged(this,new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		#endregion
+		
 		static public readonly object queryContainer = "queryContainer";
 		const string const_ns = "http://w3.tfw.co/xmlns/2011";
 		const string const_ns_ttl = "dbscheme";
 		public const string ref_asm_node = "References";
 
+		[XmlIgnore] public DatabaseCollection Parent { get; set; }
+		
+		#region Method: Rechild
+		static void Rechild(DatabaseCollection element)
+		{
+			for (int i = 0; i < element.Databases.Count; i++) {
+				element.Databases[i].Parent = element;
+				Rechild(element,element.Databases[i]);
+			}
+		}
+		static void Rechild(DatabaseCollection parent, DatabaseElement child)
+		{
+			child.Children.Clear();
+			for (int i = 0; i < child.Items.Count; i++) {
+				
+				child.Items[i].Parent = child;
+				Rechild(child,child.Items[i]);
+				child.Children.Add(child.Items[i]);
+			}
+			for (int i = 0; i < child.Views.Count; i++)
+			{
+				child.Views[i].Parent = child;
+				child.Children.Add(child.Views[i]);
+			}
+		}
+		static void Rechild(DatabaseElement parent, TableElement child)
+		{
+			for (int i = 0; i < child.Fields.Count; i++) {
+				child.Fields[i].Parent = child;
+			}
+		}
+		public void Rechild()
+		{
+			Rechild(this);
+		}
+		#endregion
+		
 		[XmlAttribute]
 		public string DateModified
 		{
@@ -59,7 +108,7 @@ namespace Generator.Core.Entities
 		public override XmlSerializerNamespaces SerializableNamespaces
 		{
 			get {
-				XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
+				var xsn = new XmlSerializerNamespaces();
 				xsn.Add(const_ns_ttl,const_ns);
 				return xsn;
 			}
@@ -95,7 +144,7 @@ namespace Generator.Core.Entities
 			get {
 				return items;
 			} set {
-				items = value;
+				items = value; OnPropertyChanged("Databases");
 			}
 		}
 		#endregion
@@ -108,7 +157,7 @@ namespace Generator.Core.Entities
 			get {
 				return sqlItems;
 			} set {
-				sqlItems = value;
+				sqlItems = value; OnPropertyChanged("Sql");
 			}
 		}
 
@@ -119,7 +168,7 @@ namespace Generator.Core.Entities
 			get {
 				return queries;
 			} set {
-				queries = value;
+				queries = value; OnPropertyChanged("Queries");
 			}
 		}
 		#endregion
@@ -130,8 +179,8 @@ namespace Generator.Core.Entities
 		{
 			if (!append) tn.Nodes.Clear();
 			if (Databases==null) return;
-			TreeNode node = new TreeNode("Database Collection");
-			TreeNode queries = new TreeNode(queryContainer.ToString());
+			var node = new TreeNode("Database Collection");
+			var queries = new TreeNode(queryContainer.ToString());
 			queries.ImageKey = queries.SelectedImageKey = queries.Name = queries.Text;
 			queries.Tag = queryContainer;
 			node.Tag = this;

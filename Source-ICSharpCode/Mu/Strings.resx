@@ -192,4 +192,11 @@
     &lt;/ItemGroup&gt;
 </value>
   </data>
+  <data name="XmlFile" xml:space="preserve">
+    <value>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;file-data&gt;D:\DEV\DATA\schema\Prime\prime.data.main.xdata&lt;/file-data&gt;
+  &lt;file-template&gt;D:\DEV\DATA\schema\Prime\NewPrimeTemplates4N.xtpl&lt;/file-template&gt;
+&lt;/config&gt;</value>
+  </data>
 </root>
