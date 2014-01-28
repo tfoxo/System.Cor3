@@ -13,8 +13,10 @@ using System.ComponentModel;
 using System.Cor3.Parsers;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Windows.Media;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -27,8 +29,43 @@ namespace Generator.Core.Markup
 {
 	[XmlRoot("TemplateCollection")]//,Namespace="http://w3.tfw.co/xmlns/2011/templates"
 	public class TemplateCollection
-		: SerializableClass<TemplateCollection>
+		: SerializableClass<TemplateCollection> //, INotifyPropertyChanged
 	{
+		static public List<string> GetGroupNames(TemplateCollection collection)
+		{
+			var groupnames = new List<string>();
+			foreach (TableTemplate template in collection.templates)
+			{
+				if (groupnames.Contains(template.Group)) continue;
+				groupnames.Add(template.Group);
+			}
+			return groupnames;
+		}
+		public class TemplateGroup
+		{
+			public string  GroupName { get; set; }
+			public IEnumerable<TableTemplate> Templates { get; set; }
+			
+			static TemplateGroup GetGroup(TemplateCollection templates, string groupOn) {
+				return new TemplateGroup { GroupName=groupOn, Templates=templates.Templates.Where(tpl=>tpl.Group==groupOn) };
+			}
+			
+			static public List<TemplateGroup> GetTemplates(TemplateCollection templates) {
+				var items = GetGroupNames(templates);
+				var list = new List<TemplateGroup>();
+				items.Sort();
+				foreach (string g in items)
+					list.Add(new TemplateGroup { GroupName=g, Templates=templates.Templates.Where(tpl=>tpl.Group==g).OrderBy(tpl=>tpl.Alias) });
+				return list;
+			}
+		}
+		List<TemplateGroup> GroupedItems { get; set; }
+		
+		public List<TemplateGroup> GetGrouping()
+		{
+			return TemplateGroup.GetTemplates(this);
+		}
+		
 		List<string> usingNamespace = new List<string>();
 		[Category("Assembly")]
 		public string[] UsingNamespace { get { return usingNamespace.ToArray(); } set { usingNamespace = new List<string>(value); } }
@@ -39,6 +76,10 @@ namespace Generator.Core.Markup
 		
 		List<TableTemplate> templates = new List<TableTemplate>();
 		public List<TableTemplate> Templates { get { return templates; } set { templates = value; } }
+		
+		[XmlIgnore] public TableTemplate this[string Alias] { get { return FindAlias(Alias); } }
+		[XmlIgnore] public TableTemplate this[FieldMatch match] { get { return FindAlias(match.TemplateAlias); } }
+		
 		
 		public TableTemplate FindAlias(string Alias) {
 			foreach (TableTemplate tpl in this.Templates)
@@ -51,8 +92,7 @@ namespace Generator.Core.Markup
 			return null;
 		}
 		
-		[XmlIgnore] public TableTemplate this[string Alias] { get { return FindAlias(Alias); } }
-		[XmlIgnore] public TableTemplate this[FieldMatch match] { get { return FindAlias(match.TemplateAlias); } }
+
 		
 		public void GetTableValues(DataTable table)
 		{

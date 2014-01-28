@@ -15,8 +15,7 @@ namespace Generator.Core.Entities
 	/// </summary>
 	public class FieldElement : DataMapElement
 	{
-		[XmlIgnore]
-		public TableElement Parent {
+		[XmlIgnore] public TableElement Parent {
 			get { return parent; }
 			set { parent = value; OnPropertyChanged("Parent"); }
 		} TableElement parent;
@@ -45,7 +44,7 @@ namespace Generator.Core.Entities
 		}
 		
 		//Dictionary<string,Func<object,string>> Utils = new Dictionary<string, Func<object, string>>();
-
+		
 		#region Properties
 		
 		/// <summary>
