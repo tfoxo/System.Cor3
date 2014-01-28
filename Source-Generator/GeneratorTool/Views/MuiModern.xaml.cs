@@ -62,7 +62,7 @@ namespace GeneratorTool.Views
 			Frame = GetTemplateChild("ContentFrame") as ModernFrame;
 			Debug.WriteLine("FRAME: {0}",Frame);
 			
-			Frame.Navigating += (sender,e) => ;
+//			Frame.Navigating += (sender,e) => { if (e.Frame. };
 		}
 		protected override void OnInitialized(EventArgs e)
 		{

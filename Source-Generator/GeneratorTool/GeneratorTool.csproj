@@ -267,6 +267,11 @@
     <Compile Include="Source\Controls\AvalonEditor\ZoomLevelToTextFormattingModeConverter.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Source\Converters\GroupOnMultiBindingConverter.cs" />
+    <Compile Include="Source\Converters\VisibilityToBooleanConverter.cs" />
+    <Compile Include="Source\DatabaseItemTemplateSelector.cs" />
+    <Compile Include="Source\GeneratorCommand.cs" />
+    <Compile Include="Source\GeneratorContentLoader.cs" />
     <Compile Include="Source\GeneratorModel.cs" />
     <Compile Include="Source\GeneratorReader.cs" />
     <Compile Include="Source\Common\AppGlobal.cs" />
@@ -288,7 +293,8 @@
       <DependentUpon>Resource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Views\DatabaseItemTemplateSelector.cs" />
+    <Compile Include="Source\MyCommand.cs" />
+    <Compile Include="Source\SelectionChangedBehaviour.cs" />
     <Compile Include="Views\DataEditorContent.xaml.cs">
       <DependentUpon>DataEditorContent.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -297,12 +303,9 @@
       <DependentUpon>FieldViewContent.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\GeneratorContentLoader.cs" />
     <Compile Include="Views\MuiModern.xaml.cs">
       <DependentUpon>MuiModern.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MyCommand.cs" />
-    <Compile Include="Views\SelectionChangedBehaviour.cs" />
     <Compile Include="Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -326,7 +329,6 @@
       <DependentUpon>TextView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\VisibilityToBooleanConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

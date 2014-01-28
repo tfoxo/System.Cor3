@@ -34,6 +34,7 @@ namespace GeneratorTool
 		public GeneratorModel Model { get; set; }
 		
 		#region (static) ICommand
+		
 		static public readonly ICommand InitializeConfigurationCommand = new RoutedUICommand(){ Text="Initialize generator configuration-file." };
 		static public readonly ICommand LoadConfigurationCommand = new RoutedUICommand(){ Text="Load generator configuration-file.", InputGestures={ new KeyGesture(Key.O, ModifierKeys.Control) } };
 		static public readonly ICommand SaveConfigurationCommand = new RoutedUICommand(){ Text="Save generator configuration-file.", InputGestures={ new KeyGesture(Key.S, ModifierKeys.Control|ModifierKeys.Shift) } };
@@ -51,20 +52,30 @@ namespace GeneratorTool
 			CommandBindings = new CommandBindingCollection(
 				new List<CommandBinding> {
 					new CommandBinding(LoadConfigurationCommand,LoadConfiguration),
-					new CommandBinding(SaveConfigurationCommand,SaveConfiguration,(object xo, CanExecuteRoutedEventArgs xa) => {
-					                   	bool answer = Model == null || string.IsNullOrEmpty(Model.Configuration.datafile) || string.IsNullOrEmpty(Model.Configuration.templatefile);
-					                   	if (!answer) {
-					                   		xa.CanExecute = true;
-					                   		xa.Handled = true;
-					                   	}
-					                   }),
-					new CommandBinding(SaveConfigurationAsCommand,SaveConfigurationAs,(object xo, CanExecuteRoutedEventArgs xa) => {
-					                   	bool answer = Model == null || string.IsNullOrEmpty(Model.Configuration.datafile) || string.IsNullOrEmpty(Model.Configuration.templatefile);
-					                   	if (!answer) {
-					                   		xa.CanExecute = true;
-					                   		xa.Handled = true;
-					                   	}
-					                   }),
+					new CommandBinding(
+						SaveConfigurationCommand,
+						SaveConfiguration,
+						(object xo, CanExecuteRoutedEventArgs xa) =>
+						{
+							bool answer = Model == null || string.IsNullOrEmpty(Model.Configuration.datafile) || string.IsNullOrEmpty(Model.Configuration.templatefile);
+							if (!answer) {
+								xa.CanExecute = true;
+								xa.Handled = true;
+							}
+						}),
+					new CommandBinding(
+						SaveConfigurationAsCommand,
+						SaveConfigurationAs,
+						(xo, xa) =>
+						{
+							bool answer = Model == null ||
+								string.IsNullOrEmpty(Model.Configuration.datafile) ||
+								string.IsNullOrEmpty(Model.Configuration.templatefile);
+							if (!answer) {
+								xa.CanExecute = true;
+								xa.Handled = true;
+							}
+						}),
 				});
 			foreach (CommandBinding binding in CommandBindings)
 				if (!elm.CommandBindings.Contains(binding)) {

@@ -10,6 +10,7 @@ using Generator.Core.Entities;
 
 namespace GeneratorTool.Views
 {
+	
 	public class VisibilityToBooleanConverter : IValueConverter
 	{
 //		public object Convert(object value)

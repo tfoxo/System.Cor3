@@ -6,12 +6,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
+using System.Windows.Input;
 using FirstFloor.ModernUI.Windows;
 using FirstFloor.ModernUI.Windows.Controls;
 using Generator.Core.Entities;
 
 namespace GeneratorTool.Views
 {
+	
 	/// <summary>
 	/// Loads lorem ipsum content regardless the given uri.
 	/// </summary>
