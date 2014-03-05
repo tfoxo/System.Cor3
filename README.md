@@ -14,7 +14,7 @@ This projects' source code licensing defaults to [MIT] license (providing credit
 
 For dependency licensing information, consult the project directory and/or the LICENSE.md in this directory.
 
-[LOG][loglink
+[LOG][loglink]
 
 [loglink]: https://github.com/tfoxo/System.Cor3/tree/master/log.md
 [NormalizePathTool]: https://github.com/tfoxo/System.Cor3/tree/master/Source-Console/NormalizePathTool
