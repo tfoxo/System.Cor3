@@ -2,22 +2,38 @@
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Interop;
 
 namespace System
 {
+	/// <summary>
+	/// This class is certainly designed for WPF.
+	/// </summary>
 	public class ClipboardMonitorService : IServiceProvider, IDisposable
 	{
-		const string message_handle_zero = "Failed obtaining window handle.";
 
-		// service-container (test)
-		#region Service
+		#region Fields
+		
 		static readonly ServiceContainer services = new ServiceContainer();
+		const string message_handle_zero = "Failed obtaining window handle.";
+		public event RoutedEventHandler GotClipboard;
+		static readonly object LOCK = new object();
+		
+		Window window;
+		HwndSource hWndSource;
+		IntPtr hWndNextViewer;
+		bool isViewing = false;
+		
+		#endregion
+		
+		#region Service
+		
+		
 		object IServiceProvider.GetService(Type serviceType)
 		{
 			return (ClipboardMonitorService) services.GetService(serviceType);
 		}
 		#endregion
-		
 		#region Win32
 		
 		[DllImport(user32)] static extern IntPtr SetClipboardViewer(IntPtr hWnd);
@@ -58,14 +74,6 @@ namespace System
 		}
 		#endregion
 		
-		#region Fields
-		Window window;
-		HwndSource hWndSource;
-		IntPtr hWndNextViewer;
-		bool isViewing = false;
-		static readonly object LOCK = new object();
-		#endregion
-		
 		public ClipboardMonitorService(Window window,RoutedEventHandler handler) : this(window)
 		{
 			AddHandler(handler);
@@ -79,13 +87,13 @@ namespace System
 		
 		private void Initialize()
 		{
-			WindowInteropHelper wih = new WindowInteropHelper(this.window);
-			if (wih.Handle==IntPtr.Zero)
+			var helper = new WindowInteropHelper(this.window);
+			if (helper.Handle==IntPtr.Zero)
 			{
 				MessageBox.Show(message_handle_zero);
 				return;
 			}
-			hWndSource = HwndSource.FromHwnd(wih.Handle);
+			hWndSource = HwndSource.FromHwnd(helper.Handle);
 			hWndSource.AddHook(this.WinProc); // start processing window messages
 			hWndNextViewer = SetClipboardViewer(hWndSource.Handle); // set this window as a viewer
 			isViewing = true;
@@ -99,16 +107,9 @@ namespace System
 		}
 
 		#region Event
-		public void AddHandler(RoutedEventHandler handler)
-		{
-			GotClipboard += handler;
-		}
-		public void RemoveHandler(RoutedEventHandler handler)
-		{
-			GotClipboard -= handler;
-		}
+		public void AddHandler(RoutedEventHandler handler) { GotClipboard += handler; }
+		public void RemoveHandler(RoutedEventHandler handler) { GotClipboard -= handler; }
 
-		public event RoutedEventHandler GotClipboard;
 		protected virtual void OnGotClipboard()
 		{
 			if (GotClipboard != null) {

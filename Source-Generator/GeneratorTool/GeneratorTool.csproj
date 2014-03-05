@@ -136,75 +136,28 @@
     <Resource Include="Assets\Icons\code-variable.png" />
     <Resrource Include="Assets\Icons\appbar.shuffle.png" />
     <Resource Include="Assets\Icons\appbar.shuffle.ico" />
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 100.ttf">
-      <Link>Assets\Typo\Roboto 100.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 100italic.ttf">
-      <Link>Assets\Typo\Roboto 100italic.ttf</Link>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 300.ttf">
-      <Link>Assets\Typo\Roboto 300.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 300italic.ttf">
-      <Link>Assets\Typo\Roboto 300italic.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 500.ttf">
-      <Link>Assets\Typo\Roboto 500.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 500italic.ttf">
-      <Link>Assets\Typo\Roboto 500italic.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 700.ttf">
-      <Link>Assets\Typo\Roboto 700.ttf</Link>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 700italic.ttf">
-      <Link>Assets\Typo\Roboto 700italic.ttf</Link>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 900.ttf">
-      <Link>Assets\Typo\Roboto 900.ttf</Link>
-    </Resource>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 900italic.ttf">
-      <Link>Assets\Typo\Roboto 900italic.ttf</Link>
-    </Resource>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 300.ttf">
-      <Link>Assets\Typo\Roboto Condensed 300.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 300italic.ttf">
-      <Link>Assets\Typo\Roboto Condensed 300italic.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 700.ttf">
-      <Link>Assets\Typo\Roboto Condensed 700.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 700italic.ttf">
-      <Link>Assets\Typo\Roboto Condensed 700italic.ttf</Link>
-    </None>
-    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed italic.ttf">
-      <Link>Assets\Typo\Roboto Condensed italic.ttf</Link>
-    </None>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed regular.ttf">
-      <Link>Assets\Typo\Roboto Condensed regular.ttf</Link>
-    </Resource>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto italic.ttf">
-      <Link>Assets\Typo\Roboto italic.ttf</Link>
-    </Resource>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto regular.ttf">
-      <Link>Assets\Typo\Roboto regular.ttf</Link>
-    </Resource>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab 100.ttf">
-      <Link>Assets\Typo\Roboto Slab 100.ttf</Link>
-    </Resource>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab 300.ttf">
-      <Link>Assets\Typo\Roboto Slab 300.ttf</Link>
-    </Resource>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab 700.ttf">
-      <Link>Assets\Typo\Roboto Slab 700.ttf</Link>
-    </Resource>
-    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab regular.ttf">
-      <Link>Assets\Typo\Roboto Slab regular.ttf</Link>
-    </Resource>
+    <None Include="Assets\Typo\Roboto 100.ttf" />
+    <None Include="Assets\Typo\Roboto 100italic.ttf"/>
+    <None Include="Assets\Typo\Roboto 300.ttf" />
+    <None Include="Assets\Typo\Roboto 300italic.ttf" />
+    <None Include="Assets\Typo\Roboto 500.ttf" />
+    <None Include="Assets\Typo\Roboto 500italic.ttf" />
+    <None Include="Assets\Typo\Roboto 700.ttf" />
+    <None Include="Assets\Typo\Roboto 700italic.ttf" />
+    <Resource Include="Assets\Typo\Roboto 900.ttf" />
+    <Resource Include="Assets\Typo\Roboto 900italic.ttf" />
+    <None Include="Assets\Typo\Roboto Condensed 300.ttf" />
+    <None Include="Assets\Typo\Roboto Condensed 300italic.ttf" />
+    <None Include="Assets\Typo\Roboto Condensed 700.ttf" />
+    <None Include="Assets\Typo\Roboto Condensed 700italic.ttf" />
+    <None Include="Assets\Typo\Roboto Condensed italic.ttf" />
+    <Resource Include="Assets\Typo\Roboto Condensed regular.ttf" />
+    <Resource Include="Assets\Typo\Roboto italic.ttf" />
+    <Resource Include="Assets\Typo\Roboto regular.ttf" />
+    <Resource Include="Assets\Typo\Roboto Slab 100.ttf" />
+    <Resource Include="Assets\Typo\Roboto Slab 300.ttf" />
+    <Resource Include="Assets\Typo\Roboto Slab 700.ttf" />
+    <Resource Include="Assets\Typo\Roboto Slab regular.ttf" />
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll" />
     <None Include="Assets\Icons\speaker_tosort.ico" />
@@ -244,6 +197,10 @@
     <Compile Include="Assets\Icons\appbar.diagram.xaml.cs">
       <DependentUpon>appbar.diagram.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Source\Commands\BasicCommand.cs" />
+    <Compile Include="Source\Commands\GeneratorCommand.cs" />
+    <Compile Include="Source\Commands\MuiMessageCommand.cs" />
+    <Compile Include="Source\Commands\MyCommand.cs" />
     <Compile Include="Source\Controls\AvalonEditor\CommentBlockFoldingStrategy.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
@@ -268,9 +225,9 @@
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Source\Converters\GroupOnMultiBindingConverter.cs" />
+    <Compile Include="Source\Converters\IsEnabledToColorConverter.cs" />
     <Compile Include="Source\Converters\VisibilityToBooleanConverter.cs" />
     <Compile Include="Source\DatabaseItemTemplateSelector.cs" />
-    <Compile Include="Source\GeneratorCommand.cs" />
     <Compile Include="Source\GeneratorContentLoader.cs" />
     <Compile Include="Source\GeneratorModel.cs" />
     <Compile Include="Source\GeneratorReader.cs" />
@@ -293,7 +250,6 @@
       <DependentUpon>Resource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Source\MyCommand.cs" />
     <Compile Include="Source\SelectionChangedBehaviour.cs" />
     <Compile Include="Views\DataEditorContent.xaml.cs">
       <DependentUpon>DataEditorContent.xaml</DependentUpon>
@@ -343,6 +299,7 @@
     <Folder Include="Source\Controls\AvalonEditor" />
     <Folder Include="Source\Extensions" />
     <Folder Include="Source\Controls" />
+    <Folder Include="Source\Commands" />
     <Folder Include="Views" />
     <Folder Include="Source\Common" />
     <Folder Include="Source\Converters" />

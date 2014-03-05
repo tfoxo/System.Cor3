@@ -21,11 +21,13 @@
 @set binout=D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-AppWpf\FeedTool\bin\
 @set inno=c:\Program Files\Inno Setup 5\
 @set inno=c:\Program Files (x86)\Inno Setup 5\
+@set cefz=CefSharp-v1.25.zip
+@set cefz=CefSharp-v1.25.7.zip
 @set path="%inno%";%~dp0bin;%path%
 ::--------------------------------------------------------------
 @echo Extracting CefSharp-v1.25
 @title Extracting CefSharp-v1.25
-@7za x -y -o%binout% "%~dp0cef-bin/CefSharp-v1.25.zip%"
+@7za x -y -o%binout% "%~dp0cef-bin/%cefz%"
 @echo.
 @echo chromium-dev-tools
 @title chromium-dev-tools

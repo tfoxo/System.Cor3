@@ -195,9 +195,9 @@ namespace GeneratorTool.Views
 			// 
 			switch (LastViewMode) {
 				case ViewMode.Undefined:
-				case ViewMode.TemplateTable:   if (cbTemplateRow.SelectedValue!=null) editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ElementTemplate; break;
-				case ViewMode.TemplateField:   if (cbTemplateRow.SelectedValue!=null) editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ItemsTemplate; break;
-				case ViewMode.TemplatePreview: if (cbTemplateRow.SelectedValue!=null) editor.Text = Reader.Generate(cbTable.SelectedValue as TableElement, cbTemplateRow.SelectedValue as TableTemplate); break;
+					case ViewMode.TemplateTable:   if (cbTemplateRow.SelectedValue!=null) editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ElementTemplate; break;
+					case ViewMode.TemplateField:   if (cbTemplateRow.SelectedValue!=null) editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ItemsTemplate; break;
+					case ViewMode.TemplatePreview: if (cbTemplateRow.SelectedValue!=null) editor.Text = Reader.Generate(cbTable.SelectedValue as TableElement, cbTemplateRow.SelectedValue as TableTemplate); break;
 					default: break;
 			}
 		}
@@ -261,31 +261,31 @@ namespace GeneratorTool.Views
 							editor.Text += "\n";
 							return;
 						}
-					switch (LastViewMode) {
-						case ViewMode.Undefined:
-							editor.Text += "ViewMode.Undefined.";
-							editor.Text += "\n";
-							editor.Text = string.Format("Error[{0}]:", (int)LastViewMode);
-							editor.Text += "\n";
-							break;
-						case ViewMode.TemplateField:
-							(LastTemplate as TableTemplate).ItemsTemplate = editor.Text;
-							editor.Text += "TABLE FIELD";
-							editor.Text += "\n";
-							editor.Text += "The tempalte was saved.";
-							editor.Text += "\n";
-							break;
-						case ViewMode.TemplateTable:
-							(LastTemplate as TableTemplate).ElementTemplate = editor.Text;
-							editor.Text += "TABLE ROW";
-							editor.Text += "\n";
-							editor.Text += "The tempalte was saved.";
-							editor.Text += "\n";
-							break;
-						case ViewMode.TemplatePreview:
-							editor.Text += "PREVIEW";
-							editor.Text += "\n";
-							break;
+						switch (LastViewMode) {
+							case ViewMode.Undefined:
+								editor.Text += "ViewMode.Undefined.";
+								editor.Text += "\n";
+								editor.Text = string.Format("Error[{0}]:", (int)LastViewMode);
+								editor.Text += "\n";
+								break;
+							case ViewMode.TemplateField:
+								(LastTemplate as TableTemplate).ItemsTemplate = editor.Text;
+								editor.Text += "TABLE FIELD";
+								editor.Text += "\n";
+								editor.Text += "The tempalte was saved.";
+								editor.Text += "\n";
+								break;
+							case ViewMode.TemplateTable:
+								(LastTemplate as TableTemplate).ElementTemplate = editor.Text;
+								editor.Text += "TABLE ROW";
+								editor.Text += "\n";
+								editor.Text += "The tempalte was saved.";
+								editor.Text += "\n";
+								break;
+							case ViewMode.TemplatePreview:
+								editor.Text += "PREVIEW";
+								editor.Text += "\n";
+								break;
 						}
 						editor.Text += "Compare SelectedTemplate to Model.";
 						editor.Text += "\n";

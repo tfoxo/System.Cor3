@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<MatrixSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Items>
+    <Matrix Key="default" Description="Same as &quot;Red Mode&quot;." Value="1f,0f,0f,0f,0f, 0f,1f,0f,0f,0f, 0f,0f,1f,0f,0f, 0f,0f,0f,1f,0f, 1.5f,0f,0f,0f,1f" />
+    <Matrix Key="Red Mode" Description="Adds 150% more red to the color of the given image." Value="1f,0f,0f,0f,0f, 0f,1f,0f,0f,0f, 0f,0f,1f,0f,0f, 0f,0f,0f,1f,0f, 1.5f,0f,0f,0f,1f" />
+  </Items>
+</MatrixSet>

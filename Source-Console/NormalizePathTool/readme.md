@@ -1,4 +1,10 @@
-﻿# NormalizePathTool
+﻿[NormalizePathTool](#normalizepathtool)
+[RenameFileTool](#renamefiletool)
+
+With the few things that have been elaborating in this space, it seems
+appropriate to start clustering tool-related tests to this program-space.
+
+# NormalizePathTool
 
 The idea is to take two paths: (1) the `target`-path and (2) the `base`-path &ndash; 
 and return a tidy result that is 'normalized' based on the "base-path".
@@ -10,17 +16,19 @@ as the path would be recognized by a some other tool.
 cs-source containing the task: [NormalizePathTool.cs]
 
 File references stored in CSPROJ files are stored relative to the `$(ProjectDir)`
-as pertains to MsBuild, CSharp Targets.
+as pertains to `MsBuild` CSharp Targets.
 
 ## NormalizePathOptions
 
 intrinsic: (defaults)
 
+<pre class="brush: csharp">
 	char IllegalPathSeparator    { get;set; } = '\\'
 	bool IsConsoleEnabled        { get;set; } = false
 	bool MatchCase               { get;set; } = true
 	char PathSeparator           { get;set; } = '/'
 	bool UseFullWidthWhenShorter { get;set; } = false
+</pre>
 
 ## EXAMPLE OUTPUT
 
@@ -32,10 +40,30 @@ By default, the tool (EXE) uses non-default `[NormalizePathOptions]`.
 
 	:: Command-Options (fixed in binary)
 	:: new NormalizePathOptions { IsConsoleEnabled=true, UseFullPathWhenShorter=true }
-	NormalizePath "D:/DEV/WIN/CS_ROOT/Projects/github-cor3/Source-Console/NormalizePathTool/bin/Debug/NormalizePath.exe" "D:/DEV/BIN/cyg/etc/emacs/site-start.d/autoconf.el" 1> output.txt
+	NormalizePath ^
+		"D:/DEV/WIN/CS_ROOT/Projects/github-cor3/Source-Console/NormalizePathTool/bin/Debug/NormalizePath.exe" ^
+		"D:/DEV/BIN/cyg/etc/emacs/site-start.d/autoconf.el" ^
+		1> output.txt
 
 ### Output
 
+In the following example, the NormailzePathTool result is a failure to find a
+common or consolidated path, so the full path to the file is returned.
+
+Also its interesting to note here that the file-name of the given file is
+lost in this process.
+
+Apparently the tool is designed for the resulting directory.
+
+<pre class="brush: csharp">
+	var pt = new PathToolTing(dest: "c:/basepath", base: "c:/dest");
+	string friendly = pt.Base.Replace(pt.After)
+</pre>
+
+That being said, the **`Base.After`** property of the command returns a value
+that I wasn't quite expecting to see when editing this text document.
+
+<pre class="brush: bash">	
 	NormalizePathTool
 	=================
 	
@@ -68,5 +96,10 @@ By default, the tool (EXE) uses non-default `[NormalizePathOptions]`.
 	  FullIsShorter  = True
 	  Exist = False
 	  D:/DEV/WIN/CS_ROOT/Projects/github-cor3/Source-Console/NormalizePathTool/bin/Debug
+</pre>
 
 [NormalizePathTool.cs]: https://github.com/tfoxo/System.Cor3/blob/master/Source/Cor3.Core/Tasks/NormalizePathTool.cs
+
+# RenameFileTool
+
+

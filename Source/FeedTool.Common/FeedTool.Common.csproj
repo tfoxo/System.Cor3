@@ -189,7 +189,7 @@
     <Compile Include="Source\Loaders\Options.cs" />
     <Compile Include="Source\Readers\HttpContentReader.cs" />
     <Compile Include="Source\Readers\OpmlReader.cs" />
-    <Compile Include="Source\SQLiteExtensions.cs" />
+    <None Include="Source\SQLiteExtensions.cs" />
     <Compile Include="Source\SQLiteFeeds.cs" />
     <Compile Include="Source\UriDownloader.cs" />
     <Compile Include="Source\XmlInfo.cs" />

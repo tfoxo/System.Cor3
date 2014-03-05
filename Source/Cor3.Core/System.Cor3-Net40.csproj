@@ -69,7 +69,10 @@
     <Compile Include="Drawing\McMaster.cs" />
     <Compile Include="Drawing\Metrics.cs" />
     <Compile Include="Drawing\ScaffoldCalculator.cs" />
-    <None Include="Include\ClipboardMonitorService.cs" />
+    <Compile Include="Tasks\PathNotRootedException.cs" />
+    <None Include="Include\ClipboardMonitorService.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Include="Include\Disconnecter.cs" />
     <None Include="Include\GetSignTool_PublicKey_BuildTask.cs" />
     <None Include="Include\quickbuildtool.exe.cs" />
@@ -88,6 +91,7 @@
     </Compile>
     <Compile Include="System.ConsoleUtil\ArgumentType.cs" />
     <Compile Include="System.ConsoleUtil\MessageType.cs" />
+    <Compile Include="Tasks\NormalizePathOptions.cs" />
     <Compile Include="Tasks\NormalizePathTool.cs" />
     <None Include="System.ConsoleUtil\SkypeUtil.cs" />
     <Compile Include="System.Cor3.WinForms\ExceptionDialog.cs">

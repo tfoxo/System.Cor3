@@ -41,6 +41,15 @@ Features
     * [YouTubeExtractor]
 	* ReactiveUI
 
+Hacks to the CSPROJ file
+------------------------
+
+If you checked out only the project directory of this project or are having issues, you might want to validate the variables within the csharp-project.  Below is a XML fragment of the current settings as within the csproj.
+
+    <Cor3_Directory>..\..</Cor3_Directory>
+    <YoutubeExtractor>$(Cor3_Directory)\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor</YoutubeExtractor>
+    <Cor3Inc>$(Cor3_Directory)\Source\Cor3.Core\Include</Cor3Inc>
+    <FlashExtSrc>$(Cor3_Directory)\Source-Libs\Flash.External</FlashExtSrc>
 
 Third-Party Libraries, Credits and/or Dependencies
 -------------------------

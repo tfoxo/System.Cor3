@@ -66,10 +66,10 @@
       <HintPath>..\..\Project\packages\Caliburn.Micro.1.5.2\lib\net45\Caliburn.Micro.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp">
-      <HintPath>Build\CefSharp-v1.25.5-binaries\CefSharp.dll</HintPath>
+      <HintPath>Build\CefSharp-v1.25.7\CefSharp.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.Wpf">
-      <HintPath>Build\CefSharp-v1.25.5-binaries\CefSharp.Wpf.dll</HintPath>
+      <HintPath>Build\CefSharp-v1.25.7\CefSharp.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\..\Project\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>

@@ -21,9 +21,12 @@ using Microsoft.Win32;
 
 namespace GeneratorTool
 {
-	
 	public class GeneratorReader
 	{
+		public GeneratorModel Model { get; set; }
+		
+		#region (static) ICommand
+		
 		public Action InitializeCompleteAction { get; set; }
 		public Action LoadCompleteAction { get; set; }
 		public Action SaveCompleteAction { get; set; }
@@ -31,20 +34,19 @@ namespace GeneratorTool
 		
 		CommandBindingCollection CommandBindings { get; set; }
 		
-		public GeneratorModel Model { get; set; }
-		
-		#region (static) ICommand
-		
 		static public readonly ICommand InitializeConfigurationCommand = new RoutedUICommand(){ Text="Initialize generator configuration-file." };
 		static public readonly ICommand LoadConfigurationCommand = new RoutedUICommand(){ Text="Load generator configuration-file.", InputGestures={ new KeyGesture(Key.O, ModifierKeys.Control) } };
 		static public readonly ICommand SaveConfigurationCommand = new RoutedUICommand(){ Text="Save generator configuration-file.", InputGestures={ new KeyGesture(Key.S, ModifierKeys.Control|ModifierKeys.Shift) } };
 		static public readonly ICommand SaveConfigurationAsCommand = new RoutedUICommand(){ Text="Save generator configuration-file.", InputGestures={ new KeyGesture(Key.S, ModifierKeys.Control|ModifierKeys.Shift) } };
+		
 		#endregion
 		
 		#region readonly / constants
+		
 		const string filter = "Generator Configuration|*.generator-config|Xml Document (generator-config)|*.xml";
 		readonly OpenFileDialog ofd = new OpenFileDialog { Filter = filter };
 		readonly SaveFileDialog sfd = new SaveFileDialog { Filter = filter };
+		
 		#endregion
 		
 		public void BindUIElement(UIElement elm)
@@ -86,6 +88,7 @@ namespace GeneratorTool
 		}
 		
 		#region Method: string Generate, IDbConfiguration4 GetConfig
+		
 		public IDbConfiguration4 GetConfig(TableElement table, TableTemplate template) {
 			return new TemplateManager(){
 				SelectedCollection = Model.Databases,
@@ -96,6 +99,7 @@ namespace GeneratorTool
 				SelectedTemplateGroup = template==null ? null : template.Group
 			};
 		}
+		
 		string GeneratedTemplate { get; set; }
 		
 		public string Generate(TableElement tableName, TableTemplate templateName)
@@ -106,14 +110,18 @@ namespace GeneratorTool
 			config  = null;
 			return GeneratedTemplate;
 		}
+		
 		#endregion
+		
 		void ConfigLoad()
 		{
 			Model.FileName = ofd.FileName;
 			Model.Configuration = GeneratorConfig.Load(Model.FileName);
 			InitializeConfiguration(this, null);
 		}
+		
 		#region RoutedEvents
+		
 		void LoadConfiguration(object o, RoutedEventArgs a)
 		{
 			if (ofd.ShowDialog().Value)
@@ -131,6 +139,7 @@ namespace GeneratorTool
 //				}
 			}
 		}
+		
 		void InitializeConfiguration(object o, RoutedEventArgs a)
 		{
 //			try {
@@ -182,6 +191,7 @@ namespace GeneratorTool
 				if (SaveCompleteAction!=null) SaveCompleteAction.Invoke();
 			}
 		}
+		
 		void SaveConfigurationAs(object o, RoutedEventArgs a)
 		{
 			if (Model==null) {
@@ -220,6 +230,8 @@ namespace GeneratorTool
 				}
 			}
 		}
+		
 		#endregion
+		
 	}
 }

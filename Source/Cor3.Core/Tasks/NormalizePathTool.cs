@@ -16,68 +16,12 @@ using System.Threading.Tasks;
 
 namespace System.Tasks
 {
-	public class PathNotRootedException : Exception
-	{
-		public string InputFile {
-			get { return inputFile; }
-			set { inputFile = value; }
-		} string inputFile;
-		
-		public override string Message {
-			get { return string.Format("Input file \"{0}\" not rooted.  A rooted file contains a drive-letter and colon as the first two chars.",inputFile); }
-		}
-		public PathNotRootedException(string fname)
-		{
-			inputFile = fname;
-		}
-	}
-	
-	public class NormalizePathOptions
-	{
-		#region Path Separator(s)
-		
-		public char PathSeparator {
-			get { return pathSeparator; }
-			set { pathSeparator = value; illegalPathSeparator = value=='/' ? '\\' : '/'; }
-		} char pathSeparator = '/';
-		
-		public char IllegalPathSeparator {
-			get { return illegalPathSeparator; }
-			set { illegalPathSeparator = value; pathSeparator = value=='/' ? '\\' : '/'; }
-		} char illegalPathSeparator = '\\';
-		#endregion
-		
-		/// <summary>
-		/// Weather or not to match case when comparing strings.
-		/// We reccommend that you leave this at default=true.
-		/// </summary>
-		public bool MatchCase {
-			get { return matchCase; }
-			set { matchCase = value; }
-		} bool matchCase = true;
-		/// <summary>
-		/// If set to true, no (known) Exception is thrown and
-		/// any exception should be handled using ConsoleError/IO.
-		/// </summary>
-		public bool IsConsoleEnabled {
-			get { return isConsoleEnabled; }
-			set { isConsoleEnabled = value; }
-		} bool isConsoleEnabled = false;
-		
-		public bool UseFullPathWhenShorter {
-			get { return useFullPathWhenShorter; }
-			set { useFullPathWhenShorter = value; }
-		} bool useFullPathWhenShorter = false;
-		
-	}
-	
 	/// <summary>
 	/// Description of NormalizePathTask.
 	/// </summary>
 	public /*partial*/ class NormalizePathTool
 	{
 		#region Constant
-
 		const string template = @"NormalizePathTool
 =================
 
@@ -262,6 +206,8 @@ RESULT:
 			return output;
 		}
 		
+		static Func<NormalizePathTool,string,string> TargetPathAction = (tool,fname)  => tool.TargetPath.Replace(string.Concat("/",fname),string.Empty);
+		
 		/// <summary>
 		/// hehe
 		/// </summary>
@@ -279,7 +225,7 @@ RESULT:
 				int index      = TargetList.Count-1;
 				TargetFileName = TargetList[index];
 				TargetList     . RemoveAt(index);
-				TargetPath     = TargetPath.Replace(string.Concat("/",TargetFileName),string.Empty);
+				TargetPath     = TargetPathAction(this,TargetFileName);
 			}
 			// BASE
 			BaseList           = new List<string>(this.basePath.Split('/'));
