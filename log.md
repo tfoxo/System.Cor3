@@ -1,5 +1,11 @@
-
 ## LOG
+
+20140305 --- @R144
+
+- Added updated a new UI for the generator app
+    - generator app has updated some its philosophy (though, not yet documented)
+- Added Pdf2Png csproj -- based on a 3rd party cs-p-invoike project MuPdf
+    - (need citation and directions for obtaining binary/dll)
 
 20131204 - REVISION 129-130
 
