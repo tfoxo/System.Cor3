@@ -11,7 +11,7 @@ Like most of my messy projects up here, I use this but the UI is a bit misleadin
 ## What works?
 
 * you can edit the `default.settings` XML file to modify the matrix presets that can be applied by changing the presets selected by the combo-box.
-* First, press ``update page ct/len'' button.  Then you can hit the update button to generate the images.
+* First, press ``update page ct/len'' button.  Then you can hit the ``process'' button to generate the images.
 
 
 Youre welcome to comment somewhere in the comments of [tfwxo-blog](http://tfwio.wordpress.com/projects) to get me to update this if you would like to kick-start a particular update.
