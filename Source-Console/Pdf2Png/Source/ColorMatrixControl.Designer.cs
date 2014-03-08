@@ -129,12 +129,12 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm00.Name = "cm00";
 			this.cm00.Size = new System.Drawing.Size(48, 20);
 			this.cm00.TabIndex = 0;
 			this.cm00.Value = new decimal(new int[] {
-			1000000,
+			1,
 			0,
 			0,
 			0});
@@ -157,15 +157,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm01.Name = "cm01";
 			this.cm01.Size = new System.Drawing.Size(48, 20);
 			this.cm01.TabIndex = 1;
-			this.cm01.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm02
 			// 
@@ -185,15 +180,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm02.Name = "cm02";
 			this.cm02.Size = new System.Drawing.Size(48, 20);
 			this.cm02.TabIndex = 2;
-			this.cm02.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm12
 			// 
@@ -213,15 +203,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm12.Name = "cm12";
 			this.cm12.Size = new System.Drawing.Size(48, 20);
 			this.cm12.TabIndex = 5;
-			this.cm12.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm11
 			// 
@@ -241,12 +226,12 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm11.Name = "cm11";
 			this.cm11.Size = new System.Drawing.Size(48, 20);
 			this.cm11.TabIndex = 4;
 			this.cm11.Value = new decimal(new int[] {
-			1000000,
+			1,
 			0,
 			0,
 			0});
@@ -269,15 +254,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm10.Name = "cm10";
 			this.cm10.Size = new System.Drawing.Size(48, 20);
 			this.cm10.TabIndex = 3;
-			this.cm10.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm22
 			// 
@@ -297,12 +277,12 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm22.Name = "cm22";
 			this.cm22.Size = new System.Drawing.Size(48, 20);
 			this.cm22.TabIndex = 8;
 			this.cm22.Value = new decimal(new int[] {
-			1000000,
+			1,
 			0,
 			0,
 			0});
@@ -325,15 +305,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm21.Name = "cm21";
 			this.cm21.Size = new System.Drawing.Size(48, 20);
 			this.cm21.TabIndex = 7;
-			this.cm21.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm20
 			// 
@@ -353,15 +328,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm20.Name = "cm20";
 			this.cm20.Size = new System.Drawing.Size(48, 20);
 			this.cm20.TabIndex = 6;
-			this.cm20.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm32
 			// 
@@ -381,15 +351,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm32.Name = "cm32";
 			this.cm32.Size = new System.Drawing.Size(48, 20);
 			this.cm32.TabIndex = 11;
-			this.cm32.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm31
 			// 
@@ -409,15 +374,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm31.Name = "cm31";
 			this.cm31.Size = new System.Drawing.Size(48, 20);
 			this.cm31.TabIndex = 10;
-			this.cm31.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm30
 			// 
@@ -437,15 +397,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm30.Name = "cm30";
 			this.cm30.Size = new System.Drawing.Size(48, 20);
 			this.cm30.TabIndex = 9;
-			this.cm30.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// groupBox1
 			// 
@@ -519,12 +474,12 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm44.Name = "cm44";
 			this.cm44.Size = new System.Drawing.Size(48, 20);
 			this.cm44.TabIndex = 24;
 			this.cm44.Value = new decimal(new int[] {
-			1000000,
+			1,
 			0,
 			0,
 			0});
@@ -547,15 +502,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm43.Name = "cm43";
 			this.cm43.Size = new System.Drawing.Size(48, 20);
 			this.cm43.TabIndex = 23;
-			this.cm43.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm34
 			// 
@@ -575,15 +525,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm34.Name = "cm34";
 			this.cm34.Size = new System.Drawing.Size(48, 20);
 			this.cm34.TabIndex = 22;
-			this.cm34.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm33
 			// 
@@ -603,12 +548,12 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm33.Name = "cm33";
 			this.cm33.Size = new System.Drawing.Size(48, 20);
 			this.cm33.TabIndex = 21;
 			this.cm33.Value = new decimal(new int[] {
-			1000000,
+			1,
 			0,
 			0,
 			0});
@@ -631,15 +576,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm24.Name = "cm24";
 			this.cm24.Size = new System.Drawing.Size(48, 20);
 			this.cm24.TabIndex = 20;
-			this.cm24.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm23
 			// 
@@ -659,15 +599,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm23.Name = "cm23";
 			this.cm23.Size = new System.Drawing.Size(48, 20);
 			this.cm23.TabIndex = 19;
-			this.cm23.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm14
 			// 
@@ -687,15 +622,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm14.Name = "cm14";
 			this.cm14.Size = new System.Drawing.Size(48, 20);
 			this.cm14.TabIndex = 18;
-			this.cm14.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm13
 			// 
@@ -715,15 +645,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm13.Name = "cm13";
 			this.cm13.Size = new System.Drawing.Size(48, 20);
 			this.cm13.TabIndex = 17;
-			this.cm13.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm04
 			// 
@@ -743,15 +668,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm04.Name = "cm04";
 			this.cm04.Size = new System.Drawing.Size(48, 20);
 			this.cm04.TabIndex = 16;
-			this.cm04.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm03
 			// 
@@ -771,15 +691,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm03.Name = "cm03";
 			this.cm03.Size = new System.Drawing.Size(48, 20);
 			this.cm03.TabIndex = 15;
-			this.cm03.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm42
 			// 
@@ -799,15 +714,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm42.Name = "cm42";
 			this.cm42.Size = new System.Drawing.Size(48, 20);
 			this.cm42.TabIndex = 14;
-			this.cm42.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm41
 			// 
@@ -827,15 +737,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm41.Name = "cm41";
 			this.cm41.Size = new System.Drawing.Size(48, 20);
 			this.cm41.TabIndex = 13;
-			this.cm41.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// cm40
 			// 
@@ -855,15 +760,10 @@ namespace Pdf2Png
 			1000000,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.cm40.Name = "cm40";
 			this.cm40.Size = new System.Drawing.Size(48, 20);
 			this.cm40.TabIndex = 12;
-			this.cm40.Value = new decimal(new int[] {
-			1000000,
-			0,
-			0,
-			0});
 			// 
 			// panel1
 			// 

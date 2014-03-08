@@ -706,4 +706,5 @@ namespace MuPDFLib
         /// <summary>1-bit Monochrome</summary>
         Monochrome = 2
     }
+
 }
