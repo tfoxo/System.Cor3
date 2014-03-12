@@ -1,5 +1,4 @@
 
-
 # NET45-Forms-ToolSuite
 
 This program was a general experiment in a couple regards.
@@ -40,5 +39,5 @@ License
 The text-editor used in this application is from SharpDevelop v3.x.
 
 [naudio]: http://naudio.codeplex.com/
-[mef-source]: from http://naudio.codeplex.com/SourceControl/latest#Lib/MEF/readme.txt
+[mef-source]: http://naudio.codeplex.com/SourceControl/latest#Lib/MEF/readme.txt
 [lgpl]: http://www.gnu.org/copyleft/lesser.html
