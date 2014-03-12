@@ -240,7 +240,8 @@ namespace Generator.Core.Parser
 			{
 				// set the table
 				table = tps.SelectedTable;
-				// Get the template
+				
+				// Get the template and do first layer of parsing
 				tableOut = ConvertInput2(
 					tps,
 					table,

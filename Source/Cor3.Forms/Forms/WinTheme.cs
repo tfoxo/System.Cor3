@@ -29,7 +29,7 @@ namespace System
 		/// <summary>
 		/// Transclude this class (File-&gt;Link).
 		/// </summary>
-		public class WindowsTheme
+		public static class WindowsTheme
 		{
 			const int BS_COMMANDLINK	= 0x0000000E;
 			const int BCM_SETNOTE			= 0x00001609;

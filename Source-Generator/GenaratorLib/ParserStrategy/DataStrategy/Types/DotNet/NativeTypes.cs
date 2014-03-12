@@ -126,6 +126,7 @@ namespace Generator.Core.Entities.Types
 				case TypeCode.Int32:
 					return "int";
 				case TypeCode.Int64:
+					return "Int64";
 //				case "BigInt": // this shouldn't be here, but i used it so it is.
 //					return "long";
 				case TypeCode.SByte:

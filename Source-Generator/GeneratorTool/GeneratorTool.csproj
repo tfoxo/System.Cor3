@@ -25,6 +25,7 @@
     <StartupObject>GeneratorTool.App</StartupObject>
     <NoWin32Manifest>False</NoWin32Manifest>
     <SignAssembly>True</SignAssembly>
+    <ApplicationIcon>Assets\Icons\appbar.shuffle.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -56,6 +57,12 @@
     <Reference Include="AvalonDock">
       <HintPath>build\AssemblyReferences\AvalonDock.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Project\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Project\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\..\Project\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
     </Reference>
@@ -81,6 +88,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -88,10 +96,13 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.90.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.90.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
@@ -137,7 +148,7 @@
     <Resrource Include="Assets\Icons\appbar.shuffle.png" />
     <Resource Include="Assets\Icons\appbar.shuffle.ico" />
     <None Include="Assets\Typo\Roboto 100.ttf" />
-    <None Include="Assets\Typo\Roboto 100italic.ttf"/>
+    <None Include="Assets\Typo\Roboto 100italic.ttf" />
     <None Include="Assets\Typo\Roboto 300.ttf" />
     <None Include="Assets\Typo\Roboto 300italic.ttf" />
     <None Include="Assets\Typo\Roboto 500.ttf" />
@@ -234,7 +245,7 @@
     <Compile Include="Source\Common\AppGlobal.cs" />
     <Compile Include="Source\Common\CommandManager.cs" />
     <Compile Include="Source\Common\LocalWindowManager.cs" />
-    <Compile Include="Source\Common\SQLiteAbstract.cs" />
+    <None Include="Source\Common\SQLiteAbstract.cs" />
     <Compile Include="Source\Common\WindowStyleChanged.cs" />
     <Compile Include="Source\Converters\RectConverter.cs" />
     <Compile Include="Source\Extensions\UriHackExtension.cs" />

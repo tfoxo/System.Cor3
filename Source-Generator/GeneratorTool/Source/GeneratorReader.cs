@@ -37,7 +37,7 @@ namespace GeneratorTool
 		static public readonly ICommand InitializeConfigurationCommand = new RoutedUICommand(){ Text="Initialize generator configuration-file." };
 		static public readonly ICommand LoadConfigurationCommand = new RoutedUICommand(){ Text="Load generator configuration-file.", InputGestures={ new KeyGesture(Key.O, ModifierKeys.Control) } };
 		static public readonly ICommand SaveConfigurationCommand = new RoutedUICommand(){ Text="Save generator configuration-file.", InputGestures={ new KeyGesture(Key.S, ModifierKeys.Control|ModifierKeys.Shift) } };
-		static public readonly ICommand SaveConfigurationAsCommand = new RoutedUICommand(){ Text="Save generator configuration-file.", InputGestures={ new KeyGesture(Key.S, ModifierKeys.Control|ModifierKeys.Shift) } };
+		static public readonly ICommand SaveConfigurationAsCommand = new RoutedUICommand(){ Text="Save generator configuration-file (as).", InputGestures={ new KeyGesture(Key.S, ModifierKeys.Control|ModifierKeys.Shift) } };
 		
 		#endregion
 		
