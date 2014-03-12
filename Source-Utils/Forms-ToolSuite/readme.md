@@ -18,6 +18,8 @@ The only useful utility provided here is the “Template Viewer”, which is one
 
 The template editor utility is a 'special' template system that I've used for a web-project, or more importantly for designing a web-project.
 
+I deal with a few different kinds of template-based systems.  For example, the generator application has one, somewhate different template system where we are dealing with tables, and the fields within the table.  This template system is designed for HTML rendering of information from a databsae, as well as to simplify the design process, where we could simply update the templates, and restart the web application.
+
 ### MEF Binary Source
 
 License
