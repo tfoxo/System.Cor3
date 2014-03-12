@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{14A59D85-A25B-437E-89C0-376F06174307}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SoftwareIndex</RootNamespace>
+    <AssemblyName>TemplateTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'xp86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>True</Prefer32Bit>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>ReferenceAssemblies\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Project\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Project\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>ReferenceAssemblies\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TextEditor">
+      <HintPath>..\..\Source-External\ICSharpCode.TextEditor\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>ReferenceAssemblies\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Source-Generator\GenaratorLib\Systems\Core.Parser\DataCfg.cs">
+      <Link>Includes\Generator\DataCfg.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source-Generator\GenaratorLib\Systems\Core.Parser\ParserHelper.cs">
+      <Link>Includes\Generator\ParserHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Core\System\System.DialogUtil.cs">
+      <Link>Includes\Interop\System.DialogUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Cor3.Forms\Forms\WinTheme.cs">
+      <Link>Includes\Interop\WinTheme.cs</Link>
+    </Compile>
+    <Compile Include="Source\CmdLib.Features\INamedTest.cs" />
+    <Compile Include="Source\CmdLib.Testing\GeneratorCommand.cs" />
+    <Compile Include="Source\CmdLib\CommandHelper.cs" />
+    <Compile Include="Source\Controls\CommandUtility.cs" />
+    <Compile Include="Source\Controls\CommandUtility.Designer.cs">
+      <DependentUpon>CommandUtility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\GenLib\Generator2SQLiteOperations %282%29.cs" />
+    <Compile Include="Source\GenLib\IGenTool.cs" />
+    <Compile Include="Includes\TextEditorUtil.cs" />
+    <Compile Include="Source\Lib\BasicTaskProvider.cs" />
+    <Compile Include="Source\Lib\DataSoftware.cs" />
+    <Compile Include="Source\Lib\ITaskControlProvider.cs" />
+    <Compile Include="Source\Lib\ProvideDataAttribute.cs" />
+    <Compile Include="Source\Lib\SqliteTemplateWorker.cs" />
+    <Compile Include="Source\Lib\TemplateUtil.cs" />
+    <Compile Include="Source\Model\GeneratorModel.cs" />
+    <Compile Include="Source\Model\IDataInterface.cs" />
+    <Compile Include="Source\Model\RowTemplates.cs" />
+    <Compile Include="Source\Model\SoftwareInfo.cs" />
+    <Compile Include="Source\Model\TemplateElement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\CmdLib\ITaskCommandProvider.cs" />
+    <Compile Include="Source\CmdLib\ParamType.cs" />
+    <Compile Include="Source\CmdLib\SimpleCommandTask.cs" />
+    <Compile Include="Source\CmdLib.Testing\CommandCheckForThreeInputs.cs" />
+    <Compile Include="Source\CmdLib.Testing\CommandCheckForTwoInputs.cs" />
+    <Compile Include="Source\Program.cs" />
+    <Compile Include="Source\View\GeneratorInfo.cs">
+      <DependentUpon>GeneratorInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\View\GeneratorInfoView.cs" />
+    <Compile Include="Source\View\MainForm.cs" />
+    <Compile Include="Source\View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\View\ResourceFromTemplate.cs">
+      <DependentUpon>ResourceFromTemplateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\View\ResourceFromTemplateView.cs" />
+    <Compile Include="Source\View\SoftwareInfo.cs">
+      <DependentUpon>SoftwareInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\View\SoftwareInfoView.cs" />
+    <Compile Include="Source\View\SoftwareInfoView.Designer.cs">
+      <DependentUpon>SoftwareInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\View\TemplateToSQLite.cs">
+      <DependentUpon>TemplateToSQLiteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\View\TemplateToSQLiteView.cs" />
+    <Compile Include="Source\View\TemplateViewer.cs">
+      <DependentUpon>TemplateViewerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\View\TemplateViewerView.cs" />
+    <Compile Include="Source\View\TemplateViewerView.Designer.cs">
+      <DependentUpon>TemplateViewerView.cs</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="readme.md" />
+    <None Include="x64\SQLite.Interop.dll" />
+    <None Include="x86\SQLite.Interop.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source-Generator\GenaratorLib\Generator.Lib.csproj">
+      <Project>{FF8C58DF-784E-4818-A92C-150B8BD6B85E}</Project>
+      <Name>Generator.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Core\System.Cor3-Net40.csproj">
+      <Project>{36A13D56-FD3A-4AF3-B608-9C84FAACC41F}</Project>
+      <Name>System.Cor3-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Data\System.Cor3.Data-Net40.csproj">
+      <Project>{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}</Project>
+      <Name>System.Cor3.Data-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Extensions\System.Cor3.Mvc3-Net40.csproj">
+      <Project>{EAF5372F-5EC7-4C8C-940A-CC9B9E789C48}</Project>
+      <Name>System.Cor3.Mvc3-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Parsers\System.Cor3.Parsers-Net40.csproj">
+      <Project>{AAF48B33-3DF6-4D51-8366-0F768D67AE44}</Project>
+      <Name>System.Cor3.Parsers-Net40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Source\Controls\CommandUtility.resx">
+      <DependentUpon>CommandUtility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\View\GeneratorInfoView.resx">
+      <DependentUpon>GeneratorInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\View\ResourceFromTemplateView.resx">
+      <DependentUpon>ResourceFromTemplateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\View\SoftwareInfoView.resx">
+      <DependentUpon>SoftwareInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\View\TemplateToSQLiteView.resx">
+      <DependentUpon>TemplateToSQLiteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\View\TemplateViewerView.resx">
+      <DependentUpon>TemplateViewerView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source\Lib" />
+    <Folder Include="Source\Model" />
+    <Folder Include="Includes" />
+    <Folder Include="Includes\Generator" />
+    <Folder Include="Includes\Interop" />
+    <Folder Include="Source\Controls" />
+    <Folder Include="Source\CmdLib" />
+    <Folder Include="Source\CmdLib.Testing" />
+    <Folder Include="Source\CmdLib.Features" />
+    <Folder Include="Source\GenLib" />
+    <Folder Include="Source" />
+    <Folder Include="Source\View" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
