@@ -16,6 +16,9 @@ The source to this project is here to genrally serve historical/reference purpos
 License
 : MIT?
 
+More information on MEF
+: https://mef.codeplex.com/
+
 MEF semantics were a bit inspiring to me at the time this was written, provided generally indirectly by [NAudio][naudio] WinForms demo a while back.  I have since considered this library unnecessary, considering how lightly it is used in this and other applications, though the library was designed well, I find simpler, transparent libraries more useful.
 
 The MEF binary provided here originally came [here][mef-source], and has been compiled with its dependency, so that only one binary ReferenceAssembly is required for usage.  Please refer to the readme that shipped with NAudio [mef-source] to find the source code used to compile this binary.
