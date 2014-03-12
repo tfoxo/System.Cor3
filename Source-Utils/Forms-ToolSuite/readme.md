@@ -9,6 +9,8 @@ The project is now compiled targeting NET45.
 
 ## Template Viewer Utility
 
+I would like to integrate the features generally exibited here, into the Generator application.
+
 The only useful utility provided here is the “Template Viewer”, which is one of a few pages availible in the application. The source to this project is here to genrally serve historical/reference purposes, where I migrated it up here meditating on
 
 * updating the Template Viewer concept
