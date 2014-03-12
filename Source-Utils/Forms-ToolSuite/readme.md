@@ -2,9 +2,12 @@
 
 # NET45-Forms-ToolSuite
 
-This program was a general experiment.
+This program was a general experiment in a couple regards.
+
 The idea was to harness databinding as similarly to WPF as possible through NET35 semantics.
-I was targeting NET20 (Windows XP and 2000 user workstations).
+Initially targeting NET20 (Windows XP and 2000 user workstations) by using NET35's corelib, which enabled NET35 characteristics such as LINQ and EXTENSIONS via NET20.
+
+The project is now compiled targeting NET45.
 
 The source to this project is here to genrally serve historical/reference purposes, where I migrated it up here to 
 
