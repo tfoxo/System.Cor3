@@ -1,4 +1,3 @@
-
 # NET45-Forms-ToolSuite
 
 This program was a general experiment in a couple regards.
@@ -8,7 +7,17 @@ Initially targeting NET20 (Windows XP and 2000 user workstations) by using NET35
 
 The project is now compiled targeting NET45.
 
-The source to this project is here to genrally serve historical/reference purposes, where I migrated it up here to 
+The source to this project is here to genrally serve historical/reference purposes, where I migrated it up here meditating on
+
+* updating the Template Viewer concept
+* I would like to generate a resource file (resx) so that templates are embedded in the application.
+
+
+## Template Viewer Utility
+
+The only useful utility provided here is the “Template Viewer”, which is one of a few pages availible in the application.
+
+The template editor utility is a 'special' template system that I've used for a web-project, or more importantly for designing a web-project.
 
 ### MEF Binary Source
 
