@@ -174,39 +174,66 @@
     <None Include="Assets\Icons\speaker_tosort.ico" />
     <Resource Include="Assets\Styles\GlobalTheme.xaml" />
     <Page Include="Assets\Styles\mui.xaml" />
+    <Page Include="Source\App.xaml" />
+    <Page Include="Source\MuiModern.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Source\Views\Content\DataEditorContent.xaml" />
+    <Page Include="Source\Views\Content\FieldViewContent.xaml" />
+    <Page Include="Source\Views\Content\SettingsAppearance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Source\Views\Content\ShowVectorContent.xaml" />
+    <Page Include="Source\Views\Content\TableViewContent.xaml" />
+    <Page Include="Source\Views\Content\TextView.xaml" />
     <Page Include="Source\Controls\AvalonEditor\Editor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DataEditorContent.xaml" />
-    <Page Include="Views\FieldViewContent.xaml" />
-    <Page Include="Views\MuiModern.xaml">
+    <Page Include="Source\Views\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Settings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SettingsAppearance.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="App.xaml" />
     <Resource Include="Assets\Styles\Lime.xaml" />
     <Resource Include="Assets\Styles\Theme.xaml" />
-    <Page Include="Views\Moxi.xaml" />
-    <Page Include="Views\ShowVectorContent.xaml" />
-    <Page Include="Views\TableViewContent.xaml" />
-    <Page Include="Views\TextView.xaml" />
+    <Page Include="Source\Views\Moxi.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="Assets\Icons\appbar.diagram.xaml.cs">
+      <DependentUpon>appbar.diagram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\App.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\Icons\appbar.diagram.xaml.cs">
-      <DependentUpon>appbar.diagram.xaml</DependentUpon>
+    <Compile Include="Source\MuiModern.xaml.cs">
+      <DependentUpon>MuiModern.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\Content\DataEditorContent.xaml.cs">
+      <DependentUpon>DataEditorContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Views\Content\FieldViewContent.xaml.cs">
+      <DependentUpon>FieldViewContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Views\Content\SettingsAppearance.xaml.cs">
+      <DependentUpon>SettingsAppearance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\Content\SettingsAppearanceViewModel.cs" />
+    <Compile Include="Source\Views\Content\ShowVectorContent.xaml.cs">
+      <DependentUpon>ShowVectorContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Views\Content\TableViewContent.xaml.cs">
+      <DependentUpon>TableViewContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Views\Content\TextView.xaml.cs">
+      <DependentUpon>TextView.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Source\Commands\BasicCommand.cs" />
     <Compile Include="Source\Commands\GeneratorCommand.cs" />
@@ -262,38 +289,11 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Source\SelectionChangedBehaviour.cs" />
-    <Compile Include="Views\DataEditorContent.xaml.cs">
-      <DependentUpon>DataEditorContent.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\FieldViewContent.xaml.cs">
-      <DependentUpon>FieldViewContent.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\MuiModern.xaml.cs">
-      <DependentUpon>MuiModern.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Settings.xaml.cs">
+    <Compile Include="Source\Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SettingsAppearance.xaml.cs">
-      <DependentUpon>SettingsAppearance.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SettingsAppearanceViewModel.cs" />
-    <Compile Include="Views\Moxi.xaml.cs">
+    <Compile Include="Source\Views\Moxi.xaml.cs">
       <DependentUpon>Moxi.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\ShowVectorContent.xaml.cs">
-      <DependentUpon>ShowVectorContent.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\TableViewContent.xaml.cs">
-      <DependentUpon>TableViewContent.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\TextView.xaml.cs">
-      <DependentUpon>TextView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -307,11 +307,12 @@
     <Folder Include="Assets" />
     <Folder Include="Assets\Styles" />
     <Folder Include="Assets\Typo" />
+    <Folder Include="Source\Views\Content" />
     <Folder Include="Source\Controls\AvalonEditor" />
     <Folder Include="Source\Extensions" />
     <Folder Include="Source\Controls" />
     <Folder Include="Source\Commands" />
-    <Folder Include="Views" />
+    <Folder Include="Source\Views" />
     <Folder Include="Source\Common" />
     <Folder Include="Source\Converters" />
     <Folder Include="Assets\Icons" />
