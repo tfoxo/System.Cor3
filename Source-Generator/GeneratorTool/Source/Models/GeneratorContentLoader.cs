@@ -18,6 +18,7 @@ namespace GeneratorTool.Views
 		
 		MoxiView moxi;
 		WriterTemplateControl writerControl = new WriterTemplateControl();
+		SQLiteView sqlTool = new SQLiteView();
 		
 		/// <summary>
 		/// Loads the content from specified uri.
@@ -30,6 +31,7 @@ namespace GeneratorTool.Views
 			if (moxi==null) moxi = new MoxiView();
 			if (uri.OriginalString == "/1") return moxi;
 			else if (uri.OriginalString == "/writerTemplate") return writerControl;
+			else if (uri.OriginalString == "/sqlTool") return sqlTool;
 			else if (uri.OriginalString == "/2")
 			{
 				MoxiView.StatePushCommand.Execute(null);

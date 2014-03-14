@@ -32,33 +32,13 @@ namespace GeneratorTool.Views
 			//FontFamily="/assets/typo/#Roboto 900"
 			InitializeComponent();
 //			this.GetValue(DependencyObject
-			
 			//System.Diagnostics.Debug.WriteLine("We have: {0}",this.);
-			mainLinks.Links.Add(
-				new Link(){
-					DisplayName="GENERATOR",
-					Source = new Uri("/1",UriKind.RelativeOrAbsolute)
-				});
-			mainLinks.Links.Add(
-				new Link(){
-					DisplayName="TEMPLATE",
-					Source = new Uri("/2",UriKind.RelativeOrAbsolute),
-				});
-			mainLinks.Links.Add(
-				new Link(){
-					DisplayName="TEMPLATE(2)",
-					Source = new Uri("/writerTemplate",UriKind.RelativeOrAbsolute)
-				});
-			mainLinks.Links.Add(
-				new Link(){
-					DisplayName="3",
-					Source = new Uri("/3",UriKind.RelativeOrAbsolute),
-				});
-			mainLinks.Links.Add(
-				new Link(){
-					DisplayName="4",
-					Source = new Uri("/4",UriKind.RelativeOrAbsolute),
-				});
+			mainLinks.Links.Add( new Link(){ DisplayName="GENERATOR", Source = new Uri("/1",UriKind.RelativeOrAbsolute) });
+			mainLinks.Links.Add( new Link(){ DisplayName="TEMPLATE-WRITER", Source = new Uri("/writerTemplate",UriKind.RelativeOrAbsolute) });
+			mainLinks.Links.Add( new Link(){ DisplayName="SQLite Tool", Source = new Uri("/sqlTool",UriKind.RelativeOrAbsolute) });
+//			mainLinks.Links.Add( new Link(){ DisplayName="TEMPLATE", Source = new Uri("/2",UriKind.RelativeOrAbsolute), });
+//			mainLinks.Links.Add( new Link(){ DisplayName="3", Source = new Uri("/3",UriKind.RelativeOrAbsolute), });
+//			mainLinks.Links.Add( new Link(){ DisplayName="4", Source = new Uri("/4",UriKind.RelativeOrAbsolute), });
 			
 		}
 		public override void OnApplyTemplate()

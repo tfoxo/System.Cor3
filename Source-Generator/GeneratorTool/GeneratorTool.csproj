@@ -154,6 +154,7 @@
     <Resource Include="Assets\Icons\code-variable.png" />
     <Resrource Include="Assets\Icons\appbar.shuffle.png" />
     <Resource Include="Assets\Icons\appbar.shuffle.ico" />
+    <EmbeddedResource Include="Assets\Styles\Sql.xshd" />
     <None Include="Assets\Typo\Roboto 100.ttf" />
     <None Include="Assets\Typo\Roboto 100italic.ttf" />
     <None Include="Assets\Typo\Roboto 300.ttf" />
@@ -223,7 +224,9 @@
     <None Include="Source\Models\Unused\SQLiteAbstract.cs" />
     <None Include="Source\Models\Unused\WindowStyleChanged.cs" />
     <Compile Include="Source\Commands\IBindCommands.cs" />
+    <Compile Include="Source\Extensions\AvalonEditorUtils.cs" />
     <Compile Include="Source\Models\AppGlobal.cs" />
+    <Compile Include="Source\Models\GeneratorContentLoader.cs" />
     <Compile Include="Source\Models\Generator\GeneratorModel.cs" />
     <Compile Include="Source\Models\Generator\GeneratorReader.cs" />
     <Compile Include="Source\Models\Settings\SettingsAppearanceViewModel.cs" />
@@ -236,7 +239,6 @@
       <DependentUpon>MuiModern.xaml</DependentUpon>
     </Compile>
     <Compile Include="Source\ViewExtensions\DatabaseItemTemplateSelector.cs" />
-    <Compile Include="Source\ViewExtensions\GeneratorContentLoader.cs" />
     <Compile Include="Source\ViewExtensions\SelectionChangedBehaviour.cs" />
     <Compile Include="Source\Views\DataContent\DataEditorContent.xaml.cs">
       <DependentUpon>DataEditorContent.xaml</DependentUpon>
