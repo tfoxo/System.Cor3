@@ -212,11 +212,26 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <None Include="Source\Common\Unused\CheckForFileException.cs" />
+    <None Include="Source\Common\Unused\CommandManager.cs" />
+    <None Include="Source\Common\Unused\Common.UriHacks.cs" />
+    <None Include="Source\Common\Unused\ContentLoader.cs" />
+    <None Include="Source\Common\Unused\LocalWindowManager.cs" />
+    <None Include="Source\Common\Unused\NetContentFilter.cs" />
+    <None Include="Source\Common\Unused\NetContentFilterType.cs" />
+    <None Include="Source\Common\Unused\SQLiteAbstract.cs" />
+    <None Include="Source\Common\Unused\WindowStyleChanged.cs" />
+    <Compile Include="Source\Models\Generator\GeneratorModel.cs" />
+    <Compile Include="Source\Models\Generator\GeneratorReader.cs" />
+    <Compile Include="Source\Models\Settings\SettingsAppearanceViewModel.cs" />
+    <Compile Include="Source\Models\WriterTemplate\WriterTemplateModel.cs" />
+    <Compile Include="Source\Models\WriterTemplate\WriterTplModel.cs" />
     <Compile Include="Source\MuiModern.xaml.cs">
       <DependentUpon>MuiModern.xaml</DependentUpon>
     </Compile>
     <Compile Include="Source\ViewExtensions\DatabaseItemTemplateSelector.cs" />
     <Compile Include="Source\ViewExtensions\GeneratorContentLoader.cs" />
+    <Compile Include="Source\ViewExtensions\SelectionChangedBehaviour.cs" />
     <Compile Include="Source\Views\DataContent\DataEditorContent.xaml.cs">
       <DependentUpon>DataEditorContent.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -267,15 +282,10 @@
     <Compile Include="Source\Converters\GroupOnMultiBindingConverter.cs" />
     <Compile Include="Source\Converters\IsEnabledToColorConverter.cs" />
     <Compile Include="Source\Converters\VisibilityToBooleanConverter.cs" />
-    <Compile Include="Source\GeneratorModel.cs" />
-    <Compile Include="Source\GeneratorReader.cs" />
     <Compile Include="Source\Common\AppGlobal.cs" />
-    <Compile Include="Source\Common\CommandManager.cs" />
-    <Compile Include="Source\Common\LocalWindowManager.cs" />
     <Compile Include="Source\Views\SettingsContent\SettingsAppearance.xaml.cs">
       <DependentUpon>SettingsAppearance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Source\Views\SettingsContent\SettingsAppearanceViewModel.cs" />
     <Compile Include="Source\Views\WriterTemplateControl.xaml.cs">
       <DependentUpon>WriterTemplateControl.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -284,25 +294,15 @@
       <DependentUpon>NewWriterTemplateControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Source\WriterTemplateModel.cs" />
-    <Compile Include="Source\WriterTplModel.cs" />
-    <None Include="Source\Common\SQLiteAbstract.cs" />
-    <Compile Include="Source\Common\WindowStyleChanged.cs" />
     <Compile Include="Source\Converters\RectConverter.cs" />
     <Compile Include="Source\Extensions\UriHackExtension.cs" />
     <Compile Include="Source\Extensions\WpfExtensions.cs" />
-    <Compile Include="Source\Common\CheckForFileException.cs" />
-    <Compile Include="Source\Common\Common.UriHacks.cs" />
-    <Compile Include="Source\Common\ContentLoader.cs" />
-    <Compile Include="Source\Common\NetContentFilter.cs" />
-    <Compile Include="Source\Common\NetContentFilterType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WPFAssemblyInfo.cs" />
     <Compile Include="Resource.Designer.cs">
       <DependentUpon>Resource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Source\SelectionChangedBehaviour.cs" />
     <Compile Include="Source\Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -322,6 +322,10 @@
     <Folder Include="Assets\Styles" />
     <Folder Include="Assets\Typo" />
     <Folder Include="Source\Common\Unused" />
+    <Folder Include="Source\Models" />
+    <Folder Include="Source\Models\Generator" />
+    <Folder Include="Source\Models\Settings" />
+    <Folder Include="Source\Models\WriterTemplate" />
     <Folder Include="Source\ViewExtensions" />
     <Folder Include="Source\Views\DataContent" />
     <Folder Include="Source\Controls\AvalonEditor" />

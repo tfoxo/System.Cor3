@@ -10,11 +10,12 @@ namespace GeneratorTool
 {
 	/// <summary>
 	/// Description of ContentLoader.
+	/// (this may just be here for prior reference)
 	/// </summary>
-	public class ContentLoader
+	static class ContentLoader
 	{
 		static SaveFileDialog sfd = new SaveFileDialog();
-		
+		#region LoadVeetleUrlContent
 		/// <summary>
 		/// Good for small files.
 		/// <para>
@@ -72,7 +73,8 @@ namespace GeneratorTool
 			if (string.IsNullOrEmpty(sresponse)) return null;
 			return sresponse;
 		}
-		
+		#endregion
+		#region GetLineFromText
 		static public string GetLineFromText(string content, string searchStart, string searchEnd)
 		{
 			if (content==null) {
@@ -98,6 +100,7 @@ namespace GeneratorTool
 			}
 			return content.Substring(start,end-start);
 		}
+		#endregion
 
 	}
 

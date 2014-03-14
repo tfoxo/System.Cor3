@@ -1,11 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: oio
- * Date: 2/6/2012
- * Time: 7:41 PM
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
+﻿/* oio * 2/6/2012 * 7:41 PM */
 using System;
 using System.Reflection;
 

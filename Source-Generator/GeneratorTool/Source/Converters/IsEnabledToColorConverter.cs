@@ -1,13 +1,7 @@
 ﻿/* oio : 1/21/2014 9:33 AM */
 using System;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Media;
-using Generator.Core.Entities;
 
 namespace GeneratorTool.Views
 {

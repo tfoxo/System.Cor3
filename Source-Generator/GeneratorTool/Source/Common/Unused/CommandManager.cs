@@ -1,29 +1,9 @@
-﻿/*
- * User: oio
- * Date: 1/31/2012
- * Time: 6:57 AM
- */
-#region Using
+﻿/* oio : 1/31/2012 : 6:57 AM */
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Web.Script.Serialization;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Navigation;
-using System.Windows.Shell;
 
-using Microsoft.Win32;
-
-#endregion
 namespace GeneratorTool
 {
 	public abstract class CommandManager<TContainer> where TContainer:FrameworkElement

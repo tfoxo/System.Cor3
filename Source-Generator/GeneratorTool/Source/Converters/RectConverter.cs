@@ -1,20 +1,9 @@
 ﻿#define LOCALVLC1
 // delete the 1
-#region Using
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Data;
-using System.Xml;
-
-using GeneratorTool.Views;
-
-#endregion
 namespace GeneratorTool
 {
 

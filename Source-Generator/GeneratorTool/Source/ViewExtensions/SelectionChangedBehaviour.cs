@@ -72,6 +72,7 @@ namespace GeneratorTool.Views
 				
 				return;
 			}
+			// otherwise we are dealing with a combobox or some other: System.Windows.Controls.Primitives.Selector
 			var selector = (Selector)sender;
 			if (selector != null) {
 				var command = selector.GetValue(CommandProperty) as ICommand;

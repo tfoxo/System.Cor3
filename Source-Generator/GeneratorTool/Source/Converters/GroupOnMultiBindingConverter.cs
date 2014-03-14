@@ -3,10 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using Generator.Core.Entities;
 namespace GeneratorTool.Views
 {
 	public class GroupOnMultiBindingConverter : IMultiValueConverter
