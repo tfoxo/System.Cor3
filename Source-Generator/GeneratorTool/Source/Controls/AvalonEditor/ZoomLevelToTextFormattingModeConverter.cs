@@ -12,7 +12,7 @@ using System.Windows.Media;
 using ICSharpCode.AvalonEdit.Folding;
 
 #endregion
-namespace GeneratorTool.Controls.AvalonEditor
+namespace GeneratorTool.Controls
 {
 	sealed class ZoomLevelToTextFormattingModeConverter : IValueConverter
 	{

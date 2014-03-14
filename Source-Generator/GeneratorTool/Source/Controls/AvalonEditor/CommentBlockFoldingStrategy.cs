@@ -12,7 +12,7 @@ using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Folding;
 
 #endregion
-namespace GeneratorTool.Controls.AvalonEditor
+namespace GeneratorTool.Controls
 {
 	/// <summary>Cascading Style Sheet Comment Folding Strategy.
 	/// <para>(Reliant upon CssParser)</para>

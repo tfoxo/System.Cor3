@@ -124,6 +124,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Source\Views\SQLiteView.xaml" />
     <Page Include="Source\Views\WriterTemplateControl.xaml" />
     <Page Include="Source\Views\WriterTplContent\NewWriterTemplateControl.xaml" />
     <Resource Include="..\..\Source-AppWpf\FeedTool\Resources\Icons.xaml">
@@ -212,18 +213,23 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <None Include="Source\Common\Unused\CheckForFileException.cs" />
-    <None Include="Source\Common\Unused\CommandManager.cs" />
-    <None Include="Source\Common\Unused\Common.UriHacks.cs" />
-    <None Include="Source\Common\Unused\ContentLoader.cs" />
-    <None Include="Source\Common\Unused\LocalWindowManager.cs" />
-    <None Include="Source\Common\Unused\NetContentFilter.cs" />
-    <None Include="Source\Common\Unused\NetContentFilterType.cs" />
-    <None Include="Source\Common\Unused\SQLiteAbstract.cs" />
-    <None Include="Source\Common\Unused\WindowStyleChanged.cs" />
+    <None Include="Source\Models\Unused\CheckForFileException.cs" />
+    <None Include="Source\Models\Unused\CommandManager.cs" />
+    <None Include="Source\Models\Unused\Common.UriHacks.cs" />
+    <None Include="Source\Models\Unused\ContentLoader.cs" />
+    <None Include="Source\Models\Unused\LocalWindowManager.cs" />
+    <None Include="Source\Models\Unused\NetContentFilter.cs" />
+    <None Include="Source\Models\Unused\NetContentFilterType.cs" />
+    <None Include="Source\Models\Unused\SQLiteAbstract.cs" />
+    <None Include="Source\Models\Unused\WindowStyleChanged.cs" />
+    <Compile Include="Source\Commands\IBindCommands.cs" />
+    <Compile Include="Source\Models\AppGlobal.cs" />
     <Compile Include="Source\Models\Generator\GeneratorModel.cs" />
     <Compile Include="Source\Models\Generator\GeneratorReader.cs" />
     <Compile Include="Source\Models\Settings\SettingsAppearanceViewModel.cs" />
+    <Compile Include="Source\Models\SQLiteTool\DatabaseLoader.cs" />
+    <Compile Include="Source\Models\SQLiteTool\DataRunner.cs" />
+    <Compile Include="Source\Models\SQLiteTool\SQLFileLoader.cs" />
     <Compile Include="Source\Models\WriterTemplate\WriterTemplateModel.cs" />
     <Compile Include="Source\Models\WriterTemplate\WriterTplModel.cs" />
     <Compile Include="Source\MuiModern.xaml.cs">
@@ -282,9 +288,11 @@
     <Compile Include="Source\Converters\GroupOnMultiBindingConverter.cs" />
     <Compile Include="Source\Converters\IsEnabledToColorConverter.cs" />
     <Compile Include="Source\Converters\VisibilityToBooleanConverter.cs" />
-    <Compile Include="Source\Common\AppGlobal.cs" />
     <Compile Include="Source\Views\SettingsContent\SettingsAppearance.xaml.cs">
       <DependentUpon>SettingsAppearance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SQLiteView.xaml.cs">
+      <DependentUpon>SQLiteView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Source\Views\WriterTemplateControl.xaml.cs">
       <DependentUpon>WriterTemplateControl.xaml</DependentUpon>
@@ -321,10 +329,11 @@
     <Folder Include="Assets" />
     <Folder Include="Assets\Styles" />
     <Folder Include="Assets\Typo" />
-    <Folder Include="Source\Common\Unused" />
+    <Folder Include="Source\Models\Unused" />
     <Folder Include="Source\Models" />
     <Folder Include="Source\Models\Generator" />
     <Folder Include="Source\Models\Settings" />
+    <Folder Include="Source\Models\SQLiteTool" />
     <Folder Include="Source\Models\WriterTemplate" />
     <Folder Include="Source\ViewExtensions" />
     <Folder Include="Source\Views\DataContent" />
@@ -333,7 +342,6 @@
     <Folder Include="Source\Controls" />
     <Folder Include="Source\Commands" />
     <Folder Include="Source\Views" />
-    <Folder Include="Source\Common" />
     <Folder Include="Source\Converters" />
     <Folder Include="Assets\Icons" />
     <Folder Include="Source\Views\WriterTplContent" />

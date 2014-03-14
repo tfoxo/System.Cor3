@@ -8,7 +8,7 @@
 	xmlns:t="clr-namespace:Generator.Core.Markup;assembly=Generator.Lib"
 	xmlns:l="clr-namespace:GeneratorTool"
 	xmlns:v="clr-namespace:GeneratorTool.Views"
-	xmlns:avalon="clr-namespace:GeneratorTool.Controls.AvalonEditor"
+	xmlns:avalon="clr-namespace:GeneratorTool.Controls"
 	xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
 	xmlns:dat="clr-namespace:System.Windows.Data;assembly=PresentationFramework">
 	<UserControl.Resources>

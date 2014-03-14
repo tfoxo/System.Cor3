@@ -7,7 +7,7 @@ using System.Cor3.Parsers;
 using IRange = ICSharpCode.AvalonEdit.Document.ISegment;
 #endregion
 
-namespace GeneratorTool.Controls.AvalonEditor
+namespace GeneratorTool.Controls
 {
 	static class Extender { static public IRange GetSegment(this TextRange input) { return new Segment(input); } }
 	class Segment : IRange

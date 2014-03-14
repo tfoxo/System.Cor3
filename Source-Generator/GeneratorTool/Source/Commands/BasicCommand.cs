@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Windows.Media;
-
-using FirstFloor.ModernUI.Presentation;
-
 namespace GeneratorTool.Views
 {
 	public class BasicCommand : ICommand

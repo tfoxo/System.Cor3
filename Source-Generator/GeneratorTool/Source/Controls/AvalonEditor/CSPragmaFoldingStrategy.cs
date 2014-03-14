@@ -11,7 +11,7 @@ using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Folding;
 
 #endregion
-namespace GeneratorTool.Controls.AvalonEditor
+namespace GeneratorTool.Controls
 {
 	/// <summary>
 	/// As with the BraceFoldingStrategy, we just want regions and don't

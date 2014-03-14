@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              xmlns:v="clr-namespace:GeneratorTool.Views"
-             xmlns:avalon="clr-namespace:GeneratorTool.Controls.AvalonEditor">
+             xmlns:avalon="clr-namespace:GeneratorTool.Controls">
 	<Grid>
 		<avalon:Editor SyntaxHighlighting="XML"  ShowLineNumbers="True" FontFamily="Consolas">
 			<avalon:Editor.ContextMenu>

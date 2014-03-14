@@ -18,7 +18,7 @@ using ICSharpCode.AvalonEdit.Indentation.CSharp;
 
 #endregion
 
-namespace GeneratorTool.Controls.AvalonEditor
+namespace GeneratorTool.Controls
 {
 
 	/// <summary>

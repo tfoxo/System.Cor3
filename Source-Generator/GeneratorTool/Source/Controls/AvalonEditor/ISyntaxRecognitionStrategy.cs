@@ -4,7 +4,7 @@
 #region Using
 using System;
 #endregion
-namespace GeneratorTool.Controls.AvalonEditor
+namespace GeneratorTool.Controls
 {
 	/// <summary>
 	/// This was simply a test.  Not implemented

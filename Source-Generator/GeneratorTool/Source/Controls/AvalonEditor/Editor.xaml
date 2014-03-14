@@ -1,11 +1,11 @@
 ﻿<ae:TextEditor
-	x:Class="GeneratorTool.Controls.AvalonEditor.Editor"
+	x:Class="GeneratorTool.Controls.Editor"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:ae="http://icsharpcode.net/sharpdevelop/avalonedit"
 	xmlns:widgets="http://icsharpcode.net/sharpdevelop/widgets"
 	xmlns:core="http://icsharpcode.net/sharpdevelop/core"
-	xmlns:local="clr-namespace:GeneratorTool.Controls.AvalonEditor"
+	xmlns:local="clr-namespace:GeneratorTool.Controls"
 	ShowLineNumbers="True"
 	FontFamily="Consolas"
 	FontSize="8pt"
