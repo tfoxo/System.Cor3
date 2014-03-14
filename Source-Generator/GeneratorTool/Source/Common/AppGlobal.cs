@@ -26,8 +26,6 @@ namespace GeneratorTool
 			Initialize(args);
 		}
 		
-		
-		
 		/// <summary>
 		/// Check for '-create-db' parameters where we expect a following
 		/// parameter contianing a path to the database.

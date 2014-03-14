@@ -216,7 +216,7 @@ namespace Pdf2Png
 		}
 		void NPageStartValueChanged(object sender, System.EventArgs e)
 		{
-			throw new NotImplementedException();
+//			throw new NotImplementedException();
 		}
 		#endregion
 		

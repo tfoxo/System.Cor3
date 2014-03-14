@@ -56,6 +56,8 @@ namespace TemplateTool.View
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.loadSQLiteDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.unloadDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+			this.generateResourceresxFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.createSQLiteDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -88,7 +90,7 @@ namespace TemplateTool.View
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(613, 24);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(713, 24);
 			this.tableLayoutPanel1.TabIndex = 2;
 			// 
 			// comboSyntax
@@ -96,10 +98,10 @@ namespace TemplateTool.View
 			this.comboSyntax.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.comboSyntax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboSyntax.FormattingEnabled = true;
-			this.comboSyntax.Location = new System.Drawing.Point(476, 0);
+			this.comboSyntax.Location = new System.Drawing.Point(574, 0);
 			this.comboSyntax.Margin = new System.Windows.Forms.Padding(0);
 			this.comboSyntax.Name = "comboSyntax";
-			this.comboSyntax.Size = new System.Drawing.Size(137, 21);
+			this.comboSyntax.Size = new System.Drawing.Size(139, 21);
 			this.comboSyntax.TabIndex = 4;
 			// 
 			// comboField
@@ -107,10 +109,10 @@ namespace TemplateTool.View
 			this.comboField.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.comboField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboField.FormattingEnabled = true;
-			this.comboField.Location = new System.Drawing.Point(341, 0);
+			this.comboField.Location = new System.Drawing.Point(437, 0);
 			this.comboField.Margin = new System.Windows.Forms.Padding(0);
 			this.comboField.Name = "comboField";
-			this.comboField.Size = new System.Drawing.Size(135, 21);
+			this.comboField.Size = new System.Drawing.Size(137, 21);
 			this.comboField.TabIndex = 2;
 			// 
 			// menuStrip1
@@ -118,20 +120,22 @@ namespace TemplateTool.View
 			this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2);
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.toolStripMenuItem1,
-									this.tasksToolStripMenuItem});
+			this.toolStripMenuItem1,
+			this.tasksToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
-			this.menuStrip1.Size = new System.Drawing.Size(71, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(163, 24);
 			this.menuStrip1.TabIndex = 4;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.loadSQLiteDatabaseToolStripMenuItem,
-									this.unloadDatabaseToolStripMenuItem});
+			this.loadSQLiteDatabaseToolStripMenuItem,
+			this.unloadDatabaseToolStripMenuItem,
+			this.toolStripMenuItem3,
+			this.generateResourceresxFileToolStripMenuItem});
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 			this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(0);
 			this.toolStripMenuItem1.Size = new System.Drawing.Size(29, 24);
@@ -140,23 +144,35 @@ namespace TemplateTool.View
 			// loadSQLiteDatabaseToolStripMenuItem
 			// 
 			this.loadSQLiteDatabaseToolStripMenuItem.Name = "loadSQLiteDatabaseToolStripMenuItem";
-			this.loadSQLiteDatabaseToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+			this.loadSQLiteDatabaseToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
 			this.loadSQLiteDatabaseToolStripMenuItem.Text = "Load SQLite Database";
 			this.loadSQLiteDatabaseToolStripMenuItem.Click += new System.EventHandler(this.LoadSQLiteDatabaseToolStripMenuItemClick);
 			// 
 			// unloadDatabaseToolStripMenuItem
 			// 
 			this.unloadDatabaseToolStripMenuItem.Name = "unloadDatabaseToolStripMenuItem";
-			this.unloadDatabaseToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+			this.unloadDatabaseToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
 			this.unloadDatabaseToolStripMenuItem.Text = "Unload Database";
 			this.unloadDatabaseToolStripMenuItem.Click += new System.EventHandler(this.UnloadDatabaseToolStripMenuItemClick);
+			// 
+			// toolStripMenuItem3
+			// 
+			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+			this.toolStripMenuItem3.Size = new System.Drawing.Size(227, 6);
+			// 
+			// generateResourceresxFileToolStripMenuItem
+			// 
+			this.generateResourceresxFileToolStripMenuItem.Name = "generateResourceresxFileToolStripMenuItem";
+			this.generateResourceresxFileToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+			this.generateResourceresxFileToolStripMenuItem.Text = "Generate Resource (*.resx) file";
+			this.generateResourceresxFileToolStripMenuItem.Click += new System.EventHandler(this.GenerateResourceresxFileToolStripMenuItemClick);
 			// 
 			// tasksToolStripMenuItem
 			// 
 			this.tasksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.createSQLiteDatabaseToolStripMenuItem,
-									this.toolStripMenuItem2,
-									this.updateCurrentValueToolStripMenuItem});
+			this.createSQLiteDatabaseToolStripMenuItem,
+			this.toolStripMenuItem2,
+			this.updateCurrentValueToolStripMenuItem});
 			this.tasksToolStripMenuItem.Name = "tasksToolStripMenuItem";
 			this.tasksToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0);
 			this.tasksToolStripMenuItem.Size = new System.Drawing.Size(40, 24);
@@ -187,10 +203,10 @@ namespace TemplateTool.View
 			this.comboGroup.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.comboGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboGroup.FormattingEnabled = true;
-			this.comboGroup.Location = new System.Drawing.Point(71, 0);
+			this.comboGroup.Location = new System.Drawing.Point(163, 0);
 			this.comboGroup.Margin = new System.Windows.Forms.Padding(0);
 			this.comboGroup.Name = "comboGroup";
-			this.comboGroup.Size = new System.Drawing.Size(135, 21);
+			this.comboGroup.Size = new System.Drawing.Size(137, 21);
 			this.comboGroup.TabIndex = 1;
 			// 
 			// comboRow
@@ -198,10 +214,10 @@ namespace TemplateTool.View
 			this.comboRow.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.comboRow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboRow.FormattingEnabled = true;
-			this.comboRow.Location = new System.Drawing.Point(206, 0);
+			this.comboRow.Location = new System.Drawing.Point(300, 0);
 			this.comboRow.Margin = new System.Windows.Forms.Padding(0);
 			this.comboRow.Name = "comboRow";
-			this.comboRow.Size = new System.Drawing.Size(135, 21);
+			this.comboRow.Size = new System.Drawing.Size(137, 21);
 			this.comboRow.TabIndex = 3;
 			// 
 			// textEditorControl1
@@ -210,7 +226,7 @@ namespace TemplateTool.View
 			this.textEditorControl1.IsReadOnly = false;
 			this.textEditorControl1.Location = new System.Drawing.Point(0, 24);
 			this.textEditorControl1.Name = "textEditorControl1";
-			this.textEditorControl1.Size = new System.Drawing.Size(613, 362);
+			this.textEditorControl1.Size = new System.Drawing.Size(713, 257);
 			this.textEditorControl1.TabIndex = 3;
 			this.textEditorControl1.Text = "textEditorControl1";
 			this.textEditorControl1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
@@ -223,7 +239,7 @@ namespace TemplateTool.View
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.DoubleBuffered = true;
 			this.Name = "TemplateViewerView";
-			this.Size = new System.Drawing.Size(613, 386);
+			this.Size = new System.Drawing.Size(713, 281);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
@@ -231,6 +247,8 @@ namespace TemplateTool.View
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+		private System.Windows.Forms.ToolStripMenuItem generateResourceresxFileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem updateCurrentValueToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem createSQLiteDatabaseToolStripMenuItem;

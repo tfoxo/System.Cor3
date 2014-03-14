@@ -9,11 +9,10 @@ using Microsoft.Win32;
 
 namespace SQLiteUtil
 {
-
 	/// <summary>
 	/// Description of utils.
 	/// </summary>
-	public class AvalonEditorUtils
+	public static class AvalonEditorUtils
 	{
 		#region Load Resource
 		

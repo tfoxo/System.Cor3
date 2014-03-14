@@ -47,7 +47,12 @@ namespace Generator
 		public const string actionName = "list-templates";
 		internal const string col_id = "id",col_admin = "admin",col_title = "title",col_table = "table",col_container = "container",col_row = "row",col_head = "head",col_foot = "foot",col_grouphead = "grouphead",col_groupfoot = "groupfoot",col_note = "note";
 		internal static readonly Type[] tcoltypes = new Type[]{ typeof(int?), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string) };
-		static internal protected readonly string[] tcols = { col_id,col_admin,col_table,col_title,col_container,col_row,col_head,col_foot,col_grouphead,col_groupfoot,col_note };
+
+		public static string[] ColumnNames {
+			get {
+				return tcols;
+			}
+		} static internal protected readonly string[] tcols = { col_id,col_admin,col_table,col_title,col_container,col_row,col_head,col_foot,col_grouphead,col_groupfoot,col_note };
 		static internal protected readonly string   tkey  = "id";
 		#endregion
 		

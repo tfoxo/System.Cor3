@@ -19,6 +19,7 @@ using Generator.Core.Parser;
 using Microsoft.Win32;
 namespace GeneratorTool
 {
+		
 	public class GeneratorModel : INotifyPropertyChanged
 	{
 		#region Properties

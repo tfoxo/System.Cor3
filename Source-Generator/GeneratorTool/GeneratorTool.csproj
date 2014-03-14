@@ -120,6 +120,12 @@
     <Page Include="..\..\..\..\..\..\..\Multimedia\image-bin\UI\icon-packs\WindowsIcons-master\WindowsPhone\xaml\appbar.diagram.xaml">
       <Link>Assets\Icons\appbar.diagram.xaml</Link>
     </Page>
+    <Page Include="Source\Views\SettingsContent\SettingsAppearance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Source\Views\WriterTemplateControl.xaml" />
+    <Page Include="Source\Views\WriterTplContent\NewWriterTemplateControl.xaml" />
     <Resource Include="..\..\Source-AppWpf\FeedTool\Resources\Icons.xaml">
       <Link>Assets\Styles\Icons.xaml</Link>
     </Resource>
@@ -170,7 +176,9 @@
     <Resource Include="Assets\Typo\Roboto Slab 700.ttf" />
     <Resource Include="Assets\Typo\Roboto Slab regular.ttf" />
     <None Include="x64\SQLite.Interop.dll" />
-    <None Include="x86\SQLite.Interop.dll" />
+    <None Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Assets\Icons\speaker_tosort.ico" />
     <Resource Include="Assets\Styles\GlobalTheme.xaml" />
     <Page Include="Assets\Styles\mui.xaml" />
@@ -179,15 +187,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Source\Views\Content\DataEditorContent.xaml" />
-    <Page Include="Source\Views\Content\FieldViewContent.xaml" />
-    <Page Include="Source\Views\Content\SettingsAppearance.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Source\Views\Content\ShowVectorContent.xaml" />
-    <Page Include="Source\Views\Content\TableViewContent.xaml" />
-    <Page Include="Source\Views\Content\TextView.xaml" />
+    <Page Include="Source\Views\DataContent\DataEditorContent.xaml" />
+    <Page Include="Source\Views\DataContent\FieldViewContent.xaml" />
+    <Page Include="Source\Views\DataContent\ShowVectorContent.xaml" />
+    <Page Include="Source\Views\DataContent\TableViewContent.xaml" />
+    <Page Include="Source\Views\DataContent\TextView.xaml" />
     <Page Include="Source\Controls\AvalonEditor\Editor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,27 +215,25 @@
     <Compile Include="Source\MuiModern.xaml.cs">
       <DependentUpon>MuiModern.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Source\Views\Content\DataEditorContent.xaml.cs">
+    <Compile Include="Source\ViewExtensions\DatabaseItemTemplateSelector.cs" />
+    <Compile Include="Source\ViewExtensions\GeneratorContentLoader.cs" />
+    <Compile Include="Source\Views\DataContent\DataEditorContent.xaml.cs">
       <DependentUpon>DataEditorContent.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Source\Views\Content\FieldViewContent.xaml.cs">
+    <Compile Include="Source\Views\DataContent\FieldViewContent.xaml.cs">
       <DependentUpon>FieldViewContent.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Source\Views\Content\SettingsAppearance.xaml.cs">
-      <DependentUpon>SettingsAppearance.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Views\Content\SettingsAppearanceViewModel.cs" />
-    <Compile Include="Source\Views\Content\ShowVectorContent.xaml.cs">
+    <Compile Include="Source\Views\DataContent\ShowVectorContent.xaml.cs">
       <DependentUpon>ShowVectorContent.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Source\Views\Content\TableViewContent.xaml.cs">
+    <Compile Include="Source\Views\DataContent\TableViewContent.xaml.cs">
       <DependentUpon>TableViewContent.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Source\Views\Content\TextView.xaml.cs">
+    <Compile Include="Source\Views\DataContent\TextView.xaml.cs">
       <DependentUpon>TextView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -265,13 +267,25 @@
     <Compile Include="Source\Converters\GroupOnMultiBindingConverter.cs" />
     <Compile Include="Source\Converters\IsEnabledToColorConverter.cs" />
     <Compile Include="Source\Converters\VisibilityToBooleanConverter.cs" />
-    <Compile Include="Source\DatabaseItemTemplateSelector.cs" />
-    <Compile Include="Source\GeneratorContentLoader.cs" />
     <Compile Include="Source\GeneratorModel.cs" />
     <Compile Include="Source\GeneratorReader.cs" />
     <Compile Include="Source\Common\AppGlobal.cs" />
     <Compile Include="Source\Common\CommandManager.cs" />
     <Compile Include="Source\Common\LocalWindowManager.cs" />
+    <Compile Include="Source\Views\SettingsContent\SettingsAppearance.xaml.cs">
+      <DependentUpon>SettingsAppearance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\SettingsContent\SettingsAppearanceViewModel.cs" />
+    <Compile Include="Source\Views\WriterTemplateControl.xaml.cs">
+      <DependentUpon>WriterTemplateControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Views\WriterTplContent\NewWriterTemplateControl.xaml.cs">
+      <DependentUpon>NewWriterTemplateControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\WriterTemplateModel.cs" />
+    <Compile Include="Source\WriterTplModel.cs" />
     <None Include="Source\Common\SQLiteAbstract.cs" />
     <Compile Include="Source\Common\WindowStyleChanged.cs" />
     <Compile Include="Source\Converters\RectConverter.cs" />
@@ -307,7 +321,9 @@
     <Folder Include="Assets" />
     <Folder Include="Assets\Styles" />
     <Folder Include="Assets\Typo" />
-    <Folder Include="Source\Views\Content" />
+    <Folder Include="Source\Common\Unused" />
+    <Folder Include="Source\ViewExtensions" />
+    <Folder Include="Source\Views\DataContent" />
     <Folder Include="Source\Controls\AvalonEditor" />
     <Folder Include="Source\Extensions" />
     <Folder Include="Source\Controls" />
@@ -316,6 +332,9 @@
     <Folder Include="Source\Common" />
     <Folder Include="Source\Converters" />
     <Folder Include="Assets\Icons" />
+    <Folder Include="Source\Views\WriterTplContent" />
+    <Folder Include="Source\Views\TemplateContent" />
+    <Folder Include="Source\Views\SettingsContent" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource.resx">

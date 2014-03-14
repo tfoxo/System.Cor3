@@ -15,7 +15,7 @@ namespace SQLiteUtil
 		[STAThread()]
 		static void Main( params string[] args )
 		{
-			App app = new App();
+			var app = new App();
 			app.InitializeComponent();
 //			LoadXshdRes("AS3","VisualEditor.Resources.AS3.xshd");
 //			LoadXshdRes("CSS2","VisualEditor.Resources.CSS.xshd");

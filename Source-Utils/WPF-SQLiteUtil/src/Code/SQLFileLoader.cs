@@ -24,6 +24,7 @@ namespace SQLiteUtil
 		
 			public override void Execute(object parameter)
 			{
+				Console.WriteLine("Load SQL clicked");
 				var ed = parameter as SQLiteUtil.Controls.Editor;
 				Loader.Load();
 				if (Loader.IsLoaded) ed.Load(Loader.SqlFile);
@@ -65,6 +66,7 @@ namespace SQLiteUtil
 		
 		public void UpdateBindings(UserControl control)
 		{
+			Console.WriteLine("SQLFileLoader.UpdateBindings");
 			LoadSqlFileCommand   = new LoadSqlFileCmd { Loader=this };
 			SaveSqlFileCommand   = new SaveSqlFileCmd { Loader=this };
 			SaveSqlFileAsCommand = new SaveSqlFileAsCmd { Loader=this };

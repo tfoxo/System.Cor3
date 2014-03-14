@@ -1,0 +1,44 @@
+<UserControl x:Class="GeneratorTool.Views.WriterTemplateControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:g="clr-namespace:Generator;assembly=Generator.Lib"
+             xmlns:a="clr-namespace:GeneratorTool.Controls.AvalonEditor">
+	<DockPanel>
+		<Grid DockPanel.Dock="Top" DataContext="Model">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Menu" ClickMode="Press" Click="Button_Click" x:Name="mnuBtn">
+					<Button.ContextMenu>
+						<ContextMenu PlacementTarget="{Binding mnuBtn}">
+							<MenuItem Header="File">
+								<MenuItem Header="Load SQLite File" Click="LoadDatabase" />
+								<MenuItem Header="Unload SQLite File" />
+								<Separator />
+								<MenuItem Header="Generate *.resx Resource File" />
+							</MenuItem>
+							<!--<MenuItem Header="Edit">
+								<MenuItem Header="Sub-Item" />
+								<MenuItem Header="Sub-Item" />
+								<MenuItem Header="Sub-Item" />
+								<MenuItem Header="Sub-Item" />
+							</MenuItem>-->
+						</ContextMenu>
+					</Button.ContextMenu>
+				</Button>
+			</StackPanel>
+			<ComboBox x:Name="cbTplGroup" Grid.Column="1" IsEditable="True" ItemsSource="{Binding GroupNames}" Text="{Binding SelectedGroup}" />
+			<ComboBox x:Name="cbTplName" Grid.Column="2" IsEditable="True" ItemsSource="{Binding Rows}" DisplayMemberPath="Title" />
+			<ComboBox x:Name="cbTplField" Grid.Column="3" IsEditable="True" ItemsSource="{x:Static g:TemplateElement.ColumnNames}" />
+			<ComboBox x:Name="cbEditorFmt" Grid.Column="4" />
+		</Grid>
+		<Grid>
+			<a:Editor x:Name="editor" FontSize="14" />
+		</Grid>
+	</DockPanel>
+</UserControl>

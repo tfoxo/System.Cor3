@@ -20,7 +20,9 @@ namespace GeneratorTool.Views
 	public class GeneratorContentLoader : DefaultContentLoader
 	{
 		public GeneratorModel Model;
+		
 		MoxiView moxi;
+		WriterTemplateControl writerControl = new WriterTemplateControl();
 		
 		/// <summary>
 		/// Loads the content from specified uri.
@@ -31,9 +33,8 @@ namespace GeneratorTool.Views
 		{
 			// return a new LoremIpsum user control instance no matter the uri
 			if (moxi==null) moxi = new MoxiView();
-			if (uri.OriginalString == "/1") {
-				return moxi;
-			}
+			if (uri.OriginalString == "/1") return moxi;
+			else if (uri.OriginalString == "/writerTemplate") return writerControl;
 			else if (uri.OriginalString == "/2")
 			{
 				MoxiView.StatePushCommand.Execute(null);

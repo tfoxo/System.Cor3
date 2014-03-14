@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using FirstFloor.ModernUI.Windows;
 using Microsoft.Win32;
+using SQLiteUtil.Views;
 namespace SQLiteUtil
 {
 	/// <summary>
@@ -14,9 +15,13 @@ namespace SQLiteUtil
 	/// </summary>
 	public class ContentLoader : DefaultContentLoader
 	{
+		static ContentLoader()
+		{
+			DefaultView = new SQLiteView();
+		}
 //		public GeneratorModel Model;
 //		MoxiView moxi;
-		static public readonly Uri DefaultView = new Uri("/src/views/sqliteview.xaml");
+		static public readonly SQLiteView DefaultView;
 		/// <summary>
 		/// Loads the content from specified uri.
 		/// </summary>

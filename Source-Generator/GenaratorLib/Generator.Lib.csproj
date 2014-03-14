@@ -87,6 +87,8 @@
     <Compile Include="ParserStrategy\TemplateStrategy\TemplateReferenceUtil.cs" />
     <Compile Include="Systems\FileSaveExtensions.cs" />
     <Compile Include="Systems\ResourceUtil.cs" />
+    <Compile Include="Systems\TemplateElement.cs" />
+    <Compile Include="Systems\TemplateUtil.cs" />
     <None Include="..\..\Source\Cor3.Data\Engine\DataAbstract.cs">
       <Link>Includes\DataAbstract.cs</Link>
     </None>

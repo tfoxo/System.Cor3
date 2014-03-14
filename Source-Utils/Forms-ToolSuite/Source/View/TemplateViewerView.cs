@@ -27,8 +27,10 @@ using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Windows.Forms;
 
+using Generator;
 using ICSharpCode.TextEditor;
 using ICSharpCode.TextEditor.Document;
 using ToolSuite.Lib;
@@ -41,6 +43,10 @@ namespace TemplateTool.View
 	/// </summary>
 	public partial class TemplateViewerView : UserControl
 	{
+		const string ResxFilter = "Resource File (*.resx)|*.resx";
+		static readonly SaveFileDialog SaveResxFileDialog = new SaveFileDialog() { Filter=ResxFilter }; 
+		static readonly OpenFileDialog LoadResxFileDialog = new OpenFileDialog() { Filter=ResxFilter };
+		
 		#region Registry
 		
 		const string regpath = @"Software\tfoxo\template-tool";
@@ -51,7 +57,7 @@ namespace TemplateTool.View
 			set { Reg.SetKeyValueString(regpath,reg_template_viewer_db,value); }
 		}
 		#endregion
-
+		
 		const string file_db_filter = "SQLite Database (*.db3)|*.db3|SQLite Database (*.sqlite)|*.sqlite|All files (*)|*";
 		SaveFileDialog sfd = new SaveFileDialog();
 		OpenFileDialog ofd = new OpenFileDialog();
@@ -95,7 +101,7 @@ namespace TemplateTool.View
 			SetText(string.Empty);
 			
 		}
-
+		
 		#region Model/View Configuration
 		
 		void InitializeUI()
@@ -135,7 +141,7 @@ namespace TemplateTool.View
 			this.comboGroup.DataSource = null;
 			this.comboRow.DataSource = null;
 		}
-
+		
 		#endregion
 		
 		#region Model Actions
@@ -148,28 +154,23 @@ namespace TemplateTool.View
 		{
 			get {
 				return
-					(string)Model.util.Templates
-					.Where(t=> t.Table==comboGroup.Text && t.Title == comboRow.Text)
-					.FirstOrDefault()
-					.GetKeyValue(comboField.Text)
-					??
-					string.Empty;
+					(string)(
+						from t in Model.util.Templates
+						where t.Table == comboGroup.Text && t.Title == comboRow.Text
+						select t
+					).FirstOrDefault().GetKeyValue(comboField.Text) ?? string.Empty;
 			}
 		}
 		
 		bool HasValue()
 		{
-			return Model.util.Templates.Where(
-				t =>
-				t.Table==comboGroup.Text &&
-				t.Title == comboRow.Text
-			).Count() > 0;
+			return (from t in Model.util.Templates where t.Table == comboGroup.Text && t.Title == comboRow.Text select t).Count() > 0;
 		}
-
+		
 		#endregion
 		
 		#region UI Actions
-
+		
 		bool HasField { get { return !CheckFields() || comboField.SelectedIndex==-1; } }
 		bool CheckFields()
 		{
@@ -179,11 +180,7 @@ namespace TemplateTool.View
 		
 		void ComboFieldSelected()
 		{
-			if (HasField)
-			{
-				textEditorControl1.Text = string.Empty;
-				return;
-			}
+			if (HasField) { textEditorControl1.Text = string.Empty; return; }
 			if (!HasValue()) SetText(string.Empty);
 			else SetText(SelectionValue);
 		}
@@ -282,6 +279,41 @@ namespace TemplateTool.View
 			Debug.Print("Row, id: ‘{0}’, name: {1}", StrRow.Id.Value, StrRow.Title);
 			StrRow.SetValue(StrField,textEditorControl1.Text);
 			TemplateUtil.UpdateTemplateRow(LastOpenDatabase,"templates",StrRow,StrField,textEditorControl1.Text);
+		}
+		
+		const string resxTitleString = "{0}.{1}";
+		void GenerateResourceresxFileToolStripMenuItemClick(object sender, System.EventArgs e)
+		{
+			if (SaveResxFileDialog.ShowDialog() != DialogResult.OK) return ;
+			using (ResXResourceWriter resx = new ResXResourceWriter(SaveResxFileDialog.FileName))
+			{
+				resx.AddResource("TemplateGroups",Model.groups);
+				
+				foreach (var groupName in Model.groups)
+				{
+					Model.GetRows(groupName);
+					
+					
+					foreach (var element in Model.rows)
+					{
+						string templateName = element.Title;
+						// I hope this serializes.
+						resx.AddResource(templateName,element);
+						
+						resx.AddResource(string.Format(resxTitleString,templateName,"Admin"),element.Admin);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Container"),element.Container);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Foot"),element.Foot);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Groupfoot"),element.Groupfoot);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Grouphead"),element.Grouphead);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Head"),element.Head);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Note"),element.Note);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Row"),element.Row);
+						resx.AddResource(string.Format(resxTitleString,templateName,"Table"),element.Table);
+						resx.AddResource(string.Format(resxTitleString,templateName,"TableName"),element.TableName);
+						//						resx.AddResource(string.Format(resxTitleString,templateName,"Admin"),element);
+					}
+				}
+			}
 		}
 		
 		#endregion

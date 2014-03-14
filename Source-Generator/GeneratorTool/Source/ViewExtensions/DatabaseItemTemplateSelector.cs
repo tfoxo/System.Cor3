@@ -10,7 +10,6 @@ using Generator.Core.Entities;
 
 namespace GeneratorTool.Views
 {
-	
 	public class DatabaseItemTemplateSelector : DataTemplateSelector
 	{
 		public override DataTemplate SelectTemplate(object item, DependencyObject container)

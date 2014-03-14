@@ -130,12 +130,10 @@
     <Compile Include="Source\Lib\ITaskControlProvider.cs" />
     <Compile Include="Source\Lib\ProvideDataAttribute.cs" />
     <Compile Include="Source\Lib\SqliteTemplateWorker.cs" />
-    <Compile Include="Source\Lib\TemplateUtil.cs" />
     <Compile Include="Source\Model\GeneratorModel.cs" />
     <Compile Include="Source\Model\IDataInterface.cs" />
     <Compile Include="Source\Model\RowTemplates.cs" />
     <Compile Include="Source\Model\SoftwareInfo.cs" />
-    <Compile Include="Source\Model\TemplateElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\CmdLib\ITaskCommandProvider.cs" />
     <Compile Include="Source\CmdLib\ParamType.cs" />

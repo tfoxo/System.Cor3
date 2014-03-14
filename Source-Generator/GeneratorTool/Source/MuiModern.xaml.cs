@@ -46,6 +46,11 @@ namespace GeneratorTool.Views
 				});
 			mainLinks.Links.Add(
 				new Link(){
+					DisplayName="TEMPLATE(2)",
+					Source = new Uri("/writerTemplate",UriKind.RelativeOrAbsolute)
+				});
+			mainLinks.Links.Add(
+				new Link(){
 					DisplayName="3",
 					Source = new Uri("/3",UriKind.RelativeOrAbsolute),
 				});

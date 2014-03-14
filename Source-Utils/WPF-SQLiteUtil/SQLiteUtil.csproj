@@ -110,7 +110,12 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\BasicCommand.cs" />
+    <Compile Include="src\Code\DatabaseLoader.cs" />
+    <Compile Include="src\Code\DataRunner.cs" />
+    <Compile Include="src\Code\SQLFileLoader.cs" />
+    <Compile Include="src\Common\AvalonEditorUtils.cs" />
+    <Compile Include="src\Common\BasicCommand.cs" />
+    <Compile Include="src\Common\IBindCommands.cs" />
     <Compile Include="src\ContentLoader.cs" />
     <Compile Include="src\Controls\CommentBlockFoldingStrategy.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
@@ -139,11 +144,6 @@
     <Compile Include="src\Controls\ZoomLevelToTextFormattingModeConverter.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\DatabaseLoader.cs" />
-    <Compile Include="src\DataRunner.cs" />
-    <Compile Include="src\IBindCommands.cs" />
-    <Compile Include="src\SQLFileLoader.cs" />
-    <Compile Include="src\utils.cs" />
     <Compile Include="src\Views\MainWindow.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -177,6 +177,8 @@
   <ItemGroup>
     <Folder Include="src" />
     <Folder Include="src\Controls" />
+    <Folder Include="src\Code" />
+    <Folder Include="src\Common" />
     <Folder Include="src\Styles" />
     <Folder Include="src\Views" />
   </ItemGroup>

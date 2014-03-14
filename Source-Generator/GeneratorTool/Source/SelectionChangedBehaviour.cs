@@ -21,7 +21,7 @@ namespace GeneratorTool.Views
 {
 	
 	//http://nerobrain.blogspot.com/2012/01/execute-command-on-combobox-selection.html
-	public class SelectionChangedBehaviour
+	static class SelectionChangedBehaviour
 	{
 		public static readonly DependencyProperty CommandProperty =
 			DependencyProperty.RegisterAttached(

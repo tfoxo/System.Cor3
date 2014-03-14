@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<UserControl x:Class="GeneratorTool.Views.MoxiView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mui="http://firstfloorsoftware.com/ModernUI" xmlns:e="clr-namespace:Generator.Core.Entities;assembly=Generator.Lib" xmlns:t="clr-namespace:Generator.Core.Markup;assembly=Generator.Lib" xmlns:l="clr-namespace:GeneratorTool" xmlns:v="clr-namespace:GeneratorTool.Views" xmlns:avalon="clr-namespace:GeneratorTool.Controls.AvalonEditor" xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" xmlns:dat="clr-namespace:System.Windows.Data;assembly=PresentationFramework">
+<UserControl
+	x:Class="GeneratorTool.Views.MoxiView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+	xmlns:e="clr-namespace:Generator.Core.Entities;assembly=Generator.Lib"
+	xmlns:t="clr-namespace:Generator.Core.Markup;assembly=Generator.Lib"
+	xmlns:l="clr-namespace:GeneratorTool"
+	xmlns:v="clr-namespace:GeneratorTool.Views"
+	xmlns:avalon="clr-namespace:GeneratorTool.Controls.AvalonEditor"
+	xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+	xmlns:dat="clr-namespace:System.Windows.Data;assembly=PresentationFramework">
 	<UserControl.Resources>
 		<BitmapImage x:Key="DatabaseIcon" UriSource="/assets/icons/kexi.png" />
 		<BitmapImage x:Key="FieldIcon" UriSource="/assets/icons/code-variable.png" />

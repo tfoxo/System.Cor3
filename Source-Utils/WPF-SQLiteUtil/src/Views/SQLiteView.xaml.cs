@@ -39,10 +39,16 @@ namespace SQLiteUtil.Views
 		{
 			InitializeComponent();
 		}
+		public override void BeginInit()
+		{
+			base.BeginInit();
+			Console.WriteLine("SQLiteView.BeginInit");
+			sqlFile.UpdateBindings(this);
+		}
 		protected override void OnInitialized(EventArgs e)
 		{
 			base.OnInitialized(e);
-			sqlFile.UpdateBindings(this);
+			Console.WriteLine("SQLiteView.OnInitialized");
 		}
 		
 		#region database commands

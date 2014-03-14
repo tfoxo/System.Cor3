@@ -20,7 +20,7 @@
 	
 	<mui:ModernWindow.TitleLinks>
 		<mui:Link DisplayName="primary view" Source="/1" />
-		<mui:Link DisplayName="settings" Source="/1 />
+		<mui:Link DisplayName="settings" Source="/1" />
 	</mui:ModernWindow.TitleLinks>
 	
 	<!--<DockPanel>

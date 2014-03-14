@@ -30,6 +30,7 @@ namespace Pdf2Png
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorMatrixControl));
 			this.cm00 = new System.Windows.Forms.NumericUpDown();
 			this.cm01 = new System.Windows.Forms.NumericUpDown();
 			this.cm02 = new System.Windows.Forms.NumericUpDown();
@@ -1019,6 +1020,7 @@ namespace Pdf2Png
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.groupBox1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(693, 500);
 			this.Name = "ColorMatrixControl";
 			this.Text = "PDF Matrix Filter";
