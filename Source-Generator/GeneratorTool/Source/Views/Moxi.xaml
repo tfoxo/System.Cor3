@@ -49,8 +49,8 @@
 						<MenuItem Header="Field Element" />
 						<Separator />
 						<MenuItem Header="Cut" Command="{x:Static v:MoxiView.CutFieldCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Copy" />
-						<MenuItem Header="Paste (Below)" />
+						<MenuItem Header="Copy" Command="{x:Static v:MoxiView.CopyFieldCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Paste (Below)" Command="{x:Static v:MoxiView.PasteFieldCommand}" CommandParameter="{Binding .}" />
 						<MenuItem Header="Paste (Above)" />
 						<Separator />
 						<MenuItem Header="Delete" />

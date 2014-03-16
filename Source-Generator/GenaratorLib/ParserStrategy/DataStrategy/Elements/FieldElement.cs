@@ -23,7 +23,7 @@ namespace Generator.Core.Entities
 		static public FieldElement Clone(FieldElement element)
 		{
 			var field = new FieldElement();
-			field.IsArray = element.IsArray;
+			field.BaseClass = element.BaseClass;
 			field.BlockAction = element.BlockAction;
 			field.CodeBlock = element.CodeBlock;
 			field.ConnectionParameters = element.ConnectionParameters;
@@ -34,7 +34,9 @@ namespace Generator.Core.Entities
 			field.Description = element.Description;
 			field.FormatString = element.FormatString;
 			field.FormType = element.FormType;
+			field.IsArray = element.IsArray;
 			field.IsNullable = element.IsNullable;
+			field.IsPrimary = false;
 			field.MaxLength = element.MaxLength;
 			field.Tags = element.Tags;
 //			field.ToolTip = element.ToolTip;

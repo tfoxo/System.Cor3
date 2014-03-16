@@ -46,27 +46,10 @@ namespace GeneratorTool.Views
 		public GeneratorUIModel Model = new GeneratorUIModel();
 		
 		
-		public class CutFieldCmd : BasicCommand
-		{
-			public MoxiView View { get; set; }
-						
-			public override void Execute(object parameter)
-			{
-				var field = parameter as FieldElement; 
-				if (field==null)
-				{
-					ModernDialog.ShowMessage("no field detected.","error",MessageBoxButton.OK);
-					return;
-				}
-				else ModernDialog.ShowMessage(parameter.ToString(),"Good!",MessageBoxButton.OK);
-				var parent = field.Parent;
-				View.Model.ClipboardItem = FieldElement.Clone(field);
-				parent.Fields.Remove(field);
-				parent.Fields = parent.Fields;
-			}
-			
-		}
 		static public readonly CutFieldCmd CutFieldCommand = new CutFieldCmd();
+		static public readonly CopyFieldCmd CopyFieldCommand = new CopyFieldCmd();
+		static public readonly PasteFieldAboveCmd PasteFieldAboveCommand = new PasteFieldAboveCmd();
+		static public readonly PasteFieldBelowCmd PasteFieldBelowCommand = new PasteFieldBelowCmd();
 		
 		#region Little Helpers
 		
@@ -160,6 +143,9 @@ namespace GeneratorTool.Views
 		{
 			InitializeComponent();
 			CutFieldCommand.View = this;
+			CopyFieldCommand.View = this;
+			PasteFieldAboveCommand.View = this;
+			PasteFieldBelowCommand.View = this;
 			InitializeReader();
 			Model.LastSelectedView = pane;
 		}
@@ -231,8 +217,8 @@ namespace GeneratorTool.Views
 			} finally {
 			}
 		}
-		class _SaveTemplateCmd : BasicCommand
-		{
+//		class _SaveTemplateCmd : BasicCommand
+//		{
 			//			public override void Execute(object parameter)
 			//			{
 			//				if (Model.LastTemplate==null) {
@@ -270,7 +256,7 @@ namespace GeneratorTool.Views
 			//				editor.Text += "Compare SelectedTemplate to Model.";
 			//				editor.Text += "\n";
 			//			}
-		}
+//		}
 		void InitializeReader()
 		{
 			Model.Reader = new GeneratorReader { LoadCompleteAction=InitializeDataSource, };

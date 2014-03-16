@@ -21,7 +21,7 @@ namespace GeneratorTool.SQLiteUtil
 		
 			public override bool CanExecute(object parameter) { return true; }
 		
-			public override void Execute(object parameter)
+			protected override void OnExecute(object parameter)
 			{
 				Console.WriteLine("Load SQL clicked");
 				var ed = parameter as GeneratorTool.Controls.Editor;
@@ -39,7 +39,7 @@ namespace GeneratorTool.SQLiteUtil
 		
 			public override bool CanExecute(object parameter) { return true; }
 		
-			public override void Execute(object parameter)
+			protected override void OnExecute(object parameter)
 			{
 				var ed = parameter as GeneratorTool.Controls.Editor;
 				Loader.Save(ed.Text);
@@ -55,7 +55,7 @@ namespace GeneratorTool.SQLiteUtil
 		
 			public override bool CanExecute(object parameter) { return true; }
 		
-			public override void Execute(object parameter)
+			protected override void OnExecute(object parameter)
 			{
 				var ed = parameter as GeneratorTool.Controls.Editor;
 				Loader.SaveAs(ed.Text);

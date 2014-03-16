@@ -13,13 +13,14 @@ using FirstFloor.ModernUI.Windows.Controls;
 
 namespace GeneratorTool.Views
 {
+		
 	public class MuiMessageCommand : BasicCommand
 	{
 		static public readonly MuiMessageCommand ShowMessageCommand = new MuiMessageCommand{};
 		
 		public string TestParameter { get; set; }
 		
-		public override void Execute(object parameter) {
+		protected override void OnExecute(object parameter) {
 			ModernDialog.ShowMessage(string.Format("{{ Null={0}, Value: {1} }}", parameter==null, parameter),"Message Title",MessageBoxButton.OK);
 		}
 	}

@@ -25,7 +25,7 @@ namespace GeneratorTool.SQLiteUtil
 		
 			public override bool CanExecute(object parameter) { return true; }
 		
-			public override void Execute(object parameter)
+			protected override void OnExecute(object parameter)
 			{
 				Loader.Load();
 			}
@@ -37,7 +37,7 @@ namespace GeneratorTool.SQLiteUtil
 		
 			public override bool CanExecute(object parameter) { return true; }
 		
-			public override void Execute(object parameter)
+			protected override void OnExecute(object parameter)
 			{
 				Loader.Create();
 			}
