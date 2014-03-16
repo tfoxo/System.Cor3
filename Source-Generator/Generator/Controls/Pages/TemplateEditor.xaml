@@ -6,15 +6,15 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
 	xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
-             xmlns:edit="clr-namespace:AvalonEditor"
+	xmlns:edit="clr-namespace:AvalonEditor"
 	xmlns:ctls="clr-namespace:Generator.Controls"
 	xmlns:txt="clr-namespace:System.Text;assembly=mscorlib">
-    <UserControl.InputBindings>
-        <KeyBinding Key="F3" Command="{x:Static c:TemplateService.CmdViewTemplateTable}" />
-        <KeyBinding Key="F4" Command="{x:Static c:TemplateService.CmdViewTemplateField}" />
-        <KeyBinding Key="F5" Command="{x:Static c:TemplateService.CmdRegenerateSelectedView}" />
-    </UserControl.InputBindings>
-    <Grid>
+	<UserControl.InputBindings>
+		<KeyBinding Key="F3" Command="{x:Static c:TemplateService.CmdViewTemplateTable}" />
+		<KeyBinding Key="F4" Command="{x:Static c:TemplateService.CmdViewTemplateField}" />
+		<KeyBinding Key="F5" Command="{x:Static c:TemplateService.CmdRegenerateSelectedView}" />
+	</UserControl.InputBindings>
+	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
 			<RowDefinition Height="3" />

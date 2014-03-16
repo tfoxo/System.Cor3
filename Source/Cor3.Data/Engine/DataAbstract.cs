@@ -26,14 +26,7 @@
  * User: oIo
  * Date: 11/15/2010 – 2:49 AM
  */
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Cor3.Data.Engine;
 using System.Data;
-using System.Data.OleDb;
-using System.Data.SqlClient;
-using System.Data.SQLite;
-using System.Windows.Forms;
 
 namespace System.Cor3.Data
 {

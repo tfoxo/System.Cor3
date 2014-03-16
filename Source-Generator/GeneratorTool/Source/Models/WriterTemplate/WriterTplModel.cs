@@ -43,6 +43,15 @@ namespace GeneratorTool
 				OnPropertyChanged("SelectedGroup");
 			}
 		} string selectedGroup;
+		public TemplateElement SelectedRow {
+			get {
+				return selectedRow;
+			}
+			set {
+				selectedRow = value;
+				OnPropertyChanged("SelectedRow");
+			}
+		} TemplateElement selectedRow;
 
 		public List<string> GroupNames {
 			get { return groupNames; }
@@ -62,6 +71,12 @@ namespace GeneratorTool
 			IsInitialized = true;
 		}
 		#endregion
+		
+		public void LoadDatabase(string file)
+		{
+			if (!string.IsNullOrEmpty(file)) return;
+			Initialize(file);
+		}
 		
 		#region Methods
 		internal void Clear()

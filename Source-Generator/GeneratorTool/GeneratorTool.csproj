@@ -207,6 +207,9 @@
     <Page Include="Source\Views\Moxi.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\Source\Cor3.Core\System\System.DialogUtil.cs">
+      <Link>Source\Extensions\System.DialogUtil.cs</Link>
+    </Compile>
     <Compile Include="Assets\Icons\appbar.diagram.xaml.cs">
       <DependentUpon>appbar.diagram.xaml</DependentUpon>
     </Compile>
@@ -224,11 +227,13 @@
     <None Include="Source\Models\Unused\SQLiteAbstract.cs" />
     <None Include="Source\Models\Unused\WindowStyleChanged.cs" />
     <Compile Include="Source\Commands\IBindCommands.cs" />
-    <Compile Include="Source\Extensions\AvalonEditorUtils.cs" />
+    <Compile Include="Source\Models\Extensions\AvalonEditorUtils.cs" />
     <Compile Include="Source\Models\AppGlobal.cs" />
     <Compile Include="Source\Models\GeneratorContentLoader.cs" />
     <Compile Include="Source\Models\Generator\GeneratorModel.cs" />
     <Compile Include="Source\Models\Generator\GeneratorReader.cs" />
+    <Compile Include="Source\Models\Generator\GeneratorUIModel.cs" />
+    <Compile Include="Source\Models\Generator\ViewMode.cs" />
     <Compile Include="Source\Models\Settings\SettingsAppearanceViewModel.cs" />
     <Compile Include="Source\Models\SQLiteTool\DatabaseLoader.cs" />
     <Compile Include="Source\Models\SQLiteTool\DataRunner.cs" />
@@ -305,8 +310,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Source\Converters\RectConverter.cs" />
-    <Compile Include="Source\Extensions\UriHackExtension.cs" />
-    <Compile Include="Source\Extensions\WpfExtensions.cs" />
+    <Compile Include="Source\Models\Extensions\UriHackExtension.cs" />
+    <Compile Include="Source\Models\Extensions\WpfExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WPFAssemblyInfo.cs" />
     <Compile Include="Resource.Designer.cs">
@@ -340,7 +345,7 @@
     <Folder Include="Source\ViewExtensions" />
     <Folder Include="Source\Views\DataContent" />
     <Folder Include="Source\Controls\AvalonEditor" />
-    <Folder Include="Source\Extensions" />
+    <Folder Include="Source\Models\Extensions" />
     <Folder Include="Source\Controls" />
     <Folder Include="Source\Commands" />
     <Folder Include="Source\Views" />

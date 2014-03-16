@@ -298,9 +298,9 @@ namespace TemplateTool.View
 					{
 						string templateName = element.Title;
 						// I hope this serializes.
-						resx.AddResource(templateName,element);
+//						resx.AddResource(templateName,element);
 						
-						resx.AddResource(string.Format(resxTitleString,templateName,"Admin"),element.Admin);
+//						resx.AddResource(string.Format(resxTitleString,templateName,"Admin"),element.Admin);
 						resx.AddResource(string.Format(resxTitleString,templateName,"Container"),element.Container);
 						resx.AddResource(string.Format(resxTitleString,templateName,"Foot"),element.Foot);
 						resx.AddResource(string.Format(resxTitleString,templateName,"Groupfoot"),element.Groupfoot);

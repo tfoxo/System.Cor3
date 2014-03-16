@@ -19,8 +19,6 @@ namespace GeneratorTool.Views.Content
 	/// </summary>
 	public partial class NewWriterTemplateControl : ModernDialog
 	{
-		
-		
 		public NewWriterTemplateControl()
 		{
 			InitializeComponent();

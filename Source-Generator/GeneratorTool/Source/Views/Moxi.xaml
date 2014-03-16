@@ -26,9 +26,13 @@
 			<StackPanel Orientation="Horizontal">
 				<StackPanel.ContextMenu>
 					<ContextMenu>
-						<MenuItem Header="I'm a menu item">
-							<MenuItem Header="I'm a menu item" />
-						</MenuItem>
+						<MenuItem Header="Field Element" />
+						<Separator />
+						<MenuItem Header="Cut" />
+						<MenuItem Header="Copy" />
+						<MenuItem Header="Paste" />
+						<Separator />
+						<MenuItem Header="Delete" />
 					</ContextMenu>
 				</StackPanel.ContextMenu>
 				<Image Margin="0,0,6,0" Source="{DynamicResource FieldIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
@@ -42,9 +46,14 @@
 			<StackPanel Orientation="Horizontal">
 				<StackPanel.ContextMenu>
 					<ContextMenu>
-						<MenuItem Header="I'm a menu item">
-							<MenuItem Header="I'm a menu item" />
-						</MenuItem>
+						<MenuItem Header="Field Element" />
+						<Separator />
+						<MenuItem Header="Cut" Command="{x:Static v:MoxiView.CutFieldCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Copy" />
+						<MenuItem Header="Paste (Below)" />
+						<MenuItem Header="Paste (Above)" />
+						<Separator />
+						<MenuItem Header="Delete" />
 					</ContextMenu>
 				</StackPanel.ContextMenu>
 				<Image Margin="0,0,6,0" Source="{DynamicResource FieldIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
@@ -67,9 +76,13 @@
 			<StackPanel Orientation="Horizontal">
 				<StackPanel.ContextMenu>
 					<ContextMenu>
-						<MenuItem Header="I'm a menu item">
-							<MenuItem Header="I'm a menu item" />
-						</MenuItem>
+						<MenuItem Header="Database?" />
+						<Separator />
+						<MenuItem Header="Cut" />
+						<MenuItem Header="Copy" />
+						<MenuItem Header="Paste" />
+						<Separator />
+						<MenuItem Header="Delete" />
 					</ContextMenu>
 				</StackPanel.ContextMenu>
 				<Image Margin="0,0,6,0" Source="{DynamicResource DatabaseIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
@@ -180,8 +193,17 @@
 							<ColumnDefinition Width="Auto" />
 							<ColumnDefinition Width="Auto" />
 						</Grid.ColumnDefinitions>
-						<StackPanel Grid.Column="0" Orientation="Horizontal">
-							<!--<mui:BBCodeBlock BBCode="[url=cmd://load]load[/url] | [url=cmd://save]save[/url] | [url=cmd://saveas]saveas[/url]">
+						<Button Grid.Column="0" Content="MENU">
+							<Button.ContextMenu>
+								<ContextMenu>
+									<MenuItem Header="Browse" Command="{x:Static l:GeneratorReader.LoadConfigurationCommand}" />
+									<MenuItem Header="Save" Command="{x:Static l:GeneratorReader.SaveConfigurationCommand}" />
+									<MenuItem Header="Save As" Command="{x:Static l:GeneratorReader.SaveConfigurationAsCommand}" />
+								</ContextMenu>
+							</Button.ContextMenu>
+						</Button>
+						<!--<StackPanel Orientation="Horizontal">
+							<mui:BBCodeBlock BBCode="[url=cmd://load]load[/url] | [url=cmd://save]save[/url] | [url=cmd://saveas]saveas[/url]">
 								<mui:BBCodeBlock.LinkNavigator>
 									<mui:DefaultLinkNavigator>
 										<mui:DefaultLinkNavigator.Commands>
@@ -191,11 +213,8 @@
 										</mui:DefaultLinkNavigator.Commands>
 									</mui:DefaultLinkNavigator>
 								</mui:BBCodeBlock.LinkNavigator>
-							</mui:BBCodeBlock>-->
-							<Button Content="Browse" Command="{x:Static l:GeneratorReader.LoadConfigurationCommand}" />
-							<Button Content="Save" Command="{x:Static l:GeneratorReader.SaveConfigurationCommand}" />
-							<Button Content="Save As" Command="{x:Static l:GeneratorReader.SaveConfigurationAsCommand}" />
-						</StackPanel>
+							</mui:BBCodeBlock>
+						</StackPanel>-->
 						<TextBox Grid.Column="1" Text="{Binding FileName}" />
 						<StackPanel Grid.Column="2" Orientation="Horizontal">
 							<Button Content="TABLE" Command="{x:Static v:MoxiView.ToggleTableCommand}" />

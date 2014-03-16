@@ -1,25 +1,12 @@
 ﻿/* oio * 01/21/2014 * Time: 09:09
  */
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media.Media3D;
-using FirstFloor.ModernUI.Windows.Controls;
-using Generator.Core;
 using Generator.Core.Entities;
 using Generator.Core.Markup;
-using Generator.Core.Operations;
-using Generator.Core.Parser;
-using Microsoft.Win32;
 namespace GeneratorTool
 {
-		
 	public class GeneratorModel : INotifyPropertyChanged
 	{
 		#region Properties

@@ -45,27 +45,36 @@ namespace Generator
 		public static readonly string[] template_table_fields = new string[9]{"container","row","grouphead","groupfoot","head","foot","note","table","fields"};
 		const string sql_create_templates = @"DROP TABLE IF EXISTS ""templates"";
 CREATE TABLE ""templates"" (
-	id		INTEGER PRIMARY KEY AUTOINCREMENT,
-	admin		INTEGER DEFAULT 0,
-	title		VARCHAR DEFAULT NULL,
-	container	VARCHAR DEFAULT NULL,
-	[grouphead]		VARCHAR DEFAULT NULL,
-	[groupfoot]		VARCHAR DEFAULT NULL,
-	[head]		VARCHAR DEFAULT NULL,
-	[foot]		VARCHAR DEFAULT NULL,
-	'row'		VARCHAR DEFAULT NULL,
-	'note'		VARCHAR DEFAULT NULL,
-	'table'		VARCHAR DEFAULT NULL,
-	'fields'		VARCHAR DEFAULT NULL);",
+id		INTEGER PRIMARY KEY AUTOINCREMENT,
+admin		INTEGER DEFAULT 0,
+title		VARCHAR DEFAULT NULL,
+container	VARCHAR DEFAULT NULL,
+[grouphead]		VARCHAR DEFAULT NULL,
+[groupfoot]		VARCHAR DEFAULT NULL,
+[head]		VARCHAR DEFAULT NULL,
+[foot]		VARCHAR DEFAULT NULL,
+'row'		VARCHAR DEFAULT NULL,
+'note'		VARCHAR DEFAULT NULL,
+'table'		VARCHAR DEFAULT NULL,
+'fields'		VARCHAR DEFAULT NULL);",
 		sql_update_row = @"UPDATE [@table] SET
-	[@field] = @value
-	WHERE [@key] = @keyvalue;";
+[@field] = @value
+WHERE [@key] = @keyvalue;",
+		sql_insert_row = @"
+insert into [templates] (
+[table],
+[title]
+) VALUES (
+@table,
+@title
+); ",
+			sql_delete_row = @"DELETE FROM ""templates"" where [id] = @xid;";
 		#endregion
 		
 		public TemplateUtil()
 		{
 		}
-
+		
 		public TemplateUtil(string path)
 		{
 			Initialize(path);
@@ -89,9 +98,9 @@ CREATE TABLE ""templates"" (
 			return new SQLiteDataAdapter(query,C);
 		}
 		
-//		public Dictionary<string, TemplateElement> Templates {
-//			get { return templates; }
-//		} Dictionary<string,TemplateElement> templates = new Dictionary<string,TemplateElement>();
+		//		public Dictionary<string, TemplateElement> Templates {
+		//			get { return templates; }
+		//		} Dictionary<string,TemplateElement> templates = new Dictionary<string,TemplateElement>();
 		public List<TemplateElement> Templates {
 			get { return templates; }
 		} List<TemplateElement> templates = new List<TemplateElement>();
@@ -103,15 +112,15 @@ CREATE TABLE ""templates"" (
 		void Initialize(string datafile_sqlite)
 		{
 			if (CheckPathForErrors(datafile_sqlite)) return;
-			
+			TemplateElement ele;
 			Templates.Clear();
 			using (SQLiteDb db = new SQLiteDb(datafile_sqlite))
-				using (DataSet ds = db.Select("templates",sql_select_templates,SelectTemplatesAdapter))
-					using (DataView v = ds.GetDataView("templates"))
-						foreach (DataRowView rv in v)
-			{
-				Templates.Add(TemplateElement.FromRowView(rv));
-			}
+			using (DataSet ds = db.Select("templates",sql_select_templates,SelectTemplatesAdapter))
+			using (DataView v = ds.GetDataView("templates"))
+				foreach (DataRowView rv in v)
+				{
+					Templates.Add(TemplateElement.FromRowView(rv));
+				}
 		}
 		
 		#endregion
@@ -142,12 +151,12 @@ CREATE TABLE ""templates"" (
 			{
 			}
 			using (SQLiteDb db = new SQLiteDb(path))
-				using (DataSet ds = db.Insert("templates",sql_create_templates,SelectTemplatesAdapter))
-					using (DataView v = ds.GetDataView("templates"))
-						foreach (DataRowView rv in v)
-			{
-//				Templates.Add(TemplateElement.FromRowView(rv));
-			}
+			using (DataSet ds = db.Insert("templates",sql_create_templates,SelectTemplatesAdapter))
+			using (DataView v = ds.GetDataView("templates"))
+				foreach (DataRowView rv in v)
+				{
+					//				Templates.Add(TemplateElement.FromRowView(rv));
+				}
 		}
 		/// <summary>
 		/// SEND TEMPLATE TO SQLITE DATABASE
@@ -160,12 +169,12 @@ CREATE TABLE ""templates"" (
 				.Replace("@keyvalue", element.Id.ToString())
 				.Replace("@key",TemplateElement.col_id)
 				.Replace("@table",tableName)
-//				.Replace("@value", newValue)
+				//				.Replace("@value", newValue)
 				;
 			using (SQLiteDb db = new SQLiteDb(path))
-				using (SQLiteConnection c = db.Connection)
-					using (SQLiteDataAdapter a = new SQLiteDataAdapter(null,c))
-						using (a.UpdateCommand = new SQLiteCommand(query,c))
+			using (SQLiteConnection c = db.Connection)
+			using (SQLiteDataAdapter a = new SQLiteDataAdapter(null,c))
+			using (a.UpdateCommand = new SQLiteCommand(query,c))
 			{
 				c.Open();
 				a.UpdateCommand.Parameters.AddWithValue("@value",newValue);
@@ -174,6 +183,45 @@ CREATE TABLE ""templates"" (
 				c.Close();
 			}
 			
+		}
+		public bool InsertRow(string path, TemplateElement element)
+		{
+			bool haserror = false;
+			using (SQLiteDb db = new SQLiteDb(path))
+			using (SQLiteConnection c = db.Connection)
+			using (SQLiteDataAdapter a = new SQLiteDataAdapter(null,c))
+			using (a.InsertCommand = new SQLiteCommand(sql_insert_row,c))
+			{
+				try {
+					c.Open();
+					a.InsertCommand.Parameters.AddWithValue("@table",element.Table);
+					a.InsertCommand.Parameters.AddWithValue("@title",element.Title);
+					a.InsertCommand.ExecuteNonQuery();
+					c.Close();
+				} catch {
+					haserror=true;
+				}
+			}
+			return haserror;
+		}
+		public bool DeleteRow(string path, TemplateElement element)
+		{
+			bool haserror = false;
+			using (SQLiteDb db = new SQLiteDb(path))
+			using (SQLiteConnection c = db.Connection)
+			using (SQLiteDataAdapter a = new SQLiteDataAdapter(null,c))
+			using (a.DeleteCommand = new SQLiteCommand(sql_delete_row,c))
+			{
+				try {
+					c.Open();
+					a.DeleteCommand.Parameters.AddWithValue("@xid",element.Id);
+					a.DeleteCommand.ExecuteNonQuery();
+					c.Close();
+				} catch {
+					haserror=true;
+				}
+			}
+			return haserror;
 		}
 		#endregion
 		
@@ -187,7 +235,7 @@ CREATE TABLE ""templates"" (
 		{
 			return !System.IO.File.Exists(path);
 		}
-
+		
 		#endregion
 		
 	}

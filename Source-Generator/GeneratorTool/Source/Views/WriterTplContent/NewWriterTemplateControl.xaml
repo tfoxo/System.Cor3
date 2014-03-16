@@ -1,7 +1,8 @@
 <mui:ModernDialog x:Class="GeneratorTool.Views.Content.NewWriterTemplateControl"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
@@ -13,13 +14,13 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<Grid>
+		<Grid Grid.Row="1" Grid.Column="1">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="180" />
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="140" />
+				<ColumnDefinition Width="240" />
 			</Grid.ColumnDefinitions>
-			<ComboBox x:Name="cbGroup" IsEditable="True" />
-			<TextBox x:Name="tbName" />
+			<ComboBox x:Name="cbGroup" IsEditable="True" ItemsSource="{Binding GroupNames}" />
+			<TextBox x:Name="tbName" Grid.Column="1" />
 		</Grid>
 	</Grid>
 </mui:ModernDialog>

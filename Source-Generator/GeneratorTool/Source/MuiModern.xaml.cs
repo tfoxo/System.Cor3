@@ -33,7 +33,7 @@ namespace GeneratorTool.Views
 			InitializeComponent();
 //			this.GetValue(DependencyObject
 			//System.Diagnostics.Debug.WriteLine("We have: {0}",this.);
-			mainLinks.Links.Add( new Link(){ DisplayName="GENERATOR", Source = new Uri("/1",UriKind.RelativeOrAbsolute) });
+			mainLinks.Links.Add( new Link(){ DisplayName="GENERATOR", Source = new Uri("/generator",UriKind.RelativeOrAbsolute) });
 			mainLinks.Links.Add( new Link(){ DisplayName="TEMPLATE-WRITER", Source = new Uri("/writerTemplate",UriKind.RelativeOrAbsolute) });
 			mainLinks.Links.Add( new Link(){ DisplayName="SQLite Tool", Source = new Uri("/sqlTool",UriKind.RelativeOrAbsolute) });
 //			mainLinks.Links.Add( new Link(){ DisplayName="TEMPLATE", Source = new Uri("/2",UriKind.RelativeOrAbsolute), });
