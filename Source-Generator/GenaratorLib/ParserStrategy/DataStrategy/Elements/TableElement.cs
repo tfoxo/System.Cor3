@@ -483,6 +483,21 @@ namespace Generator.Core.Entities
 		public TableElement()
 		{
 		}
+		public TableElement(TableElement element)
+		{
+			this.BaseClass = element.BaseClass;
+			this.DbType = element.DbType;
+			this.Description = element.Description;
+			this.Inherits = element.Inherits;
+			this.Name = element.Name;
+			this.PrimaryKey = element.PrimaryKey;
+			items = new List<FieldElement>();
+			foreach (FieldElement fe in element.Fields) {
+				var er = FieldElement.Clone(fe);
+				er.Parent = this;
+				items.Add(er);
+			}
+		}
 		#endregion
 		#region PARAMETER DICTIONARY (Template/Replacement functions)
 

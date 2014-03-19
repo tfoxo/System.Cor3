@@ -35,6 +35,12 @@ namespace Generator.Core.Entities
 		[XmlIgnore] public DatabaseCollection Parent { get; set; }
 		
 		#region Method: Rechild
+		/// <summary>
+		/// The role of this action is to parent each of the elements so as to enable
+		/// reverse-lookups.
+		/// <para>Thus far, it appears that the Rechild method is executed when a configuration file
+		/// is loaded (such as databaseconfiguration file).</para>
+		/// </summary>
 		static void Rechild(DatabaseCollection element)
 		{
 			for (int i = 0; i < element.Databases.Count; i++) {
@@ -42,6 +48,12 @@ namespace Generator.Core.Entities
 				Rechild(element,element.Databases[i]);
 			}
 		}
+		/// <summary>
+		/// The role of this action is to parent each of the elements so as to enable
+		/// reverse-lookups.
+		/// <para>Thus far, it appears that the Rechild method is executed when a configuration file
+		/// is loaded (such as databaseconfiguration file).</para>
+		/// </summary>
 		static void Rechild(DatabaseCollection parent, DatabaseElement child)
 		{
 			child.Children.Clear();
@@ -57,12 +69,25 @@ namespace Generator.Core.Entities
 				child.Children.Add(child.Views[i]);
 			}
 		}
+		/// <summary>
+		/// The role of this action is to parent each of the elements so as to enable
+		/// reverse-lookups.
+		/// <para>Thus far, it appears that the Rechild method is executed when a configuration file
+		/// is loaded (such as databaseconfiguration file).</para>
+		/// </summary>
 		static void Rechild(DatabaseElement parent, TableElement child)
 		{
 			for (int i = 0; i < child.Fields.Count; i++) {
 				child.Fields[i].Parent = child;
 			}
 		}
+		
+		/// <summary>
+		/// The role of this action is to parent each of the elements so as to enable
+		/// reverse-lookups.
+		/// <para>Thus far, it appears that the Rechild method is executed when a configuration file
+		/// is loaded (such as databaseconfiguration file).</para>
+		/// </summary>
 		public void Rechild()
 		{
 			Rechild(this);

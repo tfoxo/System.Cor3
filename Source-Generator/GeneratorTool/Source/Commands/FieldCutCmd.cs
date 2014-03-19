@@ -5,13 +5,13 @@ using FirstFloor.ModernUI.Windows.Controls;
 using Generator.Core.Entities;
 namespace GeneratorTool.Views
 {
-	public class CopyFieldCmd : BasicCommand
+	public class FieldCutCmd : BasicCommand
 	{
 		public MoxiView View {
 			get;
 			set;
 		}
-
+		
 		protected override void OnExecute(object parameter)
 		{
 			var field = parameter as FieldElement;
@@ -19,15 +19,15 @@ namespace GeneratorTool.Views
 				ModernDialog.ShowMessage("no field detected.", "error", MessageBoxButton.OK);
 				return;
 			}
-			//			else ModernDialog.ShowMessage(parameter.ToString(), "Good!", MessageBoxButton.OK);
 			var parent = field.Parent;
 			View.Model.ClipboardItem = FieldElement.Clone(field);
-			//			parent.Fields.Remove(field);
-			//			parent.Fields = parent.Fields;
+			parent.Fields.Remove(field);
+			parent.Fields = parent.Fields;
 		}
 	}
+	
+	
+	
 }
-
-
 
 

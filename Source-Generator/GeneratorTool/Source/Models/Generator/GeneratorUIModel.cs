@@ -8,7 +8,6 @@ namespace GeneratorTool
 {
 	public class GeneratorUIModel
 	{
-		
 		public object ClipboardItem {
 			get { return clipboardItem; }
 			set { clipboardItem = value; }

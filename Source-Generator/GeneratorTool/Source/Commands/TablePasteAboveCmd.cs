@@ -5,7 +5,7 @@ using FirstFloor.ModernUI.Windows.Controls;
 using Generator.Core.Entities;
 namespace GeneratorTool.Views
 {
-	public class PasteFieldAboveCmd : BasicCommand
+	public class TablePasteAboveCmd : BasicCommand
 	{
 		public MoxiView View {
 			get;
@@ -14,29 +14,30 @@ namespace GeneratorTool.Views
 
 		public override bool CanExecute(object parameter)
 		{
-			if (View == null || View.Model == null || View.Model.ClipboardItem == null)
-				return false;
-			return true;
+			if (View == null || View.Model == null || View.Model.ClipboardItem == null) return false;
+			return View.Model.ClipboardItem is TableElement;
 		}
 
 		protected override void OnExecute(object parameter)
 		{
-			var field = parameter as FieldElement;
-			if (field == null) {
+			var table = parameter as TableElement;
+			if (table == null) {
 				ModernDialog.ShowMessage("no field detected.", "error", MessageBoxButton.OK);
 				return;
 			}
 			//			else ModernDialog.ShowMessage(parameter.ToString(), "Good!", MessageBoxButton.OK);
-			var parent = field.Parent;
-			int index = parent.Fields.IndexOf(field);
-			var elm = FieldElement.Clone(View.Model.ClipboardItem as FieldElement);
+			var parent = table.Parent;
+			int index = parent.Children.IndexOf(table);
+			var elm = new TableElement(View.Model.ClipboardItem as TableElement);
+//			elm.Name = string.Format("{0} (copy)", elm.Name);
 			elm.Parent = parent;
-			elm.DataName = string.Format("{0} (copy)", elm.DataName);
-			parent.Fields.Insert(index, elm);
-			parent.Fields = parent.Fields;
+			parent.Insert(index, elm);
+			View.RefreshDataTree(parent);
 		}
 	}
 }
+
+
 
 
 

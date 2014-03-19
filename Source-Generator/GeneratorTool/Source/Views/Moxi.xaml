@@ -20,13 +20,13 @@
 		<v:GroupOnMultiBindingConverter x:Key="GroupOnTemplatesConverter" />
 		<v:IsEnabledToColorConverter x:Key="isEnabledToColorConverter" />
 		<!--  -->
-		<!-- FIELD -->
+		<!-- DataView Element -->
 		<!--  -->
 		<HierarchicalDataTemplate x:Key="DataViewTemplate">
 			<StackPanel Orientation="Horizontal">
 				<StackPanel.ContextMenu>
 					<ContextMenu>
-						<MenuItem Header="Field Element" />
+						<MenuItem Header="DataView" />
 						<Separator />
 						<MenuItem Header="Cut" />
 						<MenuItem Header="Copy" />
@@ -48,10 +48,10 @@
 					<ContextMenu>
 						<MenuItem Header="Field Element" />
 						<Separator />
-						<MenuItem Header="Cut" Command="{x:Static v:MoxiView.CutFieldCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Copy" Command="{x:Static v:MoxiView.CopyFieldCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Paste (Below)" Command="{x:Static v:MoxiView.PasteFieldCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Paste (Above)" />
+						<MenuItem Header="Cut" Command="{x:Static v:MoxiView.FieldCutCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Copy" Command="{x:Static v:MoxiView.FieldCopyCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Paste (Above)" Command="{x:Static v:MoxiView.FieldPasteAboveCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Paste (Below)" Command="{x:Static v:MoxiView.FieldPasteBelowCommand}" CommandParameter="{Binding .}" />
 						<Separator />
 						<MenuItem Header="Delete" />
 					</ContextMenu>
@@ -65,6 +65,18 @@
 		<!--  -->
 		<HierarchicalDataTemplate x:Key="TableTemplate" ItemsSource="{Binding Path=Fields}" ItemTemplate="{StaticResource FieldTemplate}">
 			<StackPanel Orientation="Horizontal">
+				<StackPanel.ContextMenu>
+					<ContextMenu>
+						<MenuItem Header="Table Element" />
+						<Separator />
+						<MenuItem Header="Cut" Command="{x:Static v:MoxiView.TableCutCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Copy" Command="{x:Static v:MoxiView.TableCopyCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Paste (Above)" Command="{x:Static v:MoxiView.TablePasteAboveCommand}" CommandParameter="{Binding .}" />
+						<MenuItem Header="Paste (Below)" Command="{x:Static v:MoxiView.TablePasteBelowCommand}" CommandParameter="{Binding .}" />
+						<Separator />
+						<MenuItem Header="Delete" />
+					</ContextMenu>
+				</StackPanel.ContextMenu>
 				<Image Margin="0,0,6,0" Source="{DynamicResource TableIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
 				<TextBlock Text="{Binding Path=Name}" />
 			</StackPanel>
@@ -103,13 +115,14 @@
 				<TextBlock Text="{Binding GroupName}" Margin="1" />
 			</StackPanel>
 		</HierarchicalDataTemplate>
+		
 		<HierarchicalDataTemplate x:Key="TemplatesGroupTemplate" ItemsSource="{Binding Templates}" ItemTemplate="{StaticResource TemplatesTemplate}">
 			<StackPanel Orientation="Horizontal">
 				<StackPanel.ContextMenu>
 					<ContextMenu>
-						<MenuItem Header="I'm a menu item">
-							<MenuItem Header="I'm a menu item" />
-						</MenuItem>
+						<MenuItem Header="TableTemplate" />
+						<Separator />
+						<MenuItem Header="New Template" />
 					</ContextMenu>
 				</StackPanel.ContextMenu>
 				<!--<Image Margin="0,0,6,0" Source="{DynamicResource DatabaseIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />-->
@@ -124,13 +137,19 @@
 			<ColumnDefinition Width="3" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
-		<TreeView Grid.Column="0" x:Name="tvModel" v:SelectionChangedBehaviour.Command="{x:Static v:MoxiView.StatePushCommand}">
-			<!-- Database -->
-			<TreeViewItem Header="Databases" x:Name="tnDatabases" ItemsSource="{Binding Path=Databases.Databases}" ItemTemplate="{StaticResource DatabaseTemplate}">
-			</TreeViewItem>
-			<TreeViewItem Header="Templates" x:Name="tnTemplates" ItemsSource="{Binding Path=Templates.Templates}" ItemTemplate="{StaticResource TemplatesGroupTemplate}">
-			</TreeViewItem>
-		</TreeView>
+		<DockPanel Grid.Column="0">
+			<StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+				<Button Content="U" />
+				<Button Content="D" />
+			</StackPanel>
+			<TreeView x:Name="tvModel" v:SelectionChangedBehaviour.Command="{x:Static v:MoxiView.StatePushCommand}">
+				<!-- Database -->
+				<TreeViewItem Header="Databases" x:Name="tnDatabases" ItemsSource="{Binding Path=Databases.Databases}" ItemTemplate="{StaticResource DatabaseTemplate}">
+				</TreeViewItem>
+				<TreeViewItem Header="Templates" x:Name="tnTemplates" ItemsSource="{Binding Path=Templates.Templates}" ItemTemplate="{StaticResource TemplatesGroupTemplate}">
+				</TreeViewItem>
+			</TreeView>
+		</DockPanel>
 		<GridSplitter Grid.Column="1" Width="3" />
 		<Grid Grid.Column="2">
 			<DockPanel Visibility="Visible" x:Name="pane">
@@ -159,7 +178,7 @@
 						</Grid.ColumnDefinitions>
 						<ComboBox x:Name="cbTemplateGroups" IsEditable="True" v:SelectionChangedBehaviour.Command="{x:Static v:MoxiView.ToggleTemplateGroupCommand}" DisplayMemberPath="Group" ItemsPanel="{Binding Path=ItemsPanelTemplate}" />
 						<ComboBox x:Name="cbTemplateRow" v:SelectionChangedBehaviour.Command="{x:Static v:MoxiView.ToggleTemplateRowCommand}" IsEditable="True" Grid.Column="1" DisplayMemberPath="Alias" />
-						<!--				<ComboBox x:Name="cbTemplateField" ItemsSource="{Binding SelectedValue.FieldTemplate.ItemsTemplate, ElementName=cbTemplateRow}" IsEditable="True" Grid.Column="2" />-->
+						<!-- Buttons Stack (Link-Buttons) -->
 						<StackPanel Grid.Column="2" Orientation="Horizontal">
 							<ContentControl>
 								<Hyperlink x:Name="ccmd" Foreground="{Binding IsEnabled, ElementName=ccmd, Converter={StaticResource isEnabledToColorConverter}, Mode=TwoWay}" Command="{x:Static v:MuiMessageCommand.ShowMessageCommand}" CommandParameter="{Binding Databases}">
@@ -199,53 +218,47 @@
 									<MenuItem Header="Browse" Command="{x:Static l:GeneratorReader.LoadConfigurationCommand}" />
 									<MenuItem Header="Save" Command="{x:Static l:GeneratorReader.SaveConfigurationCommand}" />
 									<MenuItem Header="Save As" Command="{x:Static l:GeneratorReader.SaveConfigurationAsCommand}" />
+									<Separator />
+									<MenuItem Header="New Template" Click="Event_CreateTemplate"  />
+									<MenuItem Header="Remove Template" Click="Event_RemoveTemplate"  />
 								</ContextMenu>
 							</Button.ContextMenu>
 						</Button>
-						<!--<StackPanel Orientation="Horizontal">
-							<mui:BBCodeBlock BBCode="[url=cmd://load]load[/url] | [url=cmd://save]save[/url] | [url=cmd://saveas]saveas[/url]">
-								<mui:BBCodeBlock.LinkNavigator>
-									<mui:DefaultLinkNavigator>
-										<mui:DefaultLinkNavigator.Commands>
-											<v:MyCommand x:Key="cmd://load" Command="{x:Static l:GeneratorReader.LoadConfigurationCommand}" />
-											<v:MyCommand x:Key="cmd://save" Command="{x:Static l:GeneratorReader.SaveConfigurationCommand}" />
-											<v:MyCommand x:Key="cmd://saveas" Command="{x:Static l:GeneratorReader.SaveConfigurationAsCommand}" />
-										</mui:DefaultLinkNavigator.Commands>
-									</mui:DefaultLinkNavigator>
-								</mui:BBCodeBlock.LinkNavigator>
-							</mui:BBCodeBlock>
-						</StackPanel>-->
 						<TextBox Grid.Column="1" Text="{Binding FileName}" />
 						<StackPanel Grid.Column="2" Orientation="Horizontal">
+							<Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
 							<Button Content="TABLE" Command="{x:Static v:MoxiView.ToggleTableCommand}" />
 							<Button Content="FIELD" Command="{x:Static v:MoxiView.ToggleFieldCommand}" />
 							<Button Content="PREVIEW" Command="{x:Static v:MoxiView.TogglePreviewCommand}" />
+							<Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
+							<Button Content="DATA" Command="{x:Static v:MoxiView.ToggleDataCommand}" />
 						</StackPanel>
-						<!--<StackPanel Grid.Column="2" Orientation="Horizontal" Margin="0,0,0,16">
-							<Button Content="back" Command="NavigationCommands.BrowseBack" CommandTarget="{Binding ElementName=Frame}" />
-							<Button Content="refresh" Command="NavigationCommands.Refresh" Margin="8,0,0,0" CommandTarget="{Binding ContentFrame}"/>
-														<Button Content="error" Command="NavigationCommands.GoToPage" CommandParameter="/Content/ModernFrame/ErrorSample.xaml" CommandTarget="{Binding ElementName=Frame}" Margin="8,0,0,0"/>
-							<Button Content="cancellable" Command="NavigationCommands.GoToPage" CommandParameter="/Content/ModernFrame/CancelNavigateSample.xaml" CommandTarget="{Binding ElementName=Frame}" Margin="8,0,0,0"/>
-							<Button Content="fragment" Command="NavigationCommands.GoToPage" CommandParameter="#somevalue" Margin="8,0,0,0"/>
-						</StackPanel>-->
 					</Grid>
 				</Grid>
-				<avalon:Editor xmlns:txt="clr-namespace:System.Text;assembly=mscorlib" x:Name="editor" FontFamily="Consolas" FontSize="10pt" Encoding="{x:Static txt:Encoding.UTF8}" SnapsToDevicePixels="True" SyntaxHighlighting="C#">
-					<avalon:Editor.ContextMenu>
-						<ContextMenu xmlns:v="clr-namespace:GeneratorTool.Views">
-							<MenuItem Header="Cut" Command="{x:Static ApplicationCommands.Cut}" />
-							<MenuItem Header="Copy" Command="{x:Static ApplicationCommands.Copy}" />
-							<MenuItem Header="Paste" Command="{x:Static ApplicationCommands.Paste}" />
-							<MenuItem Header="Delete" Command="{x:Static ApplicationCommands.Delete}" />
-							<Separator />
-							<MenuItem Header="Table" Command="{x:Static v:MoxiView.ToggleTableCommand}" />
-							<MenuItem Header="Field" Command="{x:Static v:MoxiView.ToggleFieldCommand}" />
-							<MenuItem Header="Preview" Command="{x:Static v:MoxiView.TogglePreviewCommand}" />
-						</ContextMenu>
-					</avalon:Editor.ContextMenu>
-				</avalon:Editor>
+				<TabControl x:Name="tabs" BorderBrush="{x:Null}" Background="Transparent">
+					<TabItem Header="Data" x:Name="tabData">
+						<v:DataEditorContent x:Name="dataEditor" />
+					</TabItem>
+					<TabItem Header="Editor" x:Name="tabEdit">
+						<avalon:Editor xmlns:txt="clr-namespace:System.Text;assembly=mscorlib" x:Name="editor" FontFamily="Consolas" FontSize="10pt" Encoding="{x:Static txt:Encoding.UTF8}" SnapsToDevicePixels="True" SyntaxHighlighting="C#">
+							<avalon:Editor.ContextMenu>
+								<ContextMenu xmlns:v="clr-namespace:GeneratorTool.Views">
+									<MenuItem Header="Cut" Command="{x:Static ApplicationCommands.Cut}" />
+									<MenuItem Header="Copy" Command="{x:Static ApplicationCommands.Copy}" />
+									<MenuItem Header="Paste" Command="{x:Static ApplicationCommands.Paste}" />
+									<MenuItem Header="Delete" Command="{x:Static ApplicationCommands.Delete}" />
+									<Separator />
+									<MenuItem Header="Data" Command="{x:Static v:MoxiView.ToggleDataCommand}" />
+									<Separator />
+									<MenuItem Header="Table" Command="{x:Static v:MoxiView.ToggleTableCommand}" />
+									<MenuItem Header="Field" Command="{x:Static v:MoxiView.ToggleFieldCommand}" />
+									<MenuItem Header="Preview" Command="{x:Static v:MoxiView.TogglePreviewCommand}" />
+								</ContextMenu>
+							</avalon:Editor.ContextMenu>
+						</avalon:Editor>
+					</TabItem>
+				</TabControl>
 			</DockPanel>
-			<v:DataEditorContent Visibility="Collapsed" x:Name="dataEditor" />
 		</Grid>
 	</Grid>
 	<!--<mui:ModernTab Layout="Tab">

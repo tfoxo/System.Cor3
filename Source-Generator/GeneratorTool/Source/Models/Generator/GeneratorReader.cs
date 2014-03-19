@@ -145,6 +145,7 @@ namespace GeneratorTool
 //			try {
 			Model.Databases = DatabaseCollection.Load(Model.Configuration.datafile);
 			Model.Templates = TemplateCollection.Load(Model.Configuration.templatefile);
+			// why is this necessary?
 			Model.Databases.Rechild();
 			a.Handled = true;
 //			} catch (Exception e) {

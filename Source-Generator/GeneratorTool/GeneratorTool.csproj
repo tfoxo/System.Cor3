@@ -125,6 +125,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Source\Views\SQLiteView.xaml" />
+    <Page Include="Source\Views\TemplateContent\CreateTemplateDialog.xaml" />
     <Page Include="Source\Views\WriterTemplateControl.xaml" />
     <Page Include="Source\Views\WriterTplContent\NewWriterTemplateControl.xaml" />
     <Resource Include="..\..\Source-AppWpf\FeedTool\Resources\Icons.xaml">
@@ -226,11 +227,15 @@
     <None Include="Source\Models\Unused\NetContentFilterType.cs" />
     <None Include="Source\Models\Unused\SQLiteAbstract.cs" />
     <None Include="Source\Models\Unused\WindowStyleChanged.cs" />
-    <Compile Include="Source\Commands\CopyFieldCmd.cs" />
-    <Compile Include="Source\Commands\CutFieldCmd.cs" />
+    <Compile Include="Source\Commands\FieldCopyCmd.cs" />
+    <Compile Include="Source\Commands\FieldCutCmd.cs" />
     <Compile Include="Source\Commands\IBindCommands.cs" />
-    <Compile Include="Source\Commands\PasteFieldAboveCmd.cs" />
-    <Compile Include="Source\Commands\PasteFieldBelowCmd.cs" />
+    <Compile Include="Source\Commands\FieldPasteAboveCmd.cs" />
+    <Compile Include="Source\Commands\FieldPasteBelowCmd.cs" />
+    <Compile Include="Source\Commands\TableCopyCmd.cs" />
+    <Compile Include="Source\Commands\TableCutCmd.cs" />
+    <Compile Include="Source\Commands\TablePasteAboveCmd.cs" />
+    <Compile Include="Source\Commands\TablePasteBelowCmd.cs" />
     <Compile Include="Source\Models\Extensions\AvalonEditorUtils.cs" />
     <Compile Include="Source\Models\AppGlobal.cs" />
     <Compile Include="Source\Models\GeneratorContentLoader.cs" />
@@ -304,6 +309,10 @@
     </Compile>
     <Compile Include="Source\Views\SQLiteView.xaml.cs">
       <DependentUpon>SQLiteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\TemplateContent\CreateTemplateDialog.xaml.cs">
+      <DependentUpon>CreateTemplateDialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Source\Views\WriterTemplateControl.xaml.cs">
       <DependentUpon>WriterTemplateControl.xaml</DependentUpon>

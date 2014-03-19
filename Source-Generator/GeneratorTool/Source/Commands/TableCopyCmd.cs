@@ -5,30 +5,27 @@ using FirstFloor.ModernUI.Windows.Controls;
 using Generator.Core.Entities;
 namespace GeneratorTool.Views
 {
-	public class CutFieldCmd : BasicCommand
+	public class TableCopyCmd : BasicCommand
 	{
 		public MoxiView View {
 			get;
 			set;
 		}
-		
+
 		protected override void OnExecute(object parameter)
 		{
-			var field = parameter as FieldElement;
-			if (field == null) {
+			var table = parameter as TableElement;
+			if (table == null) {
 				ModernDialog.ShowMessage("no field detected.", "error", MessageBoxButton.OK);
 				return;
 			}
-			else
-				ModernDialog.ShowMessage(parameter.ToString(), "Good!", MessageBoxButton.OK);
-			var parent = field.Parent;
-			View.Model.ClipboardItem = FieldElement.Clone(field);
-			parent.Fields.Remove(field);
-			parent.Fields = parent.Fields;
+			View.Model.ClipboardItem = new TableElement(table);
 		}
 	}
-	
-	
 }
+
+
+
+
 
 

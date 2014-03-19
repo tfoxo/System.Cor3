@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Xml.Serialization;
 
 using Generator.Core.Entities.Types;
@@ -10,8 +11,21 @@ using System.Windows.Forms;
 namespace Generator.Core.Entities
 {
 
-	public class DatabaseElement : DataMapElement
+	public class DatabaseElement : DataMapElement, INotifyPropertyChanged
 	{
+		public void Remove(DatabaseChildElement child)
+		{
+			if (child is TableElement) items.Remove(child as TableElement);
+			if (child is DataViewElement) views.Remove(child as DataViewElement);
+			children.Remove(child);
+		}
+		public void Insert(int index, DatabaseChildElement child)
+		{
+			if (child is TableElement) items.Insert(index,child as TableElement);
+			if (child is DataViewElement) views.Insert(index,child as DataViewElement);
+			children.Insert(index,child);
+		}
+		
 		[XmlIgnore]
 		public DatabaseCollection Parent {
 			get {

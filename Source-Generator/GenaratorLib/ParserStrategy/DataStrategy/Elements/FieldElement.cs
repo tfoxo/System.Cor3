@@ -38,6 +38,7 @@ namespace Generator.Core.Entities
 			field.IsNullable = element.IsNullable;
 			field.IsPrimary = false;
 			field.MaxLength = element.MaxLength;
+//			field.Parent = element.Parent;
 			field.Tags = element.Tags;
 //			field.ToolTip = element.ToolTip;
 			field.Transform = element.Transform;

@@ -115,7 +115,7 @@ namespace Generator.Core.Operations
 			
 			dbelm.Items				= new List<TableElement>();
 			dbelm.Views				= new List<DataViewElement>();
-			var te			= new TableElement();
+			var te					= new TableElement();
 			te.Fields				= new List<FieldElement>();
 			te.Name					= string.Format(Messages.Node_New_Table_Element, __tbIncr);
 			

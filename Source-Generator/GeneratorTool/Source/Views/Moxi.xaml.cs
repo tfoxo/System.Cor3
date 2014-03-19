@@ -9,10 +9,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
+using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows.Controls;
 using Generator.Core.Entities;
 using Generator.Core.Markup;
 using Generator.Core.Operations;
+using GeneratorTool.Views.Content;
 
 namespace GeneratorTool.Views
 {
@@ -21,6 +23,40 @@ namespace GeneratorTool.Views
 	/// </summary>
 	public partial class MoxiView : UserControl, INotifyPropertyChanged
 	{
+		// http://stackoverflow.com/questions/11986840/wpf-treeview-refreshing
+		static TreeViewItem FindTreeViewSelectedItemContainer(ItemsControl root, object selection)
+		{
+			var item = root.ItemContainerGenerator.ContainerFromItem(selection) as TreeViewItem;
+			if (item == null)
+			{
+				foreach (var subItem in root.Items)
+				{
+					item = FindTreeViewSelectedItemContainer((TreeViewItem)root.ItemContainerGenerator.ContainerFromItem(subItem), selection);
+					if (item != null)
+					{
+						break;
+					}
+				}
+			}
+			return item;
+		}
+		
+		public void RefreshDataTree(DatabaseElement parent)
+		{
+			var selectedparent = FindTreeViewSelectedItemContainer(tvModel,parent);
+			selectedparent.ItemsSource = parent.Children;
+			selectedparent.Items.Refresh();
+			selectedparent.UpdateLayout();
+		}
+		public void RefreshTree(object parent)
+		{
+			var selectedparent = FindTreeViewSelectedItemContainer(tvModel,parent);
+			//			selectedparent.ItemsSource = parent.Children;
+			selectedparent.Items.Refresh();
+			selectedparent.UpdateLayout();
+		}
+		
+		
 		#region Commands
 		static public readonly ICommand MyCommandCommand = new RoutedUICommand(){ Text="MyCommandCommand Command." };
 		
@@ -41,15 +77,23 @@ namespace GeneratorTool.Views
 		static public readonly ICommand ToggleTableCommand = new RoutedUICommand(){ Text="Template button toggled.", InputGestures={ new KeyGesture(Key.F3) } };
 		static public readonly ICommand ToggleFieldCommand = new RoutedUICommand(){ Text="Field button toggled.", InputGestures={ new KeyGesture(Key.F4) } };
 		static public readonly ICommand TogglePreviewCommand = new RoutedUICommand(){ Text="Preview button toggled.", InputGestures={ new KeyGesture(Key.F5) } };
+		static public readonly ICommand ToggleDataCommand = new RoutedUICommand(){ Text="Select the data tab-item.", InputGestures={ new KeyGesture(Key.F5) } };
+		
+		
+		
+		static public readonly FieldCutCmd FieldCutCommand = new FieldCutCmd();
+		static public readonly FieldCopyCmd FieldCopyCommand = new FieldCopyCmd();
+		static public readonly FieldPasteAboveCmd FieldPasteAboveCommand = new FieldPasteAboveCmd();
+		static public readonly FieldPasteBelowCmd FieldPasteBelowCommand = new FieldPasteBelowCmd();
+		static public readonly TableCutCmd TableCutCommand = new TableCutCmd();
+		static public readonly TableCopyCmd TableCopyCommand = new TableCopyCmd();
+		static public readonly TablePasteAboveCmd TablePasteAboveCommand = new TablePasteAboveCmd();
+		static public readonly TablePasteBelowCmd TablePasteBelowCommand = new TablePasteBelowCmd();
 		#endregion
 		
 		public GeneratorUIModel Model = new GeneratorUIModel();
 		
 		
-		static public readonly CutFieldCmd CutFieldCommand = new CutFieldCmd();
-		static public readonly CopyFieldCmd CopyFieldCommand = new CopyFieldCmd();
-		static public readonly PasteFieldAboveCmd PasteFieldAboveCommand = new PasteFieldAboveCmd();
-		static public readonly PasteFieldBelowCmd PasteFieldBelowCommand = new PasteFieldBelowCmd();
 		
 		#region Little Helpers
 		
@@ -142,10 +186,18 @@ namespace GeneratorTool.Views
 		public MoxiView()
 		{
 			InitializeComponent();
-			CutFieldCommand.View = this;
-			CopyFieldCommand.View = this;
-			PasteFieldAboveCommand.View = this;
-			PasteFieldBelowCommand.View = this;
+			FieldCutCommand.View = this;
+			FieldCopyCommand.View = this;
+			FieldPasteAboveCommand.View = this;
+			FieldPasteBelowCommand.View = this;
+			TableCutCommand.View = this;
+			TableCopyCommand.View = this;
+			TablePasteAboveCommand.View = this;
+			TablePasteBelowCommand.View = this;
+			
+			Style s = new Style(){};
+			s.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+			tabs.ItemContainerStyle = s;
 			InitializeReader();
 			Model.LastSelectedView = pane;
 		}
@@ -188,9 +240,11 @@ namespace GeneratorTool.Views
 		
 		#region Show in editor
 		
-		void ToggleEditorTemplateAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplateTable; try { Model.ViewText = editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ElementTemplate; } catch(Exception err) { if (cbTemplateRow.SelectedValue != null) { throw err; } } }
-		void ToggleEditorFieldAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplateField; try { Model.ViewText = editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ItemsTemplate; }  catch(Exception err) { if (cbTemplateRow.SelectedValue != null) { throw err; } } }
-		void ToggleEditorPreviewAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplatePreview; try { Model.ViewText = Model.Reader.Generate(cbTable.SelectedValue as TableElement,cbTemplateRow.SelectedValue as TableTemplate); } catch {} }
+		void ToggleEditorTemplateAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplateTable; try { Model.ViewText = editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ElementTemplate; } catch(Exception err) { if (cbTemplateRow.SelectedValue != null) { throw err; } } tabs.SelectedItem = tabEdit; }
+		void ToggleEditorFieldAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplateField; try { Model.ViewText = editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ItemsTemplate; }  catch(Exception err) { if (cbTemplateRow.SelectedValue != null) { throw err; } } tabs.SelectedItem = tabEdit; }
+		void ToggleEditorPreviewAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplatePreview; try { Model.ViewText = Model.Reader.Generate(cbTable.SelectedValue as TableElement,cbTemplateRow.SelectedValue as TableTemplate); } catch {} tabs.SelectedItem = tabEdit; }
+		void ToggleDataAction(object sender, RoutedEventArgs e) { tabs.SelectedItem = tabData; }
+		
 		
 		#endregion
 		
@@ -217,60 +271,18 @@ namespace GeneratorTool.Views
 			} finally {
 			}
 		}
-//		class _SaveTemplateCmd : BasicCommand
-//		{
-			//			public override void Execute(object parameter)
-			//			{
-			//				if (Model.LastTemplate==null) {
-			//					editor.Text += "\n";
-			//					editor.Text += "No template to save.";
-			//					editor.Text += "\n";
-			//					return;
-			//				}
-			//				switch (Model.LastViewMode) {
-			//					case ViewMode.Undefined:
-			//						editor.Text += "ViewMode.Undefined.";
-			//						editor.Text += "\n";
-			//						editor.Text = string.Format("Error[{0}]:", (int)LastViewMode);
-			//						editor.Text += "\n";
-			//						break;
-			//					case ViewMode.TemplateField:
-			//						(LastTemplate as TableTemplate).ItemsTemplate = editor.Text;
-			//						editor.Text += "TABLE FIELD";
-			//						editor.Text += "\n";
-			//						editor.Text += "The tempalte was saved.";
-			//						editor.Text += "\n";
-			//						break;
-			//					case ViewMode.TemplateTable:
-			//						(LastTemplate as TableTemplate).ElementTemplate = editor.Text;
-			//						editor.Text += "TABLE ROW";
-			//						editor.Text += "\n";
-			//						editor.Text += "The tempalte was saved.";
-			//						editor.Text += "\n";
-			//						break;
-			//					case ViewMode.TemplatePreview:
-			//						editor.Text += "PREVIEW";
-			//						editor.Text += "\n";
-			//						break;
-			//				}
-			//				editor.Text += "Compare SelectedTemplate to Model.";
-			//				editor.Text += "\n";
-			//			}
-//		}
+		
 		void InitializeReader()
 		{
 			Model.Reader = new GeneratorReader { LoadCompleteAction=InitializeDataSource, };
-			
 			Model.Reader.BindUIElement(this);
 			Model.Reader.TemplateGeneratedAction = a => editor.Text = a;
-			
-//			CommandBindings.Add(new CommandBinding(ShowContextCommamd,Event_ButtonContextMenu));
-			CommandBindings.Add(new CommandBinding(DatabaseViewCommand,(e,r) => { dataEditor.Visibility = Visibility.Visible; pane.Visibility = Visibility.Collapsed; }));
-			CommandBindings.Add(new CommandBinding(TemplateViewCommand,(e,r) => { dataEditor.Visibility = Visibility.Collapsed; pane.Visibility = Visibility.Visible; }));
-			
+			//			CommandBindings.Add(new CommandBinding(DatabaseViewCommand,(e,r) => { dataEditor.Visibility = Visibility.Visible; pane.Visibility = Visibility.Collapsed; }));
+			//			CommandBindings.Add(new CommandBinding(TemplateViewCommand,(e,r) => { dataEditor.Visibility = Visibility.Collapsed; pane.Visibility = Visibility.Visible; }));
 			editor.CommandBindings.Add(
 				new CommandBinding(
-					TemplateSaveCommand,(e,r) => {
+					TemplateSaveCommand,
+					(e,r) => {
 						if (Model.LastTemplate==null) {
 							editor.Text += "\n";
 							editor.Text += "No template to save.";
@@ -295,12 +307,11 @@ namespace GeneratorTool.Views
 								editor.Text += "\n";
 								break;
 						}
-//						editor.Text += "Compare SelectedTemplate to Model.";
-//						editor.Text += "\n";
 					}));
 			editor.CommandBindings.Add(
 				new CommandBinding(
-					TemplateLoadCommand,(e,r) => {
+					TemplateLoadCommand,
+					(e,r) => {
 						if (Model.LastTemplate==null) return;
 						if (Model.LastTemplate==null) {
 							editor.Text = "No template to save.";
@@ -322,6 +333,7 @@ namespace GeneratorTool.Views
 			CommandBindings.Add(new CommandBinding(ToggleTableCommand,ToggleEditorTemplateAction));
 			CommandBindings.Add(new CommandBinding(ToggleFieldCommand,ToggleEditorFieldAction));
 			CommandBindings.Add(new CommandBinding(TogglePreviewCommand,ToggleEditorPreviewAction));
+			CommandBindings.Add(new CommandBinding(ToggleDataCommand,ToggleDataAction));
 		}
 		
 		void InitializeDataSource()
@@ -329,18 +341,76 @@ namespace GeneratorTool.Views
 			cbDatabase.ItemsSource = null;
 			cbDatabase.ItemsSource = Model.Reader.Model.Databases.Databases;
 			cbDatabase.DisplayMemberPath = "Name";
+			
+			RefreshTemplates();
+			
+			DataContext = Model.Reader.Model;
+		}
+		
+		void RefreshTemplates()
+		{
 			cbTemplateRow.ItemsSource = null;
-			
 			Model.TemplateGroups = new ObservableCollection<TableTemplate>();
-			
 			foreach (var tpl in Model.Reader.Model.Templates.Templates) {
 				if ((Model.TemplateGroups.Where(p => p.Group == tpl.Group)).Any()) continue;
 				Model.TemplateGroups.Add(tpl);
 			}
 			cbTemplateGroups.ItemsSource = Model.TemplateGroups.OrderBy(m=>m.Group);
-			
-			DataContext = Model.Reader.Model;
 			tnTemplates.ItemsSource = Model.Reader.Model.Templates.GetGrouping();
+		}
+		
+		CreateTemplateDialog control { get; set; }
+		void Event_CreateTemplate(object sender, RoutedEventArgs e)
+		{
+			control = new CreateTemplateDialog(){ Title="New Template", ResizeMode=ResizeMode.CanResizeWithGrip, };
+			control.cbGroup.ItemsSource = Model.TemplateGroups;
+			control.cbGroup.DisplayMemberPath = "Group";
+			
+			TableTemplate element= null;
+			
+			var rc = new RelayCommand((x) => {
+				control.DialogResult = true;
+				element = new TableTemplate(){ Alias=control.tbName.Text, Group=control.cbGroup.Text };
+				control.Close();
+			});
+			control.Buttons=new[]{control.CancelButton,new Button(){ Content = "okay", Command = rc, IsDefault = true}};
+		restart:
+			var value = control.ShowDialog();
+			if (!(value.HasValue && value.Value)) return;
+			if (string.IsNullOrEmpty(element.Alias)) {
+				control.Title="supply a name for your template!";
+				goto restart;
+			}
+			Model.Reader.Model.Templates.Add(element);
+			Model.Reader.Model.Templates= Model.Reader.Model.Templates;
+			RefreshTemplates();
+			PushState(element);
+		}
+		void Event_RemoveTemplate(object sender, RoutedEventArgs e)
+		{
+			if (Model.LastTemplate==null) return;
+			string t = (Model.LastTemplate as TableTemplate).Alias;
+			const string format = @"You are about to delete the template ""{0}"".\nAre you sure?";
+			control = new CreateTemplateDialog(){
+				Title="New Template",
+				ResizeMode=ResizeMode.CanResizeWithGrip,
+				Content = new TextBlock(){ Text=string.Format(format,t) }
+			};
+			control.Buttons=new[]{
+				control.CancelButton,
+				new Button(){
+					Content = "okay",
+					Command = new RelayCommand((x) => { control.DialogResult = true; control.Close(); }),
+					IsDefault = true
+				}
+			};
+			var value = control.ShowDialog();
+			if (!(value.HasValue && value.Value)) return;
+			
+			Model.Reader.Model.Templates.Templates.Remove(Model.LastTemplate as TableTemplate);
+			Model.Reader.Model.Templates= Model.Reader.Model.Templates;
+			
+			RefreshTemplates();
 		}
 		
 		void Event_ButtonContextMenu(object sender, System.Windows.RoutedEventArgs e) { (e.OriginalSource as Button).ContextMenu.IsOpen = true; }
@@ -355,57 +425,3 @@ namespace GeneratorTool.Views
 		}
 	}
 }
-	
-#if no
-void TreeItemChangedAction(object sender, RoutedEventArgs e)
-{
-if (tvModel.SelectedValue is DatabaseElement)
-{
-cbDatabase.SelectedValue = tvModel.SelectedValue;
-// ---------------------------------------------------
-System.Diagnostics.Debug.WriteLine("Database");
-}
-else if (tvModel.SelectedValue is TableElement)
-{
-var field = tvModel.SelectedValue as TableElement;
-cbDatabase.SelectedItem = (tvModel.SelectedValue as TableElement).Parent;
-cbTable.SelectedItem = tvModel.SelectedValue;
-// ---------------------------------------------------
-dataEditor.viewField.DataContext = null;
-dataEditor.viewTable.DataContext =
-new TemplateManager(){
-SelectedCollection = Reader.Model.Databases,
-SelectedDatabase = field.Parent,
-SelectedTable = field,
-SelectedField = null,
-SelectedTemplate = (TableTemplate)cbTemplateGroups.SelectedItem
-//						SelectedTemplate = template,
-//						SelectedTemplateGroup = template.Group
-};
-System.Diagnostics.Debug.WriteLine("Table");
-		
-}
-else if (tvModel.SelectedValue is FieldElement)
-{
-var field = (FieldElement)tvModel.SelectedValue;
-cbDatabase.SelectedItem = field.Parent.Parent;
-cbTable.SelectedItem = field.Parent;
-cbField.SelectedItem = tvModel.SelectedValue;
-// ---------------------------------------------------
-//				dataEditor.viewTable.DataContext = field.Parent;
-dataEditor.viewField.DataContext =
-dataEditor.viewTable.DataContext =
-new TemplateManager(){
-SelectedCollection = Reader.Model.Databases,
-SelectedDatabase = field.Parent.Parent,
-SelectedTable = field.Parent,
-SelectedField = field,
-SelectedTemplate = (TableTemplate)cbTemplateGroups.SelectedItem,
-//						SelectedTemplate = template,
-//						SelectedTemplateGroup = template.Group
-};
-System.Diagnostics.Debug.WriteLine("Field");
-}
-}
-	
-#endif
