@@ -15,8 +15,6 @@ using Generator;
 using Generator.Core;
 using Generator.Core.Entities;
 using Generator.Core.Markup;
-using Generator.Core.Operations;
-using Generator.Core.Parser;
 using Microsoft.Win32;
 namespace GeneratorTool
 {

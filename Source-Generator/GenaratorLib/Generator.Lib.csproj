@@ -78,12 +78,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\AccessDataFactory.cs">
-      <DependentUpon>BasicDataFactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\BasicDataFactory.cs">
-      <DependentUpon>IDataFactory.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Source\AccessDataFactory.cs" />
+    <Compile Include="Source\BasicDataFactory.cs" />
     <Compile Include="Source\Core\SQLiteOperations.cs" />
     <Compile Include="Source\Core\SqlTemplateParser.cs" />
     <Compile Include="Source\Core\TemplateManager.cs" />
@@ -95,9 +91,7 @@
     <Compile Include="Source\Parser\Factory\REPLACEMENT.cs" />
     <Compile Include="Source\Parser\Factory\tempmatch.cs" />
     <Compile Include="Source\Parser\Factory\TypeResolutionClass.cs" />
-    <Compile Include="Source\QueryDataContext.cs">
-      <DependentUpon>IDataFactory.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Source\QueryDataContext.cs" />
     <Compile Include="Source\ResourceUtil.cs" />
     <Compile Include="Source\SchemaStrategy\SCHEMA_REMAP.cs" />
     <Compile Include="Source\Parser\Model\TemplateStrategy\TemplateReferenceUtil.cs" />
@@ -113,18 +107,8 @@
     <Compile Include="Source\Parser\ParserHelper.cs" />
     <Compile Include="Source\Parser\ParseUtil.cs" />
     <Compile Include="Source\Parser\TemplateFactory.cs" />
-    <Compile Include="Source\SQLDataContext.cs">
-      <DependentUpon>QueryDataContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\SqlDataFactory.cs">
-      <DependentUpon>BasicDataFactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\SQLiteDataContext.cs">
-      <DependentUpon>QueryDataContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\SQLiteDataFactory.cs">
-      <DependentUpon>BasicDataFactory.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Source\SqlDataFactory.cs" />
+    <Compile Include="Source\SQLiteDataFactory.cs" />
     <Compile Include="Source\TemplateUtil.cs" />
     <Compile Include="Source\Types\AccessTypeResolution.cs" />
     <None Include="..\..\Source\Cor3.Data\Engine\DataAbstract.cs">

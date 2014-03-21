@@ -21,7 +21,6 @@ using FirstFloor.ModernUI.Windows.Navigation;
 using Generator.Core.Entities;
 using Generator.Core.Entities.Types;
 using Generator.Core.Markup;
-using Generator.Core.Operations;
 
 namespace GeneratorTool.Views
 {

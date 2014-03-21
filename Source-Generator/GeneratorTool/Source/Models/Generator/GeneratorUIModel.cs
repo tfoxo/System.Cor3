@@ -2,8 +2,8 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Generator;
 using Generator.Core.Markup;
-using Generator.Core.Operations;
 namespace GeneratorTool
 {
 	public class GeneratorUIModel

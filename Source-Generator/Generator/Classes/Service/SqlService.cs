@@ -17,7 +17,6 @@ using Cor3Extensions;
 using Generator.Controls;
 using Generator.Core.Entities;
 using Generator.Core.Entities.Types;
-using Generator.Core.Operations;
 using Generator.Data;
 using Generator.Extensions;
 using TreeNode = System.Windows.Forms.TreeNode;

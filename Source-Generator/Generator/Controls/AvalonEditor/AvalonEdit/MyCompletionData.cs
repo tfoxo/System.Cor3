@@ -17,10 +17,10 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using Generator.Core.Parser;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
+using Generator.Parser;
 using ICSharpCode.AvalonEdit.CodeCompletion;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Editing;

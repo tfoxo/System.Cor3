@@ -11,9 +11,9 @@ using System.Data;
 using System.Windows;
 using System.Windows.Input;
 
+using Generator.Parser;
 using Generator.Classes;
 using Generator.Core.Markup;
-using Generator.Core.Parser;
 using Generator.Core.Types;
 using Microsoft.Win32;
 

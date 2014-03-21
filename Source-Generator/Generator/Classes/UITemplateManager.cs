@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Generator.Parser;
 
 #if WPF4
 using System.Collections.ObjectModel;
@@ -13,8 +14,6 @@ using System.Collections.Generic;
 
 using Generator.Controls;
 using Generator.Core.Entities;
-using Generator.Core.Operations;
-using Generator.Core.Parser;
 using Generator.Core.Types;
 using Generator.Service;
 using ICSharpCode.AvalonEdit;

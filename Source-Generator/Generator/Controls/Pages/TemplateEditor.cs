@@ -4,9 +4,9 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 
+using Generator.Parser;
 using AvalonEdit.Sample;
 using Generator.Classes;
-using Generator.Core.Parser;
 using Generator.Core.Types;
 using Generator.EditorExtension;
 using ICSharpCode.AvalonEdit;

@@ -82,8 +82,8 @@ namespace Generator.Controls
 		}
 		void XData2SQLite_ButtonClick(object sender, RoutedEventArgs args)
 		{
-			Generator.Core.Operations.SQLiteOperations.DropDataConfigurationTable(tbSqliteFile.Text,true);
-			Generator.Core.Operations.SQLiteOperations.XmlToDatabaseConfiguration(tbXmlDataFile.Text,tbSqliteFile.Text);
+			SQLiteOperations.DropDataConfigurationTable(tbSqliteFile.Text,true);
+			SQLiteOperations.XmlToDatabaseConfiguration(tbXmlDataFile.Text,tbSqliteFile.Text);
 		}
 		
 		public WindowRibbon()
