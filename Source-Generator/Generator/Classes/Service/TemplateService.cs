@@ -14,8 +14,6 @@ using System.Windows.Input;
 using Generator.Parser;
 using Generator.Classes;
 using Generator.Core.Markup;
-using Generator.Core.Types;
-using Microsoft.Win32;
 
 namespace Generator.Service
 {

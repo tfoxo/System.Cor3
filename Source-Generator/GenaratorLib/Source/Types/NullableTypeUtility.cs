@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Generator.Core
+namespace Generator
 {
 	public class NullableTypeUtility
 	{

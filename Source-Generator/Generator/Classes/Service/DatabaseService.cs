@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 
 using Generator.Classes;
-using Generator.Core.Entities;
+using Generator.Elements;
 
 namespace Generator.Service
 {

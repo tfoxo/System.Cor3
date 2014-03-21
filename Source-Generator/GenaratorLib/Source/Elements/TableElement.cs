@@ -7,7 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Cor3.Data;
-using Generator.Core.Entities.Types;
+using Generator.Elements.Basic;
+using Generator.Elements.Types;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -15,9 +16,10 @@ using System.Xml.Serialization;
 // using ...
 #endif
 #endregion
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
-	public class TableElement : DatabaseChildElement
+	
+	public partial class TableElement : DatabaseChildElement
 	{
 		[XmlAttribute()]
 		public string Name {
@@ -434,52 +436,7 @@ namespace Generator.Core.Entities
 			return Find(Key) != null;
 		}
 		#endregion
-		#region Methods: TreeNode ToNode(), void ToTree(TreeNode tn)
-		#if TREEV
-		public TreeNode ToNode()
-		{
-			var tn = new TreeNode(Name);
-			tn.Name = Name;
-			// the image correlates with the PanelTableEditor (or whatever it's called)
-			tn.SelectedImageKey = tn.ImageKey = "table";
-			tn.Tag = this;
-			foreach (FieldElement fe in items)
-				tn.Nodes.Add(fe.ToNode());
-			return tn;
-		}
-		public void ToTree(TreeNode tn)
-		{
-			var tblelement = tn.Nodes.Add(Name);
-			tblelement.Name = this.Name;
-//			tblelement.BaseClass = this.BaseClass;
-			// the image correlates with the PanelTableEditor (or whatever it's called)
-			tblelement.SelectedImageKey = tblelement.ImageKey = "table";
-			foreach (FieldElement item in items)
-				tblelement.Nodes.Add(item.ToNode());
-		}
-		#endif
-		#endregion
 		#region .ctor
-		#if TREEV || false
-		// .ctor
-		public TableElement(TreeNode node)
-		{
-			Name = node.Text;
-			if (items == null)
-				items = new List<FieldElement>();
-			if (node.Tag is TableElement) {
-				TableElement te = node.Tag as TableElement;
-				DbType = te.DbType;
-				BaseClass = te.BaseClass;
-				Name = te.Name;
-				PrimaryKey = te.PrimaryKey;
-			}
-			foreach (TreeNode tn in node.Nodes) {
-				if (tn.Tag is FieldElement)
-					items.Add(new FieldElement(tn));
-			}
-		}
-		#endif
 		public TableElement()
 		{
 		}
@@ -657,11 +614,6 @@ namespace Generator.Core.Entities
 		}
 		#endregion
 	}
-	#region Obsolete
 	// This is never used
-	public interface IContextProvider
-	{
-		Type ConnectionType { get; }
-	}
-	#endregion
+	
 }

@@ -50,13 +50,13 @@ namespace GeneratorTool.Views
 		/// </summary>
 		public void InitializeDataSources()
 		{
-			comboWebFormType.ItemsSource = System.TypeCode.GetValues(typeof(Generator.Core.Entities.Types.WebFormTypes));
+			comboWebFormType.ItemsSource = System.TypeCode.GetValues(typeof(Generator.Elements.Types.WebFormTypes));
 			// we would like to get access database types, but can wait for this.
 			//FIXME: we need this to update via an event-handler
 			viewField.comboDataType.ItemsSource = System.TypeCode.GetValues(typeof(System.Data.SqlDbType));
 			viewField.comboDataNativeType.ItemsSource = System.TypeCode.GetValues(typeof(System.TypeCode));
-			viewTable.comboDatabaseType.ItemsSource = Enum.GetValues(typeof(Generator.Core.Entities.Types.DatabaseType));
-			viewTable.comboTableType.ItemsSource = Enum.GetValues(typeof(Generator.Core.Entities.Types.DatabaseType));
+			viewTable.comboDatabaseType.ItemsSource = Enum.GetValues(typeof(Generator.Elements.Types.DatabaseType));
+			viewTable.comboTableType.ItemsSource = Enum.GetValues(typeof(Generator.Elements.Types.DatabaseType));
 		}
 		
 		#region methods PrimaryKey

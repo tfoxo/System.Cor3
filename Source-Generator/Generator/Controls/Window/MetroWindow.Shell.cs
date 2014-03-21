@@ -5,8 +5,8 @@
  */
 using System;
 using System.ComponentModel;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
+using Generator.Elements.Types;
 using System.Data;
 using System.IO;
 using System.Windows;

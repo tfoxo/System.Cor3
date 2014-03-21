@@ -8,7 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
-using Generator.Core.Entities;
+using Generator.Elements;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +17,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 
+using Generator.Elements.Basic;
 using AvalonDock;
 using Generator;
 using Generator.Classes;

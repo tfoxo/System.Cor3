@@ -11,8 +11,8 @@ using System.Windows.Input;
 using System.Windows.Shell;
 
 using Generator.Classes;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
+using Generator.Elements.Types;
 using IWin = System.Windows.Forms.IWin32Window;
 using OFD = Microsoft.Win32.OpenFileDialog;
 using SFD = Microsoft.Win32.SaveFileDialog;

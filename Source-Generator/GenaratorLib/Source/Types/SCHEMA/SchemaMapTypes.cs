@@ -7,7 +7,7 @@ using System;
 using System.Data.OleDb;
 #endregion
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	// note also System.Data.Common.StorageType
 	// note also System.Data.DbType

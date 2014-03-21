@@ -10,7 +10,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Generator.Classes;
-using Generator.Core.Entities;
+using Generator.Elements;
 
 namespace Generator.Controls
 {

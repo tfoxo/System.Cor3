@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 #endregion
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	/// <summary>
 	/// This is used in Generator Table and Field Parameters.

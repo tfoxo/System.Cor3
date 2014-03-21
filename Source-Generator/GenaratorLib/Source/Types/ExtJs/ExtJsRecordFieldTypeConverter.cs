@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	/// <summary>
 	/// TypeCode (NativeType) to ExtJsRecordFieldType.

@@ -3,7 +3,7 @@
 using System;
 using System.ComponentModel;
 using System.Linq;
-using Generator.Core.Entities;
+using Generator.Elements;
 using Generator.Core.Markup;
 namespace GeneratorTool
 {

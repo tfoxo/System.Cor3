@@ -9,11 +9,9 @@
  */
 using System;
 using System.Windows;
-using System.Windows.Input;
 
-using Generator.Controls;
-using Generator.Core;
-using Generator.Core.Entities;
+using Generator.Export;
+using Generator.Elements;
 using Generator.Core.Markup;
 
 #if WPF4

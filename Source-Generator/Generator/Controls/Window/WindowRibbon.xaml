@@ -12,7 +12,7 @@
 	xmlns:gen="clr-namespace:Generator"
 	xmlns:cls="clr-namespace:Generator.Classes"
 	xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-	xmlns:map="clr-namespace:Generator.Core.Entities;assembly=System.Cor3.Data.Reference"
+	xmlns:map="clr-namespace:Generator.Elements;assembly=System.Cor3.Data.Reference"
 	xmlns:fluent="clr-namespace:Fluent;assembly=Fluent"
 	xmlns:wform="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration">
 	<!-- back-stage ItemsPanelBackground="#ffa6cd5f" -->

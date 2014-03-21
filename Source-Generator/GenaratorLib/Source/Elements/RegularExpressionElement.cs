@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 #endregion
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
 	/// <summary>
 	/// Stores a hierarchical set of regular expressions.

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Xml.Serialization;
 
-using Generator.Core.Entities.Types;
+using Generator.Elements.Basic;
+using Generator.Elements.Types;
 
 #if TREEV
 using System.Windows.Forms;
 #endif
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
 	/// <summary>
 	/// a field element
 	/// </summary>
-	public class FieldElement : DataMapElement
+	public partial class FieldElement : DataMapElement
 	{
 		[XmlIgnore] public TableElement Parent {
 			get { return parent; }
@@ -177,7 +178,7 @@ namespace Generator.Core.Entities
 		/// that adds 'Serialization.Types' to a specific element bound to Serialization.
 		/// </para>
 		/// </remarks>
-		/// <seealso cref="Generator.Core.Entities.Parser.TemplateFactory" />
+		/// <seealso cref="Generator.Elements.Parser.TemplateFactory" />
 		/// </summary>
 		[XmlIgnore] public DICT<string,object> Params
 		{
@@ -420,40 +421,6 @@ namespace Generator.Core.Entities
 				);
 			}
 		}
-
-		#if TREEV
-		public TreeNode ToNode()
-		{
-			var tn = new TreeNode(DataName);
-			tn.Name = DataName;
-			tn.ToolTipText = ToolTip;
-			// the image correlates with the PanelTableEditor (or whatever it's called)
-			tn.SelectedImageKey = tn.ImageKey = "field";
-			tn.Tag = this;
-			return tn;
-		}
-		
-		public FieldElement(TreeNode tn)
-		{
-			if (tn.Tag is FieldElement) {
-				var fe			= tn.Tag as FieldElement;
-				IsArray					= fe.IsArray;
-				DataName				= fe.DataName;
-				DataType				= fe.DataType;
-				DataTypeNative			= fe.DataTypeNative;
-				DefaultValue			= fe.DefaultValue;
-				Description				= fe.Description;
-				FormatString			= fe.FormatString;
-				IsNullable				= fe.IsNullable;
-				MaxLength				= fe.MaxLength;
-				UseFormat				= fe.UseFormat;
-				FormType				= fe.FormType;
-				Tags					= fe.Tags;
-				this.BlockAction	= fe.BlockAction;
-				this.CodeBlock		= fe.CodeBlock;
-			}
-		}
-		#endif
 
 		public FieldElement(string n, string t)
 		{

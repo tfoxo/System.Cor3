@@ -13,7 +13,7 @@ using System.Cor3.Data.Engine;
 using System.Data;
 using System.Data.SQLite;
 
-using Generator.Core.Entities.Types;
+using Generator.Elements.Types;
 
 #endregion
 

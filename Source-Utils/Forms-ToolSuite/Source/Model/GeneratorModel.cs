@@ -25,7 +25,7 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Windows.Forms;
 
-using Generator.Core.Entities;
+using Generator.Elements;
 using Generator.Core.Markup;
 using ToolSuite.Lib;
 

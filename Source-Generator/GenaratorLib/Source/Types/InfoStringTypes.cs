@@ -4,7 +4,7 @@
 #region Using
 using System;
 #endregion
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	public enum InfoStringTypes
 	{

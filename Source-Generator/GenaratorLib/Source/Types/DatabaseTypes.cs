@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	/// <summary>
-	/// See Generator.Core.Entities.Types
+	/// See Generator.Elements.Types
 	/// </summary>
 	public enum DatabaseType
 	{

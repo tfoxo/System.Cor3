@@ -48,7 +48,7 @@ namespace Generator.Classes
 			if (config.DatabasesFile!=null && File.Exists(config.DatabasesFile))
 			{
 				Logger.LogG("app-config","loading data");
-				Generator.Core.Entities.DatabaseCollection.Load( config.DatabasesFile, win.TemplateFactory.SelectedCollection);
+				Generator.Elements.DatabaseCollection.Load( config.DatabasesFile, win.TemplateFactory.SelectedCollection);
 				win.TemplateFactory.SelectedCollectionTree = win.TemplateFactory.SelectedCollection;
 			}
 			if (config.TemplatesFile!=null)

@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<UserControl x:Class="Generator.Controls.DataEditor" xmlns:classes="clr-namespace:Generator.Classes" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:gen="clr-namespace:Generator.Controls" xmlns:tpl="clr-namespace:Generator.Core.Entities;assembly=Generator.Lib" xmlns:AvalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=mscorlib" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+<UserControl x:Class="Generator.Controls.DataEditor"
+             xmlns:classes="clr-namespace:Generator.Classes"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:gen="clr-namespace:Generator.Controls"
+             xmlns:g="clr-namespace:Generator;assembly=Generator.Lib"
+             xmlns:tpl="clr-namespace:Generator.Elements;assembly=Generator.Lib"
+             xmlns:AvalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
 	<DockPanel UseLayoutRounding="True" SnapsToDevicePixels="True">
 		<ScrollViewer VerticalScrollBarVisibility="Auto" Padding="4pt">
 			<StackPanel>
@@ -15,7 +27,7 @@
 					<Grid>
 						<Expander Grid.Row="0" Grid.Column="0" Header="Additional Content" IsExpanded="True">
 							<Grid>
-								<ComboBox x:Name="cbBlockAction" ItemsSource="{x:Static tpl:ActionFactory.EnumeratedActions}" IsEditable="True" Text="{Binding BlockAction, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" ToolTip="BlockAction" />
+								<ComboBox x:Name="cbBlockAction" ItemsSource="{x:Static g:ActionFactory.EnumeratedActions}" IsEditable="True" Text="{Binding BlockAction, Mode=TwoWay}" Grid.Column="0" Grid.Row="0" ToolTip="BlockAction" />
 								<TextBox Text="{Binding CodeBlock}" VerticalAlignment="Stretch" AcceptsReturn="True" AcceptsTab="True" TextWrapping="WrapWithOverflow" Grid.Column="1" Grid.Row="0" />
 								<CheckBox x:Name="checkUseFormat" Content="Use Format" IsChecked="{Binding UseFormat}" Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch" ToolTip="UsePath" FlowDirection="RightToLeft" HorizontalAlignment="Center" FontWeight="Bold" FontSize="9" />
 								<TextBox Grid.Row="1" x:Name="textFilterFormat" Text="{Binding FormatString, Mode=TwoWay}" Grid.Column="1" ToolTip="FormatString" />

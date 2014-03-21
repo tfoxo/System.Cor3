@@ -8,7 +8,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using FirstFloor.ModernUI.Windows;
 using FirstFloor.ModernUI.Windows.Controls;
-using Generator.Core.Entities;
+using Generator.Elements;
 namespace GeneratorTool.Views
 {
 	public class GeneratorCommand : ICommand

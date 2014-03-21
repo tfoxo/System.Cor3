@@ -21,13 +21,13 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 using System;
-using Generator.Core.Entities;
+using Generator.Elements;
 #if WPF4
 using System.Collections.ObjectModel;
 #else
 using System.Collections.Generic;
 #endif
-namespace Generator
+namespace Generator.Elements.Basic
 {
 	public interface IDatabaseContext
 	{

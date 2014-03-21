@@ -7,7 +7,7 @@ using System;
 using System.Xml.Serialization;
 #endregion
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	/// <summary>
 	/// <seealso cref="http://www.w3.org/TR/html401/interact/forms.html#h-17.2.1">HTML401 WebForms</seealso>

@@ -14,8 +14,9 @@ using System.Windows.Media.Media3D;
 using FirstFloor.ModernUI.Windows.Controls;
 using Generator;
 using Generator.Core;
-using Generator.Core.Entities;
+using Generator.Elements;
 using Generator.Core.Markup;
+using Generator.Export;
 using Microsoft.Win32;
 
 namespace GeneratorTool

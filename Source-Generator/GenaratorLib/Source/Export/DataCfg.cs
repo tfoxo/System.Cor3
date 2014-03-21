@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Xml.Serialization;
 
 using Generator.Core;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
 using Generator.Core.Markup;
 using SqlDbType = System.Data.SqlDbType;
 /*
  * This is designed to be imported into another project as an include.
  */
-namespace Generator.Core
+namespace Generator.Export
 {
 	// =========================================================
 	// This is both used internally and must be included externally.

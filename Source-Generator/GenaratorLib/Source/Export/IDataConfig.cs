@@ -2,25 +2,15 @@
  * User: oIo
  * Date: 11/15/2010 ? 2:33 AM
  */
-#region Using
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Xml.Serialization;
-
-using Generator.Core;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
 using Generator.Core.Markup;
 using SqlDbType = System.Data.SqlDbType;
-
-#endregion
 
 /*
  * This is designed to be imported into another project as an include.
  */
-namespace Generator.Core
+namespace Generator.Export
 {
 	public interface IDataConfig
 	{

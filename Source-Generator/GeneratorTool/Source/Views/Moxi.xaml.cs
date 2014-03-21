@@ -12,7 +12,7 @@ using System.Windows.Input;
 using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows.Controls;
 using Generator;
-using Generator.Core.Entities;
+using Generator.Elements;
 using Generator.Core.Markup;
 using GeneratorTool.Views.Content;
 

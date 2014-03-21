@@ -13,8 +13,7 @@ using System.Collections.Generic;
 #endif
 
 using Generator.Controls;
-using Generator.Core.Entities;
-using Generator.Core.Types;
+using Generator.Elements;
 using Generator.Service;
 using ICSharpCode.AvalonEdit;
 #endregion

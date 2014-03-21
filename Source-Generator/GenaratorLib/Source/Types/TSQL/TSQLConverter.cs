@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 #endregion
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	public class TSQLConverter
 	{

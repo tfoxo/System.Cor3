@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Generator.Core.Entities;
+using Generator.Elements;
 using Generator.Core.Markup;
 using Generator;
+using Generator.Export;
 
 namespace Generator.Parser
 {

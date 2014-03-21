@@ -3,7 +3,8 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
-using Generator.Core.Entities;
+using Generator.Assets;
+using Generator.Elements;
 
 namespace Generator.Controls
 {

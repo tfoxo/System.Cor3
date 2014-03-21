@@ -2,11 +2,9 @@
  * User: oIo
  * Date: 11/15/2010 ? 2:33 AM
  */
-#region Using
 using System;
 using System.Text.RegularExpressions;
 using Generator.Core.Markup;
-#endregion
 namespace Generator.Parser
 {
 	public enum FieldMatchType

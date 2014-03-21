@@ -13,10 +13,12 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
+using Generator.Assets;
+using Generator.Parser;
 using Cor3Extensions;
 using Generator.Controls;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
+using Generator.Elements.Types;
 using Generator.Data;
 using Generator.Extensions;
 using TreeNode = System.Windows.Forms.TreeNode;

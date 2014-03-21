@@ -8,14 +8,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Reflection;
-using Generator.Core.Entities.Types;
+using Generator.Elements.Types;
 using System.Cor3.Reflection;
 using System.Runtime.Hosting;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 #endregion
 
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
 	/// <summary>
 	/// <para>• (ReadOnly) Name</para>
@@ -23,7 +23,7 @@ namespace Generator.Core.Entities
 	/// <para>• ApplicationBase</para>
 	/// <para>• AssemblyFileLocation</para>
 	/// </summary>
-	public class ReferenceAssemblyElement
+	public partial class ReferenceAssemblyElement
 	{
 		string name = string.Empty,appBase = string.Empty,assemblyFileName = string.Empty;
 		
@@ -86,19 +86,6 @@ namespace Generator.Core.Entities
 		{
 		}
 		
-		public ReferenceAssemblyElement(TreeNode node)
-		{
-			if (node.Tag is ReferenceAssemblyElement)
-			{
-				ReferenceAssemblyElement nodeTag  = node.Tag as ReferenceAssemblyElement;
-				if (nodeTag.ApplicationBase!=null && nodeTag.ApplicationBase != string.Empty) ApplicationBase = nodeTag.ApplicationBase;
-				if (nodeTag.AssemblyFileExists) AssemblyFileLocation = nodeTag.AssemblyFileLocation;
-				else return;
-				if (!AssemblyIsLoaded) { Autoload(); }
-				
-			}
-			else throw new ArgumentException();
-		}
 		public ReferenceAssemblyElement(FileInfo fi) // for xml serialization
 		{
 			Context = ReferenceAsmContextTypes.CurrentReflection;
@@ -106,24 +93,6 @@ namespace Generator.Core.Entities
 			Autoload();
 		}
 		
-		public void ToTree(TreeNode node)
-		{
-			node.Nodes.Add(ToNode());
-		}
-		public TreeNode ToNode()
-		{
-			TreeNode tn;
-			if (this.assembly==null) 
-			{
-//				Global.statR("ToNode: the assembly wasn't loaded");
-			}
-			if (Name==null) tn = new TreeNode("… ( asm ) …");
-			else tn = new TreeNode(Name);
-			if (AssemblyIsLoaded) tn.ToolTipText = Assembly.FullName;
-			tn.SelectedImageKey = tn.ImageKey = "asm";
-			tn.Tag = this;
-			return tn;
-		}
 	}
 
 }

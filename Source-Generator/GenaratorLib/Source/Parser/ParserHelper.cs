@@ -7,8 +7,8 @@ using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 using Generator.Core;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
+using Generator.Elements.Types;
 using Generator.Core.Markup;
 using SqlDbType = System.Data.SqlDbType;
 

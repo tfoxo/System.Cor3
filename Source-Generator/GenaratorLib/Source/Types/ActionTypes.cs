@@ -1,14 +1,7 @@
-﻿/*
- * User: oIo
- * Date: 2/5/2011 – 10:00 PM
- */
-#region Using
+﻿/* oIo * 2/5/2011 – 10:00 PM */
 using System;
-using System.Collections.Generic;
-#endregion
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
-
 	public enum ActionTypes
 	{
 		// Code-Dom Convertable

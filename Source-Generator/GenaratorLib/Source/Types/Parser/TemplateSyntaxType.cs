@@ -7,7 +7,7 @@
 using System;
 #endregion
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	/// <summary>
 	/// Description of TemplateSyntaxType.

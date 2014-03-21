@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using FirstFloor.ModernUI.Windows.Controls;
-using Generator.Core.Entities;
+using Generator.Elements;
 namespace GeneratorTool.Views
 {
 	public class TablePasteBelowCmd : BasicCommand

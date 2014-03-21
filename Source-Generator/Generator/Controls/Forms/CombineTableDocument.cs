@@ -4,8 +4,8 @@
 using System;
 using System.Collections.Generic;
 using System.Cor3;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
+using Generator.Elements.Types;
 using System.Data;
 using System.Drawing;
 using System.Reflection;

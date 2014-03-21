@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-using Generator.Core.Entities.Types;
+using Generator.Elements.Types;
 using Generator.Data;
 using Generator.Service;
 using Microsoft.Win32;
@@ -60,7 +60,7 @@ namespace Generator.Controls
 		#region Selected Operation Context-Type
 		/// <summary>
 		/// Provides the Operation-Context
-		/// <seealso cref="Generator.Core.Entities.Types" />
+		/// <seealso cref="Generator.Elements.Types" />
 		/// </summary>
 		public static readonly DatabaseType defaultOperationContext = DatabaseType.OleAccess;
 		/// <summary>
@@ -87,8 +87,8 @@ namespace Generator.Controls
 			List<object> data = new List<object>();
 			foreach (object o in Enum.GetValues(typeof(DatabaseType))) data.Add(o);
 
-			data.Remove(Generator.Core.Entities.Types.DatabaseType.ClassObject);
-			data.Remove(Generator.Core.Entities.Types.DatabaseType.OleDb);
+			data.Remove(Generator.Elements.Types.DatabaseType.ClassObject);
+			data.Remove(Generator.Elements.Types.DatabaseType.OleDb);
 
 			cbConnectionType.InvalidateVisual();
 			

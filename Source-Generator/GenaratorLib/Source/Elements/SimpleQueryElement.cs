@@ -9,13 +9,13 @@ using System.Windows.Forms;
 #endif
 #endregion
 
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
 	/// <summary>
 	/// Description of TypeMap.
 	/// </summary>
 	[Obsolete]
-	public class SimpleQueryElement
+	public partial class SimpleQueryElement
 	{
 		string queryName;
 		public string Name { get { return queryName; } set { queryName = value; } }
@@ -23,13 +23,6 @@ namespace Generator.Core.Entities
 		string query;
 		public string Query { get { return query; } set { query = value; } }
 
-		#if TREEV
-		public void ToTree(TreeNode node)
-		{
-			TreeNode element = node.Nodes.Add(Name);
-			element.Tag = this;
-		}
-		#endif
 		
 		public SimpleQueryElement(string name, string queryvalue)
 		{

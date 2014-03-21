@@ -8,7 +8,7 @@
 	xmlns:sys="clr-namespace:System;assembly=mscorlib"
 	xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
 	xmlns:wform="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
-	xmlns:map="clr-namespace:Generator.Core.Entities;assembly=Generator.Lib"
+	xmlns:map="clr-namespace:Generator.Elements;assembly=Generator.Lib"
 	xmlns:cls="clr-namespace:Generator.Classes"
 	xmlns:local="clr-namespace:Generator"
 	xmlns:gen="clr-namespace:Generator.Controls"

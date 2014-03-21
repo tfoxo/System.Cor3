@@ -11,8 +11,8 @@ using System.Reflection;
 using System.Windows.Forms;
 
 using Generator.Classes;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
+using Generator.Elements.Types;
 
 namespace Generator.Controls
 {

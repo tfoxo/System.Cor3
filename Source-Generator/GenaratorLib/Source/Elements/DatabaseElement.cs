@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Xml.Serialization;
 
-using Generator.Core.Entities.Types;
+using Generator.Elements.Basic;
+using Generator.Elements.Types;
 
 #if TREEV
-using System.Windows.Forms;
 #endif
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
 
-	public class DatabaseElement : DataMapElement, INotifyPropertyChanged
+	public partial class DatabaseElement : DataMapElement, INotifyPropertyChanged
 	{
 		public void Remove(DatabaseChildElement child)
 		{
@@ -56,6 +56,9 @@ namespace Generator.Core.Entities
 			get { return primaryKey; } set { primaryKey = value; OnPropertyChanged("PrimaryKey"); }
 		} string primaryKey;
 		
+		/// <summary>
+		/// This doesn't appear to be implemented.
+		/// </summary>
 		[XmlElement] public List<UniqueKey> Keys;
 		
 		/// <summary>
@@ -110,33 +113,6 @@ namespace Generator.Core.Entities
 		#endregion
 
 		#region Constructor
-		#if TREEV
-		/// <summary>
-		/// Constructor for a Windows.Forms UI (TreeView.Node)
-		/// </summary>
-		/// <param name="tn"></param>
-		public DatabaseElement(TreeNode tn)
-		{
-			if (items == null) items = new List<TableElement>();
-			if (views == null) views = new List<DataViewElement>();
-			Name = tn.Text;
-			if (tn.Tag is DatabaseElement)
-			{
-				var dt = tn.Tag as DatabaseElement;
-				ConnectionType = dt.ConnectionType;
-				PrimaryKey = dt.PrimaryKey;
-//				PrimaryKey = dt.PrimaryKey;
-			}
-			foreach (TreeNode node in tn.Nodes)
-			{
-				if (node.Tag is TableElement) items.Add(new TableElement(node));
-//				if (Views == null) views = new List<DataViewElement>();
-				else if (node.Tag is DataViewElement) {
-					views.Add(new DataViewElement(node));
-				}
-			}
-		}
-		#endif
 		
 		/// <summary>
 		/// Creates a new DatabaseElement Element with a given name.
@@ -153,28 +129,6 @@ namespace Generator.Core.Entities
 		{
 		}
 		#endregion
-
-		#region public: TreeView, TreeNode (Helpers)
-		#if TREEV
-		public void ToTree(TreeView tv)
-		{
-			foreach (TableElement telm in Items) tv.Nodes.Add(telm.ToNode());
-//			foreach (DataViewElement telm in Views) tv.Nodes.Add(telm.ToNode());
-		}
-		public void ToTree(TreeNode tn) { tn.Nodes.Add(ToNode()); }
-		public TreeNode ToNode()
-		{
-			var node = new TreeNode(Name);
-			node.Name = Name;
-			// the image correlates with the PanelTableEditor (or whatever it's called)
-			node.SelectedImageKey = node.ImageKey = ImageKeyNames.Database;
-			node.Tag = this;
-			foreach (TableElement telm in Items) node.Nodes.Add(telm.ToNode());
-//			foreach (DataViewElement telm in Views) node.Nodes.Add(telm.ToNode());
-			return node;
-		}
-		#endif
-		#endregion
-		
 	}
+	
 }

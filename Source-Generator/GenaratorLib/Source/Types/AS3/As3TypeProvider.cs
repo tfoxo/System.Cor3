@@ -8,7 +8,7 @@ using System.Data;
 
 #endregion
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	public class As3TypeProvider
 	{

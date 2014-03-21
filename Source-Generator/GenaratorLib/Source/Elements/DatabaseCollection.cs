@@ -5,17 +5,15 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
+using Generator.Export;
 using Generator.Parser;
 using Generator;
 
-#if TREEV
-using System.Windows.Forms;
-#endif
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
 	//
 	[XmlRoot("DatabaseCollection"/*,Namespace=DatabaseCollection.const_ns*/)] //,Namespace="http://w3.tfw.co/xmlns/2011/dbscheme")]
-	public class DatabaseCollection : SerializableClass<DatabaseCollection>, INotifyPropertyChanged
+	public partial class DatabaseCollection : SerializableClass<DatabaseCollection>, INotifyPropertyChanged
 	{
 		#region PropertyChanged
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -199,71 +197,6 @@ namespace Generator.Core.Entities
 		}
 		#endregion
 
-		#region TreeView Support
-		#if TREEV
-		public void ToTree(TreeView tn, bool append)
-		{
-			if (!append) tn.Nodes.Clear();
-			if (Databases==null) return;
-			var node = new TreeNode("Database Collection");
-			var queries = new TreeNode(queryContainer.ToString());
-			queries.ImageKey = queries.SelectedImageKey = queries.Name = queries.Text;
-			queries.Tag = queryContainer;
-			node.Tag = this;
-			// the image correlates with the PanelTableEditor (or whatever it's called)
-			node.SelectedImageKey = node.ImageKey = ImageKeyNames.Databases;
-			#if ASMREF
-			if (Assemblies!=null) node.Nodes.Add(Assemblies.ToNode());
-			#endif
-			if (Databases!=null) foreach (DatabaseElement telm in Databases) telm.ToTree(node);
-//			foreach (DatabaseElement telm in Databases) telm.ToTree(node);
-			if (Queries!=null) foreach (QueryElement telm in Queries) telm.ToTree(queries);
-			tn.Nodes.Add(node);
-		}
-		public DatabaseCollection(TreeView tv)
-		{
-			base.useNamespaces = true;
-			this.Databases = new List<DatabaseElement>();
-			this.Queries = new List<QueryElement>();
-			foreach (TreeNode node in tv.Nodes) {
-				System.Windows.Forms.MessageBox
-					.Show(
-						node.Tag.ToString()
-					);
-
-				if (node.Tag is DatabaseCollection) {
-					TreeNode[] nodes = tv.Nodes.Find(ref_asm_node,true);
-					bool hasit = nodes.Length>0;
-					Global.statR("DC");
-					if (hasit) {
-						MessageBox.Show("we have assembly entries");
-						TreeNode found = nodes[0];
-					}
-					DatabaseCollection dc = node.Tag as DatabaseCollection;
-					Global.statR("we're moving past the continue statement at DatabaseCollection level");
-					foreach (TreeNode node1 in node.Nodes) {
-						if (node1.Tag is DatabaseElement) {
-							Databases.Add(new DatabaseElement(node1));
-						} else if (node1.Tag == (queryContainer)) {
-							foreach (TreeNode qnode in node1.Nodes) {
-								QueryElement element = QueryElement.FromNode(qnode);
-								Queries.Add(element);
-							}
-						} else if (node1.Tag is QueryElement) {
-							Queries.Add(QueryElement.FromNode(node1));
-						}
-						#if ASMREF
-						else if (node1.Tag is ReferenceAssemblyCollection) {
-							Assemblies = node1.Tag as ReferenceAssemblyCollection;
-						}
-						#endif
-					}
-				}
-			}
-		}
-		#endif
-		#endregion
-
 		/// <summary>
 		/// <para>Attempts to load a file as a Database Collection.</para>
 		/// <para>If no file is selected (DialogResult.Cancel) a new collection is created and loaded.</para>
@@ -327,4 +260,5 @@ namespace Generator.Core.Entities
 		#endregion
 
 	}
+	
 }

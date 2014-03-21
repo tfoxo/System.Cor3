@@ -32,7 +32,7 @@ using System.Windows.Forms;
 //	connection.Open();
 //	connection.Close();
 //}
-namespace Generator
+namespace Generator.Elements
 {
 	/// <summay>TemplatesModel, PrimaryKey=‘id’</summary>
 	/// <remarks></remarks>

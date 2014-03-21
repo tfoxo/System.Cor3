@@ -4,7 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	public class NativeTypeProvider
 	{

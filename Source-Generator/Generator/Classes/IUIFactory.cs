@@ -1,5 +1,6 @@
 ﻿using System;
 using Generator.Core;
+using Generator.Export;
 
 namespace Generator.Classes
 {

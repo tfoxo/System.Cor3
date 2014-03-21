@@ -27,7 +27,7 @@ using System.Linq;
 using System.IO;
 using System.Windows.Forms;
 
-using Generator.Core.Entities;
+using Generator.Elements;
 using Generator.Core.Markup;
 using SoftwareIndex.GenLib;
 using TemplateTool.CmdLib;

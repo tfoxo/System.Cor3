@@ -7,12 +7,13 @@ using System;
 using System.IO;
 using System.Xml.Serialization;
 using Generator;
+using Generator.Export;
 
 //using System.Windows.Forms;
 
 #endregion
 
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
 	[XmlRoot("config")]
 	public class GeneratorConfig : SerializableClass<GeneratorConfig>

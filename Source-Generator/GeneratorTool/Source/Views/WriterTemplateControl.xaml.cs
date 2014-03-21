@@ -13,6 +13,7 @@ using System.Windows.Media;
 using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows.Controls;
 using Generator;
+using Generator.Elements;
 using Microsoft.Win32;
 using GeneratorTool.Views.Content;
 

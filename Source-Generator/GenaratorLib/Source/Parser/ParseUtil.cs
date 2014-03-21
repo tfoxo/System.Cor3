@@ -2,19 +2,15 @@
  * User: oIo
  * Date: 11/15/2010 ? 2:33 AM
  */
-#region Using
 using System;
 using System.Collections.Generic;
-using System.Cor3.Data;
-using Generator.Core.Entities.Types;
 using System.Cor3.Parsers;
 
 using System.Text.RegularExpressions;
 using SqlDbType = System.Data.SqlDbType;
-#endregion
 namespace Generator.Parser
 {
-	public class ParseUtil
+	public static class ParseUtil
 	{
 		const char boo = 'a';
 //		internal const string regex_fieldMatch = @"\$\((set\w*|print\w*|begin\w*|end\w*|Table\w*|Field\w*)\:(?<innerElement>[^\)]+)\)";

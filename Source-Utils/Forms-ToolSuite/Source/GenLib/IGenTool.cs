@@ -22,7 +22,7 @@
 using System;
 using System.ComponentModel.Composition;
 using Generator.Core;
-using Generator.Core.Entities;
+using Generator.Elements;
 using Generator.Core.Markup;
 
 namespace SoftwareIndex.GenLib

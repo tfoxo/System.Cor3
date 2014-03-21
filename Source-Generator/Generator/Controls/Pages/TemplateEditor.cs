@@ -7,7 +7,6 @@ using System.Windows.Threading;
 using Generator.Parser;
 using AvalonEdit.Sample;
 using Generator.Classes;
-using Generator.Core.Types;
 using Generator.EditorExtension;
 using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.CodeCompletion;

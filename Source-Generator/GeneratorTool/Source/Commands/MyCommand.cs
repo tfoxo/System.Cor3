@@ -18,8 +18,8 @@ using System.Windows.Media;
 using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows;
 using FirstFloor.ModernUI.Windows.Navigation;
-using Generator.Core.Entities;
-using Generator.Core.Entities.Types;
+using Generator.Elements;
+using Generator.Elements.Types;
 using Generator.Core.Markup;
 
 namespace GeneratorTool.Views

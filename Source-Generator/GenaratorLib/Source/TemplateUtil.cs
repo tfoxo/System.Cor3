@@ -28,6 +28,7 @@ using System.Data.SQLite;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using Generator.Elements;
 
 //using (SQLiteConnection connection = new SQLiteConnection(connectionstring))
 //	using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query,connection))

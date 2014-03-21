@@ -6,7 +6,7 @@
 using System;
 #endregion
 
-namespace Generator.Core.Entities.Types
+namespace Generator.Elements.Types
 {
 	/// <summary>
 	/// though it's new, this enum is considered obsolete to what is

@@ -2,16 +2,14 @@
  * User: oIo
  * Date: 11/15/2010 – 2:33 AM
  */
-#region Using
 using System;
-using System.Windows.Forms;
-using System.Xml;
 using System.Xml.Serialization;
-#endregion
+using Generator.Elements.Basic;
 
-namespace Generator.Core.Entities
+namespace Generator.Elements
 {
-	public class QueryElement : DataMapElement
+	
+	public partial class QueryElement : DataMapElement
 	{
 		[XmlAttribute] public string name;
 		[XmlAttribute] public string source;
@@ -19,27 +17,6 @@ namespace Generator.Core.Entities
 		[XmlAttribute] public string mode;
 		[XmlElement] public string sql;
 		
-		#region FORMS TreeNode
-//		#if FORMS
-		public void ToTree(TreeNode root)
-		{
-			TreeNode node = root.Nodes.Add(name);
-			node.Name = name;
-			node.Tag = this;
-			node.SelectedImageKey = node.ImageKey =
-				ImageKeyNames.SqlQuery;
-		}
-		static public QueryElement FromNode(TreeNode node)
-		{
-			QueryElement q = node.Tag as QueryElement;
-			if (!q.name.Equals(node.Text))
-			{
-				q.name = node.Text;
-			}
-			return q;
-		}
-//		#endif
-		#endregion
 
 		public QueryElement()
 		{
