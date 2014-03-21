@@ -4,6 +4,7 @@
  */
 #region Using
 using System;
+using System.Data.OleDb;
 #endregion
 
 namespace Generator.Core.Entities.Types
@@ -18,34 +19,34 @@ namespace Generator.Core.Entities.Types
 	public enum SchemaMapTypes
 	{
 		 /// 2
-		@Short = System.Data.OleDb.OleDbType.SmallInt,
+		@Short = OleDbType.SmallInt,
 		///3,
-		@Long = System.Data.OleDb.OleDbType.Integer,
+		@Long = OleDbType.Integer,
 		///4,
-		@Single = System.Data.OleDb.OleDbType.Single,
+		@Single = OleDbType.Single,
 		///5,
-		@Double = System.Data.OleDb.OleDbType.Double,
+		@Double = OleDbType.Double,
 		///6,
-		@Currency = System.Data.OleDb.OleDbType.Currency,
+		@Currency = OleDbType.Currency,
 		///7
-		@DateTime = 7,//System.Data.OleDb.OleDbType.Date,  // I know that Date maps correctly to 7, but just in case…
+		@DateTime = 7,//OleDbType.Date,  // I know that Date maps correctly to 7, but just in case…
 		///11
-		@Bit = System.Data.OleDb.OleDbType.Boolean,// is this correct? Guess so.
+		@Bit = OleDbType.Boolean,// is this correct? Guess so.
 		///17
-		@Byte = System.Data.OleDb.OleDbType.UnsignedTinyInt,
+		@Byte = OleDbType.UnsignedTinyInt,
 		///72
-		@GUID = System.Data.OleDb.OleDbType.Guid,
+		@GUID = OleDbType.Guid,
 		///128
-		@BigBinary = System.Data.OleDb.OleDbType.Binary, //204 (Ole.Binary is 128)
+		@BigBinary = OleDbType.Binary, //204 (Ole.Binary is 128)
 		///128
-		@LongBinary = System.Data.OleDb.OleDbType.Binary, //205
+		@LongBinary = OleDbType.Binary, //205
 		///128
-		@VarBinary = System.Data.OleDb.OleDbType.Binary, //204
+		@VarBinary = OleDbType.Binary, //204
 		///130
-		@LongText = System.Data.OleDb.OleDbType.WChar,//203
+		@LongText = OleDbType.WChar,//203
 		///130
-		@VarChar = System.Data.OleDb.OleDbType.WChar,//202
+		@VarChar = OleDbType.WChar,//202
 		///131
-		@Decimal = System.Data.OleDb.OleDbType.Decimal,
+		@Decimal = OleDbType.Decimal,
 	}
 }

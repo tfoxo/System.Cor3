@@ -5,6 +5,7 @@
 #region Using
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Generator.Core.Entities.Types;
 
@@ -17,7 +18,7 @@ namespace Generator.Core.Entities
 	/// </summary>
 	public class ActionFactory
 	{
-		static List<T> EnumerateViewTypes<T>(System.Reflection.Assembly containedAssembly)
+		static List<T> EnumerateViewTypes<T>(Assembly containedAssembly)
 			where T:class
 		{
 			List<T> types = new List<T>();
@@ -57,7 +58,7 @@ namespace Generator.Core.Entities
 				return list;
 			}
 		}
-		static void GetTypesFromAsm(System.Reflection.Assembly asm, ref List<object> list)
+		static void GetTypesFromAsm(Assembly asm, ref List<object> list)
 		{
 			List<EnumProvider> tlist = EnumerateViewTypes<EnumProvider>(asm);
 			foreach (IEnumProvider provider in tlist)

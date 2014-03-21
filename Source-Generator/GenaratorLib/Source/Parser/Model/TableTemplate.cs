@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
@@ -126,7 +127,7 @@ namespace Generator.Core.Markup
 		/// </para>
 		/// <para>
 		/// -- additional language support has been added to Adobe Flex Native Types
-		/// <para>(System.TypeCode)</para>
+		/// <para>(TypeCode)</para>
 		/// <para>(System.Cor3.Data.Map.Types.NativeTypes)</para>
 		/// <para>(System.Cor3.Data.Map.Types.FlashNativeTypes)</para>
 		/// </para>
@@ -148,7 +149,7 @@ namespace Generator.Core.Markup
 		{
 			
 		}
-		public TableTemplate(System.Data.DataRow row) : this(new TableElement())
+		public TableTemplate(DataRow row) : this(new TableElement())
 		{
 			FromRowValues(row);
 		}
@@ -158,11 +159,11 @@ namespace Generator.Core.Markup
 		}
 
 		#region DataRow Implementation (Template From DataRowView)
-		protected override void FromRowValues(System.Data.DataRowView row)
+		protected override void FromRowValues(DataRowView row)
 		{
 			FromRowValues(row.Row);
 		}
-		protected override void FromRowValues(System.Data.DataRow row)
+		protected override void FromRowValues(DataRow row)
 		{
 			base.FromRowValues(row);
 			this.SyntaxLanguage =  RowValue<string>(row,"SyntaxLanguage");
@@ -171,7 +172,7 @@ namespace Generator.Core.Markup
 			this.ItemsTemplate =  RowValue<string>(row,res.itmTpl);
 			this.ElementTemplate =  RowValue<string>(row,res.elmTpl);
 		}
-		protected override void ToRow(System.Data.DataRowView row)
+		protected override void ToRow(DataRowView row)
 		{
 			base.ToRow(row);
 			row["ClassName"] = this.ClassName;

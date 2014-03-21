@@ -25,8 +25,8 @@ namespace Generator.Data
 		public QueryDataContext DataContext { get;set; }
 		public DataAbstract<TConnection,TCommand,TAdapter,TParameter> Database { get;set; }
 		
-		virtual public System.Array GetWebFormTypes(){
-			return System.TypeCode.GetValues(typeof(Generator.Core.Entities.Types.WebFormTypes));
+		virtual public Array GetWebFormTypes(){
+			return TypeCode.GetValues(typeof(Generator.Core.Entities.Types.WebFormTypes));
 		}
 		virtual public void BindToData(){}
 		virtual public void Create() {  }

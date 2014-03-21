@@ -25,7 +25,7 @@ using System.Collections.ObjectModel;
 
 using Generator.Core.Entities;
 
-namespace Generator.Core
+namespace Generator
 {
 	/// <summary>
 	/// Database Configuration for use in DotNet Versions >= 3.5

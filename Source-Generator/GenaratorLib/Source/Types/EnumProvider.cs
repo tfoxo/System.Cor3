@@ -21,7 +21,7 @@ namespace Generator.Core.Entities.Types
 		virtual public bool CanDoFromNative { get { return false; } }
 		virtual public bool CanDoToNative { get { return false; } }
 		
-		abstract public System.TypeCode ToNative(string name);
+		abstract public TypeCode ToNative(string name);
 		
 		abstract public string ProvideTypeCode(TypeCode toConvert);
 		

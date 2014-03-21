@@ -21,7 +21,7 @@ using System.Xml;
 using System.Xml.Serialization;
 
 using Generator.Core.Entities;
-using Generator.Core.Parser;
+using Generator.Parser;
 using Generator.Core.Entities.Types;
 #endregion
 

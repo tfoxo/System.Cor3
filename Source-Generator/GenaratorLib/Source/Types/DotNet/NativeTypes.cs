@@ -2,14 +2,13 @@
  * User: oIo
  * Date: 11/15/2010 ? 2:49 AM
  */
-#region Using
 using System;
-#endregion
+using System.Collections.Generic;
 namespace Generator.Core.Entities.Types
 {
 	public class NativeTypeProvider
 	{
-		static public void TypeCodeStringToNativeDictionary(string DataTypeNative,System.Collections.Generic.IDictionary<string,object> fparams)
+		static public void TypeCodeStringToNativeDictionary(string DataTypeNative,IDictionary<string,object> fparams)
 		{
 			TypeCode code = TypeCode.Empty;
 			bool converted = Enum.TryParse(DataTypeNative, out code);
@@ -67,7 +66,7 @@ namespace Generator.Core.Entities.Types
 			#endif
 			#endregion
 		}
-		static public NativeTypes TypeCodeToNativeTypes(System.TypeCode typeCode)
+		static public NativeTypes TypeCodeToNativeTypes(TypeCode typeCode)
 		{
 			switch (typeCode) {
 				case TypeCode.Single:
@@ -101,7 +100,7 @@ namespace Generator.Core.Entities.Types
 					return NativeTypes.@object;
 			}
 		}
-		static public string TypeCodeToNativeString(System.TypeCode typeCode)
+		static public string TypeCodeToNativeString(TypeCode typeCode)
 		{
 			switch (typeCode) {
 				case TypeCode.Boolean:

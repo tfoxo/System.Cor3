@@ -39,7 +39,7 @@ namespace Generator.Core
 			return IsNullable(code);
 //			return false;
 		}
-		static public bool IsNullable(System.TypeCode code)
+		static public bool IsNullable(TypeCode code)
 		{
 			switch (code) {
 				case TypeCode.Boolean:

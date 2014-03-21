@@ -14,6 +14,7 @@ using System.Cor3.Data.Context;
 using System.Cor3.Data.Engine;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 
 #if WPF4
 using System.Windows;
@@ -30,7 +31,7 @@ using Generator.Core.Entities;
 using Generator.Core.Entities.Types;
 using Generator.Core.Markup;
 #endregion
-namespace Generator.Core.Operations
+namespace Generator
 {
 	/// <summary>
 	/// Description of SQLiteOperations.
@@ -176,7 +177,7 @@ insert into [generator-templates] (
 			List<string> list = new List<string>();
 			
 			string output = string.Empty;
-			using (System.Cor3.Data.Context.SQLiteContext c = new System.Cor3.Data.Context.SQLiteContext())
+			using (var c = new System.Cor3.Data.Context.SQLiteContext())
 			{
 				c.Select("select * from sqlite_master");
 				using (DataView v = c.Data.GetDataView(0))
@@ -190,7 +191,7 @@ insert into [generator-templates] (
 					}
 				}
 			}
-			try { System.IO.File.WriteAllText(sqlFile,string.Join("\r\n",list.ToArray()),System.Text.Encoding.UTF8); }
+			try { File.WriteAllText(sqlFile,string.Join("\r\n",list.ToArray()),System.Text.Encoding.UTF8); }
 			catch (Exception e) { throw new Exception("There was an error writing to the file.",e); }
 		}
 		#endregion
@@ -506,9 +507,8 @@ insert into [generator-templates] (
 			int dbid = 1,tid=1;
 			foreach (DatabaseElement elmDb in c.Databases)
 			{
-				using (System.Cor3.Data.Context.SQLiteContext ct = new System.Cor3.Data.Context.SQLiteContext())
+				using (var ct = new System.Cor3.Data.Context.SQLiteContext())
 				{
-					
 					foreach (TableElement elmT in elmDb.Items)
 					{
 						foreach (FieldElement elmF in elmT.Fields)

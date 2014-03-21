@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace Generator.Core.Parser
+namespace Generator.Parser
 {
 	#region Referenced Enumerations
 	public enum NsTypes { Global, AdapterTypes, DatabaseTypes, SqlTypes, TableTypes, FieldTypes }

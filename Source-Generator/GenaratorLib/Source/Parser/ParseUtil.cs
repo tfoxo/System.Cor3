@@ -12,7 +12,7 @@ using System.Cor3.Parsers;
 using System.Text.RegularExpressions;
 using SqlDbType = System.Data.SqlDbType;
 #endregion
-namespace Generator.Core.Parser
+namespace Generator.Parser
 {
 	public class ParseUtil
 	{

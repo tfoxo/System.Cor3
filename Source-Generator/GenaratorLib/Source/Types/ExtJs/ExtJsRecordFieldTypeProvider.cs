@@ -32,7 +32,7 @@ namespace Generator.Core.Entities.Types
 			}
 		}
 
-		public override System.TypeCode ToNative(string name)
+		public override TypeCode ToNative(string name)
 		{
 			switch (name) {
 				case "Boolean":
@@ -78,7 +78,7 @@ namespace Generator.Core.Entities.Types
 			}
 		}
 		
-		public System.Array RecordFieldType
+		public Array RecordFieldType
 		{
 			get {
 				return ExtJsFieldType.GetValues(typeof(ExtJsRecordFieldType));

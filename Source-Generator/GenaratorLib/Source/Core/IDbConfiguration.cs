@@ -25,7 +25,7 @@ using System.Collections.ObjectModel;
 
 using Generator.Core.Entities;
 
-namespace Generator.Core
+namespace Generator
 {
 	/// <summary>
 	/// Targeting ‘System.Windows.Forms’ UI with a TreeView

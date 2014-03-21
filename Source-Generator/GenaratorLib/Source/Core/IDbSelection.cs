@@ -24,7 +24,7 @@ using System;
 using System.Windows.Forms;
 using Generator.Core.Entities;
 
-namespace Generator.Core
+namespace Generator
 {
 	/// <summary>
 	/// For Windows.Forms.

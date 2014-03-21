@@ -68,7 +68,7 @@ namespace Generator.Core.Markup
 			element = value;
 		}
 		
-		virtual protected void FromRowValues(System.Data.DataRowView row)
+		virtual protected void FromRowValues(DataRowView row)
 		{
 			FromRowValues(row.Row);
 		}
@@ -78,7 +78,7 @@ namespace Generator.Core.Markup
 			if (row[field]==DBNull.Value) return (T)(Object)null;
 			return (T)row[field];
 		}
-		virtual protected void FromRowValues(System.Data.DataRow row)
+		virtual protected void FromRowValues(DataRow row)
 		{
 			this.Alias = RowValue<string>(row,"Alias");
 			this.ElementTemplate =  RowValue<string>(row,res.elmTpl);

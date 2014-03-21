@@ -21,22 +21,14 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 
 using Generator.Core.Entities;
 using Generator.Core.Markup;
-using Generator.Core.Parser;
-using Generator.Core.Types;
+using Generator.Parser;
 
-#if WPF4
-
-#else
-
-#endif
-
-namespace Generator.Core
+namespace Generator
 {
 	/// <summary>
 	/// The IFactory interface suggests a connection to a user-interface

@@ -28,7 +28,7 @@ namespace Generator.Data
 		void Create(string filename);
 		void BindToData();
 		void GetSchemas();
-		System.Array GetWebFormTypes();
-		System.Array GetDataNativeItemTypes();
+		Array GetWebFormTypes();
+		Array GetDataNativeItemTypes();
 	}
 }

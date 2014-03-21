@@ -1,7 +1,7 @@
 ﻿using System;
 using Generator.Core.Entities;
 
-namespace Generator.Core
+namespace Generator
 {
 	/// <summary>
 	/// The basic DatabaseCollection Information.

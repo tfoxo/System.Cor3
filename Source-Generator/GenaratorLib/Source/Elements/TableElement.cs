@@ -43,7 +43,7 @@ namespace Generator.Core.Entities
 		[XmlIgnore]
 		public Action<DICT<string,object>> Transform { get;set; }
 
-		[XmlElement("Field"), System.ComponentModel.Browsable(false)]
+		[XmlElement("Field"), Browsable(false)]
 		public List<FieldElement> Fields {
 			get { return items; }
 			set { items = new List<FieldElement>(value); OnPropertyChanged("Fields"); }

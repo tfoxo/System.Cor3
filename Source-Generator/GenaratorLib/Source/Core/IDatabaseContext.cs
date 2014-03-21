@@ -27,7 +27,7 @@ using System.Collections.ObjectModel;
 #else
 using System.Collections.Generic;
 #endif
-namespace Generator.Core
+namespace Generator
 {
 	public interface IDatabaseContext
 	{

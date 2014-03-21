@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Generator.Core.Parser;
+using Generator.Parser;
 #endregion
 
 namespace Generator.Core.Markup

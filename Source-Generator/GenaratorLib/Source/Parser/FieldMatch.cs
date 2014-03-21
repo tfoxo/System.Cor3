@@ -7,7 +7,7 @@ using System;
 using System.Text.RegularExpressions;
 using Generator.Core.Markup;
 #endregion
-namespace Generator.Core.Parser
+namespace Generator.Parser
 {
 	public enum FieldMatchType
 	{

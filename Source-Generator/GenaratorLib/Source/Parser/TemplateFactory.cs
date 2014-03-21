@@ -5,8 +5,9 @@ using System.Text.RegularExpressions;
 
 using Generator.Core.Entities;
 using Generator.Core.Markup;
+using Generator;
 
-namespace Generator.Core.Parser
+namespace Generator.Parser
 {
 	static public class TemplateFactory
 	{

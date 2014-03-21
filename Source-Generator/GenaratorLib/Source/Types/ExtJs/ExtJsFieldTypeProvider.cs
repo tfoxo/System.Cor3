@@ -18,7 +18,7 @@ namespace Generator.Core.Entities.Types
 		
 		public override Array Types { get { return FieldType; } }
 		
-		public override System.TypeCode ToNative(string name)
+		public override TypeCode ToNative(string name)
 		{
 			switch (name)
 			{
@@ -57,7 +57,7 @@ namespace Generator.Core.Entities.Types
 			}
 		}
 		
-		public System.Array FieldType
+		public Array FieldType
 		{
 			get {
 				return ExtJsFieldType.GetValues(typeof(ExtJsFieldType));

@@ -5,6 +5,9 @@
 #region Using
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Reflection;
 using Generator.Core.Entities.Types;
 using System.Cor3.Reflection;
 using System.Runtime.Hosting;
@@ -36,18 +39,18 @@ namespace Generator.Core.Entities
 		[XmlAttribute("AssemblyFileLocation")] public string AssemblyFileLocation { get { return assemblyFileName; } set { assemblyFileName = value; Autoload(); } }
 		#endregion
 
-		System.Reflection.Assembly assembly = null;
-		[XmlIgnore] public System.Reflection.Assembly Assembly { get { return assembly; } protected set { assembly = value; } }
+		Assembly assembly = null;
+		[XmlIgnore] public Assembly Assembly { get { return assembly; } protected set { assembly = value; } }
 		
 		public bool AssemblyIsLoaded { get { return !(assembly==null); } }
 		
 		ReferenceAsmContextTypes context = ReferenceAsmContextTypes.Reflection;
-		[System.ComponentModel.DefaultValueAttribute(ReferenceAsmContextTypes.Reflection)]
+		[DefaultValueAttribute(ReferenceAsmContextTypes.Reflection)]
 		[XmlIgnore] public ReferenceAsmContextTypes Context { get { return context; } set { context = value; } }
 		
 		protected void Autoload()
 		{
-			System.IO.FileInfo fi = new System.IO.FileInfo(this.AssemblyFileLocation);
+			FileInfo fi = new System.IO.FileInfo(this.AssemblyFileLocation);
 			AppDomainSetup setup = ReferenceAppDomain.AppDomainSetupAlt;
 			ApplicationBase = fi.Directory.FullName;//System.AppDomain.CurrentDomain.BaseDirectory;
 			setup.ShadowCopyFiles = "true";
@@ -96,10 +99,10 @@ namespace Generator.Core.Entities
 			}
 			else throw new ArgumentException();
 		}
-		public ReferenceAssemblyElement(System.IO.FileInfo fi) // for xml serialization
+		public ReferenceAssemblyElement(FileInfo fi) // for xml serialization
 		{
 			Context = ReferenceAsmContextTypes.CurrentReflection;
-			Assembly = System.Reflection.Assembly.ReflectionOnlyLoadFrom(AssemblyFileLocation = fi.FullName);
+			Assembly = Assembly.ReflectionOnlyLoadFrom(AssemblyFileLocation = fi.FullName);
 			Autoload();
 		}
 		

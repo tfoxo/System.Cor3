@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 using Generator.Core.Entities;
 using Generator.Core.Markup;
-using Generator.Core.Parser;
+using Generator.Parser;
 using Generator.Core.Types;
 
 #if WPF4
@@ -19,7 +19,7 @@ using EventType = System.Windows.RoutedEventArgs;
 
 using EventType = System.EventArgs;
 #endif
-namespace Generator.Core.Operations
+namespace Generator
 {
 	/// <summary>
 	/// Note that Windows.Forms.TreeNode is referenced in correlation with
@@ -208,7 +208,7 @@ namespace Generator.Core.Operations
 		public DataView SelectedGroupView { get; set; }
 		
 		/// <summary>A DataTable used for storing, sorting, managing, selecting and editing templates.</summary>
-		public System.Data.DataTable ItemsTable { get; set; }
+		public DataTable ItemsTable { get; set; }
 		
 		internal bool CanSaveTemplatesProperty
 		{

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
-using Generator.Core.Parser;
+using Generator.Parser;
+using Generator;
 
 #if TREEV
 using System.Windows.Forms;

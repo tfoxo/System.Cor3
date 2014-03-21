@@ -26,9 +26,9 @@ using System.Collections.ObjectModel;
 using Generator.Core.Entities;
 using Generator.Core.Markup;
 
-namespace Generator.Core
+namespace Generator
 {
-	public class GeneratorContextClass<TUIControl> : IGeneratorContext where TUIControl:System.Windows.Window
+	public class GeneratorContextClass<TUIControl> : IGeneratorContext where TUIControl:global::System.Windows.Window
 	{
 	internal readonly TUIControl win;
 	internal IFactory iconfig = null;

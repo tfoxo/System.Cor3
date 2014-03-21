@@ -42,7 +42,7 @@ namespace Generator.Core.Types
 		static public List<SCHEMA_REMAP> AccessMap()
 		{
 			// note the NativeDataType (int) field provided here
-			//System.TypeCode,ProviderDbType,NativeDataType
+			//TypeCode,ProviderDbType,NativeDataType
 			return GetAccessMapTable(
 				// this provides Access's TypeName
 				new SCHEMA_REMAP("AccessType","Columns","DATA_TYPE","DataType","TypeName","NativeDataType"),

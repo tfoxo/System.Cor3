@@ -21,7 +21,7 @@ using Generator.Extensions;
 
 #endregion
 
-namespace Generator.Core.Operations
+namespace Generator
 {
 
 	/// <summary>

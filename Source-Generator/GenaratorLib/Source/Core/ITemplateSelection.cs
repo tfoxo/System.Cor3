@@ -23,7 +23,7 @@
 using System;
 using Generator.Core.Markup;
 
-namespace Generator.Core
+namespace Generator
 {
 	public interface ITemplateSelection
 	{

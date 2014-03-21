@@ -25,7 +25,7 @@ namespace Generator.Extensions
 		static readonly string[] AceTypeNames = Strings.TypeNames_Ace.Split(',');
 		static public string[] AceStringNames(this AccessDataTypes src) { return AceTypeNames; }
 		
-		static public System.TypeCode AceGetNativeTypeCode(this AccessDataTypes typeRef)
+		static public TypeCode AceGetNativeTypeCode(this AccessDataTypes typeRef)
 		{
 			if (typeRef==AccessDataTypes.Number) return TypeCode.Double;
 			else if (typeRef==AccessDataTypes.AutoIncr) return TypeCode.Int32;
