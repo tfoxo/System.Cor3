@@ -139,8 +139,10 @@
 		</Grid.ColumnDefinitions>
 		<DockPanel Grid.Column="0">
 			<StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-				<Button Content="U" />
-				<Button Content="D" />
+				<Button Content="VIEW" ToolTip="Create View" Click="Event_CreateView_Form" />
+				<Separator />
+				<Button Content="U" ToolTip="Move selected node Up" />
+				<Button Content="D" ToolTip="Move selected node down"/>
 			</StackPanel>
 			<TreeView x:Name="tvModel" v:SelectionChangedBehaviour.Command="{x:Static v:MoxiView.StatePushCommand}">
 				<!-- Database -->

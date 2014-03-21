@@ -13,6 +13,7 @@ namespace Generator.Core.Entities
 {
 	/// <summary>
 	/// More of a working test for a set of globally available type-references.
+	/// does this do anything?
 	/// </summary>
 	public class ActionFactory
 	{

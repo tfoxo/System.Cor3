@@ -78,128 +78,128 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ParserStrategy\DataStrategy\Elements\IDataView.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\DatabaseChildElement.cs" />
-    <Compile Include="ParserStrategy\Factory\REPLACEMENT.cs" />
-    <Compile Include="ParserStrategy\Factory\tempmatch.cs" />
-    <Compile Include="ParserStrategy\Factory\TypeResolutionClass.cs" />
-    <Compile Include="ParserStrategy\SchemaStrategy\SCHEMA_REMAP.cs" />
-    <Compile Include="ParserStrategy\TemplateStrategy\TemplateReferenceUtil.cs" />
-    <Compile Include="Systems\FileSaveExtensions.cs" />
-    <Compile Include="Systems\ResourceUtil.cs" />
-    <Compile Include="Systems\TemplateElement.cs" />
-    <Compile Include="Systems\TemplateUtil.cs" />
+    <Compile Include="Source\AccessDataFactory.cs">
+      <DependentUpon>BasicDataFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\BasicDataFactory.cs">
+      <DependentUpon>IDataFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Core\SQLiteOperations.cs" />
+    <Compile Include="Source\Core\SqlTemplateParser.cs" />
+    <Compile Include="Source\Core\TemplateManager.cs" />
+    <Compile Include="Source\Elements\DatabaseCollection.cs" />
+    <Compile Include="Source\Elements\GeneratorConfig.cs" />
+    <Compile Include="Source\Elements\IDataView.cs" />
+    <Compile Include="Source\Elements\DatabaseChildElement.cs" />
+    <Compile Include="Source\IDataFactory.cs" />
+    <Compile Include="Source\Parser\Factory\REPLACEMENT.cs" />
+    <Compile Include="Source\Parser\Factory\tempmatch.cs" />
+    <Compile Include="Source\Parser\Factory\TypeResolutionClass.cs" />
+    <Compile Include="Source\QueryDataContext.cs">
+      <DependentUpon>IDataFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\ResourceUtil.cs" />
+    <Compile Include="Source\SchemaStrategy\SCHEMA_REMAP.cs" />
+    <Compile Include="Source\Parser\Model\TemplateStrategy\TemplateReferenceUtil.cs" />
+    <Compile Include="Source\Elements\TemplateElement.cs" />
+    <Compile Include="Source\Export\DataCfg.cs" />
+    <Compile Include="Source\Export\IDataConfig.cs" />
+    <Compile Include="Source\Extensions\FileSaveExtensions.cs" />
+    <Compile Include="Source\Parser\Enumerations.cs" />
+    <Compile Include="Source\Parser\FieldMatch.cs" />
+    <Compile Include="Source\Parser\GeneratorParser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Parser\ParserHelper.cs" />
+    <Compile Include="Source\Parser\ParseUtil.cs" />
+    <Compile Include="Source\Parser\TemplateFactory.cs" />
+    <Compile Include="Source\SQLDataContext.cs">
+      <DependentUpon>QueryDataContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\SqlDataFactory.cs">
+      <DependentUpon>BasicDataFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\SQLiteDataContext.cs">
+      <DependentUpon>QueryDataContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\SQLiteDataFactory.cs">
+      <DependentUpon>BasicDataFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\TemplateUtil.cs" />
+    <Compile Include="Source\Types\AccessTypeResolution.cs" />
     <None Include="..\..\Source\Cor3.Data\Engine\DataAbstract.cs">
       <Link>Includes\DataAbstract.cs</Link>
     </None>
-    <Compile Include="ParserStrategy\DataStrategy\ActionFactory.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\DatabaseCollection.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\DatabaseElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\DataMapElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\DataViewElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\FieldElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\FieldReference.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\IGeneratorElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\QueryElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\ReferenceAssemblyElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\RegularExpressionElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\SimpleQueryElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Elements\TableElement.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\GeneratorConfig.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\ImageKeyNames.cs">
+    <Compile Include="Source\DataStrategy\ActionFactory.cs" />
+    <Compile Include="Source\Elements\DatabaseElement.cs" />
+    <Compile Include="Source\Elements\DataMapElement.cs" />
+    <Compile Include="Source\Elements\DataViewElement.cs" />
+    <Compile Include="Source\Elements\FieldElement.cs" />
+    <Compile Include="Source\Elements\FieldReference.cs" />
+    <Compile Include="Source\Elements\IGeneratorElement.cs" />
+    <Compile Include="Source\Elements\QueryElement.cs" />
+    <Compile Include="Source\Elements\ReferenceAssemblyElement.cs" />
+    <Compile Include="Source\Elements\RegularExpressionElement.cs" />
+    <Compile Include="Source\Elements\SimpleQueryElement.cs" />
+    <Compile Include="Source\Elements\TableElement.cs" />
+    <Compile Include="Source\DataStrategy\ImageKeyNames.cs">
       <DependentUpon>ReferenceAssemblyCollection.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParserStrategy\DataStrategy\InfoCollection.cs" />
-    <Compile Include="Systems\Core.Parser\DataCfg.cs" />
-    <Compile Include="Systems\Core.Parser\ParserEnumerations.cs" />
-    <Compile Include="Systems\Core.Parser\FieldMatch.cs" />
-    <Compile Include="Systems\Core.Parser\GeneratorParser.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Systems\Core.Parser\ParserHelper.cs" />
-    <Compile Include="Systems\Core.Parser\IDataConfig.cs" />
-    <Compile Include="Systems\Core.Parser\ParseUtil.cs" />
-    <Compile Include="Systems\Core.Parser\TemplateFactory.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\ReferenceAssemblyCollection.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Reflection.ReflectionInfo.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ACE\AceTypeConverter.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ActionTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\AS3\As3TypeProvider.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\AS3\FlashNativeTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ConnectionType.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\DatabaseTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\DotNet\NativeTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\DotNet\ReferenceAsmContextTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ElementTypeUtility.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\EnumProvider.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ExtJs\ExtJsFieldType.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ExtJs\ExtJsFieldTypeProvider.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ExtJs\ExtJsRecordFieldType.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ExtJs\ExtJsRecordFieldTypeConverter.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ExtJs\ExtJsRecordFieldTypeProvider.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\GeneratorDateTimeFieldProvider.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\GeneratorTypeConverter.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\GeneratorTypeProvider.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\InfoCollectionViewTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\InfoStringTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\Net\WebElementType.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\ADO\AccessDataTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\Net\WebFormAttributeType.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\Net\WebFormInputAttributeType.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\Net\WebFormTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\OutputTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\Parser\TemplateSyntaxType.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\SCHEMA\SchemaMapTypes.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\TSQL\TSQLConverter.cs" />
-    <Compile Include="ParserStrategy\DataStrategy\Types\NullableTypeUtility.cs" />
-    <Compile Include="ParserStrategy\SchemaStrategy\SchemaStateViewBase.cs" />
-    <Compile Include="ParserStrategy\TemplateStrategy\Model\FieldTemplate.cs" />
-    <Compile Include="ParserStrategy\TemplateStrategy\Model\MarkupTemplate.cs" />
-    <Compile Include="ParserStrategy\TemplateStrategy\Model\TableTemplate.cs" />
-    <Compile Include="ParserStrategy\TemplateStrategy\Model\TemplateCollection.cs" />
-    <Compile Include="ParserStrategy\TemplateStrategy\QuickMatch.cs" />
-    <Compile Include="ParserStrategy\Core\SQLiteOperations.cs" />
-    <Compile Include="Systems\Core\GeneratorContextClass.cs" />
-    <Compile Include="Systems\Core\IDatabaseCollection.cs" />
-    <Compile Include="Systems\Core\IDatabaseContext.cs" />
-    <Compile Include="Systems\Core\IDatabaseService.cs" />
-    <Compile Include="Systems\Core\IDbConfiguration.cs" />
-    <Compile Include="Systems\Core\IDbConfiguration4.cs" />
-    <Compile Include="Systems\Core\IDbSelection.cs" />
-    <Compile Include="Systems\Core\IFactory.cs" />
-    <Compile Include="Systems\Core\IGeneratorService.cs" />
-    <Compile Include="Systems\Core\IGeneratorContext.cs" />
-    <Compile Include="Systems\Core\ITemplateContext.cs" />
-    <Compile Include="Systems\Core\ITemplateSelection.cs" />
-    <Compile Include="Systems\Data\AccessDataFactory.cs">
-      <DependentUpon>BasicDataFactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Systems\Data\AccessTypeResolution.cs" />
-    <Compile Include="Systems\Data\BasicDataFactory.cs">
-      <DependentUpon>IDataFactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Systems\Data\IDataFactory.cs" />
-    <Compile Include="Systems\Data\QueryDataContext.cs">
-      <DependentUpon>IDataFactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Systems\Data\SQLDataContext.cs">
-      <DependentUpon>QueryDataContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Systems\Data\SqlDataFactory.cs">
-      <DependentUpon>BasicDataFactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Systems\Data\SQLiteDataContext.cs">
-      <DependentUpon>QueryDataContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Systems\Data\SQLiteDataFactory.cs">
-      <DependentUpon>BasicDataFactory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Systems\Extensions\AccessDataExtension.cs" />
-    <Compile Include="Systems\Extensions\MatchExtension.cs" />
-    <Compile Include="Systems\Extensions\SchemaExtension.cs" />
-    <Compile Include="Systems\Extensions\XHelpers.cs" />
-    <Compile Include="ParserStrategy\Core\SqlTemplateParser.cs" />
-    <Compile Include="ParserStrategy\Core\TemplateManager.cs" />
+    <Compile Include="Source\DataStrategy\InfoCollection.cs" />
+    <Compile Include="Source\DataStrategy\ReferenceAssemblyCollection.cs" />
+    <Compile Include="Source\DataStrategy\Reflection.ReflectionInfo.cs" />
+    <Compile Include="Source\Types\ACE\AceTypeConverter.cs" />
+    <Compile Include="Source\Types\ActionTypes.cs" />
+    <Compile Include="Source\Types\AS3\As3TypeProvider.cs" />
+    <Compile Include="Source\Types\AS3\FlashNativeTypes.cs" />
+    <Compile Include="Source\Types\ConnectionType.cs" />
+    <Compile Include="Source\Types\DatabaseTypes.cs" />
+    <Compile Include="Source\Types\DotNet\NativeTypes.cs" />
+    <Compile Include="Source\Types\DotNet\ReferenceAsmContextTypes.cs" />
+    <Compile Include="Source\Types\ElementTypeUtility.cs" />
+    <Compile Include="Source\Types\EnumProvider.cs" />
+    <Compile Include="Source\Types\ExtJs\ExtJsFieldType.cs" />
+    <Compile Include="Source\Types\ExtJs\ExtJsFieldTypeProvider.cs" />
+    <Compile Include="Source\Types\ExtJs\ExtJsRecordFieldType.cs" />
+    <Compile Include="Source\Types\ExtJs\ExtJsRecordFieldTypeConverter.cs" />
+    <Compile Include="Source\Types\ExtJs\ExtJsRecordFieldTypeProvider.cs" />
+    <Compile Include="Source\Types\GeneratorDateTimeFieldProvider.cs" />
+    <Compile Include="Source\Types\GeneratorTypeConverter.cs" />
+    <Compile Include="Source\Types\GeneratorTypeProvider.cs" />
+    <Compile Include="Source\Types\InfoCollectionViewTypes.cs" />
+    <Compile Include="Source\Types\InfoStringTypes.cs" />
+    <Compile Include="Source\Types\Net\WebElementType.cs" />
+    <Compile Include="Source\Types\ADO\AccessDataTypes.cs" />
+    <Compile Include="Source\Types\Net\WebFormAttributeType.cs" />
+    <Compile Include="Source\Types\Net\WebFormInputAttributeType.cs" />
+    <Compile Include="Source\Types\Net\WebFormTypes.cs" />
+    <Compile Include="Source\Types\OutputTypes.cs" />
+    <Compile Include="Source\Types\Parser\TemplateSyntaxType.cs" />
+    <Compile Include="Source\Types\SCHEMA\SchemaMapTypes.cs" />
+    <Compile Include="Source\Types\TSQL\TSQLConverter.cs" />
+    <Compile Include="Source\Types\NullableTypeUtility.cs" />
+    <Compile Include="Source\SchemaStrategy\SchemaStateViewBase.cs" />
+    <Compile Include="Source\Parser\Model\FieldTemplate.cs" />
+    <Compile Include="Source\Parser\Model\MarkupTemplate.cs" />
+    <Compile Include="Source\Parser\Model\TableTemplate.cs" />
+    <Compile Include="Source\Parser\Model\TemplateCollection.cs" />
+    <Compile Include="Source\Parser\Model\TemplateStrategy\QuickMatch.cs" />
+    <Compile Include="Source\Core\GeneratorContextClass.cs" />
+    <Compile Include="Source\Core\IDatabaseCollection.cs" />
+    <Compile Include="Source\Core\IDatabaseContext.cs" />
+    <Compile Include="Source\Core\IDatabaseService.cs" />
+    <Compile Include="Source\Core\IDbConfiguration.cs" />
+    <Compile Include="Source\Core\IDbConfiguration4.cs" />
+    <Compile Include="Source\Core\IDbSelection.cs" />
+    <Compile Include="Source\Core\IFactory.cs" />
+    <Compile Include="Source\Core\IGeneratorService.cs" />
+    <Compile Include="Source\Core\IGeneratorContext.cs" />
+    <Compile Include="Source\Core\ITemplateContext.cs" />
+    <Compile Include="Source\Core\ITemplateSelection.cs" />
+    <Compile Include="Source\Extensions\AccessDataExtension.cs" />
+    <Compile Include="Source\Extensions\MatchExtension.cs" />
+    <Compile Include="Source\Extensions\SchemaExtension.cs" />
+    <Compile Include="Source\Extensions\XHelpers.cs" />
     <Compile Include="Messages.Designer.cs">
       <DependentUpon>Messages.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -216,7 +216,9 @@
     <None Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Systems\Includes\" />
+    <Folder Include="Source" />
+    <Folder Include="Source\Export" />
+    <Folder Include="Source\Parser" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Messages.resx">

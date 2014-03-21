@@ -423,5 +423,9 @@ namespace GeneratorTool.Views
 				PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		void Event_CreateView_Form(object sender, System.Windows.RoutedEventArgs e)
+		{
+			ModernDialog.ShowMessage("This feature is not yet available","Information",MessageBoxButton.OK);
+		}
 	}
 }
