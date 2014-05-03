@@ -25,7 +25,7 @@
     <StartupObject>GeneratorTool.App</StartupObject>
     <NoWin32Manifest>False</NoWin32Manifest>
     <SignAssembly>True</SignAssembly>
-    <ApplicationIcon>Assets\Icons\appbar.shuffle.ico</ApplicationIcon>
+    <ApplicationIcon>Source\Assets\Icons\appbar.shuffle.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -104,6 +104,7 @@
     <Reference Include="System.Data.SQLite.Linq">
       <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
@@ -117,9 +118,17 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="..\..\..\..\..\..\..\Multimedia\image-bin\UI\icon-packs\WindowsIcons-master\WindowsPhone\xaml\appbar.diagram.xaml">
-      <Link>Assets\Icons\appbar.diagram.xaml</Link>
+    <Page Include="..\..\Source-AppWpf\FeedTool\Resources\Icons.xaml">
+      <Link>Source\Assets\Styles\Icons.xaml</Link>
     </Page>
+    <Resource Include="..\..\Source\Cor3.Stock\Images\Oxygen\kexi.png">
+      <Link>Source\Assets\Icons\kexi.png</Link>
+    </Resource>
+    <Resource Include="..\..\Source\Cor3.Stock\Images\Oxygen\table.png">
+      <Link>Source\Assets\Icons\table.png</Link>
+    </Resource>
+    <Page Include="Source\Assets\Styles\DataTemplates.xaml" />
+    <Page Include="Source\Views\DataContent\ViewContent.xaml" />
     <Page Include="Source\Views\SettingsContent\SettingsAppearance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,63 +137,55 @@
     <Page Include="Source\Views\TemplateContent\CreateTemplateDialog.xaml" />
     <Page Include="Source\Views\WriterTemplateControl.xaml" />
     <Page Include="Source\Views\WriterTplContent\NewWriterTemplateControl.xaml" />
-    <Resource Include="..\..\Source-AppWpf\FeedTool\Resources\Icons.xaml">
-      <Link>Assets\Styles\Icons.xaml</Link>
-    </Resource>
-    <Resource Include="..\..\Source\Cor3.Stock\Images\Oxygen\table.png">
-      <Link>Assets\Icons\table.png</Link>
-    </Resource>
-    <Resource Include="..\..\Source\Cor3.Stock\Images\Oxygen\kexi.png">
-      <Link>Assets\Icons\kexi.png</Link>
-    </Resource>
-    <Resource Include="Assets\Typo\Droid Sans 700.ttf" />
-    <Resource Include="Assets\Typo\Droid Sans regular.ttf" />
-    <Resource Include="Assets\Typo\Lato 100.ttf" />
-    <Resource Include="Assets\Typo\Lato 100italic.ttf" />
-    <Resource Include="Assets\Typo\Lato 300.ttf" />
-    <Resource Include="Assets\Typo\Lato 300italic.ttf" />
-    <Resource Include="Assets\Typo\Lato 700.ttf" />
-    <Resource Include="Assets\Typo\Lato 700italic.ttf" />
-    <Resource Include="Assets\Typo\Lato 900.ttf" />
-    <Resource Include="Assets\Typo\Lato 900italic.ttf" />
-    <Resource Include="Assets\Typo\Lato italic.ttf" />
-    <Resource Include="Assets\Typo\Lato regular.ttf" />
-    <Resource Include="Assets\Typo\Oxygen 300.ttf" />
-    <Resource Include="Assets\Typo\Oxygen 700.ttf" />
-    <Resource Include="Assets\Typo\Oxygen regular.ttf" />
-    <Resource Include="Assets\Icons\code-variable.png" />
-    <Resrource Include="Assets\Icons\appbar.shuffle.png" />
-    <Resource Include="Assets\Icons\appbar.shuffle.ico" />
-    <EmbeddedResource Include="Assets\Styles\Sql.xshd" />
-    <None Include="Assets\Typo\Roboto 100.ttf" />
-    <None Include="Assets\Typo\Roboto 100italic.ttf" />
-    <None Include="Assets\Typo\Roboto 300.ttf" />
-    <None Include="Assets\Typo\Roboto 300italic.ttf" />
-    <None Include="Assets\Typo\Roboto 500.ttf" />
-    <None Include="Assets\Typo\Roboto 500italic.ttf" />
-    <None Include="Assets\Typo\Roboto 700.ttf" />
-    <None Include="Assets\Typo\Roboto 700italic.ttf" />
-    <Resource Include="Assets\Typo\Roboto 900.ttf" />
-    <Resource Include="Assets\Typo\Roboto 900italic.ttf" />
-    <None Include="Assets\Typo\Roboto Condensed 300.ttf" />
-    <None Include="Assets\Typo\Roboto Condensed 300italic.ttf" />
-    <None Include="Assets\Typo\Roboto Condensed 700.ttf" />
-    <None Include="Assets\Typo\Roboto Condensed 700italic.ttf" />
-    <None Include="Assets\Typo\Roboto Condensed italic.ttf" />
-    <Resource Include="Assets\Typo\Roboto Condensed regular.ttf" />
-    <Resource Include="Assets\Typo\Roboto italic.ttf" />
-    <Resource Include="Assets\Typo\Roboto regular.ttf" />
-    <Resource Include="Assets\Typo\Roboto Slab 100.ttf" />
-    <Resource Include="Assets\Typo\Roboto Slab 300.ttf" />
-    <Resource Include="Assets\Typo\Roboto Slab 700.ttf" />
-    <Resource Include="Assets\Typo\Roboto Slab regular.ttf" />
+    <Resource Include="Source\Assets\Typo\Droid Sans 700.ttf" />
+    <Resource Include="Source\Assets\Typo\Droid Sans regular.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 100.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 100italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 300.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 300italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 700.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 700italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 900.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato 900italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Lato regular.ttf" />
+    <Resource Include="Source\Assets\Typo\Oxygen 300.ttf" />
+    <Resource Include="Source\Assets\Typo\Oxygen 700.ttf" />
+    <Resource Include="Source\Assets\Typo\Oxygen regular.ttf" />
+    <EmbeddedResource Include="Source\Assets\Styles\Sql.xshd" />
+    <Resource Include="Source\Assets\Icons\Actions-edit-find.ico" />
+    <Resource Include="Source\Assets\Icons\appbar.shuffle.ico" />
+    <Resource Include="Source\Assets\Icons\appbar.shuffle.png" />
+    <Resource Include="Source\Assets\Icons\code-variable.png" />
+    <None Include="Source\Assets\Icons\speaker_tosort.ico" />
+    <None Include="Source\Assets\Typo\Roboto 100.ttf" />
+    <None Include="Source\Assets\Typo\Roboto 100italic.ttf" />
+    <None Include="Source\Assets\Typo\Roboto 300.ttf" />
+    <None Include="Source\Assets\Typo\Roboto 300italic.ttf" />
+    <None Include="Source\Assets\Typo\Roboto 500.ttf" />
+    <None Include="Source\Assets\Typo\Roboto 500italic.ttf" />
+    <None Include="Source\Assets\Typo\Roboto 700.ttf" />
+    <None Include="Source\Assets\Typo\Roboto 700italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto 900.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto 900italic.ttf" />
+    <None Include="Source\Assets\Typo\Roboto Condensed 300.ttf" />
+    <None Include="Source\Assets\Typo\Roboto Condensed 300italic.ttf" />
+    <None Include="Source\Assets\Typo\Roboto Condensed 700.ttf" />
+    <None Include="Source\Assets\Typo\Roboto Condensed 700italic.ttf" />
+    <None Include="Source\Assets\Typo\Roboto Condensed italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto Condensed regular.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto italic.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto regular.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto Slab 100.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto Slab 300.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto Slab 700.ttf" />
+    <Resource Include="Source\Assets\Typo\Roboto Slab regular.ttf" />
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Assets\Icons\speaker_tosort.ico" />
-    <Resource Include="Assets\Styles\GlobalTheme.xaml" />
-    <Page Include="Assets\Styles\mui.xaml" />
+    <Page Include="Source\Assets\Styles\GlobalTheme.xaml" />
+    <Page Include="Source\Assets\Styles\mui.xaml" />
     <Page Include="Source\App.xaml" />
     <Page Include="Source\MuiModern.xaml">
       <SubType>Designer</SubType>
@@ -203,20 +204,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Resource Include="Assets\Styles\Lime.xaml" />
-    <Resource Include="Assets\Styles\Theme.xaml" />
+    <Page Include="Source\Assets\Styles\Lime.xaml" />
+    <Resource Include="Source\Assets\Styles\Theme.xaml" />
     <Page Include="Source\Views\Moxi.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Source\Cor3.Core\System\System.DialogUtil.cs">
       <Link>Source\Extensions\System.DialogUtil.cs</Link>
     </Compile>
-    <Compile Include="Assets\Icons\appbar.diagram.xaml.cs">
-      <DependentUpon>appbar.diagram.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Source\App.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Views\DataContent\ViewContent.xaml.cs">
+      <DependentUpon>ViewContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <None Include="Source\Models\Unused\CheckForFileException.cs" />
     <None Include="Source\Models\Unused\CommandManager.cs" />
@@ -232,6 +234,7 @@
     <Compile Include="Source\Commands\IBindCommands.cs" />
     <Compile Include="Source\Commands\FieldPasteAboveCmd.cs" />
     <Compile Include="Source\Commands\FieldPasteBelowCmd.cs" />
+    <Compile Include="Source\Commands\ResourceGenerator.cs" />
     <Compile Include="Source\Commands\TableCopyCmd.cs" />
     <Compile Include="Source\Commands\TableCutCmd.cs" />
     <Compile Include="Source\Commands\TablePasteAboveCmd.cs" />
@@ -341,14 +344,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Resource Include="Assets\Icons\Actions-edit-find.ico" />
-    <Resource Include="Assets\Icons\veetle-brand.ico" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets" />
-    <Folder Include="Assets\Styles" />
-    <Folder Include="Assets\Typo" />
+    <Folder Include="Source\Assets" />
+    <Folder Include="Source\Assets\Styles" />
+    <Folder Include="Source\Assets\Typo" />
     <Folder Include="Source\Models\Unused" />
     <Folder Include="Source\Models" />
     <Folder Include="Source\Models\Generator" />
@@ -363,7 +364,7 @@
     <Folder Include="Source\Commands" />
     <Folder Include="Source\Views" />
     <Folder Include="Source\Converters" />
-    <Folder Include="Assets\Icons" />
+    <Folder Include="Source\Assets\Icons" />
     <Folder Include="Source\Views\WriterTplContent" />
     <Folder Include="Source\Views\TemplateContent" />
     <Folder Include="Source\Views\SettingsContent" />

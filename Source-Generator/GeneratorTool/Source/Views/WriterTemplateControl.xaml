@@ -9,6 +9,7 @@
 		<Grid DockPanel.Dock="Top" DataContext="Model">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="120" />
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="*" />
@@ -37,10 +38,11 @@
 					</Button.ContextMenu>
 				</Button>
 			</StackPanel>
-			<ComboBox x:Name="cbTplGroup" Grid.Column="1" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.GroupUpdatedCommand}" IsEditable="True" ItemsSource="{Binding GroupNames}" />
-			<ComboBox x:Name="cbTplName" Grid.Column="2" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.RowUpdatedCommand}" IsEditable="True" ItemsSource="{Binding Rows}" DisplayMemberPath="Title" />
-			<ComboBox x:Name="cbTplField" Grid.Column="3" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.FieldUpdatedCommand}" IsEditable="True" />
-			<ComboBox x:Name="cbEditorFmt" Grid.Column="4" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.SyntaxUpdatedCommand}" ItemsSource="{Binding Source={x:Static AvalonEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}" />
+			<TextBox x:Name="tNamespace" Grid.Column="1" />
+			<ComboBox x:Name="cbTplGroup" Grid.Column="2" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.GroupUpdatedCommand}" IsEditable="True" ItemsSource="{Binding GroupNames}" />
+			<ComboBox x:Name="cbTplName" Grid.Column="3" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.RowUpdatedCommand}" IsEditable="True" ItemsSource="{Binding Rows}" DisplayMemberPath="Title" />
+			<ComboBox x:Name="cbTplField" Grid.Column="4" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.FieldUpdatedCommand}" IsEditable="True" />
+			<ComboBox x:Name="cbEditorFmt" Grid.Column="5" v:SelectionChangedBehaviour.Command="{x:Static v:WriterTemplateControl.SyntaxUpdatedCommand}" ItemsSource="{Binding Source={x:Static AvalonEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}" />
 		</Grid>
 		<Grid>
 			<a:Editor x:Name="editor" FontSize="14">

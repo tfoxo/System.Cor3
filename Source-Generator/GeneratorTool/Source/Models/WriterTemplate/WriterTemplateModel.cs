@@ -3,22 +3,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media.Media3D;
-using FirstFloor.ModernUI.Windows.Controls;
 using Generator;
-using Generator.Core;
 using Generator.Elements;
-using Generator.Core.Markup;
-using Microsoft.Win32;
 namespace GeneratorTool
 {
-	class WriterTemplateModel : INotifyPropertyChanged
+	public class WriterTemplateModel : INotifyPropertyChanged
 	{
 		#region INotifyPropertyChanged implementation
 

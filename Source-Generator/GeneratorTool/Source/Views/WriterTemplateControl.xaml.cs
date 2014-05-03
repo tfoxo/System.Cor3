@@ -2,14 +2,11 @@
 */
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Resources;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows.Controls;
 using Generator;
@@ -24,7 +21,7 @@ namespace GeneratorTool.Views
 	/// </summary>
 	public partial class WriterTemplateControl : UserControl
 	{
-		
+		static readonly ResourceGenerator ResGen = new ResourceGenerator();
 		#region Registry
 		
 		const string regpath = @"Software\tfoxo\template-tool";
@@ -48,6 +45,7 @@ namespace GeneratorTool.Views
 		static public readonly RoutedCommand FieldUpdatedCommand = new RoutedCommand("Field changed",typeof(WriterTemplateControl));
 		static public readonly RoutedCommand SyntaxUpdatedCommand = new RoutedCommand("Syntax changed",typeof(WriterTemplateControl));
 		static public readonly RoutedCommand SaveResourcesCommand = new RoutedCommand("Save resx resource",typeof(WriterTemplateControl));
+		static public readonly RoutedCommand AutoSaveResourcesCommand = new RoutedCommand("AutoSave resx resource",typeof(WriterTemplateControl)){InputGestures={ new KeyGesture(Key.G,ModifierKeys.Control) }};
 		
 		#endregion
 		
@@ -101,6 +99,7 @@ namespace GeneratorTool.Views
 			cbTplField.SelectedIndex = 0;
 			editor.CommandBindings.Add(new CommandBinding(ApplicationCommands.Save,Event_SaveToRow));
 			CommandBindings.Add(new CommandBinding(SaveResourcesCommand,Event_SaveResxFile));
+			CommandBindings.Add(new CommandBinding(AutoSaveResourcesCommand,Event_AutoSaveResxFile));
 		}
 		
 		#endregion
@@ -157,7 +156,7 @@ namespace GeneratorTool.Views
 			//			control.cbGroup.ItemsSource = model.GroupNames;
 			var value = control.ShowDialog();
 			if (!(value.HasValue && value.Value)) return;
-//			ModernDialog.ShowMessage("We have our template-element","Success",MessageBoxButton.OK);
+			//			ModernDialog.ShowMessage("We have our template-element","Success",MessageBoxButton.OK);
 			var fname = Ofd.FileName;
 			Model.util.InsertRow(Ofd.FileName,element);
 			InitializeData();
@@ -181,7 +180,7 @@ namespace GeneratorTool.Views
 			cbTplName.Text = null;
 			InitializeData();
 			if (Model.GroupNames.Contains(n)) cbTplGroup.Text = n; else cbTplGroup.Text = null;
-//			cbTplName.Text = element.Title;
+			//			cbTplName.Text = element.Title;
 		}
 		void Event_SaveToRow(object sender, RoutedEventArgs e)
 		{
@@ -203,33 +202,28 @@ namespace GeneratorTool.Views
 		
 		void Event_ButtonContextMenu(object sender, RoutedEventArgs e) { (sender as Button).ContextMenu.IsOpen = true; }
 		
-		const string resxTitleString = "{0}.{1}";
+		bool? CsDesigner(string content, string title="generating..."){
+			
+			var dlg = new ModernDialog(){ Content=content,Title=title };
+			var rc = new RelayCommand((x) => { dlg.DialogResult = true; dlg.Close(); });
+			dlg.Buttons = new[]{ dlg.CancelButton,new Button(){ Content = "okay", Command = rc, IsDefault = true}};
+			return dlg.ShowDialog();
+		}
+		
 		void Event_SaveResxFile(object sender, RoutedEventArgs e)
 		{
 			var value = SaveResxFileDialog.ShowDialog();
 			if (!(value.HasValue && value.Value)) return ;
-			using (ResXResourceWriter resx = new ResXResourceWriter(SaveResxFileDialog.FileName))
+			StaticResourceGenerator.SaveResource(Model,SaveResxFileDialog.FileName,false,tNamespace.Text);
+		}
+		void Event_AutoSaveResxFile(object sender, RoutedEventArgs e)
+		{
+			if (string.IsNullOrEmpty(SaveResxFileDialog.FileName))
 			{
-				resx.AddResource("TemplateGroups",Model.GroupNames);
-				
-				foreach (var groupName in Model.GroupNames)
-				{
-					Model.GetRows(groupName);
-					foreach (var element in Model.rows)
-					{
-						string templateName = element.Title;
-						if (element.Container!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Container"),element.Container);
-						if (element.Foot!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Foot"),element.Foot);
-						if (element.Groupfoot!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Groupfoot"),element.Groupfoot);
-						if (element.Grouphead!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Grouphead"),element.Grouphead);
-						if (element.Head!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Head"),element.Head);
-						if (element.Note!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Note"),element.Note);
-						if (element.Row!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Row"),element.Row);
-						if (element.Table!=null) resx.AddResource(string.Format(resxTitleString,templateName,"Table"),element.Table);
-//						if (element.TableName!=null) resx.AddResource(string.Format(resxTitleString,templateName,"TableName"),element.TableName);
-					}
-				}
+				Event_SaveResxFile(sender,e);
+				return;
 			}
+			StaticResourceGenerator.SaveResource(Model,SaveResxFileDialog.FileName,false,tNamespace.Text);
 		}
 		#endregion
 	

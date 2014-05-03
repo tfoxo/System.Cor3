@@ -3,24 +3,20 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
-using System.Windows.Media.Media3D;
-using FirstFloor.ModernUI.Windows.Controls;
 using Generator;
-using Generator.Core;
 using Generator.Elements;
 using Generator.Core.Markup;
-using Generator.Export;
 using Microsoft.Win32;
 
 namespace GeneratorTool
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	public class GeneratorReader
 	{
 		public GeneratorModel Model { get; set; }
@@ -89,14 +85,14 @@ namespace GeneratorTool
 		
 		#region Method: string Generate, IDbConfiguration4 GetConfig
 		
-		public IDbConfiguration4 GetConfig(TableElement table, TableTemplate template) {
+		public Generator.Export.Intrinsic.IDbConfiguration4 GetConfig(TableElement table, TableTemplate template) {
 			return new TemplateManager(){
 				SelectedCollection = Model.Databases,
 				SelectedDatabase = table==null ? null : table.Parent,
 				SelectedTable = table,
 				Templates = Model.Templates,
 				SelectedTemplate = template,
-				SelectedTemplateGroup = template==null ? null : template.Group
+				SelectedTemplateGroup = template==null ? null : template.Group,
 			};
 		}
 		
@@ -104,7 +100,7 @@ namespace GeneratorTool
 		
 		public string Generate(TableElement tableName, TableTemplate templateName)
 		{
-			IDbConfiguration4 config = GetConfig(tableName,templateName);
+			Generator.Export.Intrinsic.IDbConfiguration4 config = GetConfig(tableName,templateName);
 			GeneratedTemplate = Model.Databases.ConvertInput(config,config.SelectedTable.Name);
 			if (TemplateGeneratedAction != null) TemplateGeneratedAction.Invoke(GeneratedTemplate);
 			config  = null;

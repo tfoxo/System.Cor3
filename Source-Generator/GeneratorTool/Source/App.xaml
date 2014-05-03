@@ -5,14 +5,14 @@
 			<!-- PresentationFramework.Aero, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 -->
 			<ResourceDictionary.MergedDictionaries>
 				<!--<ResourceDictionary Source="/PresentationFramework.Aero, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, ProcessorArchitecture=MSIL;component/themes/aero.normalcolor.xaml" />-->
-				<ResourceDictionary Source="/assets/styles/globaltheme.xaml" />
-				<ResourceDictionary Source="/assets/styles/theme.xaml" />
+				<ResourceDictionary Source="/source/assets/styles/globaltheme.xaml" />
+				<ResourceDictionary Source="/source/assets/styles/theme.xaml" />
 				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
 				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml" />
 				<!--<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml" />-->
 				<!--<ResourceDictionary Source="/MahApps.Metro;component/Styles/Accents/Blue.xaml" />-->
-				<ResourceDictionary Source="/assets/styles/lime.xaml" />
-				<ResourceDictionary Source="/assets/styles/icons.xaml" />
+				<ResourceDictionary Source="/source/assets/styles/lime.xaml" />
+				<ResourceDictionary Source="/source/assets/styles/icons.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 			<v:VisibilityToBooleanConverter x:Key="vbc" />
 			<Style x:Key="ExpanderTemplate">

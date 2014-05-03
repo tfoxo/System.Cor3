@@ -33,7 +33,7 @@ namespace GeneratorTool
 		{
 			var app = new App();
 			app.InitializeComponent();
-			AvalonEditorUtils.LoadXshdRes("SQL","GeneratorTool.Assets.Styles.Sql.xshd");
+			AvalonEditorUtils.LoadXshdRes("SQL","GeneratorTool.Source.Assets.Styles.Sql.xshd");
 			app.Run();
 		}
 		

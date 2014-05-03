@@ -8,6 +8,7 @@ namespace GeneratorTool
 	{
 		Undefined = 0,
 		Database,
+		DataView,
 		Table,
 		Field,
 		TemplateTable,

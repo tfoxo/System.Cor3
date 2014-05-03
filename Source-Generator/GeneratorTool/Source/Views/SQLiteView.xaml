@@ -17,7 +17,7 @@
 				<Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
 				
 				<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="QUERY " />
-				<Button Content="EXECUTE (NonQuery)" Click="Event_ExecuteNonQuery" />
+				<Button Content="EXECUTE (NonQuery)" Click="Event_ExecuteNonQuery" x:Name="btnNonQuery" />
 				<Button Content="EXECUTE (SELECT)" Click="Event_ExecuteSelectQuery" />
 				<Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
 				
@@ -27,11 +27,11 @@
 				<Button Content="SAVE AS" Command="{x:Static l:SQLFileLoader.SaveSqlFileAsCommand}" CommandParameter="{Binding ElementName=edit}" />
 			
 			</StackPanel>
-			<TabControl Background="Transparent" BorderBrush="Transparent">
-				<TabItem Header="SQL">
+			<TabControl x:Name="tabs" Background="Transparent" BorderBrush="Transparent">
+				<TabItem Header="SQL" x:Name="tabSql">
 					<ctl:Editor x:Name="edit" SyntaxHighlighting="SQL" FontSize="14" Text="SELECT * from sqlite_master;" />
 				</TabItem>
-				<TabItem Header="View">
+				<TabItem Header="View" x:Name="tabView">
 					<DataGrid x:Name="grid" />
 				</TabItem>
 			</TabControl>

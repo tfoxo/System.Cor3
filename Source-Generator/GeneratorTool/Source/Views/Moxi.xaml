@@ -5,131 +5,16 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:mui="http://firstfloorsoftware.com/ModernUI"
 	xmlns:e="clr-namespace:Generator.Elements;assembly=Generator.Lib"
-	xmlns:t="clr-namespace:Generator.Core.Markup;assembly=Generator.Lib"
 	xmlns:l="clr-namespace:GeneratorTool"
 	xmlns:v="clr-namespace:GeneratorTool.Views"
 	xmlns:avalon="clr-namespace:GeneratorTool.Controls"
-	xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-	xmlns:dat="clr-namespace:System.Windows.Data;assembly=PresentationFramework">
+>
 	<UserControl.Resources>
-		<BitmapImage x:Key="DatabaseIcon" UriSource="/assets/icons/kexi.png" />
-		<BitmapImage x:Key="FieldIcon" UriSource="/assets/icons/code-variable.png" />
-		<BitmapImage x:Key="TableIcon" UriSource="/assets/icons/table.png" />
-		<v:DatabaseItemTemplateSelector x:Key="DatabaseItem_Selector" />
-		<v:VisibilityToBooleanConverter x:Key="Visi" />
-		<v:GroupOnMultiBindingConverter x:Key="GroupOnTemplatesConverter" />
-		<v:IsEnabledToColorConverter x:Key="isEnabledToColorConverter" />
-		<!--  -->
-		<!-- DataView Element -->
-		<!--  -->
-		<HierarchicalDataTemplate x:Key="DataViewTemplate">
-			<StackPanel Orientation="Horizontal">
-				<StackPanel.ContextMenu>
-					<ContextMenu>
-						<MenuItem Header="DataView" />
-						<Separator />
-						<MenuItem Header="Cut" />
-						<MenuItem Header="Copy" />
-						<MenuItem Header="Paste" />
-						<Separator />
-						<MenuItem Header="Delete" />
-					</ContextMenu>
-				</StackPanel.ContextMenu>
-				<Image Margin="0,0,6,0" Source="{DynamicResource FieldIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
-				<TextBlock Text="{Binding Path=Name}" />
-			</StackPanel>
-		</HierarchicalDataTemplate>
-		<!--  -->
-		<!-- FIELD -->
-		<!--  -->
-		<HierarchicalDataTemplate x:Key="FieldTemplate">
-			<StackPanel Orientation="Horizontal">
-				<StackPanel.ContextMenu>
-					<ContextMenu>
-						<MenuItem Header="Field Element" />
-						<Separator />
-						<MenuItem Header="Cut" Command="{x:Static v:MoxiView.FieldCutCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Copy" Command="{x:Static v:MoxiView.FieldCopyCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Paste (Above)" Command="{x:Static v:MoxiView.FieldPasteAboveCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Paste (Below)" Command="{x:Static v:MoxiView.FieldPasteBelowCommand}" CommandParameter="{Binding .}" />
-						<Separator />
-						<MenuItem Header="Delete" />
-					</ContextMenu>
-				</StackPanel.ContextMenu>
-				<Image Margin="0,0,6,0" Source="{DynamicResource FieldIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
-				<TextBlock Text="{Binding Path=DataName}" />
-			</StackPanel>
-		</HierarchicalDataTemplate>
-		<!--  -->
-		<!-- FIELD -->
-		<!--  -->
-		<HierarchicalDataTemplate x:Key="TableTemplate" ItemsSource="{Binding Path=Fields}" ItemTemplate="{StaticResource FieldTemplate}">
-			<StackPanel Orientation="Horizontal">
-				<StackPanel.ContextMenu>
-					<ContextMenu>
-						<MenuItem Header="Table Element" />
-						<Separator />
-						<MenuItem Header="Cut" Command="{x:Static v:MoxiView.TableCutCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Copy" Command="{x:Static v:MoxiView.TableCopyCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Paste (Above)" Command="{x:Static v:MoxiView.TablePasteAboveCommand}" CommandParameter="{Binding .}" />
-						<MenuItem Header="Paste (Below)" Command="{x:Static v:MoxiView.TablePasteBelowCommand}" CommandParameter="{Binding .}" />
-						<Separator />
-						<MenuItem Header="Delete" />
-					</ContextMenu>
-				</StackPanel.ContextMenu>
-				<Image Margin="0,0,6,0" Source="{DynamicResource TableIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
-				<TextBlock Text="{Binding Path=Name}" />
-			</StackPanel>
-		</HierarchicalDataTemplate>
-		<!--  -->
-		<!-- DATABASE -->
-		<!--  -->
-		<HierarchicalDataTemplate x:Key="DatabaseTemplate" ItemsSource="{Binding Children}" ItemTemplateSelector="{StaticResource DatabaseItem_Selector}">
-			<StackPanel Orientation="Horizontal">
-				<StackPanel.ContextMenu>
-					<ContextMenu>
-						<MenuItem Header="Database?" />
-						<Separator />
-						<MenuItem Header="Cut" />
-						<MenuItem Header="Copy" />
-						<MenuItem Header="Paste" />
-						<Separator />
-						<MenuItem Header="Delete" />
-					</ContextMenu>
-				</StackPanel.ContextMenu>
-				<Image Margin="0,0,6,0" Source="{DynamicResource DatabaseIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />
-				<TextBlock Text="{Binding Path=Name}" />
-			</StackPanel>
-		</HierarchicalDataTemplate>
-		<HierarchicalDataTemplate x:Key="TemplatesTemplate" ItemsSource="{Binding Templates}">
-			<StackPanel Orientation="Horizontal">
-				<StackPanel.ContextMenu>
-					<ContextMenu>
-						<MenuItem Header="I'm a menu item">
-							<MenuItem Header="I'm a menu item" />
-						</MenuItem>
-					</ContextMenu>
-				</StackPanel.ContextMenu>
-				<!--<Image Margin="0,0,6,0" Source="{DynamicResource DatabaseIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />-->
-				<TextBlock Text="{Binding Alias}" Margin="1,1,6,1" />
-				<TextBlock Text="{Binding GroupName}" Margin="1" />
-			</StackPanel>
-		</HierarchicalDataTemplate>
-		
-		<HierarchicalDataTemplate x:Key="TemplatesGroupTemplate" ItemsSource="{Binding Templates}" ItemTemplate="{StaticResource TemplatesTemplate}">
-			<StackPanel Orientation="Horizontal">
-				<StackPanel.ContextMenu>
-					<ContextMenu>
-						<MenuItem Header="TableTemplate" />
-						<Separator />
-						<MenuItem Header="New Template" />
-					</ContextMenu>
-				</StackPanel.ContextMenu>
-				<!--<Image Margin="0,0,6,0" Source="{DynamicResource DatabaseIcon}" Width="16" Height="16" VerticalAlignment="Bottom" />-->
-				<!--<TextBlock Text="Group: " Margin="1,1,6,1" />-->
-				<TextBlock Text="{Binding GroupName}" Margin="1" />
-			</StackPanel>
-		</HierarchicalDataTemplate>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/source/assets/styles/datatemplates.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
 	</UserControl.Resources>
 	<Grid>
 		<Grid.ColumnDefinitions>
@@ -234,12 +119,16 @@
 							<Button Content="PREVIEW" Command="{x:Static v:MoxiView.TogglePreviewCommand}" />
 							<Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
 							<Button Content="DATA" Command="{x:Static v:MoxiView.ToggleDataCommand}" />
+							<Button Content="VIEW" Command="{x:Static v:MoxiView.ToggleViewCommand}" />
 						</StackPanel>
 					</Grid>
 				</Grid>
 				<TabControl x:Name="tabs" BorderBrush="{x:Null}" Background="Transparent">
 					<TabItem Header="Data" x:Name="tabData">
 						<v:DataEditorContent x:Name="dataEditor" />
+					</TabItem>
+					<TabItem Header="View-Data" x:Name="tabView">
+						<v:ViewContent x:Name="dataView" />
 					</TabItem>
 					<TabItem Header="Editor" x:Name="tabEdit">
 						<avalon:Editor xmlns:txt="clr-namespace:System.Text;assembly=mscorlib" x:Name="editor" FontFamily="Consolas" FontSize="10pt" Encoding="{x:Static txt:Encoding.UTF8}" SnapsToDevicePixels="True" SyntaxHighlighting="C#">

@@ -2,7 +2,6 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
@@ -74,6 +73,7 @@ namespace GeneratorTool.Views
 		static public readonly ICommand ToggleTemplateGroupCommand = new RoutedUICommand(){ Text="Template Group Command." };
 		static public readonly ICommand ToggleTemplateRowCommand = new RoutedUICommand(){ Text="Template Row Command." };
 		
+		static public readonly ICommand ToggleViewCommand = new RoutedUICommand(){ Text="Select View tab-item.", InputGestures={ new KeyGesture(Key.F2) } };
 		static public readonly ICommand ToggleTableCommand = new RoutedUICommand(){ Text="Template button toggled.", InputGestures={ new KeyGesture(Key.F3) } };
 		static public readonly ICommand ToggleFieldCommand = new RoutedUICommand(){ Text="Field button toggled.", InputGestures={ new KeyGesture(Key.F4) } };
 		static public readonly ICommand TogglePreviewCommand = new RoutedUICommand(){ Text="Preview button toggled.", InputGestures={ new KeyGesture(Key.F5) } };
@@ -114,6 +114,12 @@ namespace GeneratorTool.Views
 				SelectedDatabase = field
 			};
 		}
+		public TemplateManager CreateTemplate(DataViewElement view)
+		{
+			return new TemplateManager(){
+				SelectedView = view
+			};
+		}
 		public TemplateManager CreateTemplate(TableElement field)
 		{
 			return new TemplateManager(){
@@ -136,6 +142,13 @@ namespace GeneratorTool.Views
 		}
 		#endregion
 		#region State
+		void PushState(DataViewElement dataview)
+		{
+			Model.LastViewMode = ViewMode.DataView;
+			Model.LastSelectedObject = dataview;
+			Model.LastFactory = CreateTemplate(dataview);
+//			SetCombos(database);
+		}
 		void PushState(DatabaseElement database)
 		{
 			Model.LastViewMode = ViewMode.Database;
@@ -174,6 +187,7 @@ namespace GeneratorTool.Views
 			else if (treeSelection is TableElement) PushState(treeSelection as TableElement);
 			else if (treeSelection is FieldElement) PushState(treeSelection as FieldElement);
 			else if (treeSelection is TableTemplate) PushState(treeSelection as TableTemplate);
+			else if (treeSelection is DataViewElement) PushState(treeSelection as DataViewElement);
 			else if (treeSelection is string) MessageBox.Show("Look a string.");
 			dataEditor.DataContext = Model.LastFactory;
 		}
@@ -194,10 +208,7 @@ namespace GeneratorTool.Views
 			TableCopyCommand.View = this;
 			TablePasteAboveCommand.View = this;
 			TablePasteBelowCommand.View = this;
-			
-			Style s = new Style(){};
-			s.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
-			tabs.ItemContainerStyle = s;
+			tabs.ItemContainerStyle = new Style(){Setters={new Setter(UIElement.VisibilityProperty, Visibility.Collapsed)}};
 			InitializeReader();
 			Model.LastSelectedView = pane;
 		}
@@ -244,6 +255,7 @@ namespace GeneratorTool.Views
 		void ToggleEditorFieldAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplateField; try { Model.ViewText = editor.Text = (cbTemplateRow.SelectedValue as TableTemplate).ItemsTemplate; }  catch(Exception err) { if (cbTemplateRow.SelectedValue != null) { throw err; } } tabs.SelectedItem = tabEdit; }
 		void ToggleEditorPreviewAction(object sender, RoutedEventArgs e) { Model.LastTemplate=cbTemplateRow.SelectedValue; Model.LastViewMode = ViewMode.TemplatePreview; try { Model.ViewText = Model.Reader.Generate(cbTable.SelectedValue as TableElement,cbTemplateRow.SelectedValue as TableTemplate); } catch {} tabs.SelectedItem = tabEdit; }
 		void ToggleDataAction(object sender, RoutedEventArgs e) { tabs.SelectedItem = tabData; }
+		void ToggleViewAction(object sender, RoutedEventArgs e) { tabs.SelectedItem = tabView; }
 		
 		
 		#endregion
@@ -334,6 +346,7 @@ namespace GeneratorTool.Views
 			CommandBindings.Add(new CommandBinding(ToggleFieldCommand,ToggleEditorFieldAction));
 			CommandBindings.Add(new CommandBinding(TogglePreviewCommand,ToggleEditorPreviewAction));
 			CommandBindings.Add(new CommandBinding(ToggleDataCommand,ToggleDataAction));
+			CommandBindings.Add(new CommandBinding(ToggleViewCommand,ToggleViewAction));
 		}
 		
 		void InitializeDataSource()
@@ -370,7 +383,7 @@ namespace GeneratorTool.Views
 			
 			var rc = new RelayCommand((x) => {
 				control.DialogResult = true;
-				element = new TableTemplate(){ Alias=control.tbName.Text, Group=control.cbGroup.Text };
+				element = new TableTemplate(){ Alias=control.tbName.Text, Group=control.cbGroup.Text, ElementTemplate="", ItemsTemplate="" };
 				control.Close();
 			});
 			control.Buttons=new[]{control.CancelButton,new Button(){ Content = "okay", Command = rc, IsDefault = true}};
