@@ -1,3 +1,6 @@
 [submodule "Source-External/YoutubeExtractor"]
 	path = Source-External/YoutubeExtractor
 	url = https://github.com/flagbug/YoutubeExtractor.git
+[submodule "Source/cor3.core"]
+	path = Source/cor3.core
+	url = https://github.com/tfoxo/cor3.core
