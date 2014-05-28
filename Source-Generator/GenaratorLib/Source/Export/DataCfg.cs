@@ -14,7 +14,7 @@ namespace Generator.Export
 	// =========================================================
 	// This is both used internally and must be included externally.
 	// =========================================================
-	class DataCfg : IDataConfig
+	class DataCfg : Generator.Export.Intrinsic.IDataConfig
 	{
 		public bool HasTemplate(string alias)
 		{
@@ -50,7 +50,7 @@ namespace Generator.Export
 		/// </summary>
 		/// <param name="config"></param>
 		/// <returns></returns>
-		static public string Parse(IDataConfig config)
+		static public string Parse(Generator.Export.Intrinsic.IDataConfig config)
 		{
 			// TableElement tableElementbackup = config.Table;
 			string tableOut = Parse(config.Databases, config.Table, config.Template);
@@ -94,7 +94,7 @@ namespace Generator.Export
 			}
 			return tableOut;
 		}
-		static public string Parse(IDataConfig config, string template)
+		static public string Parse(Generator.Export.Intrinsic.IDataConfig config, string template)
 		{
 			config.Template = config.Templates[template];
 			return Parse(config);

@@ -7,7 +7,6 @@ using System.Windows.Input;
 
 using Generator.Elements;
 using Generator.Core.Markup;
-using Generator.Export;
 using Generator.Parser;
 
 #if WPF4
@@ -22,7 +21,7 @@ namespace Generator
 	/// Note that Windows.Forms.TreeNode is referenced in correlation with
 	/// most data-elements.
 	/// </summary>
-	public class TemplateManager : IDbConfiguration4, IFactory
+	public class TemplateManager : Generator.Export.Intrinsic.IDbConfiguration4, Generator.Export.Intrinsic.IFactory
 	{
 		static int tcount = 0;
 		static int __dbIncr = 0;
@@ -189,10 +188,10 @@ namespace Generator
 		// --------------------------------------
 		
 		/// <summary>IFactory instance implementation.</summary>
-		ITemplateSelection IFactory.TemplateInstance { get { return this; } }
+		Generator.Export.Intrinsic.ITemplateSelection Generator.Export.Intrinsic.IFactory.TemplateInstance { get { return this; } }
 		
 		/// <summary>ITemplateSelection instance implementation.</summary>
-		ITemplateSelection ITemplateSelection.TemplateInstance { get { return this; } }
+		Generator.Export.Intrinsic.ITemplateSelection Generator.Export.Intrinsic.ITemplateSelection.TemplateInstance { get { return this; } }
 		
 		//
 		// Template DataTable & DataRowView
@@ -241,7 +240,7 @@ namespace Generator
 		public DataViewElement		SelectedView { get; set; }
 		public DataViewLink			SelectedLink { get; set; }
 		public FieldElement			SelectedField { get; set; }
-		public IDatabaseCollection	Instance { get { return this; } }
+		public Generator.Export.Intrinsic.IDatabaseCollection	Instance { get { return this; } }
 		#endregion
 		
 		#region Obsolete: FromITemplateSelection
@@ -250,7 +249,7 @@ namespace Generator
 		/// This methode seems to be Obsolete,
 		/// </summary>
 		/// <param name="selection"></param>
-		void FromITemplateSelection(ITemplateSelection selection)
+		void FromITemplateSelection(Generator.Export.Intrinsic.ITemplateSelection selection)
 		{
 			SelectedTemplate = selection.SelectedTemplate;
 			Templates = selection.Templates;

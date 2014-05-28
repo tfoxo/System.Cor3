@@ -84,8 +84,8 @@
 			<Label Grid.Row="1" Content="Base-Path" HorizontalAlignment="Right" VerticalAlignment="Center" />
 			<TextBox Name="tbRelativePath" Grid.Row="1" Grid.Column="1" />
 		</Grid>
-		<avalon:TextEditor Name="editor" Grid.Row="3" SyntaxHighlighting="XML"  ShowLineNumbers="True"FontFamily="Consolas">
-			<avalon:TextEditor.ContextMenu>
+		<avalon:TextEditor Name="editor" Grid.Row="3" SyntaxHighlighting="XML"  ShowLineNumbers="True" FontFamily="Consolas">
+			<avalon:TextEditor.ContextMenu> 
 				<ContextMenu>
 					<MenuItem Header="Select All" Command="ApplicationCommands.SelectAll" />
 					<!--					<MenuItem Header="Select None" Command="{x:Static EditingCommands.se}" />-->

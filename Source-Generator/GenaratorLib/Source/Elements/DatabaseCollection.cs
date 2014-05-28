@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
-using Generator.Export;
 using Generator.Parser;
 using Generator;
 
@@ -247,7 +246,7 @@ namespace Generator.Elements
 		/// </param>
 		/// <param name="tableName"></param>
 		/// <returns></returns>
-		public string ConvertInput(IDbConfiguration4 dbs, string tableName)
+		public string ConvertInput(Generator.Export.Intrinsic.IDbConfiguration4 dbs, string tableName)
 		{
 			// I suppose that this loop just checks weather the table exists.
 			foreach (DatabaseElement elm in Databases) {

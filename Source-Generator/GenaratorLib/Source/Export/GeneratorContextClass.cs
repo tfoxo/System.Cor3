@@ -29,10 +29,10 @@ using Generator.Core.Markup;
 
 namespace Generator.Export
 {
-public class GeneratorContextClass<TUIControl> : IGeneratorContext where TUIControl:Window
+public class GeneratorContextClass<TUIControl> : Generator.Export.Intrinsic.IGeneratorContext where TUIControl:Window
 {
 internal readonly TUIControl win;
-internal IFactory iconfig = null;
+internal Generator.Export.Intrinsic.IFactory iconfig = null;
 //		public bool UseNamespaces { get;set; }
 	
 #region Database Context

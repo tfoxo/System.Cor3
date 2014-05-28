@@ -56,6 +56,11 @@ namespace System
 		static public int ArgIndex = 0;
 		internal List<string> Args, ArgsBackup;
 		
+        public void WaitForKey()
+        {
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
 		/// <summary>
 		/// look up the first found index of the same argument.
 		/// </summary>

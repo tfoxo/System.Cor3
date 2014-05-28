@@ -1,5 +1,6 @@
-﻿[NormalizePathTool](#normalizepathtool)
+[NormalizePathTool](#normalizepathtool)
 [RenameFileTool](#renamefiletool)
+[XRename](#xrename)
 
 With the few things that have been elaborating in this space, it seems
 appropriate to start clustering tool-related tests to this program-space.
@@ -102,4 +103,53 @@ that I wasn't quite expecting to see when editing this text document.
 
 # RenameFileTool
 
+A batch tool for renaming multiple files to a format such as "file000.ext"
+
+things that are needed:
+
+* (1) only rename matched regular expressions.  only regex flag
+* (2) cbz/cbr compression configuration
+	* look in windows registry
+	* look for uninstall
+	* look in environment
+* (2A) CBZ/R Creation From Directory as input COMMAND STRING
+* (2B) Execute the command
+
+## xrename
+
+> Regular-Expression Rename
+
+I thought that this application was fully in a working status,
+but apparently I had moved a bunch of the settings onto the
+`Setting` class inside the task/tool.
+
+Apparently this is the kind of little tool that can be pushed
+a bit further, and it appears to be caught up in such a process.
+
+For one thing, this program was designed to cater to one case:
+Image files contained within a cbr (, cbz, ...) archive are 
+sorted by their distinctive file-name, when organized into a
+set of pages as displayed in a reader.
+
+### Settings: Switches
+
+* `-i` InputDirectories (List)
+* `-x` Expression
+* `-xr` ExpressionReplace
+* `-spr` SortPre
+* `-spo` SortPost
+* `-r` Reverse (order)
+
+### Settings: Types
+
+* string Expression
+* Regex ExpressionReplace
+* List<string> Items
+* bool OnlyUseMatches
+* string OutputDir
+* bool Recursive
+* Regex RegularExpression
+* bool Reverse
+* bool SortPost
+* bool SortPre
 

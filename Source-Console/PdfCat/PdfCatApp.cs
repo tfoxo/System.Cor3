@@ -75,11 +75,6 @@ namespace PdfCat
             //WaitForKey();
         }
         
-        void WaitForKey()
-        {
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-        }
         
         /// <summary>
         /// Put your own code here to get the files to be concatenated.

@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using Generator.Elements;
 using Generator.Core.Markup;
 using Generator;
-using Generator.Export;
 
 namespace Generator.Parser
 {
@@ -214,7 +213,7 @@ namespace Generator.Parser
 		
 		#region Convert
 		
-		static public string ConvertTable(IDbConfiguration4 tps)
+		static public string ConvertTable(Generator.Export.Intrinsic.IDbConfiguration4 tps)
 		{
 			return ConvertInput(tps,true);
 		}
@@ -230,7 +229,7 @@ namespace Generator.Parser
 		/// <param name="tps">IDbConfiguration4; (selection)</param>
 		/// <param name="newVersion">This isn't used.</param>
 		/// <returns>parsed string result.</returns>
-		static public string ConvertInput(IDbConfiguration4 tps, bool newVersion)
+		static public string ConvertInput(Generator.Export.Intrinsic.IDbConfiguration4 tps, bool newVersion)
 		{
 			string tableOut = string.Empty;
 			
@@ -380,7 +379,7 @@ namespace Generator.Parser
 		
 		/// changed: we are not just calling continue to break out of a loop;  No loop;
 		/// Now we're returning the input 'tableIn'.
-		static public string ConvertInputPart(IDbConfiguration4 tps, TableElement table, QuickMatch match, string tableIn)
+		static public string ConvertInputPart(Generator.Export.Intrinsic.IDbConfiguration4 tps, TableElement table, QuickMatch match, string tableIn)
 		{
 			string tableOut = tableIn;
 //			QuickMatch match0 = list[0];
@@ -478,7 +477,7 @@ namespace Generator.Parser
 		/// <param name="fieldTemplate"></param>
 		/// <param name="isForView"></param>
 		/// <returns></returns>
-		static public string ConvertInput2(IDbConfiguration4 tps,
+		static public string ConvertInput2(Generator.Export.Intrinsic.IDbConfiguration4 tps,
 		                                   TableElement table,
 		                                   string tableTemplate,
 		                                   string fieldTemplate,
@@ -531,7 +530,7 @@ namespace Generator.Parser
 		/// <returns>
 		/// A list of parsed table-fields given fieldTemplate.
 		/// </returns>
-		public static List<string> GetParamStrings(IDbConfiguration4 tps,
+		public static List<string> GetParamStrings(Generator.Export.Intrinsic.IDbConfiguration4 tps,
 		                                           TableElement table,
 		                                           string fieldTemplate,
 		                                           bool noKey)

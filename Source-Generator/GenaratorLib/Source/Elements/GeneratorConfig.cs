@@ -2,16 +2,9 @@
  * User: oIo
  * Date: 11/15/2010 – 2:33 AM
  */
-#region Using
 using System;
 using System.IO;
 using System.Xml.Serialization;
-using Generator;
-using Generator.Export;
-
-//using System.Windows.Forms;
-
-#endregion
 
 namespace Generator.Elements
 {
@@ -36,7 +29,7 @@ namespace Generator.Elements
 		{
 			base.fileFilter = "generator-config|*.generator-config;";
 		}
-		public GeneratorConfig(IDbConfiguration4 win)
+		public GeneratorConfig(Generator.Export.Intrinsic.IDbConfiguration4 win)
 		{
 			if (win.SelectedCollection!=null)
 				datafile = win.SelectedCollection.FileLoadedOrSaved;

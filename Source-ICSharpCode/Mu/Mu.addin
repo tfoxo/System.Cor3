@@ -4,21 +4,52 @@
 	</Manifest>
 	<Runtime>
 		<Import assembly="Mu.dll" />
+		<Import assembly="AvalonDock.Themes.dll" />
 		<Import assembly="FirstFloor.ModernUI.dll" />
 		<Import assembly="System.Cor3.dll" />
-		<Import assembly="System.Cor3.dll" />
+		<Import assembly="System.Cor3.Data.dll" />
+		<Import assembly="System.Cor3.Parsers.dll" />
 		<Import assembly="Generator.Lib.dll" />
-		
+		<Import assembly="System.Data.SQLite.dll" />
+		<Import assembly=":AvalonDock" />
 		<Import assembly=":ICSharpCode.AvalonEdit" />
 		<Import assembly=":ICSharpCode.Core" />
 		<Import assembly=":ICSharpCode.SharpDevelop" />
+		<!--
+			SD4 uses: ICSharpCode.SharpDevelop.Dom
 		<Import assembly=":ICSharpCode.SharpDevelop.Dom" />
+		-->
 		<Import assembly=":ICSharpCode.SharpDevelop.Widgets" />
 	</Runtime>
-	<Path name="/Workspace/Autostart">
-		<Class id="ThemeToolCommandStartup" class="Mu.MuStartup" />
+	<Path name="/SharpDevelop/Autostart">
+		<Class id="MuToolCommandStartup" class="Mu.MuStartup" />
+		<Class id="ThemeToolCommandStartup" class="ThemeTool.ToolCommandStartup" />
 	</Path>
-	<Path name="/Workspace/Tools">
+	<Path name="/SharpDevelop/Workbench/Tools">
 		<MenuItem id="MuDefaultCommand" label="Generate Links" class="Mu.Commands.ShowMuControl" />
+		<MenuItem id="ThemeToolsRoot" label="Theme Tool" type="Menu">
+			<MenuItem id="ThemeToolCommandDefault" label="Default" class="ThemeTool.ToolCommandDefault" />
+			<MenuItem id="ThemeToolCommandGeneric" label="Generic" class="ThemeTool.ToolCommandGeneric" />
+			<MenuItem type="Separator" />
+			<MenuItem id="ThemeToolCommandClassic" label="Classic" class="ThemeTool.ToolCommandClassic" />
+			<MenuItem id="ThemeToolCommandAero" label="Aero" class="ThemeTool.ToolCommandAero" />
+			<MenuItem id="ThemeToolCommandLuna" label="Luna" class="ThemeTool.ToolCommandLuna" />
+			<MenuItem type="Separator" />
+			<MenuItem id="ThemeToolCommandAutumn" label="Autumn" class="ThemeTool.ToolCommandAutumn" />
+			<MenuItem id="ThemeToolCommandGrass" label="Grass" class="ThemeTool.ToolCommandGrass" />
+			<MenuItem type="Separator" />
+			<!--<MenuItem id="ThemeToolCommandDev11" label="dev2011" class="ThemeTool.ToolCommandDev11" />-->
+			<MenuItem id="ThemeToolCommandDev11a" label="dev2o11" class="ThemeTool.ThemeToolCommandDev11a" />
+			<MenuItem id="ThemeToolCommandDev11b" label="dev2o11v2" class="ThemeTool.ThemeToolCommandDev11b" />
+			<MenuItem type="Separator" />
+			<MenuItem id="ThemeToolCommandDev10" label="Dev 2010" class="ThemeTool.ToolCommandDev10" />
+			<MenuItem id="ThemeToolCommandDev10Green" label="Dev 2010 Green" class="ThemeTool.ToolCommandDev10Green" />
+			<MenuItem id="ThemeToolCommandDev10Red" label="Dev 2010 Red" class="ThemeTool.ToolCommandDev10Red" />
+			<MenuItem type="Separator" />
+			<MenuItem id="ThemeToolCommandExpressDark" label="Expression Dark" class="ThemeTool.ToolCommandExpressDark" />
+			<MenuItem id="ThemeToolCommandExpressLight" label="Expression Light" class="ThemeTool.ToolCommandExpressLight" />
+			<MenuItem type="Separator" />
+			<MenuItem id="ThemeToolCommandCustom" label="Custom..." class="ThemeTool.ToolCommandCustom" />
+		</MenuItem>
 	</Path>
 </AddIn>

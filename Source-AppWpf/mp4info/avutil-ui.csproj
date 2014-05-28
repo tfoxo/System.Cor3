@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{2D051386-276A-4B78-A940-9B6688B59AD1}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>mp4nfo</RootNamespace>
+    <AssemblyName>avutil-ui</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ApplicationIcon>src\spkr.ico</ApplicationIcon>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Project\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Project\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\..\..\aac_fix\Projects\packages\ModernUI.WPF.1.0.5\lib\net40\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\..\..\aac_fix\Projects\packages\ModernUI.WPF.1.0.5\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Project\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\aac_fix\Source\m4aSplitter\Core\TimeFormat.cs">
+      <Link>include\YoutubeExtractor\TimeFormat.cs</Link>
+    </Compile>
+    <None Include="..\..\..\aac_fix\libs-extenral\libmp4v2\libmp4v2-cli.cs">
+      <Link>include\libmp4v2\libmp4v2-cli.cs</Link>
+    </None>
+    <None Include="..\..\..\aac_fix\libs-extenral\libmp4v2\libmp4v2-interop.cs">
+      <Link>include\libmp4v2\libmp4v2-interop.cs</Link>
+    </None>
+    <Compile Include="..\..\..\github-cor3\Source\Cor3.Core\System\Commander.cs">
+      <Link>include\YoutubeExtractor\Commander.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="src\App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\FFMpeg\FFCommand.cs" />
+    <Compile Include="src\FFMpeg\FFProgress.cs" />
+    <Compile Include="src\FFMpeg\FFProgressArgs.cs" />
+    <Compile Include="src\Library\AppOptions.cs" />
+    <Compile Include="src\Library\mp4v2\MP4v2_Util.cs" />
+    <Compile Include="src\Library\mp4v2\mp4nfo.cs" />
+    <Compile Include="src\Library\mp4v2\StringExtensions.cs" />
+    <Compile Include="src\Library\SQLiteAbstract.cs" />
+    <Compile Include="src\Library\WpfExtensions.cs" />
+    <Compile Include="src\Library\Youtube\YoutubeNfo.cs" />
+    <Compile Include="src\Library\Youtube\YtNfo.cs" />
+    <Compile Include="src\Library\Youtube\YtVideoInfo.cs" />
+    <Compile Include="src\Library\YtDownloadDirectory.cs" />
+    <Compile Include="src\Pages\FolderPage.cs">
+      <DependentUpon>FolderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Pages\InputPage.xaml.cs">
+      <DependentUpon>InputPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Pages\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Pages\OptionsPage.xaml.cs">
+      <DependentUpon>OptionsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Views\BasicCommand.cs" />
+    <Compile Include="src\Views\TagView.xaml.cs">
+      <DependentUpon>TagView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Views\YouTubeUrlView.xaml.cs">
+      <DependentUpon>YouTubeUrlView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Window1.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <None Include="x64\SQLite.Interop.dll" />
+    <None Include="x86\SQLite.Interop.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="src\App.xaml" />
+    <Page Include="src\Pages\FolderPage.xaml" />
+    <Page Include="src\Pages\InputPage.xaml" />
+    <Page Include="src\Pages\IntroPage.xaml" />
+    <Page Include="src\Pages\OptionsPage.xaml" />
+    <Page Include="src\Views\TagView.xaml" />
+    <Page Include="src\Views\YouTubeUrlView.xaml" />
+    <Page Include="src\Window1.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\aac_fix\libs-extenral\libmp4v2\libmp4v2.dll">
+      <Link>libmp4v2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <Resource Include="src\spkr.ico" />
+    <Resource Include="src\speaker_tosort.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\document_properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\aacplusenc.exe">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\faac.exe" />
+    <None Include="bin\ffmpeg.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\ffplay.exe" />
+    <None Include="bin\ffprobe.exe" />
+    <None Include="bin\lame.exe" />
+    <None Include="bin\libaacplus-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libfdk-aac-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libgcc_s_dw2-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libiconv-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libmodplug-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libmp3lame-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libstdc++-6.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libwinpthread-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\libx264-130.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\pthreadGC2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="bin\x264.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AacAudioExtractor.cs">
+      <Link>include\YoutubeExtractor\AacAudioExtractor.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AdaptiveType.cs">
+      <Link>include\YoutubeExtractor\AdaptiveType.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioDownloader.cs">
+      <Link>include\YoutubeExtractor\AudioDownloader.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioExtractionException.cs">
+      <Link>include\YoutubeExtractor\AudioExtractionException.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioType.cs">
+      <Link>include\YoutubeExtractor\AudioType.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\BigEndianBitConverter.cs">
+      <Link>include\YoutubeExtractor\BigEndianBitConverter.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\BitHelper.cs">
+      <Link>include\YoutubeExtractor\BitHelper.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Decipherer.cs">
+      <Link>include\YoutubeExtractor\Decipherer.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Downloader.cs">
+      <Link>include\YoutubeExtractor\Downloader.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\DownloadUrlResolver.cs">
+      <Link>include\YoutubeExtractor\DownloadUrlResolver.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\FlvFile.cs">
+      <Link>include\YoutubeExtractor\FlvFile.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\HttpHelper.cs">
+      <Link>include\YoutubeExtractor\HttpHelper.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\IAudioExtractor.cs">
+      <Link>include\YoutubeExtractor\IAudioExtractor.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Mp3AudioExtractor.cs">
+      <Link>include\YoutubeExtractor\Mp3AudioExtractor.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\ProgressEventArgs.cs">
+      <Link>include\YoutubeExtractor\ProgressEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoDownloader.cs">
+      <Link>include\YoutubeExtractor\VideoDownloader.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoInfo.cs">
+      <Link>include\YoutubeExtractor\VideoInfo.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoNotAvailableException.cs">
+      <Link>include\YoutubeExtractor\VideoNotAvailableException.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoType.cs">
+      <Link>include\YoutubeExtractor\VideoType.cs</Link>
+    </Compile>
+    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\YoutubeParseException.cs">
+      <Link>include\YoutubeExtractor\YoutubeParseException.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mp4nfo.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Cor3.Core\System.Cor3-Net40.csproj">
+      <Project>{36A13D56-FD3A-4AF3-B608-9C84FAACC41F}</Project>
+      <Name>System.Cor3-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Data\System.Cor3.Data-Net40.csproj">
+      <Project>{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}</Project>
+      <Name>System.Cor3.Data-Net40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
