@@ -125,6 +125,7 @@
     <Compile Include="src\FFMpeg\FFProgress.cs" />
     <Compile Include="src\FFMpeg\FFProgressArgs.cs" />
     <Compile Include="src\Library\AppOptions.cs" />
+    <Compile Include="src\Library\mp4v2\MP4v2_Config.cs" />
     <Compile Include="src\Library\mp4v2\MP4v2_Util.cs" />
     <Compile Include="src\Library\mp4v2\mp4nfo.cs" />
     <Compile Include="src\Library\mp4v2\StringExtensions.cs" />
