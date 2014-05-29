@@ -54,7 +54,6 @@ namespace SQLiteUtil
 			using (SQLiteConnection c = db.Connection)
 			using (SQLiteDataAdapter a = db.Adapter)
 			{
-				
 //				db.Insert(this.sqlQuery, delegate() {});
 			}
 			

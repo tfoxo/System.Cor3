@@ -106,15 +106,15 @@
     <Compile Include="..\..\..\aac_fix\Source\m4aSplitter\Core\TimeFormat.cs">
       <Link>include\YoutubeExtractor\TimeFormat.cs</Link>
     </Compile>
+    <Compile Include="..\..\Source\cor3.core\System\Commander.cs">
+      <Link>include\Commander.cs</Link>
+    </Compile>
     <None Include="..\..\..\aac_fix\libs-extenral\libmp4v2\libmp4v2-cli.cs">
       <Link>include\libmp4v2\libmp4v2-cli.cs</Link>
     </None>
     <None Include="..\..\..\aac_fix\libs-extenral\libmp4v2\libmp4v2-interop.cs">
       <Link>include\libmp4v2\libmp4v2-interop.cs</Link>
     </None>
-    <Compile Include="..\..\..\github-cor3\Source\Cor3.Core\System\Commander.cs">
-      <Link>include\YoutubeExtractor\Commander.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WPFAssemblyInfo.cs" />
     <Compile Include="src\App.xaml.cs">
@@ -163,8 +163,6 @@
       <SubType>Code</SubType>
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
-    <None Include="x64\SQLite.Interop.dll" />
-    <None Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="src\App.xaml" />
@@ -233,64 +231,64 @@
     <None Include="bin\x264.exe" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AacAudioExtractor.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AacAudioExtractor.cs">
       <Link>include\YoutubeExtractor\AacAudioExtractor.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AdaptiveType.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AdaptiveType.cs">
       <Link>include\YoutubeExtractor\AdaptiveType.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioDownloader.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioDownloader.cs">
       <Link>include\YoutubeExtractor\AudioDownloader.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioExtractionException.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioExtractionException.cs">
       <Link>include\YoutubeExtractor\AudioExtractionException.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioType.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\AudioType.cs">
       <Link>include\YoutubeExtractor\AudioType.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\BigEndianBitConverter.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\BigEndianBitConverter.cs">
       <Link>include\YoutubeExtractor\BigEndianBitConverter.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\BitHelper.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\BitHelper.cs">
       <Link>include\YoutubeExtractor\BitHelper.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Decipherer.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Decipherer.cs">
       <Link>include\YoutubeExtractor\Decipherer.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Downloader.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Downloader.cs">
       <Link>include\YoutubeExtractor\Downloader.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\DownloadUrlResolver.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\DownloadUrlResolver.cs">
       <Link>include\YoutubeExtractor\DownloadUrlResolver.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\FlvFile.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\FlvFile.cs">
       <Link>include\YoutubeExtractor\FlvFile.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\HttpHelper.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\HttpHelper.cs">
       <Link>include\YoutubeExtractor\HttpHelper.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\IAudioExtractor.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\IAudioExtractor.cs">
       <Link>include\YoutubeExtractor\IAudioExtractor.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Mp3AudioExtractor.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\Mp3AudioExtractor.cs">
       <Link>include\YoutubeExtractor\Mp3AudioExtractor.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\ProgressEventArgs.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\ProgressEventArgs.cs">
       <Link>include\YoutubeExtractor\ProgressEventArgs.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoDownloader.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoDownloader.cs">
       <Link>include\YoutubeExtractor\VideoDownloader.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoInfo.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoInfo.cs">
       <Link>include\YoutubeExtractor\VideoInfo.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoNotAvailableException.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoNotAvailableException.cs">
       <Link>include\YoutubeExtractor\VideoNotAvailableException.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoType.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\VideoType.cs">
       <Link>include\YoutubeExtractor\VideoType.cs</Link>
     </Compile>
-    <Compile Include="D:\DEV\WIN\CS_ROOT\Projects\github-cor3\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\YoutubeParseException.cs">
+    <Compile Include="..\..\Source-External\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\YoutubeParseException.cs">
       <Link>include\YoutubeExtractor\YoutubeParseException.cs</Link>
     </Compile>
   </ItemGroup>

@@ -216,3 +216,4 @@ pip-log.txt
 /Source/Cor3.Core/obj
 /Source/Cor3.Core/bin
 /Source/Cor3.Core/cor3.snk
+/Project/*.sdsettings

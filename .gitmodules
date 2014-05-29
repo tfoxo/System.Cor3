@@ -5,23 +5,23 @@
 	path = Source/cor3.core
 	url = https://github.com/tfwio/cor3.core
 	branch = master
-[submodule "source/cor3.data"]
-	path = source/cor3.data
+[submodule "Source/cor3.data"]
+	path = Source/cor3.data
 	url = https://github.com/tfwio/cor3.data
 	branch = master
-[submodule "source/cor3.stock"]
-	path = source/cor3.stock
+[submodule "Source/cor3.stock"]
+	path = Source/cor3.stock
 	url = https://github.com/tfwio/cor3.stock
 	branch = master
-[submodule "source/cor3.extensions"]
-	path = source/cor3.extensions
+[submodule "Source/cor3.extensions"]
+	path = Source/cor3.extensions
 	url = https://github.com/tfwio/cor3.ext
 	branch = master
 [submodule "Source/cor3.parsers"]
 	path = Source/cor3.parsers
 	url = https://github.com/tfwio/cor3.par
 	branch = master
-[submodule "source/cor3.forms"]
-	path = source/cor3.forms
+[submodule "Source/cor3.forms"]
+	path = Source/cor3.forms
 	url = https://github.com/tfwio/cor3.forms
 	branch = master

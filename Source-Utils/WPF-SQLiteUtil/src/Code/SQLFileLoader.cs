@@ -8,8 +8,6 @@ using System.Windows.Input;
 using Microsoft.Win32;
 namespace SQLiteUtil
 {
-	
-	
 	class SQLFileLoader : IBindCommands, INotifyPropertyChanged
 	{
 		#region IBindCommands implementation

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="crudbook.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="crudbook" Width="720" Height="409">
+	<Grid>
+		<TabControl>
+			<TabItem Header="List of books">
+				<view:CrudView xmlns:view="clr-namespace:crudbook.Views" />
+			</TabItem>
+			<TabItem Header="CRUD">
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>
