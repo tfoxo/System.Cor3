@@ -88,6 +88,7 @@
     <Compile Include="source\Common\ActionLoadDatabase.cs" />
     <Compile Include="source\Common\BasicCommand.cs" />
     <Compile Include="source\Common\BookMine.cs" />
+    <Compile Include="source\Common\BookMine.custom.cs" />
     <Compile Include="source\Common\DataFileLoader.cs" />
     <Compile Include="source\Views\CrudView.xaml.cs">
       <DependentUpon>CrudView.xaml</DependentUpon>

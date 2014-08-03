@@ -25,3 +25,9 @@
 	path = Source/cor3.forms
 	url = https://github.com/tfwio/cor3.forms
 	branch = master
+[submodule "Source/cor3.win"]
+	path = Source/cor3.win
+	url = https://github.com/tfwio/cor3.win
+[submodule "Source/cor3.fx"]
+	path = Source/cor3.fx
+	url = https://github.com/tfwio/cor3.fx
